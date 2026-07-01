@@ -69,6 +69,12 @@
   .insight h3{margin:0 0 8px;color:var(--plum);font-size:22px}
   .insight p{margin:6px 0}
   .insight strong{color:var(--terra)}
+  .decision-card{background:linear-gradient(135deg,var(--plum),var(--teal));border:2px solid var(--gold);border-radius:18px;padding:26px 28px;box-shadow:var(--shadow);text-align:center;color:var(--cream)}
+  .decision-card .tag{display:inline-block;background:var(--gold);color:#3a1130;font-weight:800;letter-spacing:.14em;font-size:12px;padding:5px 15px;border-radius:999px;text-transform:uppercase}
+  .decision-card h2{margin:12px 0 4px;color:var(--gold-lt);font-size:clamp(26px,4vw,40px)}
+  .decision-card p{margin:0 auto 16px;color:var(--cream-2);max-width:660px}
+  .decision-card a.book{display:inline-block;background:var(--gold);color:#3a1130;text-decoration:none;font-weight:800;padding:11px 24px;border-radius:10px;transition:.15s}
+  .decision-card a.book:hover{background:var(--gold-lt)}
 
   /* ===== Controls ===== */
   .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;
@@ -89,6 +95,8 @@
     box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:.2s;border-top:5px solid var(--gold)}
   .card.dim{opacity:.28;filter:grayscale(.5)}
   .card.pick{border-top-color:var(--terra);box-shadow:0 0 0 3px rgba(181,83,63,.35),var(--shadow)}
+  .card.chosen{border-top-color:var(--gold);box-shadow:0 0 0 3px var(--gold),0 16px 40px rgba(201,162,75,.45)}
+  .choicebar{background:linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold));color:#3a1130;font-family:var(--serif);font-weight:800;text-align:center;padding:8px;letter-spacing:.1em;font-size:14px;text-transform:uppercase}
   .card .rank{position:absolute;top:12px;left:12px;z-index:3;background:var(--plum);color:var(--gold-lt);
     width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;border:2px solid var(--gold)}
   .card .photo{position:relative;aspect-ratio:16/10;background:#e7dcc4 center/cover;overflow:hidden}
@@ -213,6 +221,19 @@
   </div>
 </header>
 
+<!-- DECISION -->
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="decision-card">
+      <span class="tag">✓ Decided — this is our flat</span>
+      <h2>By the Old Synagogue · Balcony</h2>
+      <p>★4.97 (highest-rated of all ten) · private balcony · not top-floor · the heart of Kazimierz · 776&nbsp;CHF for our 7 nights — the one you both chose.</p>
+      <a class="book" href="https://www.airbnb.com/rooms/913476377185902404?adults=2&check_in=2026-08-09&check_out=2026-08-16" target="_blank" rel="noopener">View our flat on Airbnb ↗</a>
+      <a href="things-to-do.html" style="display:inline-block;margin:8px 0 0 10px;color:var(--gold-lt);text-decoration:none;font-weight:800;padding:11px 22px;border:1.5px solid var(--gold);border-radius:10px">Plan our week — things to do in Kraków →</a>
+    </div>
+  </div>
+</section>
+
 <!-- INSIGHT -->
 <section>
   <div class="wrap">
@@ -274,7 +295,8 @@
       <div class="map-legend">
         <span><i class="dot" style="background:#b5533f"></i> Sarah's 6 favourites</span>
         <span><i class="dot" style="background:#c9a24b"></i> 4 backups</span>
-        <span style="opacity:.8">Real Kraków street map · click a pin to jump to the flat</span>
+        <span style="color:var(--gold-lt);font-weight:700">★ Our choice (#3)</span>
+        <span style="opacity:.8">click a pin to jump to the flat</span>
       </div>
     </div>
   </div>
@@ -352,7 +374,7 @@ const FLATS = [
     pros:["Best aesthetic of them all","Best location of the shortlist","Two-floor","Good bed & good kitchen","Cheapest of the five"],
     cons:["No balcony","No air-con","Under the roof (can get hot)","Lowest rating (still 4.78)"] },
 
-  { id:"913476377185902404", rank:3, tier:"fav", name:"By the Old Synagogue · Balcony",
+  { id:"913476377185902404", rank:3, tier:"fav", selected:true, name:"By the Old Synagogue · Balcony",
     layout:"1 bedroom · 1 bed · 1 bath", rating:4.97, price:776, priceNote:"858 without discount",
     lat:50.0507, lng:19.9483,
     balcony:"private", ac:false, twoFloor:false, underRoof:false, kitchen:"good",
@@ -513,12 +535,15 @@ function renderCards(){
   if(sortMode==="price") list.sort((a,b)=>(a.price??1e9)-(b.price??1e9));
   else if(sortMode==="rating") list.sort((a,b)=>b.rating-a.rating);
   else list.sort((a,b)=>a.rank-b.rank);
+  // the selected flat always leads
+  list = [...list.filter(f=>f.selected), ...list.filter(f=>!f.selected)];
 
   grid.innerHTML = list.map(f=>{
     const on=passesFilters(f);
     const v=votes[f.id]||{};
     const priceHtml = f.price!=null ? `${f.price}<small> CHF</small>` : `<small>see listing</small>`;
-    return `<div class="card ${on?'':'dim'} ${(v.harry||v.sarah)?'pick':''}" id="card-${f.id}" data-id="${f.id}">
+    return `<div class="card ${on?'':'dim'} ${(v.harry||v.sarah)?'pick':''} ${f.selected?'chosen':''}" id="card-${f.id}" data-id="${f.id}">
+      ${f.selected?'<div class="choicebar">★ Our choice — this is the flat</div>':''}
       <span class="rank">${f.rank}</span>
       <div class="photo">
         <img loading="lazy" src="${f.img}" alt="${f.name}" referrerpolicy="no-referrer"
@@ -588,9 +613,11 @@ function renderMap(){
   // flat pins (accurate Web-Mercator placement)
   FLATS.forEach(f=>{ const x=px(f.lng), y=py(f.lat); const c=f.tier==="fav"?"#b5533f":"#c9a24b";
     s+=`<g style="cursor:pointer" onclick="jumpTo('${f.id}')">
-      <circle cx="${x}" cy="${y}" r="20" fill="url(#glow)"/>
+      <circle cx="${x}" cy="${y}" r="${f.selected?26:20}" fill="url(#glow)"/>
+      ${f.selected?`<circle cx="${x}" cy="${y}" r="20" fill="none" stroke="#c9a24b" stroke-width="3.5"/>`:''}
       <circle cx="${x}" cy="${y}" r="14" fill="${c}" stroke="#f6ecd6" stroke-width="2.5" filter="url(#pinsh)"/>
       <text x="${x}" y="${y+5}" text-anchor="middle" fill="#fff" font-family="Palatino,serif" font-weight="bold" font-size="15">${f.rank}</text>
+      ${f.selected?`<text x="${x}" y="${y-23}" text-anchor="middle" font-size="22" fill="#c9a24b" paint-order="stroke" stroke="#fff" stroke-width="3">★</text>`:''}
     </g>`;
   });
   s+=`<text x="${W-8}" y="${H-8}" text-anchor="end" fill="#444" font-family="sans-serif" font-size="12" opacity="0.85" paint-order="stroke" stroke="#fff" stroke-width="3">© OpenStreetMap contributors © CARTO</text>`;
