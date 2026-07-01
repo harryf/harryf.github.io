@@ -1,0 +1,170 @@
+#!/usr/bin/env bash
+#
+# publish — copy a single HTML page into the harryf.github.io site and deploy it.
+#
+# Usage:
+#   publish <file.html> [name]         # asks: public or private?
+#   publish <file.html> --public
+#   publish <file.html> --private
+#   publish <file.html> --dry-run      # show what would happen, change nothing
+#   publish -h | --help
+#
+# Works from anywhere — symlink it onto your PATH:
+#   ln -s /Users/harry/Code/personal/harryf.github.io/bin/publish ~/bin/publish
+#
+# It figures out where the repo is from its own (real) location, copies your
+# file in, commits, and pushes. GitHub Actions then rebuilds the homepage
+# index and deploys (~40s). Public pages land at the site root and get listed
+# on the homepage; private pages land under private/ and are served but NOT
+# listed. "Private" means unlisted, not access-controlled — the site is public.
+
+set -euo pipefail
+
+BASE_URL="https://harryf.github.io"
+
+die()  { printf 'publish: %s\n' "$1" >&2; exit 1; }
+note() { printf '%s\n' "$1"; }
+
+usage() {
+  cat <<'EOF'
+Usage: publish <file.html> [name] [--public|--private] [-y] [--dry-run]
+
+Copies an HTML file into the harryf.github.io repo, commits, and pushes.
+GitHub Actions then rebuilds the homepage index and deploys (~40s).
+
+Arguments:
+  <file.html>     Path to the HTML file to publish (from anywhere on disk).
+  [name]          Optional published name/slug (default: the file's own name).
+                  ".html" is appended if you omit it.
+
+Options:
+  --public        Publish to the site root and list it on the homepage.
+  --private       Publish under private/ — served by URL but NOT listed.
+                  If neither is given, you'll be asked.
+  -y, --yes       Skip confirmation prompts (still asks public/private if unset).
+  --dry-run       Print the plan and exit without copying, committing, or pushing.
+  -h, --help      Show this help.
+
+Examples:
+  publish ./chart.html
+  publish ~/Desktop/demo.html cool-demo --public
+  publish notes.html --private -y
+EOF
+}
+
+# --- resolve this script's real location, following symlinks (macOS-safe) ---
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+  SOURCE="$(readlink "$SOURCE")"
+  case "$SOURCE" in /*) ;; *) SOURCE="$DIR/$SOURCE" ;; esac
+done
+SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# --- parse args ---
+FILE=""
+NAME=""
+VIS=""
+ASSUME_YES=0
+DRY_RUN=0
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -h|--help)  usage; exit 0 ;;
+    --public)   VIS="public" ;;
+    --private)  VIS="private" ;;
+    -y|--yes)   ASSUME_YES=1 ;;
+    --dry-run)  DRY_RUN=1 ;;
+    --)         shift; break ;;
+    -*)         die "unknown option: $1 (try --help)" ;;
+    *)
+      if   [ -z "$FILE" ]; then FILE="$1"
+      elif [ -z "$NAME" ]; then NAME="$1"
+      else die "unexpected argument: $1"; fi
+      ;;
+  esac
+  shift
+done
+
+[ -n "$FILE" ] || { usage; exit 1; }
+[ -f "$FILE" ] || die "no such file: $FILE"
+
+# --- work out the destination filename ---
+[ -n "$NAME" ] || NAME="$(basename "$FILE")"
+case "$NAME" in
+  *.html|*.htm) ;;
+  *) NAME="$NAME.html" ;;
+esac
+case "$NAME" in */*) die "name must be a plain filename, not a path: $NAME" ;; esac
+
+case "$FILE" in
+  *.html|*.htm) ;;
+  *) note "warning: $FILE doesn't look like HTML — publishing it anyway." ;;
+esac
+
+# --- ask public/private if not specified ---
+if [ -z "$VIS" ]; then
+  printf 'Publish "%s" as:\n  [p] public  — listed on the homepage\n  [v] private — served but unlisted\n' "$NAME"
+  while :; do
+    printf 'Choice [p/v]: '
+    read -r ans </dev/tty || die "no input (use --public or --private)"
+    case "$ans" in
+      p|P|public)  VIS="public";  break ;;
+      v|V|private) VIS="private"; break ;;
+      *) note "Please answer p or v." ;;
+    esac
+  done
+fi
+
+if [ "$VIS" = "private" ]; then
+  DEST_DIR="$REPO/private"; REL="private/$NAME"
+else
+  DEST_DIR="$REPO";         REL="$NAME"
+fi
+DEST="$DEST_DIR/$NAME"
+URL="$BASE_URL/$REL"
+
+# --- overwrite guard ---
+ACTION="Publish"
+if [ -e "$DEST" ]; then
+  ACTION="Update"
+  if [ "$ASSUME_YES" -ne 1 ] && [ "$DRY_RUN" -ne 1 ]; then
+    printf '%s already exists. Overwrite? [y/N]: ' "$REL"
+    read -r ow </dev/tty || die "no input"
+    case "$ow" in y|Y|yes) ;; *) die "aborted" ;; esac
+  fi
+fi
+
+# --- summary ---
+printf '\n%s:\n  from: %s\n  to:   %s   (%s)\n  url:  %s\n\n' \
+  "$ACTION" "$FILE" "$REL" "$VIS" "$URL"
+
+if [ "$DRY_RUN" -eq 1 ]; then
+  note "(dry run — nothing copied, committed, or pushed)"
+  exit 0
+fi
+
+if [ "$ASSUME_YES" -ne 1 ]; then
+  printf 'Publish now? [Y/n]: '
+  read -r go </dev/tty || die "no input"
+  case "$go" in n|N|no) die "aborted" ;; esac
+fi
+
+# --- copy, commit, push ---
+mkdir -p "$DEST_DIR"
+cp "$FILE" "$DEST"
+
+cd "$REPO"
+git add -- "$REL"
+if git diff --cached --quiet -- "$REL"; then
+  note "Nothing changed — $REL is already up to date."
+  exit 0
+fi
+git commit -q -m "$ACTION $REL"
+
+if ! git push -q; then
+  die "push rejected — run 'git -C \"$REPO\" pull --rebase' then push manually. Your commit is saved locally."
+fi
+
+printf '\n\xe2\x9c\x93 Pushed. Live at %s in ~40s (Actions is rebuilding + deploying).\n' "$URL"
+printf '  Watch: gh run watch --repo harryf/harryf.github.io  |  https://github.com/harryf/harryf.github.io/actions\n'
