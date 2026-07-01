@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kraków · Choosing Our Flat · 9–16 Aug 2026</title>
+<style>
+  /* ===== Kraków / Młoda Polska (Wyspiański) art-nouveau palette ===== */
+  :root{
+    --plum:#3a1130; --plum-2:#5a1c48; --teal:#0e3b3a; --teal-2:#14524f;
+    --gold:#c9a24b; --gold-lt:#e6c877; --cream:#f6ecd6; --cream-2:#efe2c4;
+    --ink:#2a1a22; --terra:#b5533f; --sage:#7c8f5a; --peacock:#1f6f78;
+    --shadow:0 10px 30px rgba(30,10,25,.28);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:var(--sans);color:var(--ink);
+    background:
+      radial-gradient(circle at 15% 0%, rgba(201,162,75,.12), transparent 40%),
+      radial-gradient(circle at 85% 5%, rgba(31,111,120,.14), transparent 45%),
+      var(--cream);
+    line-height:1.55;
+  }
+  h1,h2,h3,.disp{font-family:var(--serif)}
+  a{color:var(--terra)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* ===== Decorative header ===== */
+  header.hero{
+    position:relative;overflow:hidden;color:var(--cream);
+    background:linear-gradient(135deg,var(--teal) 0%,var(--plum) 100%);
+    border-bottom:6px solid var(--gold);
+  }
+  .hero .peacocks{position:absolute;inset:0;opacity:.20;pointer-events:none}
+  .hero-inner{position:relative;padding:46px 0 40px;text-align:center}
+  .eyebrow{letter-spacing:.42em;text-transform:uppercase;font-size:12px;color:var(--gold-lt);margin:0 0 8px}
+  .hero h1{font-size:clamp(42px,8vw,86px);margin:0;line-height:.95;
+    letter-spacing:.02em;text-shadow:0 3px 14px rgba(0,0,0,.35)}
+  .hero h1 .ogonek{color:var(--gold-lt)}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(16px,2.4vw,22px);margin:12px 0 0;color:var(--cream-2)}
+  .rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px auto 0;max-width:420px;color:var(--gold-lt)}
+  .rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+
+  /* ===== Flight / trip strip ===== */
+  .trip{background:rgba(0,0,0,.16);border-top:1px solid rgba(201,162,75,.35);padding:18px 0}
+  .flights{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+  .flight{background:rgba(246,236,214,.07);border:1px solid rgba(201,162,75,.4);border-radius:12px;
+    padding:12px 18px;min-width:270px;display:flex;align-items:center;gap:16px}
+  .flight .route{font-family:var(--serif);font-size:15px;color:var(--gold-lt);letter-spacing:.05em}
+  .flight .times{font-size:22px;font-weight:700;font-family:var(--serif);color:var(--cream)}
+  .flight .meta{font-size:12px;color:var(--cream-2);opacity:.85}
+  .flight .plane{font-size:20px}
+  .nights{text-align:center;color:var(--cream-2);font-size:13px;margin-top:12px;letter-spacing:.04em}
+
+  /* ===== Section titles ===== */
+  section{padding:46px 0}
+  .sec-head{text-align:center;margin-bottom:8px}
+  .sec-head h2{font-size:clamp(28px,4.5vw,40px);margin:0;color:var(--plum-2)}
+  .sec-head p{margin:6px auto 0;max-width:640px;color:#6b4b58}
+  .kicker{display:inline-block;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--peacock);font-weight:700}
+
+  /* ===== Insight callout ===== */
+  .insight{background:linear-gradient(135deg,#fff9ec,#f3e6c6);border:2px solid var(--gold);
+    border-radius:18px;padding:26px 28px;box-shadow:var(--shadow);position:relative}
+  .insight::before{content:"❧";position:absolute;top:-16px;left:26px;background:var(--cream);color:var(--terra);font-size:26px;padding:0 8px}
+  .insight h3{margin:0 0 8px;color:var(--plum);font-size:22px}
+  .insight p{margin:6px 0}
+  .insight strong{color:var(--terra)}
+
+  /* ===== Controls ===== */
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;
+    margin:0 auto 8px;padding:16px;background:#fff8ea;border:1px solid var(--cream-2);border-radius:14px;box-shadow:var(--shadow)}
+  .controls .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  .controls label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8a6b3a;font-weight:700;margin-right:2px}
+  .chip{border:1.5px solid var(--peacock);background:transparent;color:var(--peacock);
+    padding:6px 13px;border-radius:999px;font-size:13px;cursor:pointer;font-weight:600;transition:.15s;font-family:var(--sans)}
+  .chip:hover{background:rgba(31,111,120,.1)}
+  .chip.on{background:var(--peacock);color:#fff}
+  .chip.sort.on{background:var(--terra);border-color:var(--terra);color:#fff}
+  .chip.sort{border-color:var(--terra);color:var(--terra)}
+  .reset{background:none;border:none;color:#a07;cursor:pointer;font-size:12px;text-decoration:underline}
+
+  /* ===== Flat grid ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px;margin-top:26px}
+  .card{background:#fffdf7;border:1px solid var(--cream-2);border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:.2s;border-top:5px solid var(--gold)}
+  .card.dim{opacity:.28;filter:grayscale(.5)}
+  .card.pick{border-top-color:var(--terra);box-shadow:0 0 0 3px rgba(181,83,63,.35),var(--shadow)}
+  .card .rank{position:absolute;top:12px;left:12px;z-index:3;background:var(--plum);color:var(--gold-lt);
+    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;border:2px solid var(--gold)}
+  .card .photo{position:relative;aspect-ratio:16/10;background:#e7dcc4 center/cover;overflow:hidden}
+  .card .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .rating{position:absolute;bottom:10px;right:10px;background:rgba(58,17,48,.9);color:var(--gold-lt);
+    padding:4px 10px;border-radius:999px;font-size:13px;font-weight:700}
+  .card .price{position:absolute;top:12px;right:12px;background:var(--cream);color:var(--plum);
+    padding:5px 11px;border-radius:10px;font-weight:800;font-family:var(--serif);border:1.5px solid var(--gold);font-size:15px}
+  .card .price small{font-weight:600;font-size:11px;color:#8a6b3a}
+  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+  .card h3{margin:0 0 2px;font-size:20px;color:var(--plum-2);line-height:1.15}
+  .card .layout{font-size:12.5px;color:#7a5a68;margin:0 0 10px}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+  .badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;letter-spacing:.02em}
+  .b-yes{background:#e3efd9;color:#3e5a24;border:1px solid #b9d19a}
+  .b-no{background:#f6e0da;color:#8c3a28;border:1px solid #e0b3a8}
+  .b-info{background:#e0eef0;color:#1f5f68;border:1px solid #a9d2d6}
+  .verdict{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--terra);margin:0 0 10px;
+    border-left:3px solid var(--gold);padding-left:12px}
+  .proscons{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12.5px;margin:0 0 12px}
+  .proscons ul{margin:0;padding-left:16px}
+  .proscons li{margin:2px 0}
+  .pros li::marker{color:var(--sage)}
+  .cons li::marker{color:var(--terra)}
+  .proscons h4{margin:0 0 3px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+  .pros h4{color:var(--sage)} .cons h4{color:var(--terra)}
+  .card .foot{margin-top:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .btn{flex:1;text-align:center;background:var(--plum);color:var(--cream);text-decoration:none;
+    padding:9px;border-radius:10px;font-weight:700;font-size:13px;transition:.15s;min-width:120px}
+  .btn:hover{background:var(--terra)}
+  .votes{display:flex;gap:6px}
+  .vote{border:1.5px solid #d8c39a;background:#fff;border-radius:10px;padding:8px 10px;cursor:pointer;font-size:13px;font-weight:700;transition:.15s;white-space:nowrap}
+  .vote.on{background:var(--terra);color:#fff;border-color:var(--terra)}
+  .vote.on.sarah{background:var(--peacock);border-color:var(--peacock)}
+
+  .backup-note{text-align:center;max-width:680px;margin:0 auto 4px;color:#6b4b58;font-style:italic;font-family:var(--serif)}
+
+  /* ===== Map ===== */
+  .mapwrap{background:linear-gradient(160deg,#12403f,#2a1130);border-radius:18px;padding:22px;box-shadow:var(--shadow);border:2px solid var(--gold)}
+  .mapwrap svg{width:100%;height:auto;display:block;border-radius:10px}
+  .map-legend{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px;color:var(--cream-2);font-size:12.5px}
+  .map-legend span{display:flex;align-items:center;gap:6px}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+
+  /* ===== Comparison table ===== */
+  .tablewrap{overflow-x:auto;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--cream-2)}
+  table{border-collapse:collapse;width:100%;background:#fffdf7;font-size:13px;min-width:820px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #eaddc0}
+  thead th{background:var(--plum);color:var(--gold-lt);font-family:var(--serif);position:sticky;top:0;font-weight:600;letter-spacing:.02em}
+  tbody tr:hover{background:#fbf3df}
+  td.flatname{font-family:var(--serif);font-weight:700;color:var(--plum-2)}
+  .yes{color:#3e7a24;font-weight:700}.no{color:var(--terra);font-weight:700}
+  .num{font-variant-numeric:tabular-nums;font-weight:700}
+
+  /* ===== Culture / footer ===== */
+  .culture{background:linear-gradient(135deg,var(--plum),var(--teal));color:var(--cream);border-top:6px solid var(--gold)}
+  .culture .sec-head h2{color:var(--gold-lt)}
+  .culture .sec-head p{color:var(--cream-2)}
+  .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .ctile{background:rgba(246,236,214,.06);border:1px solid rgba(201,162,75,.35);border-radius:14px;padding:18px 20px}
+  .ctile h3{margin:0 0 6px;color:var(--gold-lt);font-size:19px}
+  .ctile p{margin:0;font-size:14px;color:var(--cream-2)}
+  footer{background:#26102a;color:var(--cream-2);text-align:center;padding:26px 0;font-size:13px}
+  footer a{color:var(--gold-lt)}
+  .pickbanner{position:fixed;bottom:0;left:0;right:0;background:var(--plum);color:var(--cream);
+    padding:10px 16px;text-align:center;font-size:14px;box-shadow:0 -6px 20px rgba(0,0,0,.3);
+    transform:translateY(120%);transition:.3s;z-index:40;font-family:var(--serif)}
+  .pickbanner.show{transform:translateY(0)}
+  .pickbanner b{color:var(--gold-lt)}
+  .chip.share{border-color:var(--plum-2);color:var(--plum-2)}
+  .chip.share:hover{background:rgba(90,28,72,.1)}
+  .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-160%);
+    background:var(--plum);color:var(--cream);padding:12px 22px;border-radius:12px;
+    box-shadow:var(--shadow);z-index:60;transition:.32s;font-family:var(--serif);
+    border:1px solid var(--gold);max-width:90vw;text-align:center}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  @media(max-width:520px){.proscons{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="peacocks" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#e6c877" stroke-width="2" fill="none" opacity="0.9">
+      <path d="M0,300 C120,180 180,120 140,40 M140,40 C110,120 60,150 20,150"/>
+      <path d="M60,300 C160,190 230,150 210,60"/>
+      <circle cx="140" cy="40" r="10" fill="#c9a24b" stroke="none"/>
+      <path d="M1200,300 C1080,180 1020,120 1060,40 M1060,40 C1090,120 1140,150 1180,150"/>
+      <path d="M1140,300 C1040,190 970,150 990,60"/>
+      <circle cx="1060" cy="40" r="10" fill="#c9a24b" stroke="none"/>
+      <path d="M600,320 c-40,-60 -40,-120 0,-170 c40,50 40,110 0,170" opacity="0.5"/>
+    </g>
+  </svg>
+  <div class="hero-inner wrap">
+    <p class="eyebrow">A Decision, Illustrated · Harry &amp; Sarah</p>
+    <h1>Krak<span class="ogonek">ó</span>w</h1>
+    <p class="sub">Nine flats, one week, one choice — Kazimierz, August 2026</p>
+    <div class="rule">✦ ❧ ✦</div>
+  </div>
+  <div class="trip">
+    <div class="wrap">
+      <div class="flights">
+        <div class="flight">
+          <span class="plane">🛫</span>
+          <div>
+            <div class="route">ZRH → KRK · Sun 9 Aug</div>
+            <div class="times">12:25 → 14:05</div>
+            <div class="meta">Nonstop · 1h40m · Helvetic Airways · Economy Basic</div>
+          </div>
+        </div>
+        <div class="flight">
+          <span class="plane">🛬</span>
+          <div>
+            <div class="route">KRK → ZRH · Sun 16 Aug</div>
+            <div class="times">14:50 → 16:35</div>
+            <div class="meta">Nonstop · 1h45m · Swiss · Economy Basic</div>
+          </div>
+        </div>
+      </div>
+      <p class="nights">7 nights · check-in Sun 9 Aug · check-out Sun 16 Aug · 2 guests · both flights confirmed ✓</p>
+    </div>
+  </div>
+</header>
+
+<!-- INSIGHT -->
+<section>
+  <div class="wrap">
+    <div class="insight">
+      <h3>The real decision isn't <em>where</em> — it's which comfort you'll trade.</h3>
+      <p>All nine flats sit inside one ~800&nbsp;m circle in <strong>Kazimierz</strong>, the old Jewish quarter and Kraków's most atmospheric, art-soaked district. They're 2–10&nbsp;minute walks from each other, so "the area" barely separates them. What separates them is the tradeoff Sarah kept hitting: <strong>two-floor charm vs. air-con vs. a private balcony</strong> — no single flat has all three in this district.</p>
+      <p>Two things the Airbnb data settle for us: the sauna loft's bed is confirmed as <strong>two mattresses</strong> (worth texting the host), and Sarah's instinct pick — the balcony flat by the Old Synagogue — is also the <strong>highest-rated of all nine (★4.97)</strong>. August in Kraków runs warm (mid-20s°C, occasional 30°C), so <strong>AC + top-floor "under the roof"</strong> is a genuine comfort lever, not a detail.</p>
+      <p style="margin-bottom:0"><em>Filter by what matters to you below, then each of you cast a vote. Picks are saved on this page.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAVORITES -->
+<section id="flats">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Sarah's Shortlist · from 80+ reviewed</span>
+      <h2>The Contenders</h2>
+      <p>Sarah's own words are the verdict line on each card. Data (rating, beds, layout, photo) harvested live from Airbnb. Prices are what Sarah saw in CHF for our exact dates.</p>
+    </div>
+
+    <div class="controls" id="controls">
+      <div class="grp">
+        <label>Must have</label>
+        <button class="chip" data-filter="balcony">Balcony</button>
+        <button class="chip" data-filter="ac">Air-con</button>
+        <button class="chip" data-filter="twoFloor">Two-floor</button>
+        <button class="chip" data-filter="notUnderRoof">Not under roof</button>
+      </div>
+      <div class="grp">
+        <label>Sort</label>
+        <button class="chip sort" data-sort="rank">Sarah's order</button>
+        <button class="chip sort" data-sort="price">Price ↑</button>
+        <button class="chip sort" data-sort="rating">Rating ↓</button>
+      </div>
+      <div class="grp">
+        <label>Our picks</label>
+        <button class="chip share" id="share">🔗 Share our picks</button>
+        <button class="reset" id="clearpicks">clear picks</button>
+      </div>
+      <button class="reset" id="reset">reset filters</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section style="background:#fbf3df">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">All within a 10-minute stroll</span>
+      <h2>Where They Sit</h2>
+      <p>Positioned by real Airbnb coordinates. The Vistula curls along the south; the Old Town &amp; Wawel are just north-west. Click a pin to jump to the flat.</p>
+    </div>
+    <div class="mapwrap">
+      <svg id="map" viewBox="0 0 900 620" role="img" aria-label="Map of Kazimierz with flat locations"></svg>
+      <div class="map-legend">
+        <span><i class="dot" style="background:#b5533f"></i> Sarah's 5 favourites</span>
+        <span><i class="dot" style="background:#c9a24b"></i> 4 backups</span>
+        <span><i class="dot" style="background:#1f6f78"></i> Landmarks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Every dimension, side by side</span>
+      <h2>The Full Ledger</h2>
+    </div>
+    <div class="tablewrap">
+      <table id="table">
+        <thead><tr>
+          <th>#</th><th>Flat</th><th>Price</th><th>★</th><th>Beds</th>
+          <th>Balcony</th><th>AC</th><th>Two-floor</th><th>Under roof</th><th>Kitchen</th><th>The catch</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <p style="text-align:center;font-size:12px;color:#8a6b3a;margin-top:10px">
+      WiFi in all nine · all ★4.78–4.97 · prices = Sarah's quote in CHF for 9–16 Aug (backups: check the listing)
+    </p>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" style="color:var(--gold-lt)">Why this city, this district</span>
+      <h2>A City Made of Art</h2>
+      <p>Kraków is Poland's art capital — home of Wyspiański's stained glass and the Młoda Polska movement whose peacock-and-floral spirit colours this page. Kazimierz is its bohemian heart.</p>
+    </div>
+    <div class="cards3">
+      <div class="ctile"><h3>Kazimierz nights</h3><p>Plac Nowy's ringed food hall, candlelit courtyards, klezmer bars and mural-covered lanes — all on the doorstep of every flat here.</p></div>
+      <div class="ctile"><h3>10 minutes north</h3><p>Wawel Castle, the Main Market Square (Europe's largest medieval square), the Cloth Hall and St. Mary's — a flat walk or short tram.</p></div>
+      <div class="ctile"><h3>Wyspiański &amp; glass</h3><p>The Franciscan Basilica's stained glass and the National Museum hold the Młoda Polska masterpieces that make Kraków a pilgrimage for artists.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built for Harry &amp; Sarah · flat analysis by Sarah · data harvested from Airbnb · Kraków 9–16 Aug 2026</p>
+  <p><a href="https://www.airbnb.com/wishlists/2108022768" target="_blank" rel="noopener">↗ Sarah's full Airbnb wishlist</a></p>
+</footer>
+
+<div class="pickbanner" id="pickbanner"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ DATA (Sarah's notes + Airbnb og-tag harvest) ============ */
+const IMG = u => u + "?im_w=1200";
+const FLATS = [
+  { id:"52128382", rank:1, tier:"fav", name:"Glass Loft · Jacuzzi & Sauna",
+    layout:"1 bedroom · 2 beds · 1 bath", rating:4.91, price:910, priceNote:"top of range",
+    lat:50.0545, lng:19.9446,
+    balcony:"shared", ac:true, twoFloor:true, underRoof:false, kitchen:"small",
+    img:IMG("https://a0.muscache.com/im/pictures/miso/Hosting-52128382/original/d19052c4-45d5-4d12-9c83-3e0b677a756c.jpeg"),
+    url:"https://www.airbnb.com/rooms/52128382?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"A unique one — the splurge with a private spa.",
+    catch:"Priciest, small kitchen, shared balcony",
+    pros:["Private jacuzzi + sauna","Air conditioning","Two-floor glass loft","Gym downstairs"],
+    cons:["Most expensive (910)","Kitchen is small","Balcony shared between levels","Bed = two mattresses, looks small"] },
+
+  { id:"1395068429768607322", rank:2, tier:"fav", name:"Lucky Seven · Attic Loft",
+    layout:"1 bedroom · 1 bed · 1 bath", rating:4.78, price:456, priceNote:"490 without discount",
+    lat:50.0516, lng:19.9432,
+    balcony:"none", ac:false, twoFloor:true, underRoof:true, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/miso/Hosting-1395068429768607322/original/49a703de-0df1-472d-88f7-006f36146f30.jpeg"),
+    url:"https://www.airbnb.com/rooms/1395068429768607322?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"Visually my favourite — the aesthetic pick.",
+    catch:"No balcony, no AC, under the roof",
+    pros:["Best aesthetic of them all","Best location of the shortlist","Two-floor","Good bed & good kitchen","Cheapest of the five"],
+    cons:["No balcony","No air-con","Under the roof (can get hot)","Lowest rating (still 4.78)"] },
+
+  { id:"913476377185902404", rank:3, tier:"fav", name:"By the Old Synagogue · Balcony",
+    layout:"1 bedroom · 1 bed · 1 bath", rating:4.97, price:776, priceNote:"858 without discount",
+    lat:50.0507, lng:19.9483,
+    balcony:"private", ac:false, twoFloor:false, underRoof:false, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/miso/Hosting-913476377185902404/original/d09e2ad6-ba7c-4a1d-b52f-b6337e17c320.jpeg"),
+    url:"https://www.airbnb.com/rooms/913476377185902404?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"I think this is the best one — ideal for what we want.",
+    catch:"No AC (but not top floor)",
+    pros:["Private balcony","Highest rating of all nine (4.97)","Good kitchen & bed","Not under the roof","Heart of Kazimierz"],
+    cons:["No air-con","Not two-floor (Sarah wanted two-floor)"] },
+
+  { id:"1221737838826462231", rank:4, tier:"fav", name:"Starowiślna 41 · Cosy Studio",
+    layout:"Studio · 1 bed · 1 bath", rating:4.87, price:528, priceNote:"",
+    lat:50.05471, lng:19.94685,
+    balcony:"private-small", ac:false, twoFloor:false, underRoof:false, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/miso/Hosting-1221737838826462231/original/ab0b3a51-6280-47ce-ba53-09e1eea9b0f7.jpeg"),
+    url:"https://www.airbnb.com/rooms/1221737838826462231?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"The smallest, but very cute — the easy, normal choice.",
+    catch:"Everything's a bit small",
+    pros:["Very cute","Has a balcony","Good kitchen & bed","Not under the roof","Well priced"],
+    cons:["Smallest of the shortlist","Balcony is small","No air-con","Studio (no separate bedroom)"] },
+
+  { id:"1115031244076645356", rank:5, tier:"fav", name:"Skawińska 20 · Terrace & Great Kitchen",
+    layout:"1 bedroom · 2 beds · 1 bath", rating:4.91, price:655, priceNote:"",
+    lat:50.0469, lng:19.9391,
+    balcony:"shared", ac:true, twoFloor:false, underRoof:false, kitchen:"best",
+    img:IMG("https://a0.muscache.com/im/pictures/miso/Hosting-1115031244076645356/original/d570cc30-be5a-48ed-be6a-2e7c14d09998.jpeg"),
+    url:"https://www.airbnb.com/rooms/1115031244076645356?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"Also a favourite — the best kitchen of every flat I checked.",
+    catch:"Possible nearby bridge construction noise",
+    pros:["Best kitchen of all of them","Has air-con","Terrace","Good rating (4.91)"],
+    cons:["Balcony/terrace is shared","Bed looks a bit small","Nearby bridge construction — possible noise"] },
+
+  /* ---- backups (all have balconies; less of Sarah's commentary) ---- */
+  { id:"975955372123801972", rank:6, tier:"backup", name:"Dietla 21 · Kazimierz",
+    layout:"1 bedroom · 2 beds · 1 bath", rating:4.9, price:null,
+    lat:50.05148, lng:19.93849,
+    balcony:"private", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/miso/Hosting-975955372123801972/original/9f9bcaa8-211e-4565-987f-b5c5dc11cc5d.jpeg"),
+    url:"https://www.airbnb.com/rooms/975955372123801972?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"Backup — a solid, more classic Airbnb, with a balcony.",
+    catch:"Check price & AC on the listing",
+    pros:["Has a balcony","Central Kazimierz","Well rated (4.9)","1-bedroom, 2 beds"],
+    cons:["Less special than the top five (Sarah)","Price not quoted"] },
+
+  { id:"51207912", rank:7, tier:"backup", name:"Fall in Love · Studio",
+    layout:"Studio · 2 beds · 1 bath", rating:4.92, price:null,
+    lat:50.04983, lng:19.94379,
+    balcony:"private", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/7318e8b7-0d56-4fd1-9329-d1051560bcba.jpg"),
+    url:"https://www.airbnb.com/rooms/51207912?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"Backup — charming studio, high rating, has a balcony.",
+    catch:"Studio; check price & AC",
+    pros:["Has a balcony","High rating (4.92)","2 beds"],
+    cons:["Studio (no separate bedroom)","Price not quoted"] },
+
+  { id:"1028316480713232809", rank:8, tier:"backup", name:"Vistula View · Rooftop Terrace",
+    layout:"1 bedroom · 2 beds · 1 bath", rating:4.88, price:null,
+    lat:50.0466, lng:19.9499,
+    balcony:"rooftop", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/hosting/Hosting-1028316480713232809/original/c02058a8-e147-4258-be6e-1e233ad8f3d5.jpeg"),
+    url:"https://www.airbnb.com/rooms/1028316480713232809?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"Backup — river view and a rooftop terrace.",
+    catch:"Check price & AC on the listing",
+    pros:["Rooftop terrace","View of the Vistula","1-bedroom, 2 beds"],
+    cons:["Slightly further from centre of Kazimierz","Price not quoted"] },
+
+  { id:"949347490084437472", rank:9, tier:"backup", name:"RUAH · Jewish Quarter",
+    layout:"1 bedroom · 2 beds · 1 bath", rating:4.9, price:null,
+    lat:50.0524, lng:19.9484,
+    balcony:"private", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
+    img:IMG("https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTQ5MzQ3NDkwMDg0NDM3NDcy/original/d7097acc-425d-4231-8cc9-33726a48df51.jpeg"),
+    url:"https://www.airbnb.com/rooms/949347490084437472?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"Backup — atmospheric spot right in the Jewish Quarter.",
+    catch:"Check price & AC on the listing",
+    pros:["Has a balcony","In the heart of the Jewish Quarter","Well rated (4.9)"],
+    cons:["Less commentary from Sarah","Price not quoted"] },
+];
+
+const LANDMARKS = [
+  { name:"Old Synagogue", lat:50.0507, lng:19.9487 },
+  { name:"Plac Nowy", lat:50.0517, lng:19.9445 },
+  { name:"Vistula ↓ Wawel ↖", lat:50.0455, lng:19.9375 },
+];
+
+/* ============ STATE ============ */
+const KEY="krakow_votes_v1";
+let votes = JSON.parse(localStorage.getItem(KEY) || "{}"); // {id:{harry:bool,sarah:bool}}
+let filters = new Set();
+let sortMode = "rank";
+
+/* ============ SHARE VIA URL (self-contained, no backend) ============ */
+function encodeVotes(v){ return btoa(unescape(encodeURIComponent(JSON.stringify(v)))); }
+function decodeVotes(s){ try{ return JSON.parse(decodeURIComponent(escape(atob(s)))); }catch(e){ return null; } }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),3400); }
+
+// On load: if the link carries picks, MERGE them in (additive per person) so both halves' votes combine
+function loadFromHash(){
+  const m=(location.hash||'').match(/picks=([^&]+)/);
+  if(!m) return;
+  const incoming=decodeVotes(m[1]); if(!incoming) return;
+  let merged=0;
+  for(const id in incoming){
+    votes[id]=votes[id]||{};
+    if(incoming[id].harry && !votes[id].harry){votes[id].harry=true;merged++;}
+    if(incoming[id].sarah && !votes[id].sarah){votes[id].sarah=true;merged++;}
+  }
+  localStorage.setItem(KEY,JSON.stringify(votes));
+  if(merged) setTimeout(()=>toast('Your other half’s picks are now merged in ♥'),400);
+}
+
+function shareLink(){
+  if(!Object.keys(votes).length){ toast('Cast a vote first, then share the link'); return; }
+  const url=location.origin+location.pathname+'#picks='+encodeVotes(votes);
+  history.replaceState(null,'',url);
+  const ok=()=>toast('Link copied — text it to your other half ♥');
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(ok).catch(()=>toast('Link is in your address bar — copy & send it'));
+  } else { toast('Link is in your address bar — copy & send it'); }
+}
+
+function clearVotes(){
+  votes={}; localStorage.removeItem(KEY);
+  history.replaceState(null,'',location.pathname+location.search);
+  renderCards(); updateBanner(); toast('Picks cleared');
+}
+
+/* ============ HELPERS ============ */
+const yn = (v)=> v===true?'<span class="yes">Yes</span>' : v===false?'<span class="no">No</span>' : '<span style="color:#999">—</span>';
+const balconyLabel = b => ({none:"None","private":"Private","private-small":"Small","shared":"Shared",rooftop:"Rooftop"})[b]||b;
+function passesFilters(f){
+  if(filters.has("balcony") && (f.balcony==="none")) return false;
+  if(filters.has("ac") && f.ac!==true) return false;
+  if(filters.has("twoFloor") && !f.twoFloor) return false;
+  if(filters.has("notUnderRoof") && f.underRoof) return false;
+  return true;
+}
+
+/* ============ RENDER CARDS ============ */
+function renderCards(){
+  const grid=document.getElementById("grid");
+  let list=[...FLATS];
+  if(sortMode==="price") list.sort((a,b)=>(a.price??1e9)-(b.price??1e9));
+  else if(sortMode==="rating") list.sort((a,b)=>b.rating-a.rating);
+  else list.sort((a,b)=>a.rank-b.rank);
+
+  grid.innerHTML = list.map(f=>{
+    const on=passesFilters(f);
+    const v=votes[f.id]||{};
+    const priceHtml = f.price!=null ? `${f.price}<small> CHF</small>` : `<small>see listing</small>`;
+    return `<div class="card ${on?'':'dim'} ${(v.harry||v.sarah)?'pick':''}" id="card-${f.id}" data-id="${f.id}">
+      <span class="rank">${f.rank}</span>
+      <div class="photo">
+        <img loading="lazy" src="${f.img}" alt="${f.name}" referrerpolicy="no-referrer"
+             onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#3a1130,#0e3b3a)';">
+        <span class="price">${priceHtml}</span>
+        <span class="rating">★ ${f.rating}</span>
+      </div>
+      <div class="body">
+        <h3>${f.name}</h3>
+        <p class="layout">${f.layout}${f.tier==='backup'?' · <em>backup option</em>':''}</p>
+        <div class="badges">
+          <span class="badge ${f.balcony!=='none'?'b-yes':'b-no'}">${f.balcony!=='none'?'Balcony: '+balconyLabel(f.balcony):'No balcony'}</span>
+          <span class="badge ${f.ac===true?'b-yes':f.ac===false?'b-no':'b-info'}">${f.ac===true?'Air-con':f.ac===false?'No AC':'AC: check'}</span>
+          ${f.twoFloor?'<span class="badge b-yes">Two-floor</span>':''}
+          ${f.underRoof?'<span class="badge b-no">Under roof</span>':''}
+          <span class="badge b-info">Kitchen: ${f.kitchen}</span>
+        </div>
+        <p class="verdict">“${f.verdict}”</p>
+        <div class="proscons">
+          <div class="pros"><h4>For</h4><ul>${f.pros.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+          <div class="cons"><h4>Against</h4><ul>${f.cons.map(c=>`<li>${c}</li>`).join('')}</ul></div>
+        </div>
+        <div class="foot">
+          <a class="btn" href="${f.url}" target="_blank" rel="noopener">View on Airbnb ↗</a>
+          <div class="votes">
+            <button class="vote harry ${v.harry?'on':''}" data-id="${f.id}" data-who="harry">♥ Harry</button>
+            <button class="vote sarah ${v.sarah?'on':''}" data-id="${f.id}" data-who="sarah">♥ Sarah</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  grid.querySelectorAll(".vote").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.id, who=b.dataset.who;
+    votes[id]=votes[id]||{}; votes[id][who]=!votes[id][who];
+    localStorage.setItem(KEY,JSON.stringify(votes));
+    renderCards(); updateBanner();
+  });
+}
+
+/* ============ BANNER (shared picks) ============ */
+function updateBanner(){
+  const both=FLATS.filter(f=>votes[f.id]&&votes[f.id].harry&&votes[f.id].sarah);
+  const any=FLATS.filter(f=>votes[f.id]&&(votes[f.id].harry||votes[f.id].sarah));
+  const el=document.getElementById("pickbanner");
+  if(both.length){ el.innerHTML=`✦ You both love: <b>${both.map(f=>f.name).join(' · ')}</b> — that's your flat.`; el.classList.add("show"); }
+  else if(any.length){ el.innerHTML=`In the running: <b>${any.map(f=>f.name).join(' · ')}</b> — need a match from both of you.`; el.classList.add("show"); }
+  else el.classList.remove("show");
+}
+
+/* ============ MAP ============ */
+function renderMap(){
+  const svg=document.getElementById("map");
+  const W=900,H=620,pad=70;
+  const lats=FLATS.map(f=>f.lat), lngs=FLATS.map(f=>f.lng);
+  const minLat=Math.min(...lats)-0.0025,maxLat=Math.max(...lats)+0.0025;
+  const minLng=Math.min(...lngs)-0.0025,maxLng=Math.max(...lngs)+0.0025;
+  const X=lng=>pad+(lng-minLng)/(maxLng-minLng)*(W-2*pad);
+  const Y=lat=>pad+(maxLat-lat)/(maxLat-minLat)*(H-2*pad);
+  let s=`<defs>
+    <radialGradient id="glow"><stop offset="0%" stop-color="#c9a24b" stop-opacity=".5"/><stop offset="100%" stop-color="#c9a24b" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="0" y="0" width="${W}" height="${H}" fill="#0e2e2d"/>
+  <path d="M0,${H-70} C${W*0.3},${H-30} ${W*0.55},${H-120} ${W},${H-60} L${W},${H} L0,${H} Z" fill="#123c48" opacity="0.9"/>
+  <text x="26" y="${H-30}" fill="#2f7f88" font-family="Palatino,serif" font-size="20" font-style="italic">Wisła (Vistula)</text>`;
+  // faint street grid
+  for(let i=1;i<7;i++){s+=`<line x1="${W/7*i}" y1="20" x2="${W/7*i}" y2="${H-40}" stroke="#1c4a48" stroke-width="1"/>`;}
+  for(let i=1;i<5;i++){s+=`<line x1="20" y1="${H/5*i}" x2="${W-20}" y2="${H/5*i}" stroke="#1c4a48" stroke-width="1"/>`;}
+  // landmarks
+  LANDMARKS.forEach(l=>{
+    s+=`<circle cx="${X(l.lng)}" cy="${Y(l.lat)}" r="6" fill="#1f6f78"/>
+        <text x="${X(l.lng)+10}" y="${Y(l.lat)+4}" fill="#7fd0d6" font-family="Palatino,serif" font-size="14">${l.name}</text>`;
+  });
+  // flats
+  FLATS.forEach(f=>{
+    const c=f.tier==="fav"?"#b5533f":"#c9a24b";
+    s+=`<g style="cursor:pointer" onclick="jumpTo('${f.id}')">
+      <circle cx="${X(f.lng)}" cy="${Y(f.lat)}" r="22" fill="url(#glow)"/>
+      <circle cx="${X(f.lng)}" cy="${Y(f.lat)}" r="14" fill="${c}" stroke="#f6ecd6" stroke-width="2"/>
+      <text x="${X(f.lng)}" y="${Y(f.lat)+5}" text-anchor="middle" fill="#fff" font-family="Palatino,serif" font-weight="bold" font-size="15">${f.rank}</text>
+    </g>`;
+  });
+  s+=`<text x="${W-30}" y="34" text-anchor="end" fill="#c9a24b" font-family="Palatino,serif" font-style="italic" font-size="17">Kazimierz · Kraków</text>`;
+  svg.innerHTML=s;
+}
+function jumpTo(id){
+  const el=document.getElementById("card-"+id);
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+  el.style.transition="box-shadow .3s"; el.style.boxShadow="0 0 0 4px #c9a24b, var(--shadow)";
+  setTimeout(()=>el.style.boxShadow="",1600);
+}
+
+/* ============ TABLE ============ */
+function renderTable(){
+  document.getElementById("tbody").innerHTML=FLATS.map(f=>`<tr>
+    <td class="num">${f.rank}</td>
+    <td class="flatname"><a href="${f.url}" target="_blank" rel="noopener" style="color:inherit">${f.name}</a></td>
+    <td class="num">${f.price!=null?f.price+' CHF':'—'}</td>
+    <td class="num">${f.rating}</td>
+    <td>${f.layout.split('·')[1]?.trim()||''}</td>
+    <td>${f.balcony!=='none'?'<span class="yes">'+balconyLabel(f.balcony)+'</span>':'<span class="no">No</span>'}</td>
+    <td>${yn(f.ac)}</td>
+    <td>${f.twoFloor?'<span class="yes">Yes</span>':'<span class="no">No</span>'}</td>
+    <td>${f.underRoof?'<span class="no">Yes</span>':'<span class="yes">No</span>'}</td>
+    <td>${f.kitchen}</td>
+    <td style="font-size:12px;color:#8a5">${f.catch}</td>
+  </tr>`).join('');
+}
+
+/* ============ CONTROLS ============ */
+document.querySelectorAll(".chip[data-filter]").forEach(b=>b.onclick=()=>{
+  const k=b.dataset.filter;
+  if(filters.has(k)){filters.delete(k);b.classList.remove("on");}
+  else{filters.add(k);b.classList.add("on");}
+  renderCards();
+});
+document.querySelectorAll(".chip[data-sort]").forEach(b=>b.onclick=()=>{
+  sortMode=b.dataset.sort;
+  document.querySelectorAll(".chip[data-sort]").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on");
+  renderCards();
+});
+document.getElementById("reset").onclick=()=>{
+  filters.clear(); sortMode="rank";
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
+  renderCards();
+};
+
+document.getElementById("share").onclick=shareLink;
+document.getElementById("clearpicks").onclick=clearVotes;
+
+/* ============ INIT ============ */
+loadFromHash();
+renderCards(); renderMap(); renderTable(); updateBanner();
+</script>
+</body>
+</html>
