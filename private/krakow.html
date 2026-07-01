@@ -185,7 +185,7 @@
   <div class="hero-inner wrap">
     <p class="eyebrow">A Decision, Illustrated · Harry &amp; Sarah</p>
     <h1>Krak<span class="ogonek">ó</span>w</h1>
-    <p class="sub">Nine flats, one week, one choice — Kazimierz, August 2026</p>
+    <p class="sub">Ten flats, one week, one choice — Kraków, August 2026</p>
     <div class="rule">✦ ❧ ✦</div>
   </div>
   <div class="trip">
@@ -218,8 +218,8 @@
   <div class="wrap">
     <div class="insight">
       <h3>The real decision isn't <em>where</em> — it's which comfort you'll trade.</h3>
-      <p>All nine flats sit inside one ~800&nbsp;m circle in <strong>Kazimierz</strong>, the old Jewish quarter and Kraków's most atmospheric, art-soaked district. They're 2–10&nbsp;minute walks from each other, so "the area" barely separates them. What separates them is the tradeoff Sarah kept hitting: <strong>two-floor charm vs. air-con vs. a private balcony</strong> — no single flat has all three in this district.</p>
-      <p>Two things the Airbnb data settle for us: the sauna loft's bed is confirmed as <strong>two mattresses</strong> (worth texting the host), and Sarah's instinct pick — the balcony flat by the Old Synagogue — is also the <strong>highest-rated of all nine (★4.97)</strong>. August in Kraków runs warm (mid-20s°C, occasional 30°C), so <strong>AC + top-floor "under the roof"</strong> is a genuine comfort lever, not a detail.</p>
+      <p>Nine of the ten flats sit inside one ~800&nbsp;m circle in <strong>Kazimierz</strong>, the old Jewish quarter and Kraków's most atmospheric, art-soaked district — the tenth (the old monastery) sits just west, by <strong>Wawel Castle</strong>. The Kazimierz ones are 2–10&nbsp;minute walks from each other, so "the area" barely separates them. What separates them is the tradeoff Sarah kept hitting: <strong>two-floor charm vs. air-con vs. a private balcony</strong> — no single flat has all three.</p>
+      <p>Two things the Airbnb data settle for us: the sauna loft's bed is confirmed as <strong>two mattresses</strong> (worth texting the host), and Sarah's instinct pick — the balcony flat by the Old Synagogue — is also the <strong>highest-rated of all ten (★4.97)</strong>. August in Kraków runs warm (mid-20s°C, occasional 30°C), so <strong>AC + top-floor "under the roof"</strong> is a genuine comfort lever, not a detail.</p>
       <p style="margin-bottom:0"><em>Filter by what matters to you below, then each of you cast a vote. Picks are saved on this page.</em></p>
     </div>
   </div>
@@ -240,7 +240,7 @@
         <button class="chip" data-filter="balcony">Balcony</button>
         <button class="chip" data-filter="ac">Air-con</button>
         <button class="chip" data-filter="twoFloor">Two-floor</button>
-        <button class="chip" data-filter="notUnderRoof">Not under roof</button>
+        <button class="chip" data-filter="notUnderRoof" title="Top-floor ‘under the roof’ flats get hot in summer without AC — this keeps the cooler ones">Not top-floor</button>
       </div>
       <div class="grp">
         <label>Sort</label>
@@ -250,6 +250,7 @@
       </div>
       <div class="grp">
         <label>Our picks</label>
+        <button class="chip" data-filter="picked" id="pickedfilter" title="Show only the flats you've voted for — handy when you open a shared link">♥ Only our picks</button>
         <button class="chip share" id="share">🔗 Share our picks</button>
         <button class="reset" id="clearpicks">clear picks</button>
       </div>
@@ -271,7 +272,7 @@
     <div class="mapwrap">
       <svg id="map" viewBox="0 0 900 620" role="img" aria-label="Map of Kazimierz with flat locations"></svg>
       <div class="map-legend">
-        <span><i class="dot" style="background:#b5533f"></i> Sarah's 5 favourites</span>
+        <span><i class="dot" style="background:#b5533f"></i> Sarah's 6 favourites</span>
         <span><i class="dot" style="background:#c9a24b"></i> 4 backups</span>
         <span style="opacity:.8">Real Kraków street map · click a pin to jump to the flat</span>
       </div>
@@ -296,7 +297,7 @@
       </table>
     </div>
     <p style="text-align:center;font-size:12px;color:#8a6b3a;margin-top:10px">
-      WiFi in all nine · all ★4.78–4.97 · prices = Sarah's quote in CHF for 9–16 Aug (backups: check the listing)
+      WiFi in all ten · all ★4.78–4.97 · prices = Sarah's quote in CHF for 9–16 Aug (backups: check the listing)
     </p>
   </div>
 </section>
@@ -359,7 +360,7 @@ const FLATS = [
     url:"https://www.airbnb.com/rooms/913476377185902404?adults=2&check_in=2026-08-09&check_out=2026-08-16",
     verdict:"I think this is the best one — ideal for what we want.",
     catch:"No AC (but not top floor)",
-    pros:["Private balcony","Highest rating of all nine (4.97)","Good kitchen & bed","Not under the roof","Heart of Kazimierz"],
+    pros:["Private balcony","Highest rating of all ten (4.97)","Good kitchen & bed","Not under the roof","Heart of Kazimierz"],
     cons:["No air-con","Not two-floor (Sarah wanted two-floor)"] },
 
   { id:"1221737838826462231", rank:4, tier:"fav", name:"Starowiślna 41 · Cosy Studio",
@@ -384,8 +385,19 @@ const FLATS = [
     pros:["Best kitchen of all of them","Has air-con","Terrace","Good rating (4.91)"],
     cons:["Balcony/terrace is shared","Bed looks a bit small","Nearby bridge construction — possible noise"] },
 
+  { id:"13820135", rank:6, tier:"fav", name:"Old Monastery · Terrace near Wawel",
+    layout:"1 bedroom · 2 beds · 1 bath", rating:4.9, price:727, priceNote:"806 without discount",
+    lat:50.05135, lng:19.93726,
+    balcony:"terrace-small", ac:true, twoFloor:false, underRoof:false, kitchen:"big",
+    img:IMG("https://a0.muscache.com/im/pictures/ca1be7ae-cbf0-4819-a16b-e2b0fd931734.jpg"),
+    url:"https://www.airbnb.com/rooms/13820135?adults=2&check_in=2026-08-09&check_out=2026-08-16",
+    verdict:"The last one — set in a real old monastery, lots of highs and lows.",
+    catch:"Not in Kazimierz — by the castle, more touristy",
+    pros:["Inside a genuine old monastery (survived the war)","Original monastery brick wall","Has air-con","Big kitchen","Terrace + garden","Very pretty, steps from Wawel Castle"],
+    cons:["Not in Kazimierz — edge of the centre","More touristy (near the castle)","Pricier (727)","No real balcony (ground floor)","A bit small, bedroom barely separated"] },
+
   /* ---- backups (all have balconies; less of Sarah's commentary) ---- */
-  { id:"975955372123801972", rank:6, tier:"backup", name:"Dietla 21 · Kazimierz",
+  { id:"975955372123801972", rank:7, tier:"backup", name:"Dietla 21 · Kazimierz",
     layout:"1 bedroom · 2 beds · 1 bath", rating:4.9, price:null,
     lat:50.05148, lng:19.93849,
     balcony:"private", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
@@ -394,9 +406,9 @@ const FLATS = [
     verdict:"Backup — a solid, more classic Airbnb, with a balcony.",
     catch:"Check price & AC on the listing",
     pros:["Has a balcony","Central Kazimierz","Well rated (4.9)","1-bedroom, 2 beds"],
-    cons:["Less special than the top five (Sarah)","Price not quoted"] },
+    cons:["Less special than the top six (Sarah)","Price not quoted"] },
 
-  { id:"51207912", rank:7, tier:"backup", name:"Fall in Love · Studio",
+  { id:"51207912", rank:8, tier:"backup", name:"Fall in Love · Studio",
     layout:"Studio · 2 beds · 1 bath", rating:4.92, price:null,
     lat:50.04983, lng:19.94379,
     balcony:"private", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
@@ -407,7 +419,7 @@ const FLATS = [
     pros:["Has a balcony","High rating (4.92)","2 beds"],
     cons:["Studio (no separate bedroom)","Price not quoted"] },
 
-  { id:"1028316480713232809", rank:8, tier:"backup", name:"Vistula View · Rooftop Terrace",
+  { id:"1028316480713232809", rank:9, tier:"backup", name:"Vistula View · Rooftop Terrace",
     layout:"1 bedroom · 2 beds · 1 bath", rating:4.88, price:null,
     lat:50.0466, lng:19.9499,
     balcony:"rooftop", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
@@ -418,7 +430,7 @@ const FLATS = [
     pros:["Rooftop terrace","View of the Vistula","1-bedroom, 2 beds"],
     cons:["Slightly further from centre of Kazimierz","Price not quoted"] },
 
-  { id:"949347490084437472", rank:9, tier:"backup", name:"RUAH · Jewish Quarter",
+  { id:"949347490084437472", rank:10, tier:"backup", name:"RUAH · Jewish Quarter",
     layout:"1 bedroom · 2 beds · 1 bath", rating:4.9, price:null,
     lat:50.0524, lng:19.9484,
     balcony:"private", ac:null, twoFloor:false, underRoof:false, kitchen:"good",
@@ -460,7 +472,10 @@ function loadFromHash(){
     if(incoming[id].sarah && !votes[id].sarah){votes[id].sarah=true;merged++;}
   }
   localStorage.setItem(KEY,JSON.stringify(votes));
-  if(merged) setTimeout(()=>toast('Your other half’s picks are now merged in ♥'),400);
+  if(Object.keys(incoming).length){
+    filters.add("picked"); // opening a shared link → show just those favourites
+    setTimeout(()=>toast(merged?'Shared picks merged in — showing just those ♥':'Showing the shared picks ♥'),400);
+  }
 }
 
 function shareLink(){
@@ -481,12 +496,13 @@ function clearVotes(){
 
 /* ============ HELPERS ============ */
 const yn = (v)=> v===true?'<span class="yes">Yes</span>' : v===false?'<span class="no">No</span>' : '<span style="color:#999">—</span>';
-const balconyLabel = b => ({none:"None","private":"Private","private-small":"Small","shared":"Shared",rooftop:"Rooftop"})[b]||b;
+const balconyLabel = b => ({none:"None","private":"Private","private-small":"Small","shared":"Shared",rooftop:"Rooftop","terrace-small":"Terrace"})[b]||b;
 function passesFilters(f){
   if(filters.has("balcony") && (f.balcony==="none")) return false;
   if(filters.has("ac") && f.ac!==true) return false;
   if(filters.has("twoFloor") && !f.twoFloor) return false;
   if(filters.has("notUnderRoof") && f.underRoof) return false;
+  if(filters.has("picked") && !(votes[f.id] && (votes[f.id].harry || votes[f.id].sarah))) return false;
   return true;
 }
 
@@ -628,6 +644,7 @@ document.getElementById("clearpicks").onclick=clearVotes;
 
 /* ============ INIT ============ */
 loadFromHash();
+document.querySelectorAll(".chip[data-filter]").forEach(b=>{ if(filters.has(b.dataset.filter)) b.classList.add("on"); });
 renderCards(); renderMap(); renderTable(); updateBanner();
 </script>
 </body>
