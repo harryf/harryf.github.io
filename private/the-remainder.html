@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Remainder</title>
+<style>
+  :root{
+    --bg:#070709; --ink:#e9e4d8; --dim:#78725f; --faint:#2e2b25;
+    --amber:#e0a458; --amber-dk:#8a6023; --line:#1c1a16;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--bg);color:var(--ink);
+    font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body{min-height:100vh;overflow-x:hidden}
+
+  /* spotlight */
+  #spot{position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(520px circle at var(--mx,50%) var(--my,38%),
+      rgba(224,164,88,.09),rgba(224,164,88,.025) 45%,transparent 70%);
+    transition:opacity 1.2s}
+  body.deep #spot{opacity:.45}
+
+  #prog{position:fixed;top:18px;right:22px;z-index:5;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;
+    letter-spacing:.3em;color:var(--dim);opacity:.7}
+
+  main{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 22px}
+
+  .act{display:none;min-height:100vh;padding:11vh 0 12vh;
+    flex-direction:column;justify-content:center}
+  .act.on{display:flex;animation:actin 1.1s ease both}
+  @keyframes actin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  .kicker{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--amber);margin-bottom:26px}
+  h1{font-size:clamp(38px,7vw,62px);font-weight:400;letter-spacing:.02em;line-height:1.1}
+  h2{font-size:clamp(24px,4.4vw,34px);font-weight:400;line-height:1.25;margin-bottom:20px}
+  p{margin:14px 0;color:var(--ink)}
+  p.q{color:var(--dim)}
+  .num{font-family:ui-monospace,'SF Mono',Menlo,monospace;color:var(--amber)}
+  em{font-style:italic}
+
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+  .next{margin-top:44px;align-self:flex-start;padding:13px 30px;
+    border:1px solid var(--amber-dk);color:var(--amber);
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13px;letter-spacing:.22em;
+    text-transform:uppercase;transition:background .3s,color .3s}
+  .next:hover{background:var(--amber);color:#0a0a0c}
+
+  /* sliders */
+  .ctl{margin:20px 0 6px}
+  .ctl label{display:flex;justify-content:space-between;align-items:baseline;
+    font-size:14px;color:var(--dim);margin-bottom:6px}
+  .ctl output{font-family:ui-monospace,'SF Mono',Menlo,monospace;color:var(--amber);font-size:15px}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:22px;background:transparent;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--faint)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:16px;height:16px;border-radius:50%;background:var(--amber);margin-top:-7px}
+  input[type=range]::-moz-range-track{height:2px;background:var(--faint)}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
+    background:var(--amber);border:none}
+
+  /* ACT II — grid */
+  #grid{display:grid;grid-template-columns:repeat(52,1fr);gap:2px;margin:30px 0 12px}
+  #grid .w{aspect-ratio:1;background:var(--faint);border-radius:1px}
+  #grid .w.lived{background:var(--amber-dk)}
+  #grid .w.now{background:var(--amber);animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  #gridReadout{min-height:26px;font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:12.5px;color:var(--dim);letter-spacing:.05em}
+  .after{opacity:0;transition:opacity 1.4s}
+  .after.show{opacity:1}
+  .legend{display:flex;gap:26px;font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:12.5px;color:var(--dim);margin:10px 0 4px;flex-wrap:wrap}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:1px;
+    margin-right:7px;vertical-align:baseline}
+
+  /* ACT III — counts */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;margin:26px 0}
+  .card{border:1px solid var(--line);padding:20px 18px}
+  .card .big{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:clamp(26px,4.5vw,36px);
+    color:var(--amber);display:block;margin-bottom:4px}
+  .card .lbl{font-size:13px;color:var(--dim)}
+  .calc{border-left:2px solid var(--amber-dk);padding:6px 0 6px 22px;margin:30px 0}
+  .calc p{margin:10px 0}
+
+  /* ACT V — mirror */
+  .truth{position:relative;border:1px solid var(--line);margin:16px 0;
+    user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:pan-y}
+  .truth .body{padding:24px 26px;opacity:0;transition:opacity .9s;font-size:18px;line-height:1.6}
+  .truth .cover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:#0b0b0e;cursor:pointer;transition:opacity .9s}
+  .truth .cover span{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
+  .truth .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--amber)}
+  .truth.open .cover{opacity:0;pointer-events:none}
+  .truth.open .body{opacity:1}
+  .truth.open{user-select:text;-webkit-user-select:text}
+
+  /* ACT VI — choices */
+  .choice{margin:26px 0}
+  .choice .cq{font-size:14px;color:var(--dim);margin-bottom:10px;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;letter-spacing:.14em;text-transform:uppercase}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.opts{grid-template-columns:1fr}}
+  .opt{border:1px solid var(--line);padding:18px 18px;text-align:left;font-size:16px;
+    line-height:1.5;color:var(--ink);transition:border-color .3s,opacity .3s}
+  .opt:hover{border-color:var(--amber-dk)}
+  .opt.picked{border-color:var(--amber);color:var(--amber)}
+  .opt.dimmed{opacity:.28}
+  #prior{border:1px solid var(--amber-dk);padding:18px 22px;margin-bottom:34px;
+    font-size:15px;color:var(--dim);display:none}
+  #prior strong{color:var(--amber);font-weight:400}
+  #reflect{display:none;margin-top:38px}
+
+  /* ACT VII — silence */
+  #silStage{display:none;text-align:center;padding:8vh 0}
+  #ringWrap{width:160px;height:160px;margin:0 auto}
+  #ringWrap svg{width:100%;height:100%;transform:rotate(-90deg)}
+  #skipSil{position:fixed;bottom:20px;right:24px;color:var(--dim);opacity:.12;
+    font-size:11px;letter-spacing:.2em;font-family:ui-monospace,Menlo,monospace;display:none}
+  #closing{display:none}
+  #closing p{opacity:0;animation:lineIn 1.6s ease forwards}
+  @keyframes lineIn{to{opacity:1}}
+  .stamp{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;
+    color:var(--dim);letter-spacing:.08em;margin-top:44px !important}
+  #again{margin-top:26px;color:var(--dim);opacity:.4;font-size:12px;
+    letter-spacing:.2em;font-family:ui-monospace,Menlo,monospace;text-transform:uppercase}
+  #again:hover{opacity:.9}
+
+  .foot{font-size:13.5px;color:var(--dim);margin-top:22px}
+  hr.sp{border:none;border-top:1px solid var(--line);margin:34px 0}
+  @media(prefers-reduced-motion:reduce){
+    .act.on{animation:none}
+    #grid .w.now{animation:none}
+  }
+</style>
+</head>
+<body>
+<div id="spot"></div>
+<div id="prog">I / VII</div>
+<main>
+
+<!-- ═══════════ ACT I — THE DARK ═══════════ -->
+<section class="act on" id="a1">
+  <div class="kicker">Act I — The Dark</div>
+  <h1>The Remainder</h1>
+  <p style="margin-top:26px">A page about what's left. It knows you're 52. It needs about six minutes of your attention, and then — as promised — it will give you silence.</p>
+  <p class="q">Move your cursor. Notice the spotlight follows you. It always did. That was never the hard part.</p>
+  <button class="next" data-go="2">Lights</button>
+</section>
+
+<!-- ═══════════ ACT II — THE GRID ═══════════ -->
+<section class="act" id="a2">
+  <div class="kicker">Act II — The Grid</div>
+  <h2>Every week you have ever had.</h2>
+  <p class="q">One square, one week. Watch.</p>
+  <div id="grid" aria-label="life in weeks"></div>
+  <div id="gridReadout">&nbsp;</div>
+  <div class="after" id="after2">
+    <div class="legend">
+      <span><span class="sw" style="background:var(--amber-dk)"></span><span id="livedN">2'704</span> spent</span>
+      <span><span class="sw" style="background:var(--faint)"></span><span id="leftN">1'664</span> remaining</span>
+      <span><span class="sw" style="background:var(--amber)"></span>this one</span>
+    </div>
+    <div class="ctl">
+      <label>How long do you think you've got? <output id="expOut">84</output></label>
+      <input type="range" id="exp" min="70" max="100" value="84">
+    </div>
+    <p>The filled part took your entire life — everything you've ever done, everyone you've ever met, every laugh you ever got, fits inside the amber. It refilled just now in about three seconds.</p>
+    <p>You're not at the start of this graph, and you're not at the end. You're where a comedian would put the punchline: two-thirds in, everything set up, all of it paid for. <em>The remainder is the punchline — and punchlines are short.</em></p>
+    <p class="foot">Touch the grid to inspect any week. Assumes you turned 52 recently; the squares don't care about the odd month.</p>
+    <button class="next" data-go="3">Count it</button>
+  </div>
+</section>
+
+<!-- ═══════════ ACT III — THE COUNTS ═══════════ -->
+<section class="act" id="a3">
+  <div class="kicker">Act III — The Counts</div>
+  <h2>Small enough to count.</h2>
+  <p class="q">These recompute from the lifespan you chose. Drag things. It's your arithmetic, not mine.</p>
+  <div class="cards">
+    <div class="card"><span class="big" id="summers">32</span><span class="lbl">summers left</span></div>
+    <div class="card"><span class="big" id="saturdays">1'664</span><span class="lbl">Saturday nights left</span></div>
+    <div class="card"><span class="big" id="waking">187'008</span><span class="lbl">waking hours left</span></div>
+  </div>
+
+  <div class="calc">
+    <div class="ctl">
+      <label>Gigs per month, on average <output id="gigOut">2</output></label>
+      <input type="range" id="gigRate" min="0" max="10" value="2">
+    </div>
+    <p>At that pace, until your knees-and-energy horizon of 75, you have <span class="num" id="gigsLeft">552</span> gigs left. <em>Ever.</em></p>
+    <p>That's a three-digit number. You could literally number them. The next one you do is Gig&nbsp;#<span class="num" id="gigCountdown">552</span>, counting down. What would you put in a set if you knew its number?</p>
+  </div>
+
+  <div class="calc">
+    <p>Now someone you love who's older than you.</p>
+    <div class="ctl">
+      <label>Their age <output id="pAgeOut">78</output></label>
+      <input type="range" id="pAge" min="55" max="95" value="78">
+    </div>
+    <div class="ctl">
+      <label>Times you actually see them per year <output id="pVisOut">2</output></label>
+      <input type="range" id="pVis" min="1" max="52" value="2">
+    </div>
+    <div class="ctl">
+      <label>How long they might have <output id="pEndOut">88</output></label>
+      <input type="range" id="pEnd" min="75" max="100" value="88">
+    </div>
+    <p>You will see them <span class="num" id="visitsLeft">20</span> more times.</p>
+    <p class="q" id="visitsBarb">Twenty. That's not a relationship — that's a countdown. Unless you change the middle slider, which is the only one you control.</p>
+  </div>
+  <button class="next" data-go="4">Where the hours go</button>
+</section>
+
+<!-- ═══════════ ACT IV — THE LEDGER ═══════════ -->
+<section class="act" id="a4">
+  <div class="kicker">Act IV — The Ledger</div>
+  <h2>What your hours actually vote for.</h2>
+  <p class="q">Forget what you value. Set what an honest week looks like. The page will do the rest of your life.</p>
+  <div class="ctl"><label>Building comedy tools — Jokebox, extractors, clip factory <output id="hBuildOut">10h</output></label>
+    <input type="range" id="hBuild" min="0" max="30" value="10"></div>
+  <div class="ctl"><label>Writing new material <output id="hWriteOut">2h</output></label>
+    <input type="range" id="hWrite" min="0" max="20" value="2"></div>
+  <div class="ctl"><label>Actually on stage <output id="hStageOut">1h</output></label>
+    <input type="range" id="hStage" min="0" max="20" value="1"></div>
+  <div class="ctl"><label>Undivided hours with people you love <output id="hPeopleOut">6h</output></label>
+    <input type="range" id="hPeople" min="0" max="40" value="6"></div>
+
+  <hr class="sp">
+  <p>Over your <span class="num" id="goodYears">23</span> good years, that week becomes:</p>
+  <p><span class="num" id="oBuild">11'960</span> hours building the museum.<br>
+     <span class="num" id="oInside">3'588</span> hours making the thing it exhibits.</p>
+  <p id="ratioLine">That's <span class="num" id="oRatio">3.3</span> hours of archive for every hour of art. The Jokebox will be magnificent. It will also be a museum of a career that happened mostly in its own basement.</p>
+  <p><span class="num" id="oPeople">7'176</span> hours with the people who'll be at the funeral. The tools won't attend. They never do.</p>
+  <button class="next" data-go="5">Face the mirror</button>
+</section>
+
+<!-- ═══════════ ACT V — THE MIRROR ═══════════ -->
+<section class="act" id="a5">
+  <div class="kicker">Act V — The Mirror</div>
+  <h2>Hold each one down until it opens.</h2>
+  <p class="q">Press and hold. Let go early and it closes again. That's the mechanic — and also the point.</p>
+
+  <div class="truth"><div class="body">The tools are good. That's exactly why they make such a perfect hiding place. Nobody — including you — can see avoidance when it looks like excellent work.</div><div class="cover"><span>hold</span></div><div class="bar"></div></div>
+
+  <div class="truth"><div class="body">You never calculated your quit-Gigs number because the vagueness is the protection. A number could be reached. A feeling can't.</div><div class="cover"><span>hold</span></div><div class="bar"></div></div>
+
+  <div class="truth"><div class="body">The Jokebox archive is growing faster than the act. You are becoming an excellent librarian of jokes you never get on stage.</div><div class="cover"><span>hold</span></div><div class="bar"></div></div>
+
+  <div class="truth"><div class="body">Every week, rooms full of strangers like you. Now count the people who actually know you. Notice which list you've been working on.</div><div class="cover"><span>hold</span></div><div class="bar"></div></div>
+
+  <div class="truth"><div class="body">You build things for Sarah because a finished tool is proof of love you can point to. Being there can't be shipped. That's what makes it worth more.</div><div class="cover"><span>hold</span></div><div class="bar"></div></div>
+
+  <div class="truth"><div class="body">You already know what you'd decide this year if you weren't afraid. The fact that you held this one down the longest is the proof.</div><div class="cover"><span>hold</span></div><div class="bar"></div></div>
+
+  <button class="next" data-go="6">Choose</button>
+</section>
+
+<!-- ═══════════ ACT VI — THE CHOICE ═══════════ -->
+<section class="act" id="a6">
+  <div class="kicker">Act VI — The Choice</div>
+  <h2>Choose. Actually click. No skipping.</h2>
+  <div id="prior"></div>
+
+  <div class="choice" data-key="legacy"><div class="cq">Pick one</div>
+    <div class="opts">
+      <button class="opt" data-val="Remembered by a million strangers">Remembered by a million strangers</button>
+      <button class="opt" data-val="Permanently change five real people">Permanently change five real people</button>
+    </div></div>
+
+  <div class="choice" data-key="year"><div class="cq">One year, full health, pick one</div>
+    <div class="opts">
+      <button class="opt" data-val="200 gigs and 50 shipped projects">200 gigs and 50 shipped projects</button>
+      <button class="opt" data-val="Phone off, people close">Phone off, people close</button>
+    </div></div>
+
+  <div class="choice" data-key="archive"><div class="cq">Pick one</div>
+    <div class="opts">
+      <button class="opt" data-val="A perfect archive of everything you ever made">A perfect archive of everything you ever made</button>
+      <button class="opt" data-val="One more hour on stage, unrecorded, gone forever">One more hour on stage, unrecorded, gone forever</button>
+    </div></div>
+
+  <div class="choice" data-key="next"><div class="cq">Tonight, pick one</div>
+    <div class="opts">
+      <button class="opt" data-val="The next tool">The next tool</button>
+      <button class="opt" data-val="Five minutes of new material">Five minutes of new material</button>
+    </div></div>
+
+  <div id="reflect">
+    <p>You chose with your finger in a few seconds. Your calendar has been choosing the other column for years. One of them is lying about what you want — <em>and it isn't the calendar.</em></p>
+    <p class="q">This page saved your answers. Come back in a month and choose again. See if you've moved.</p>
+    <button class="next" data-go="7">The last thing</button>
+  </div>
+</section>
+
+<!-- ═══════════ ACT VII — THE SILENCE ═══════════ -->
+<section class="act" id="a7">
+  <div id="silIntro">
+    <div class="kicker">Act VII — The Silence</div>
+    <h2>You said it yourself: silence is amazing.</h2>
+    <p>So here is the last interaction. It costs one minute — one of the roughly <span class="num" id="minLeft">11.2 million</span> waking minutes you have left. No text. No numbers. Nothing to optimize, nothing to archive, nothing to build.</p>
+    <p class="q">Just sit in it. The way you'd want a room to sit in the silence after your bravest joke.</p>
+    <button class="next" id="beginSil">Sixty seconds of it</button>
+  </div>
+
+  <div id="silStage">
+    <div id="ringWrap">
+      <svg viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="54" fill="none" stroke="#1c1a16" stroke-width="1.5"/>
+        <circle id="ring" cx="60" cy="60" r="54" fill="none" stroke="#e0a458" stroke-width="1.5"
+          stroke-dasharray="339.29" stroke-dashoffset="0" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div id="closing">
+    <p style="animation-delay:.4s">That was one minute. Nothing happened. Nobody laughed. Nothing shipped. Nothing got archived.</p>
+    <p style="animation-delay:2.2s">And it was still — you said it yourself — amazing.</p>
+    <p style="animation-delay:4s">Awesome is relative. Relative to how awake you were for it. You have <span class="num" id="minLeft2">11.2 million</span> more of those. They are not stored anywhere. There is no Jokebox for them.</p>
+    <p style="animation-delay:5.8s"><em>Go book Gig&nbsp;#1.</em></p>
+    <p class="stamp" style="animation-delay:7.2s" id="stamp"></p>
+    <button id="again" style="animation:lineIn 1.6s 8s ease forwards;opacity:0">run it again</button>
+  </div>
+</section>
+
+</main>
+<button id="skipSil">skip</button>
+
+<script>
+(function(){
+  'use strict';
+  var AGE = 52, GOOD_TO = 75, HOLD_MS = 1500, SIL_MS = 60000;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(id){ return document.getElementById(id); };
+  var fmt = function(n){ return Math.round(n).toLocaleString('de-CH'); };
+
+  /* ---------- spotlight ---------- */
+  document.addEventListener('pointermove', function(e){
+    document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+    document.documentElement.style.setProperty('--my', e.clientY + 'px');
+  });
+
+  /* ---------- act navigation ---------- */
+  var ROMAN = ['I','II','III','IV','V','VI','VII'];
+  var current = 1, gridAnimated = false;
+  function go(n){
+    var cur = $('a' + current), nxt = $('a' + n);
+    if (!nxt) return;
+    cur.classList.remove('on');
+    nxt.classList.add('on');
+    current = n;
+    $('prog').textContent = ROMAN[n-1] + ' / VII';
+    if (n >= 5) document.body.classList.add('deep');
+    window.scrollTo(0, 0);
+    if (n === 2 && !gridAnimated) animateGrid();
+  }
+  document.querySelectorAll('[data-go]').forEach(function(b){
+    b.addEventListener('click', function(){ go(parseInt(b.dataset.go, 10)); });
+  });
+
+  /* ---------- state + recompute ---------- */
+  function exp(){ return parseInt($('exp').value, 10); }
+  var lastExp = null;
+
+  function buildGrid(instantFill){
+    var g = $('grid');
+    g.innerHTML = '';
+    var total = exp() * 52, lived = AGE * 52;
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < total; i++){
+      var d = document.createElement('div');
+      d.className = 'w';
+      d.dataset.i = i;
+      if (instantFill && i < lived) d.className = 'w lived';
+      if (instantFill && i === lived) d.className = 'w now';
+      frag.appendChild(d);
+    }
+    g.appendChild(frag);
+  }
+
+  function animateGrid(){
+    gridAnimated = true;
+    buildGrid(false);
+    var lived = AGE * 52;
+    var cells = $('grid').children;
+    if (reduced){ finishGrid(); return; }
+    var DUR = 3000, t0 = null, last = 0;
+    function step(ts){
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / DUR);
+      var eased = p * p * p; /* slow childhood, blurred recent decades */
+      var target = Math.floor(eased * lived);
+      for (var i = last; i < target; i++) cells[i].classList.add('lived');
+      last = target;
+      if (p < 1) requestAnimationFrame(step);
+      else finishGrid();
+    }
+    requestAnimationFrame(step);
+  }
+
+  function finishGrid(){
+    buildGrid(true);
+    $('after2').classList.add('show');
+    recalc();
+  }
+
+  /* grid readout — tap or move, no hover-tooltips */
+  $('grid').addEventListener('pointermove', gridRead);
+  $('grid').addEventListener('pointerdown', gridRead);
+  function gridRead(e){
+    var t = e.target;
+    if (!t.dataset || t.dataset.i === undefined) return;
+    var i = parseInt(t.dataset.i, 10);
+    var yr = Math.floor(i / 52), wk = (i % 52) + 1;
+    var calYear = (new Date().getFullYear() - AGE) + yr;
+    var lived = AGE * 52;
+    var status = i < lived ? 'spent' : (i === lived ? 'you are here' : 'remaining');
+    $('gridReadout').textContent = 'age ' + yr + ', week ' + wk + ' — ' + calYear + ' — ' + status;
+  }
+
+  function recalc(){
+    var E = exp();
+    $('expOut').textContent = E;
+    var yearsLeft = Math.max(0, E - AGE);
+    var weeksLeft = yearsLeft * 52;
+    var daysLeft = yearsLeft * 365.25;
+    $('livedN').textContent = fmt(AGE * 52);
+    $('leftN').textContent = fmt(weeksLeft);
+    $('summers').textContent = fmt(yearsLeft);
+    $('saturdays').textContent = fmt(weeksLeft);
+    $('waking').textContent = fmt(daysLeft * 16);
+
+    var goodYears = Math.max(0, Math.min(GOOD_TO, E) - AGE);
+    $('goodYears').textContent = goodYears;
+
+    var rate = parseInt($('gigRate').value, 10);
+    $('gigOut').textContent = rate;
+    var gigs = rate * 12 * goodYears;
+    $('gigsLeft').textContent = fmt(gigs);
+    $('gigCountdown').textContent = fmt(gigs);
+
+    var pA = parseInt($('pAge').value, 10),
+        pV = parseInt($('pVis').value, 10),
+        pE = parseInt($('pEnd').value, 10);
+    $('pAgeOut').textContent = pA;
+    $('pVisOut').textContent = pV;
+    $('pEndOut').textContent = pE;
+    var visits = Math.max(0, pE - pA) * pV;
+    $('visitsLeft').textContent = fmt(visits);
+    $('visitsBarb').textContent = visits < 40
+      ? fmt(visits) + '. That’s not a relationship — that’s a countdown. Unless you change the middle slider, which is the only one you control.'
+      : fmt(visits) + '. Better. Keep the middle slider honest — it’s the only one you control.';
+
+    var hB = parseInt($('hBuild').value, 10),
+        hW = parseInt($('hWrite').value, 10),
+        hS = parseInt($('hStage').value, 10),
+        hP = parseInt($('hPeople').value, 10);
+    $('hBuildOut').textContent = hB + 'h';
+    $('hWriteOut').textContent = hW + 'h';
+    $('hStageOut').textContent = hS + 'h';
+    $('hPeopleOut').textContent = hP + 'h';
+    var gw = goodYears * 52;
+    var build = hB * gw, inside = (hW + hS) * gw, people = hP * gw;
+    $('oBuild').textContent = fmt(build);
+    $('oInside').textContent = fmt(inside);
+    $('oPeople').textContent = fmt(people);
+    var ratioLine = $('ratioLine');
+    if (inside > 0){
+      var r = (build / inside).toFixed(1);
+      ratioLine.style.display = '';
+      ratioLine.innerHTML = (build / inside >= 1)
+        ? 'That’s <span class="num">' + r + '</span> hours of archive for every hour of art. The Jokebox will be magnificent. It will also be a museum of a career that happened mostly in its own basement.'
+        : 'That’s <span class="num">' + r + '</span> hours of archive per hour of art — the art is winning. Interesting. What changed, and why did it take a slider to imagine it?';
+    } else {
+      ratioLine.style.display = 'none';
+    }
+
+    var mins = daysLeft * 16 * 60;
+    var minsTxt = (mins / 1e6).toFixed(1) + ' million';
+    $('minLeft').textContent = minsTxt;
+    $('minLeft2').textContent = minsTxt;
+
+    if (gridAnimated && E !== lastExp) buildGrid(true);
+    lastExp = E;
+  }
+
+  ['exp','gigRate','pAge','pVis','pEnd','hBuild','hWrite','hStage','hPeople'].forEach(function(id){
+    $(id).addEventListener('input', recalc);
+  });
+  recalc();
+  buildGrid(false); /* dim grid visible if user peeks before animation */
+
+  /* ---------- ACT V: hold-to-reveal ---------- */
+  document.querySelectorAll('.truth').forEach(function(t){
+    var bar = t.querySelector('.bar'), raf = null, t0 = null, openTimer = null;
+    t.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    function start(e){
+      if (t.classList.contains('open')) return;
+      e.preventDefault();
+      t0 = performance.now();
+      /* the decision is a timer (robust); rAF only draws the bar */
+      openTimer = setTimeout(function(){
+        t.classList.add('open');
+        bar.style.width = '0';
+        if (raf) cancelAnimationFrame(raf);
+        raf = null;
+      }, HOLD_MS);
+      tick();
+    }
+    function tick(){
+      if (t.classList.contains('open') || t0 === null) return;
+      var p = Math.min(1, (performance.now() - t0) / HOLD_MS);
+      bar.style.width = (p * 100) + '%';
+      raf = requestAnimationFrame(tick);
+    }
+    function cancel(){
+      if (t.classList.contains('open')) return;
+      if (openTimer) clearTimeout(openTimer);
+      if (raf) cancelAnimationFrame(raf);
+      openTimer = null; raf = null; t0 = null;
+      bar.style.width = '0';
+    }
+    t.addEventListener('pointerdown', start);
+    t.addEventListener('pointerup', cancel);
+    t.addEventListener('pointerleave', cancel);
+    t.addEventListener('pointercancel', cancel);
+  });
+
+  /* ---------- ACT VI: choices + persistence ---------- */
+  var STORE = 'the-remainder';
+  var picks = {};
+  function loadStore(){
+    try { return JSON.parse(localStorage.getItem(STORE) || 'null'); }
+    catch(e){ return null; }
+  }
+  function saveStore(obj){
+    try { localStorage.setItem(STORE, JSON.stringify(obj)); } catch(e){}
+  }
+  var prev = loadStore();
+  if (prev && prev.picks){
+    var lines = Object.keys(prev.picks).map(function(k){ return prev.picks[k]; });
+    $('prior').style.display = 'block';
+    $('prior').innerHTML = 'Last time — <strong>' + (prev.date || 'a while ago') +
+      '</strong> — you chose: <strong>' + lines.join('</strong> · <strong>') +
+      '</strong>.<br>Choose again. See if you’ve moved.';
+  }
+  var choiceEls = document.querySelectorAll('.choice');
+  choiceEls.forEach(function(c){
+    c.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        picks[c.dataset.key] = o.dataset.val;
+        c.querySelectorAll('.opt').forEach(function(x){
+          x.classList.remove('picked','dimmed');
+          x.classList.add(x === o ? 'picked' : 'dimmed');
+        });
+        if (Object.keys(picks).length === choiceEls.length){
+          $('reflect').style.display = 'block';
+          saveStore({ date: new Date().toLocaleDateString('en-GB',
+            { day:'numeric', month:'long', year:'numeric' }), picks: picks });
+        }
+      });
+    });
+  });
+
+  /* ---------- ACT VII: silence ---------- */
+  var CIRC = 339.29, silRaf = null, silTimer = null, silDone = false;
+  $('beginSil').addEventListener('click', function(){
+    $('silIntro').style.display = 'none';
+    $('silStage').style.display = 'block';
+    $('skipSil').style.display = 'block';
+    var t0 = performance.now();
+    /* the end is a timer (robust); rAF only draws the ring */
+    silTimer = setTimeout(endSilence, SIL_MS);
+    function step(){
+      if (silDone) return;
+      var p = Math.min(1, (performance.now() - t0) / SIL_MS);
+      $('ring').style.strokeDashoffset = (CIRC * p).toFixed(2);
+      if (p < 1) silRaf = requestAnimationFrame(step);
+    }
+    silRaf = requestAnimationFrame(step);
+  });
+  $('skipSil').addEventListener('click', endSilence);
+  function endSilence(){
+    if (silDone) return;
+    silDone = true;
+    if (silTimer) clearTimeout(silTimer);
+    if (silRaf) cancelAnimationFrame(silRaf);
+    silRaf = null; silTimer = null;
+    $('silStage').style.display = 'none';
+    $('skipSil').style.display = 'none';
+    var d = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+    $('stamp').textContent = 'You were here: ' + d + '. Come back in a month — your answers will have moved.';
+    $('closing').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+  $('again').addEventListener('click', function(){ location.reload(); });
+})();
+</script>
+</body>
+</html>
