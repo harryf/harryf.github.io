@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Hinwil HQ, Interview Prep</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
+<style>
+  :root{
+    --bg:#0b0d10; --card:#15181d; --card2:#1c2027; --line:#262b33;
+    --red:#e10600; --red-soft:#ff453a; --green:#30d158; --amber:#ffd60a;
+    --text:#e8eaed; --muted:#9aa0a8; --dim:#6b7280;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.5;}
+  body{padding-bottom:calc(70px + env(safe-area-inset-bottom));}
+  a{color:var(--red-soft); text-decoration:none;}
+  a:active{opacity:.7;}
+  h1{font-size:1.35rem; margin:.2em 0;}
+  h2{font-size:1.15rem; margin:.4em 0;}
+  h3{font-size:1rem; margin:.4em 0;}
+  .wrap{max-width:640px; margin:0 auto; padding:16px;}
+  .topbar{position:sticky; top:0; z-index:20; background:rgba(11,13,16,.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);}
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding:10px 16px;}
+  .brand{font-weight:800; letter-spacing:.5px; font-size:1.05rem;}
+  .brand span{color:var(--red);}
+  .pos-badge{background:var(--card2); border:1px solid var(--line); border-radius:999px;
+    padding:4px 12px; font-weight:800; font-size:.95rem;}
+  .pos-badge b{color:var(--red-soft);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px; margin:12px 0;}
+  .card.tight{padding:12px 14px;}
+  .muted{color:var(--muted);} .dim{color:var(--dim);} .small{font-size:.85rem;}
+  .green{color:var(--green);} .red{color:var(--red-soft);} .amber{color:var(--amber);}
+  .center{text-align:center;}
+  .btn{display:inline-block; background:var(--card2); color:var(--text); border:1px solid var(--line);
+    border-radius:10px; padding:10px 14px; font-size:.95rem; font-weight:600; cursor:pointer; user-select:none;}
+  .btn.primary{background:var(--red); border-color:var(--red); color:#fff;}
+  .btn.full{display:block; width:100%; text-align:center; margin-top:10px;}
+  .btn:active{transform:scale(.98);}
+  .btn.ghost{background:transparent;}
+  .row{display:flex; gap:8px; flex-wrap:wrap;}
+  .row .btn{flex:1; text-align:center;}
+  .progress-outer{background:var(--card2); border-radius:99px; height:10px; overflow:hidden; margin:8px 0;}
+  .progress-inner{background:linear-gradient(90deg,var(--red),var(--red-soft)); height:100%; border-radius:99px;
+    transition:width .5s ease; min-width:2px;}
+  .nav{position:fixed; bottom:0; left:0; right:0; z-index:30; background:rgba(17,19,24,.97);
+    border-top:1px solid var(--line); display:flex; padding-bottom:env(safe-area-inset-bottom);}
+  .nav button{flex:1; background:none; border:none; color:var(--dim); font-size:.68rem; padding:8px 2px 6px;
+    cursor:pointer; font-family:inherit;}
+  .nav button .ico{display:block; font-size:1.35rem; margin-bottom:2px;}
+  .nav button.active{color:#fff;}
+  .nav button.active .ico{transform:translateY(-1px);}
+  .chunk{border:1px solid var(--line); border-radius:var(--radius); margin:10px 0; overflow:hidden; background:var(--card);}
+  .chunk-head{display:flex; align-items:center; gap:10px; padding:13px 14px; cursor:pointer;}
+  .chunk-head .state{font-size:1.1rem; width:26px; text-align:center; flex-shrink:0;}
+  .chunk-head .t{font-weight:700; font-size:.95rem;}
+  .chunk-head .mins{margin-left:auto; color:var(--dim); font-size:.75rem; flex-shrink:0;}
+  .chunk-body{padding:0 16px 16px; border-top:1px solid var(--line); padding-top:12px;}
+  .chunk-body p{margin:.6em 0;}
+  .chunk-body ul{margin:.4em 0; padding-left:1.2em;}
+  .chunk-body li{margin:.35em 0;}
+  .callout{background:var(--card2); border-left:3px solid var(--red); border-radius:8px; padding:10px 12px; margin:10px 0; font-size:.92rem;}
+  .quizbox{background:var(--card2); border-radius:10px; padding:12px; margin-top:12px;}
+  .quizbox .q{font-weight:700; margin-bottom:8px;}
+  .quizbox .opt{display:block; width:100%; text-align:left; background:var(--card); border:1px solid var(--line);
+    color:var(--text); border-radius:8px; padding:10px 12px; margin:6px 0; font-size:.92rem; cursor:pointer; font-family:inherit;}
+  .quizbox .opt.correct{border-color:var(--green); background:rgba(48,209,88,.12);}
+  .quizbox .opt.wrong{border-color:var(--red); background:rgba(225,6,0,.12);}
+  .explain{font-size:.88rem; margin-top:8px; padding:10px; border-radius:8px; background:rgba(48,209,88,.08); border:1px solid rgba(48,209,88,.25);}
+  .explain.bad{background:rgba(225,6,0,.06); border-color:rgba(225,6,0,.3);}
+  table{width:100%; border-collapse:collapse; font-size:.88rem; margin:8px 0;}
+  th,td{text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{color:var(--muted); font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.4px;}
+  .flashcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:26px 18px;
+    text-align:center; min-height:170px; display:flex; flex-direction:column; justify-content:center; cursor:pointer; margin:12px 0;}
+  .flashcard .term{font-size:1.25rem; font-weight:800;}
+  .flashcard .def{font-size:.95rem; color:var(--text);}
+  .drill-q{font-size:1.12rem; font-weight:700; margin:10px 0;}
+  .coach{background:var(--card2); border-radius:10px; padding:12px 14px; margin-top:12px; font-size:.92rem;}
+  .coach b{color:var(--green);}
+  .coach .trap{color:var(--red-soft);}
+  textarea{width:100%; min-height:130px; background:var(--card2); color:var(--text); border:1px solid var(--line);
+    border-radius:10px; padding:12px; font-family:inherit; font-size:.95rem; line-height:1.5; resize:vertical;}
+  textarea:focus{outline:none; border-color:var(--red);}
+  .check-item{display:flex; align-items:flex-start; gap:10px; padding:9px 0; border-bottom:1px solid var(--line); cursor:pointer;}
+  .check-item:last-child{border-bottom:none;}
+  .check-item .box{width:22px; height:22px; border:2px solid var(--dim); border-radius:6px; flex-shrink:0; margin-top:1px;
+    display:flex; align-items:center; justify-content:center; font-size:.85rem;}
+  .check-item.done .box{background:var(--green); border-color:var(--green); color:#03210d;}
+  .check-item.done .lbl{color:var(--dim); text-decoration:line-through;}
+  .tag{display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+    background:var(--card2); border:1px solid var(--line); color:var(--muted); border-radius:6px; padding:2px 7px; margin-right:6px;}
+  .tag.hr{color:#7cc0ff;} .tag.build{color:var(--amber);} .tag.ops{color:#c792ea;} .tag.curve{color:var(--red-soft);}
+  .countdown{display:flex; gap:8px; justify-content:center; margin:10px 0;}
+  .countdown .cell{background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:8px 0; width:70px; text-align:center;}
+  .countdown .num{font-size:1.5rem; font-weight:800;}
+  .countdown .unit{font-size:.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:1px;}
+  .modrow{display:flex; align-items:center; gap:12px; padding:13px 14px; border:1px solid var(--line);
+    border-radius:var(--radius); margin:10px 0; background:var(--card); cursor:pointer;}
+  .modrow .ico{font-size:1.5rem;}
+  .modrow .info{flex:1;}
+  .modrow .info .t{font-weight:700;}
+  .modrow .pct{font-weight:800; font-size:.9rem; color:var(--muted);}
+  .modrow .pct.done{color:var(--green);}
+  .back{color:var(--muted); font-size:.9rem; cursor:pointer; display:inline-block; margin-bottom:6px;}
+  details{border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:8px 0; background:var(--card);}
+  summary{font-weight:700; cursor:pointer; font-size:.95rem;}
+  details[open] summary{margin-bottom:8px;}
+  .quote{font-style:italic; border-left:3px solid var(--dim); padding-left:12px; margin:10px 0; color:var(--muted);}
+  .bigscript{background:var(--card2); border-radius:10px; padding:14px; font-size:1.0rem; line-height:1.65; margin:10px 0;}
+  .toast{position:fixed; bottom:86px; left:50%; transform:translateX(-50%); background:#fff; color:#111;
+    font-weight:700; padding:10px 18px; border-radius:99px; z-index:50; font-size:.9rem; opacity:0; transition:opacity .3s;
+    pointer-events:none; white-space:nowrap;}
+  .toast.show{opacity:1;}
+  .linkrow{display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--line);}
+  .linkrow:last-child{border-bottom:none;}
+  .linkrow .ico{font-size:1.2rem; width:28px; text-align:center; flex-shrink:0;}
+  .linkrow .lt{font-weight:600; font-size:.92rem;}
+  .linkrow .ld{font-size:.78rem; color:var(--dim);}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="brand">HINWIL <span>HQ</span></div>
+  <div class="pos-badge" id="posBadge">P20</div>
+</div></div>
+
+<div class="wrap" id="app"></div>
+
+<div class="nav" id="nav">
+  <button data-view="home"><span class="ico">🏁</span>Home</button>
+  <button data-view="learn"><span class="ico">📚</span>Learn</button>
+  <button data-view="drill"><span class="ico">🎯</span>Drill</button>
+  <button data-view="stories"><span class="ico">✍️</span>Stories</button>
+  <button data-view="gameday"><span class="ico">🏆</span>Game&nbsp;Day</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* ============================================================
+   STATE, everything lives in localStorage on Ben's phone only.
+   ============================================================ */
+const KEY = "benprep_v1";
+let S = load();
+function load(){
+  try{ return Object.assign({chunks:{},flash:{},drill:{},stories:{},checks:{},xp:0}, JSON.parse(localStorage.getItem(KEY)||"{}")); }
+  catch(e){ return {chunks:{},flash:{},drill:{},stories:{},checks:{},xp:0}; }
+}
+function save(){ localStorage.setItem(KEY, JSON.stringify(S)); updateBadge(); }
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 1800);
+}
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+const INTERVIEW_TS = new Date("2026-07-09T11:00:00+02:00").getTime();
+
+const MODULES = [
+{
+  id:"team", icon:"🏎️", title:"Know the Team", sub:"History, bosses, drivers, sites, incl. the trap questions",
+  chunks:[
+  {
+    id:"t1", title:"It's Sauber, wearing Audi colours", mins:2,
+    body:`<p>The team you're interviewing with is <b>not new</b>. It's the Swiss team Sauber, racing out of the <b>same Hinwil factory since 1993</b>. The badge keeps changing; the building and the people are the constant.</p>
+    <ul>
+      <li><b>1993–2005</b> Sauber, Peter Sauber's independent Swiss team. Launched careers (Räikkönen, Massa).</li>
+      <li><b>2006–2009</b> BMW Sauber, the high point: 2nd in the 2007 championship, and the team's <b>only F1 win: Robert Kubica, Canada 2008</b>.</li>
+      <li><b>2010–2018</b> Sauber again, independent, Ferrari engines, surviving on skill.</li>
+      <li><b>2019–2023</b> Alfa Romeo, sponsor rebrand, still Sauber underneath.</li>
+      <li><b>2024–2025</b> Stake / Kick Sauber, bridge years while Audi moved in.</li>
+      <li><b>2026</b> → <b>Audi works team</b>. Entity renamed Audi Motorsport AG.</li>
+    </ul>
+    <div class="callout">💡 Knowing it's the old Sauber team (Kubica's Montreal win, the BMW era) shows you care about the <i>place</i>, not just the Audi badge. That lands well with people who've worked there 20 years.</div>`,
+    quiz:{ q:"The team's only F1 race win so far was…",
+      opts:["Hülkenberg, Silverstone 2025","Kubica, Canada 2008 (BMW Sauber era)","Räikkönen, Australia 2003","They've never finished on the podium"],
+      correct:1, explain:"Robert Kubica won the 2008 Canadian GP in the BMW Sauber era, the Hinwil team's only win to date. (They HAVE had podiums, so the last option is a double trap.)" }
+  },
+  {
+    id:"t2", title:"Who owns it (and how it happened)", mins:2,
+    body:`<p>Audi announced its F1 entry in 2022 and, instead of building a team from scratch, <b>bought Sauber</b>, first a stake, then <b>100% ownership, completed early 2025</b> (reported ~€600m).</p>
+    <ul>
+      <li><b>Owner:</b> Audi AG, which is part of the <b>Volkswagen Group</b>.</li>
+      <li><b>Minority partner:</b> Qatar's sovereign wealth fund (<b>QIA</b>) holds a significant minority stake, funding the ramp-up.</li>
+      <li><b>Title sponsor:</b> <b>Revolut</b> (the fintech app), that's why the email says "Audi Revolut F1 Team". Reportedly ~$75m/year.</li>
+    </ul>
+    <div class="callout">💡 If sponsors come up: "Revolut is the title partner for the debut works season" is all you need. Don't quote money figures as fact, say "reportedly".</div>`,
+    quiz:{ q:"Who owns the team in 2026?",
+      opts:["Sauber family, with Audi as sponsor","Audi AG (VW Group) 100%, with QIA as minority stakeholder","A 50/50 Audi–Qatar joint venture","Revolut"],
+      correct:1, explain:"Audi AG owns it outright (completed early 2025). QIA holds a minority stake in the holding structure. Revolut is the title sponsor, not an owner." }
+  },
+  {
+    id:"t3", title:"Why 2026 is THE year to join", mins:2,
+    body:`<p>2026 is the <b>biggest regulation reset in a decade</b>: brand-new engine rules AND new chassis/aero rules at the same time. Everyone starts closer to zero, which is exactly why Audi picked this year to enter.</p>
+    <ul>
+      <li>New power units run <b>roughly 50% electric power</b> (up from ~20%) on <b>100% sustainable fuel</b>.</li>
+      <li>It's Audi's <b>first-ever works season</b>, their own engine, their own team.</li>
+      <li>The team is <b>expanding</b>: headcount roughly doubled to ~800 at Hinwil, publicly aiming toward ~1,400 to compete with the front.</li>
+    </ul>
+    <div class="callout">💡 This is your "why now" answer: a works-team ramp-up is a hiring wave. People who join during the hard first seasons become the trusted senior hands when the results come (Audi's target: competitive by the end of the decade).</div>`,
+    quiz:{ q:"Roughly what share of the 2026 power unit's power is electric?",
+      opts:["About 10%","About 25%","About 50%","It's fully electric"],
+      correct:2, explain:"~50%, up from ~20%, the biggest electrification step F1 has made. And that's why your HV certification actually matters this year." }
+  },
+  {
+    id:"t4", title:"⚠️ The boss trap", mins:2,
+    body:`<p>This is the one fact where the "obvious" answer is now <b>wrong</b>. Get it right and you look sharp; get it wrong and you look out of date.</p>
+    <ul>
+      <li><b>Jonathan Wheatley</b> was the founding team principal, <b>he LEFT in March 2026</b>, two rounds into the season.</li>
+      <li><b>Mattia Binotto</b> (ex-Ferrari boss) heads the whole Audi F1 project and is now <b>also acting team principal</b>.</li>
+      <li>Above everything: <b>Gernot Döllner</b>, CEO of Audi AG.</li>
+      <li>Bonus names (only if confident): James Key (Technical Director), Allan McNish (Racing Director, appointed ~April 2026).</li>
+    </ul>
+    <div class="bigscript">Safe sentence if leadership comes up: <i>"Mattia Binotto leads the F1 project and is acting team principal since Jonathan Wheatley left earlier this year, with everything reporting up to Audi CEO Gernot Döllner."</i></div>`,
+    quiz:{ q:"Who is the team principal walking into your interview (July 2026)?",
+      opts:["Jonathan Wheatley","Mattia Binotto (acting, after Wheatley left in March)","Gernot Döllner","Peter Sauber"],
+      correct:1, explain:"Wheatley left in March 2026. Binotto, who runs the whole Audi F1 project, absorbed the team principal role. Döllner is Audi's CEO, not the team boss. This is the #1 trap question." }
+  },
+  {
+    id:"t5", title:"The drivers", mins:1,
+    body:`<ul>
+      <li><b>Nico Hülkenberg</b> (#27, Germany), the experienced veteran. Symbolic: German driver, German works team. Rough luck so far in 2026 (0 points, technical DNFs).</li>
+      <li><b>Gabriel Bortoleto</b> (#5, Brazil), the rookie, and <b>the one scoring</b>. He took Audi's first-ever points at the season opener in Australia, and P8 at the British GP (the most recent points).</li>
+      <li>Reserve/simulator: reportedly Neel Jani, low confidence, don't lead with it.</li>
+    </ul>
+    <div class="callout">💡 Don't fanboy about drivers in the room, but knowing who scored Audi's first points shows you actually follow the team.</div>`,
+    quiz:{ q:"Who scored Audi's first-ever works-team points, and where?",
+      opts:["Hülkenberg, in Germany","Bortoleto, at the season opener in Australia","Hülkenberg, at Silverstone","Neither has scored yet"],
+      correct:1, explain:"Bortoleto scored in Australia (the opener), the first points of the Audi era, and added P8 at the British GP. Hülkenberg is on 0 with a run of bad luck." }
+  },
+  {
+    id:"t6", title:"Three sites, and which one is yours", mins:2,
+    body:`<table>
+      <tr><th>Site</th><th>What happens there</th></tr>
+      <tr><td><b>Hinwil 🇨🇭</b></td><td>Chassis: design, build, <b>assembly</b>, aero + wind tunnel, race ops. <b>← Your job is here.</b></td></tr>
+      <tr><td><b>Neuburg 🇩🇪</b></td><td>The Audi power unit (engine + hybrid), Audi's first in-house F1 engine.</td></tr>
+      <tr><td><b>Bicester 🇬🇧</b></td><td>Smaller tech centre tapping UK F1 talent.</td></tr>
+    </table>
+    <p>Being a works team means chassis (Hinwil) and engine (Neuburg) are finally under one owner and get designed together, that's the whole point of the takeover.</p>
+    <div class="callout">⚠️ Trap for YOU specifically: your HV/EV certification is great, but the power unit is built in <b>Neuburg</b>, not Hinwil. Frame it as <b>"high-voltage safety awareness around the car"</b>, never "I'll help build the engine."</div>`,
+    quiz:{ q:"Where is the Audi F1 power unit built?",
+      opts:["Hinwil, next to car assembly","Neuburg an der Donau, Germany","Bicester, UK","Ingolstadt"],
+      correct:1, explain:"Neuburg (Bavaria). Hinwil does the chassis and assembly, your world. Knowing this split is exactly why you pitch HV as safety-around-the-car, not engine building." }
+  },
+  {
+    id:"t7", title:"2026 form: honest, not negative", mins:2,
+    body:`<p>Reality check (as of early July, after the British GP): <b>~9th in the championship, ~6 points after 9 of 22 rounds</b>. Bortoleto has all the points. It's a hard rebuilding year and everyone in the building knows it.</p>
+    <p>How to talk about it: <b>honest + forward-looking</b>. Never fake optimism ("you'll win soon!") and never criticise. The grown-up line:</p>
+    <div class="bigscript"><i>"It's clearly a building year on all-new rules, that's exactly what makes it interesting to join now. The people who are here during the hard seasons are the ones trusted when it comes good."</i></div>
+    <div class="callout">📌 Standings move every week, glance at the latest result Wednesday night. There's a link in Game Day.</div>`,
+    quiz:{ q:"Interviewer says: 'You've seen where we are in the standings. Why join a team at the back?' Best answer:",
+      opts:["\"I'm sure you'll be winning next season.\"","\"Honestly, results don't matter to me.\"","\"Because it's a building year on new rules, joining now means growing with the team, and being trusted when it comes good.\"","\"Because other teams rejected me.\""],
+      correct:2, explain:"Honest about the present, committed to the build. Fake optimism sounds naive; indifference sounds unmotivated. The 'growth' answer is true AND what they hope to hear." }
+  }
+]},
+{
+  id:"panel", icon:"👥", title:"The Three People", sub:"Who's in the room and what each one is testing",
+  chunks:[
+  {
+    id:"p1", title:"Regula Plüss, HR Business Partner", mins:2,
+    body:`<p>The <b>"will this person fit and stay"</b> gate. Public info on her is thin (that's normal, she's not a public figure). What matters is what her role tests:</p>
+    <ul>
+      <li><b>Motivation:</b> why Audi, why this role, why now, she wants durable motivation, not F1-fan starry eyes.</li>
+      <li><b>Commitment:</b> hours, weekends, travel, she'll make the hard parts explicit and watch your reaction.</li>
+      <li><b>Logistics:</b> right-to-work, start date, notice period, have exact answers ready.</li>
+      <li><b>Reliability signals:</b> how you talk about MERBAG and colleagues (never negative!).</li>
+    </ul>
+    <div class="callout">💡 Your three logistics facts, cold: Swiss-qualified (no permit issue) · available from September · notice period sorted. Say them without hesitating.</div>`,
+    quiz:{ q:"Plüss asks about your current employer. You say:",
+      opts:["Honest positives: what MERBAG taught you, why you're ready for the next step","A few complaints so she knows why you're leaving","\"It's just a normal workshop, nothing special\"","Avoid the question"],
+      correct:0, explain:"How you talk about a past employer is how they assume you'll talk about THEM one day. Grateful + ready-for-more is the only right tone. MERBAG is Switzerland's biggest Mercedes workshop, it's a genuinely strong foundation, own it." }
+  },
+  {
+    id:"p2", title:"Martin Brunner, Head of Car Build", mins:2,
+    body:`<p><b>Your future boss.</b> He runs the factory department that assembles the race cars. He's testing one thing: <b>can you build things correctly, safely, repeatedly, under deadline?</b></p>
+    <ul>
+      <li>Precision and assembly quality, real examples, not adjectives.</li>
+      <li>Torque/spec discipline, do you follow build sheets and sign-offs <i>exactly</i>.</li>
+      <li>Cleanliness + FOD awareness (no tools/debris left in the car).</li>
+      <li><b>Honesty about mistakes</b>, in a build shop, hiding an error can endanger a driver. Owning errors instantly is the culture.</li>
+    </ul>
+    <div class="callout">💡 Research suggests (not confirmed, don't quote it at him!) he may be a long-time Sauber man who came up as a race mechanic in the BMW-Sauber era. If true: he respects people who can DO the work with their hands. Bring stories, not buzzwords. Your gearbox rebuilds are the strongest card you hold.</div>`,
+    quiz:{ q:"Brunner: 'It's 2am, a part doesn't fit, and the build deadline is 7am. What do you do?' Best answer:",
+      opts:["Force it carefully, deadlines are deadlines","Stay methodical: check the drawing/spec, don't force it, flag it early to the lead. Never compromise the build to hit a clock","Set it aside and hope someone else notices","Improvise a workaround and mention it later"],
+      correct:1, explain:"A bodged fit at 2am becomes a failure at 300 km/h on Sunday. Escalating early isn't weakness, it's exactly the no-blame, safety-first culture he needs on his floor." }
+  },
+  {
+    id:"p3", title:"Dario Pompei, Race Team Operations Manager", mins:2,
+    body:`<p>Runs the machine that gets two cars + spares + an entire garage to <b>24 races worldwide</b>. He's testing: <b>can you perform trackside, under pressure, for a whole season?</b></p>
+    <ul>
+      <li><b>Travel commitment</b>, the make-or-break question. Be unambiguous.</li>
+      <li>Calm under time pressure, a concrete story ready.</li>
+      <li>Taking direction cleanly in a hierarchy; communicating problems fast.</li>
+    </ul>
+    <p>Useful to know: his background is <b>engineering</b> (aerodynamicist → project manager → operations). So he may probe <b>why</b> a procedure exists, not just whether you follow it.</p>
+    <div class="callout">💡 If he asks why torque-marking / traceability matters: "so quality is provable and mistakes are catchable before the car runs, the trackside crew has to trust the build without re-checking every bolt."</div>`,
+    quiz:{ q:"Pompei: 'The travel is brutal. 24 races, back-to-backs, long-haul. Honestly, are you in?' Best answer:",
+      opts:["\"Yes, absolutely, sounds like a free world tour.\"","\"Yes, and here's why I can sustain it: I train consistently, I handle long irregular hours already, and this is the life I actually want. I know it's graft, not glamour.\"","\"I'd prefer mostly factory work, to be honest.\"","\"How many races would I really have to do?\""],
+      correct:1, explain:"He needs evidence you've understood the cost AND still want it. Fitness + existing irregular-hours experience + clear-eyed enthusiasm is the credible yes. (Answer A signals glamour-seeking, a screening red flag.)" }
+  },
+  {
+    id:"p4", title:"The triangle, three tests, one machine", mins:2,
+    body:`<p>The panel isn't random. It covers the three axes every race-team hire is judged on:</p>
+    <table>
+      <tr><th>Person</th><th>Tests</th></tr>
+      <tr><td>Plüss (HR)</td><td>Fit & commitment, will you last here?</td></tr>
+      <tr><td>Brunner (Build)</td><td>Craft, can you build it right, every time?</td></tr>
+      <tr><td>Pompei (Ops)</td><td>Reliability, can you deliver under pressure, on the road?</td></tr>
+    </table>
+    <p>And the killer move: show Brunner and Pompei you see their two worlds as <b>one machine</b>. Memorise this sentence, it's the single smartest thing you can say on Thursday:</p>
+    <div class="bigscript"><i>"Car build is the first link in the operations chain. The schedule, the freight, the whole weekend plan all assume the car that leaves the bench is right, so my job in the factory is really an operations deadline with a quality guarantee attached."</i></div>`,
+    quiz:{ q:"Without scrolling up, what's the core idea of the 'one machine' sentence?",
+      opts:["Mechanics should also plan the freight","Car build is the FIRST LINK in the operations chain: if the bench work is right and on time, everything downstream works","Operations is more important than car build","Factory and trackside are separate worlds"],
+      correct:1, explain:"Bench quality + hitting the schedule = what the whole operational machine downstream depends on. Saying this shows both interviewers you get the system, not just your corner of it." }
+  }
+]},
+{
+  id:"how", icon:"🔧", title:"How an F1 Team Works", sub:"Factory vs trackside, your department, the season rhythm",
+  chunks:[
+  {
+    id:"h1", title:"Two organisations, one badge", mins:2,
+    body:`<p>The most important mental model: an F1 team is <b>two organisations wearing one badge</b>.</p>
+    <ul>
+      <li><b>The factory</b> (~800 people at Hinwil, growing toward ~1,400): design, manufacturing, <b>car build</b>, R&D, quality. Over 90% of the team never goes to a race.</li>
+      <li><b>The travelling race team</b> (only ~60–90 people): gets two cars + spares + a full garage to every Grand Prix, races them, packs down, repeats ×24.</li>
+    </ul>
+    <p><b>Car Build is a factory department</b>, and it's the classic entry point and proving ground for people who later travel. Your role title ("Race Team Mechanic, Car Assembly") sits exactly at that seam: a factory build role inside the race organisation.</p>`,
+    quiz:{ q:"Roughly how many people actually travel to each race?",
+      opts:["All ~800","Around 300","Around 60–90","About 20"],
+      correct:2, explain:"Only ~60–90 travel; 90%+ stay at the factory. Trackside seats are few and earned, which is why 'I'll prove myself on the bench first' is the right posture." }
+  },
+  {
+    id:"h2", title:"Your department: how a car gets built", mins:3,
+    body:`<p>An F1 car is <b>~13,000+ components</b>, built outward from the centre, and the order matters:</p>
+    <ul>
+      <li>1️⃣ The <b>monocoque</b> (carbon "tub" / survival cell) arrives from composites. Everything hangs off it.</li>
+      <li>2️⃣ The <b>power unit</b> bolts to the back of it.</li>
+      <li>3️⃣ The <b>gearbox</b> bolts to the power unit, and is itself structural: the rear suspension mounts to it.</li>
+      <li>4️⃣ Then everything else: suspension, hydraulics, cooling, fuel system, looms, brakes, bodywork.</li>
+    </ul>
+    <p>Day-to-day in car build: <b>sub-assembly</b> on the bench (corners, gearbox internals, hydraulic manifolds), building <b>to drawing and build sheet</b> (nothing from memory), <b>torque control</b> (every fastener specified, marked, independently checked), systems install + leak/pressure/function tests, and <b>seat fits</b> for the drivers.</p>
+    <div class="callout">💡 Sound familiar? It's your MERBAG discipline dialled up, except there's no warranty department behind you, only a data trace and your signature.</div>`,
+    quiz:{ q:"Why is the F1 gearbox special compared to a road-car gearbox?",
+      opts:["It's automatic","It's structural, the rear suspension mounts to it, so it carries the car's loads","It never gets rebuilt","It's built by the driver's crew at the track"],
+      correct:1, explain:"The gearbox is a load-bearing part of the car's spine (monocoque → PU → gearbox). That's why gearbox build discipline is such a core Car Assembly skill, and why YOUR gearbox rebuilds are your best story." }
+  },
+  {
+    id:"h3", title:"The build never stops", mins:2,
+    body:`<ul>
+      <li><b>Winter build (Dec–Feb):</b> the new car is assembled for the first time, the biggest, most intense build of the year, against a brutal first-test deadline.</li>
+      <li><b>In-season:</b> cars and assemblies are constantly stripped, inspected, rebuilt. Between races the shop cycles gearboxes, corners, hydraulic systems.</li>
+      <li><b>Upgrades:</b> the car changes all season, new floors, wings, suspension get integrated on tight turnarounds.</li>
+      <li><b>"Lifing":</b> parts have a mandatory life (mileage/time limit) and are retired regardless of how they look, tracked by serial number, logged per car.</li>
+      <li><b>First-article builds:</b> car build assembles brand-new designs first, and feeds problems back to the designers ("this clearance is wrong").</li>
+    </ul>
+    <div class="callout">💡 The department's religion: precision, repeatability, traceability, zero defects. A build mechanic's whole value is that the car leaves the building right, every time, <b>provably</b>.</div>`,
+    quiz:{ q:"What does 'lifing' mean?",
+      opts:["Lifting the car on stands","Parts have a mandatory usage life and are replaced when it expires, even if they look perfect","The team's fitness programme","Extending a part's use as long as possible to save money"],
+      correct:1, explain:"Every serial-numbered component has a tracked life. When it's expired, it comes off, no exceptions, no 'it looks fine'. The opposite instinct from road-car economics, worth showing you understand." }
+  },
+  {
+    id:"h4", title:"The operations machine (Pompei's world)", mins:2,
+    body:`<p>Getting the show to 24 races on 5 continents:</p>
+    <ul>
+      <li><b>European races:</b> the team's own trucks drive everything race to race. Target: loaded and rolling <b>within ~5 hours of the chequered flag</b>.</li>
+      <li><b>"Flyaways"</b> (everything outside Europe): time-critical kit (cars, gearboxes, key spares) flies (~35 tonnes air freight per team); bulky kit travels by sea in <b>rotating container sets</b> that leapfrog ahead around the globe.</li>
+      <li>Ops also runs: customs/carnets, dangerous-goods paperwork, garage build/tear-down crews, travel, and <b>staff rotation</b> so people don't burn out.</li>
+    </ul>
+    <div class="callout">💡 You don't run the logistics, you <b>live inside them</b>. You pack your bay to a system and work to freight deadlines. The truck leaves whether you're finished or not.</div>`,
+    quiz:{ q:"What's the key difference between European and flyaway races, logistically?",
+      opts:["No difference","Europe = the team's own trucks; flyaways = air freight for critical kit + sea containers sent ahead","Flyaways use fewer people","European races don't need a garage build"],
+      correct:1, explain:"Truck fleet in Europe (rolling ~5h after the flag); air+sea split for flyaways with container sets leapfrogging the calendar. Knowing the word 'flyaway' already puts you ahead of most candidates." }
+  },
+  {
+    id:"h5", title:"Who's who in the garage", mins:3,
+    body:`<p>Each car has its own crew. The hierarchy (titles vary by team):</p>
+    <table>
+      <tr><th>Role</th><th>Job</th></tr>
+      <tr><td><b>Chief Mechanic</b></td><td>Leads the whole garage crew, both cars; often controls pit-stop release.</td></tr>
+      <tr><td><b>No.1 Mechanic</b> (per car)</td><td>Fully accountable for one car. Makes the final "car is ready" call. Major career milestone.</td></tr>
+      <tr><td><b>No.2 Mechanic</b></td><td>The No.1's right hand.</td></tr>
+      <tr><td><b>Specialists</b></td><td>Front-end, rear-end, <b>gearbox</b>, hydraulics, systems/electronics.</td></tr>
+    </table>
+    <p>The <b>pit crew</b> (~20 people: 4 gun men, 8 tyre carriers, jacks, stabilisers, release) are all drawn from these mechanics, <b>nobody is hired just to do pit stops</b>. Everyone has a real build/maintenance job first.</p>
+    <p>Career ladder: <b>factory car build → travelling specialist → No.1 → Chief Mechanic</b> (or senior factory build management, also a respected path).</p>`,
+    quiz:{ q:"Who makes the final call that a car is ready to run?",
+      opts:["The race engineer","The No.1 Mechanic for that car","The team principal","The driver"],
+      correct:1, explain:"The No.1 owns that car all weekend, the specialists report to them, and the 'car's ready' call is theirs. That accountability is what you'd be working toward over the years." }
+  },
+  {
+    id:"h6", title:"A race weekend from the floor", mins:3,
+    body:`<ul>
+      <li><b>Wed–Thu:</b> mechanics build the cars up from travel state; every system fitted, plumbed, function-checked. Teams <b>self-scrutineer</b> and declare the cars legal (FIA spot-checks).</li>
+      <li><b>Fri:</b> practice, fast set-up changes between sessions, car up on stands.</li>
+      <li><b>Sat:</b> qualifying. From Q1, <b>parc fermé</b>: the car is "locked", only specified work allowed until the race. Work must stop ~3.5h after qualifying.</li>
+      <li><b>Overnight:</b> the <b>curfew</b>, mandated hours the crew must NOT be at the circuit. Exists so teams can't work people to death.</li>
+      <li><b>Sun:</b> final prep (~5h before formation lap), grid, race, pit stops… then <b>pack-down</b>: cars stripped to travel state, garage torn down, trucks rolling in ~5 hours.</li>
+    </ul>
+    <div class="callout">💡 Not glamorous: long shifts, hot garages, little sleep, then travel. That's the reality they'll test whether you've understood.</div>`,
+    quiz:{ q:"What is parc fermé?",
+      opts:["The team's motorhome parking","From qualifying onward the car is locked down, only specified work is permitted before the race","The tyre storage area","A French victory celebration"],
+      correct:1, explain:"From Q1 the car that qualifies must essentially be the car that races, FIA-supervised, restricted work windows (~3.5h post-quali stop, ~5h pre-race start). Using this term correctly = instant credibility." }
+  },
+  {
+    id:"h7", title:"Why zero-defects is the whole job", mins:2,
+    body:`<p>The heart of the culture, and your strongest connection to it:</p>
+    <ul>
+      <li>A mis-torqued fastener in a road car = a comeback and a warranty claim. In F1 = potentially <b>a wheel off at 300 km/h</b>, a driver-safety event.</li>
+      <li>One wrong-spec part can <b>ruin all the session data</b> or end a race that hundreds of factory people worked toward.</li>
+      <li>Everything is traceable to <b>a person and a signature</b>: build sheet, torque mark, serial number.</li>
+    </ul>
+    <div class="bigscript">The best build mechanic isn't the fastest or the flashiest, it's the one who does it right, <b>the same way, every single time</b>, and can prove it.</div>
+    <div class="callout">💡 That's the bridge from MERBAG: four years of no-second-chances work on customers' AMGs is the same habit of mind, dialled up. You don't have motorsport miles, you DO have the exact discipline the floor is built on.</div>`,
+    quiz:{ q:"They ask: 'What's the difference between a mistake in your workshop and a mistake here?' Strong answer:",
+      opts:["\"There's no real difference.\"","\"Here a mistake can be a safety event at 300 km/h and undo hundreds of people's work, which is why everything is torqued, marked, signed and traceable. Same discipline as my AMG work, but with zero tolerance.\"","\"Mistakes happen everywhere, you just fix them.\"","\"In F1 you'd get fired immediately.\""],
+      correct:1, explain:"Shows you grasp the stakes AND the system that manages them (traceability), and connects it to your existing discipline. Fear-based answers (D) miss the point: the culture is no-blame honesty + rigorous process, not terror." }
+  }
+]},
+{
+  id:"sell", icon:"🃏", title:"Sell Yourself", sub:"Your cards, your gaps, and the answers that win",
+  chunks:[
+  {
+    id:"s1", title:"The ad was written for you", mins:2,
+    body:`<p>The team's own job ad for this exact role asked for, verbatim:</p>
+    <ul>
+      <li>"Completed basic mechanical training… e.g. car mechanic or <b>automotive mechatronics technician</b>" ← literally your diploma</li>
+      <li>"Manual dexterity and a careful, proactive and independent way of working"</li>
+      <li>"Enthusiastic team player… flexible and <b>extremely resilient</b>"</li>
+      <li>"Willingness to travel worldwide" + "work outside of normal working hours"</li>
+      <li>English required; <b>German an advantage</b> ← you have both, plus Swiss German</li>
+    </ul>
+    <p>The sister ad for the sub-assembly bench adds the culture bar: a passion for <i>"an exceptionally exact and clean way of working"</i>, plus measuring instruments, build protocols, SAP tracking.</p>
+    <div class="callout">💡 You're not a long-shot. You are close to the archetype this role was written for. Walk in knowing that, it's the antidote to nerves.</div>`,
+    quiz:{ q:"Which requirement can you literally match with your diploma?",
+      opts:["Motorsport experience","\"Automotive mechatronics technician\", named in the ad as a target qualification","A UK engineering degree","F2 team experience"],
+      correct:1, explain:"The ad names your exact qualification. Combined with German + Swiss training + local, you can map yourself onto their own wording line by line." }
+  },
+  {
+    id:"s2", title:"Your six cards", mins:3,
+    body:`<table>
+      <tr><th>Card</th><th>How to play it</th></tr>
+      <tr><td><b>1. Gearbox rebuilds</b></td><td>Your strongest concrete skill. Strip, measure, shim, torque, document, near 1:1 with F1 transmission build method. Lead with it.</td></tr>
+      <tr><td><b>2. HV/EV certification</b></td><td>2026 PUs are ~50% electric. Almost no incoming road-car mechanic has HV certification. Bring it up unprompted, but frame as <b>HV safety around the car</b> (engine is built in Neuburg!).</td></tr>
+      <tr><td><b>3. Zero-mistake AMG culture</b></td><td>Four years where guessing wasn't allowed on customers' G63s/E63s. Same "exceptionally exact" standard their ad demands.</td></tr>
+      <tr><td><b>4. Diagnostics brain</b></td><td>Xentry/systematic diagnostics = evidence-based, procedure-driven thinking. You don't guess; you diagnose.</td></tr>
+      <tr><td><b>5. Local + German + long-term</b></td><td>Zürich-based, no relocation risk, no permit issue, in it for the career. Frame as <i>reliability</i>, not convenience.</td></tr>
+      <tr><td><b>6. Stamina + responsibility</b></td><td>Consistent training, half-marathons, Scout leadership (responsible for others, under pressure, long days). Proof you can sustain the calendar.</td></tr>
+    </table>`,
+    quiz:{ q:"How must you frame your HV/EV certification?",
+      opts:["\"I could help build the power unit.\"","\"HV safety awareness around the car\", since the PU is built at Neuburg, not Hinwil","Don't mention it, it's road-car stuff","\"I'm certified to work on the battery.\""],
+      correct:1, explain:"The certification is genuinely rare and 2026-relevant, but overclaiming (building/servicing the PU) shows you don't understand the team structure. Safety-around-the-car is the credible, impressive version." }
+  },
+  {
+    id:"s3", title:"Your gaps, own them, don't hide them", mins:2,
+    body:`<p>F1 people spot bluffing instantly, and it reads as the arrogance they screen out. Name the gap, then show the bridge:</p>
+    <ul>
+      <li><b>No composites/carbon experience.</b> Real gap, road cars are metal. Bridge: <i>"That's new to me, but I've spent four years building to tight tolerances with clean, careful hands, and it's a skill I'm keen to learn fast alongside your specialists."</i></li>
+      <li><b>No motorsport/trackside experience.</b> The role <i>expects</i> this, it's a trainee pathway. Bridge: <i>"That's exactly why this route appeals: learn the F1 basics properly on the bench, and earn the trackside side."</i></li>
+      <li><b>4 years vs the ad's "career starter" wording.</b> Bridge: <i>"On the F1 side I'm starting from zero and here to learn, but you won't be teaching me how to hold a torque wrench, just how F1 does it."</i></li>
+    </ul>
+    <div class="callout">💡 Posture in one line: <b>confident about the fundamentals, humble about the F1-specific gaps.</b> That combination is exactly what they hire.</div>`,
+    quiz:{ q:"Brunner: 'You've never touched carbon fibre.' Best response:",
+      opts:["\"It can't be that different from metal.\"","\"True, composites are new to me. What I bring is four years of tight-tolerance, clean, documented work, and materials handling is a skill I'll add fast. I know it's careful, clean work, that's already how I operate.\"","\"I watched a lot of videos about it.\"","\"I was hoping to avoid the composites side.\""],
+      correct:1, explain:"Own it (no bluff), bridge to your real discipline, show eagerness. Option A is the classic arrogance fail; C is bluffing; D kills the role fit." }
+  },
+  {
+    id:"s4", title:"The red flags that kill candidates", mins:2,
+    body:`<p>Almost everyone who fails these interviews fails on attitude, not skill:</p>
+    <ul>
+      <li>🚩 <b>Underestimating hours/travel</b>, the #1 mismatch. Sound hesitant about the calendar → out.</li>
+      <li>🚩 <b>Glamour over graft</b>, talking podiums, paddock, drivers, "being part of F1". The job is cleaning parts at 1am. Talk about the craft.</li>
+      <li>🚩 <b>Arrogance / can't take feedback</b>, a trainee who acts like he knows F1 already is the fastest rejection.</li>
+      <li>🚩 <b>"I don't really make mistakes"</b>, in a safety-critical shop this is a red flag, not a boast. The culture is owning errors instantly.</li>
+      <li>🚩 <b>Blaming others</b>, any mistake story must be one you caught, owned and fixed.</li>
+      <li>🚩 <b>Trash-talking MERBAG</b>, read as a future liability.</li>
+    </ul>`,
+    quiz:{ q:"Which of these answers is a hidden red flag?",
+      opts:["\"I double-check my own torques before sign-off.\"","\"Honestly, I'm most excited about travelling with the drivers and being in the paddock.\"","\"I once fitted a wrong part, caught it on my final check, flagged it and re-did the job.\"","\"The hours don't scare me, my workshop weeks are already irregular and I train for endurance.\""],
+      correct:1, explain:"That's the glamour answer, the exact thing teams screen out. The other three are green flags: self-checking, owned mistakes, clear-eyed about hours." }
+  },
+  {
+    id:"s5", title:"Your story, 60 seconds", mins:2,
+    body:`<p>"Tell me about yourself" will probably open the interview. Rule: <b>60–90 seconds, then stop.</b> Structure:</p>
+    <div class="bigscript">1. <b>Who:</b> "Qualified Automobilmechatroniker, four years at MERBAG, Switzerland's biggest Mercedes workshop."<br><br>
+    2. <b>Proof:</b> "Trained across AMG performance cars, gearbox rebuilds from the ground up, engine work, four months in the diagnostics team, HV-certified."<br><br>
+    3. <b>Why here:</b> "I've wanted the precision end of this trade since I built a go-kart at school, and car assembly at a works F1 team in its building year, ten minutes... well, forty minutes from home, is exactly where I want to grow."<br><br>
+    4. <b>Stop. Smile. Let them ask.</b></div>
+    <div class="callout">⚠️ Your known risk: <b>saying too much</b>. When you feel the urge to keep going, that's the signal to stop. Silence after a good answer is power, not awkwardness. They'll ask if they want more.</div>`,
+    quiz:{ q:"You finish your 60-second intro and there's a 3-second silence. What do you do?",
+      opts:["Keep talking, fill the gap with more details","Hold the silence calmly. It's their turn; they're probably taking notes","Apologise for the short answer","Ask if that was okay"],
+      correct:1, explain:"Interviewers pause deliberately (and take notes). Filling silence is where over-talkers lose points, extra unrehearsed words dilute a strong answer. End on a full stop, not a trail-off." }
+  },
+  {
+    id:"s6", title:"Questions YOU ask (bring 4, ask 2–3)", mins:2,
+    body:`<p>Your questions are half the impression. Tailored by person:</p>
+    <ul>
+      <li><b>For Brunner:</b> "What does the first year look like in car assembly, and what would I need to prove to earn trackside travel?" · "What's the hardest part of the build to get right?"</li>
+      <li><b>For Pompei:</b> "How much does someone in car assembly travel in a typical season, and how does that build over time?"</li>
+      <li><b>For Plüss / anyone:</b> "This is a huge rebuilding period, what kind of person thrives here versus struggles?"</li>
+      <li><b>The curiosity closer:</b> "Coming from road cars, what surprises new mechatronics technicians most about how an F1 car goes together?"</li>
+    </ul>
+    <div class="callout">🚫 Never ask: about drivers, salary-first, or "when will you win?"</div>`,
+    quiz:{ q:"Why is 'what would I need to prove to earn trackside travel?' such a strong question?",
+      opts:["It shows you expect to travel immediately","It shows ambition AND humility: you want the path, and you accept it must be earned on the bench first","It puts pressure on them to promise something","It fills time"],
+      correct:1, explain:"It signals long-term intent, realistic expectations, and hunger, the exact trainee profile. And it gets Brunner talking about his own standards, which tells you what he values." }
+  }
+]}
+];
+
+const FLASH = [
+  {t:"Monocoque", d:"The carbon-fibre 'tub' / survival cell the driver sits in. Everything is built outward from it."},
+  {t:"Car build / assembly", d:"The factory department that assembles complete cars from thousands of parts, to spec. Your world."},
+  {t:"Build sheet", d:"The step-by-step, signed-off build procedure. Nothing is done from memory, it's done to the document."},
+  {t:"FOD", d:"Foreign Object Debris. A tool or fastener left in the car is a cardinal sin. Clean bench, everything accounted for."},
+  {t:"Lifing / part life", d:"Parts have a mandatory usage life and are retired when it expires, tracked by serial number, even if they look perfect."},
+  {t:"Parc fermé", d:"From qualifying, the car is locked down, only specified work allowed before the race, FIA-supervised."},
+  {t:"Curfew", d:"Mandated overnight hours the crew must NOT be at the circuit. Limits all-nighters; few exceptions per season."},
+  {t:"Flyaway", d:"A race outside Europe. Critical kit flies (~35t air freight); bulky kit goes ahead by sea in rotating container sets."},
+  {t:"No.1 Mechanic", d:"Accountable for one car all weekend; makes the final 'car is ready' call. The career milestone to aim for."},
+  {t:"Chief Mechanic", d:"Leads the whole garage crew across both cars; often controls pit-stop release."},
+  {t:"Power unit (PU)", d:"The complete hybrid engine system. In 2026 ~50% electric. Audi's is built in Neuburg, Germany, not Hinwil."},
+  {t:"Works team", d:"A team owned and run by a manufacturer (chassis + engine under one roof). 2026 is Audi's first works season."},
+  {t:"Scrutineering", d:"Legality checking. Teams self-declare compliance Thursday; the FIA spot-checks all weekend."},
+  {t:"Sub-assembly", d:"Building modules (corners, gearbox internals, hydraulic manifolds) on the bench before they go onto the car."},
+  {t:"Torque marking", d:"Paint-marking a torqued fastener so its state is visible and checkable. Quality made provable."},
+  {t:"Hinwil / Neuburg / Bicester", d:"The three sites: chassis+assembly (CH) / power unit (DE) / tech centre (UK). You'd be in Hinwil."}
+];
+
+const DRILL = [
+  {id:"d1", cat:"hr", q:"Tell me about yourself.",
+   coach:"<b>60–90 seconds, four beats:</b> who (qualified Mechatroniker, 4 yrs MERBAG) → proof (AMG, gearbox rebuilds, diagnostics, HV cert) → why here (precision end of the trade, works-team building year, local) → STOP.<br><span class='trap'>Trap: this is where over-talkers lose the room in minute one. Rehearse the ending.</span>"},
+  {id:"d2", cat:"hr", q:"Why do you want to work in Formula 1?",
+   coach:"<b>Craft, not glamour.</b> The sharpest end of the discipline you already love: zero-mistake building, immediate feedback, the best standard in the world. Mention following the Sauber→Audi project since announcement.<br><span class='trap'>Trap: any mention of TV, paddock, celebrities or 'the dream' = glamour flag.</span>"},
+  {id:"d3", cat:"hr", q:"Why this team, and why now?",
+   coach:"<b>Three reasons, all true:</b> (1) works-team ramp-up = a team building itself, you grow with it; (2) biggest rules reset in a decade = everyone starts fresh; (3) it's home, Zürich-based, no relocation, here for the long haul.<br><span class='trap'>Don't say 'because it's close to home' as reason #1, it's the supporting point, not the headline.</span>"},
+  {id:"d4", cat:"hr", q:"Why should we take someone with zero motorsport experience?",
+   coach:"<b>Because the role was designed for it</b>, it's a trainee pathway, and what can't be trained fast is what you already have: four years of zero-mistake, documented, torque-disciplined building at Switzerland's biggest Mercedes workshop. The F1-specific parts are exactly what you're here to learn.<br><span class='trap'>Don't get defensive. This question is an invitation, not an attack.</span>"},
+  {id:"d5", cat:"hr", q:"Are you really okay with the hours and the travel? Be honest.",
+   coach:"<b>Unambiguous yes + evidence:</b> irregular hours already normal; consistent physical training (half-marathons); no ties preventing travel; this is the life you're choosing with open eyes, graft, not glamour.<br><span class='trap'>Hesitation here ends candidacies. But don't oversell either, 'I know it will be hard, and I want it' is the credible tone.</span>"},
+  {id:"d6", cat:"hr", q:"What would your boss at MERBAG say about you?",
+   coach:"<b>Pick 2–3 concrete traits</b> a supervisor would actually verify: reliable, careful, asks when unsure, doesn't leave a job half-done. Ideally anchor with a real moment ('he gave me the diagnostics placement because…').<br><span class='trap'>Stay honest, they may actually call for a reference.</span>"},
+  {id:"d7", cat:"hr", q:"Where do you see yourself in five years?",
+   coach:"<b>Inside this building:</b> proven on the bench, trusted with more of the build, ideally earned a travelling role, working toward No.1 mechanic territory over the years. Ambition + patience.<br><span class='trap'>Don't say 'race engineer' or 'management', this is a hands-on craft role; wanting to leave the tools reads wrong here.</span>"},
+  {id:"d8", cat:"hr", q:"What are your salary expectations?",
+   coach:"<b>Deflect gracefully, stay flexible:</b> 'The opportunity and the learning are what I'm here for, I trust you pay trainees fairly, and I'm open to discussing it.' If pressed, a realistic Swiss trainee-technician range, said once, without negotiating hard.<br><span class='trap'>Don't anchor high in a trainee interview; don't apologise for the topic either.</span>"},
+  {id:"d9", cat:"hr", q:"When can you start, and what's your notice period?",
+   coach:"<b>Exact facts, no hesitation:</b> qualified as of August, available from September; notice period at MERBAG known and stated. Swiss citizen/permit, no work-permit issue.<br><span class='trap'>Fumbling logistics facts undermines the 'reliable' brand. Know these cold.</span>"},
+  {id:"d10", cat:"build", q:"Walk me through the most complex assembly you've done.",
+   coach:"<b>The gearbox rebuild, as a story:</b> what came in → full strip → measure and inspect (what you measured, what tolerances) → shim/replace → reassemble to torque spec in sequence → document and sign off → result. 90 seconds, specific numbers where you can.<br><span class='trap'>Practise it OUT LOUD until it flows. This is your single most important answer.</span>"},
+  {id:"d11", cat:"build", q:"How do you make sure you don't make mistakes under time pressure?",
+   coach:"<b>System, not willpower:</b> follow the documented procedure, torque to spec and mark it, self-check at defined points, final visual check, and if something feels wrong, stop and verify rather than push on. Speed comes from repetition, not from skipping steps.<br><span class='trap'>'I'm just very careful' is not an answer. Describe the SYSTEM.</span>"},
+  {id:"d12", cat:"build", q:"Tell me about a mistake you made and what happened next.",
+   coach:"<b>Have ONE real story ready:</b> the mistake → you caught/flagged it immediately → fixed it → what you changed so it can't recur. The point is the honesty reflex, not the mistake.<br><span class='trap'>'I can't think of one' or a story that blames someone else are both fails. In this culture, owning errors fast is a hiring criterion.</span>"},
+  {id:"d13", cat:"build", q:"What do you know about how an F1 car is actually built?",
+   coach:"<b>Show the mental model:</b> built outward from the carbon monocoque → PU bolts to it → gearbox (structural!) → suspension, hydraulics, systems, bodywork. ~13,000 parts, everything to build sheet and torque spec, all serial-tracked with mandatory part life.<br><span class='trap'>Don't overclaim ('I know all about it'), deliver it as 'here's what I've understood so far, and I know the real thing goes deeper.'</span>"},
+  {id:"d14", cat:"build", q:"You've only worked on road cars. What will be the biggest change for you?",
+   coach:"<b>Name real differences:</b> composites instead of metal, tighter tolerances, full traceability/lifing, first-article builds where the part might be wrong (not you), and the pace. Then the bridge: the discipline, spec, torque, cleanliness, documentation, is the same muscle.<br><span class='trap'>Also a chance to show humility. Pick differences that show you've done your homework.</span>"},
+  {id:"d15", cat:"build", q:"Why does everything get torque-marked and signed off?",
+   coach:"<b>Because quality must be provable:</b> the trackside crew has to trust the build without rechecking every bolt; the mark makes state visible, the signature makes it traceable, and problems get caught before the car runs, not at 300 km/h.<br><span class='trap'>This is Pompei's 'do you understand WHY procedures exist' test. Nail the reasoning, not just the rule.</span>"},
+  {id:"d16", cat:"ops", q:"Describe a time you delivered under real time pressure.",
+   coach:"<b>One concrete story:</b> hard deadline (customer car needed same day / diagnostics against the clock) → how you stayed methodical → delivered without cutting the checks. End with what it taught you about pace vs. precision.<br><span class='trap'>The story must show you did NOT skip quality steps to hit the clock, that's the F1 answer.</span>"},
+  {id:"d17", cat:"ops", q:"How do you handle being told exactly what to do, even when you'd do it differently?",
+   coach:"<b>Direction taken cleanly + voice used properly:</b> in safety-critical work you follow the procedure; if you see a real problem, you flag it to the right person immediately rather than freelancing. Scouts + workshop hierarchy = you've lived this.<br><span class='trap'>Neither 'I always obey silently' nor 'I do it my way', the answer is: execute the spec, escalate concerns fast.</span>"},
+  {id:"d18", cat:"ops", q:"What does a race weekend actually look like for a mechanic?",
+   coach:"<b>Show the rhythm:</b> build-up Wed–Thu, self-scrutineering, practice Friday with fast set-up changes, parc fermé from qualifying (~3.5h work stop), curfew overnight, race Sunday, then pack-down with trucks rolling in ~5 hours. Long days, hot garage, little sleep.<br><span class='trap'>Bonus points for 'parc fermé' and 'curfew' used correctly, vocabulary = preparation.</span>"},
+  {id:"d19", cat:"ops", q:"How does your work on the bench connect to what happens at the track?",
+   coach:"<b>THE money question, the one-machine answer:</b> 'Car build is the first link in the operations chain. The schedule, the freight, the weekend plan all assume the car that leaves the bench is right: my job is an operations deadline with a quality guarantee attached.'<br><span class='trap'>Say it like your own thought, not a memorised line. Practise until it's natural.</span>"},
+  {id:"d20", cat:"ops", q:"The freight truck leaves in 30 minutes and your bay isn't packed. What do you do?",
+   coach:"<b>Priorities + communication:</b> flag the situation immediately to the lead (no silent heroics), pack to the system (critical items per the checklist first, nothing loose or undocumented), ask for hands if needed. The truck deadline is absolute, but so is knowing exactly what's in every crate.<br><span class='trap'>The wrong answer is hiding the problem or throwing things in boxes. Ops runs on knowing where everything is.</span>"},
+  {id:"d21", cat:"curve", q:"What's your biggest weakness?",
+   coach:"<b>Real + managed:</b> e.g. 'When I'm enthusiastic I can say too much, I've learned to make my point and stop' or 'I used to take on too much alone; now I flag early and ask.' One sentence of weakness, one of the fix.<br><span class='trap'>No fake weaknesses ('I work too hard'). And keep it SHORT, don't ramble about your weakness of rambling.</span>"},
+  {id:"d22", cat:"curve", q:"You're clearly still very young. Why should we trust you with a race car?",
+   coach:"<b>Reframe with evidence:</b> four years of trusted work on customers' six-figure AMGs, HV certification (they don't hand that out for showing up), a diagnostics placement earned, Scout leadership at 18. Trust is built on checkable track record, and you'll earn it here bolt by bolt, sign-off by sign-off.<br><span class='trap'>Don't be defensive, don't apologise for your age. Calm evidence beats indignation.</span>"},
+  {id:"d23", cat:"curve", q:"What do you do outside work?",
+   coach:"<b>Pick the relevant ones:</b> consistent training (running, two half-marathons, calisthenics), music production, stand-up comedy (yes, say it: performing under pressure in front of strangers is real nerve training). Rounded, disciplined, sociable.<br><span class='trap'>This is also a stamina check, the fitness answer matters more than it seems.</span>"},
+  {id:"d24", cat:"curve", q:"Is there anything you'd like to ask us?",
+   coach:"<b>Never 'no'.</b> Ask 2–3 from your prepared list: first-year expectations + earning trackside (Brunner) · how travel builds over time (Pompei) · who thrives here (Plüss) · what surprises new technicians most about F1 assembly.<br><span class='trap'>Asking nothing reads as no genuine interest. This is the easiest win in the whole interview, don't waste it.</span>"},
+  {id:"d25", cat:"curve", q:"Rapid fire: Who's the team principal? Where's the engine built? What happened in Australia?",
+   coach:"<b>Binotto (acting, since Wheatley left in March) · Neuburg, Germany · Bortoleto scored Audi's first-ever points.</b><br><span class='trap'>If you don't know a fact, say so cleanly, 'I don't know, I'll look it up' beats a guess dressed as knowledge. But you WILL know these three.</span>"},
+  {id:"d26", cat:"curve", q:"We have candidates with actual race-team experience. Why you?",
+   coach:"<b>Don't compete on their ground:</b> 'I can't offer race weekends yet, I can offer four years of exactly the discipline your build shop runs on, HV certification for the most electric F1 era ever, German, local, and a trainee's hunger with a technician's fundamentals. The F1 layer is what you teach; the foundation is what I bring.'<br><span class='trap'>Never talk other candidates down. Sell your fit, not their flaws.</span>"}
+];
+
+const STORIES = [
+  {id:"st1", title:"Tell me about yourself (60–90 sec)",
+   tip:"Four beats: who → proof → why here → stop. Under 200 words. Read it out loud and time it.",
+   ph:"Qualified Automobilmechatroniker, four years at MERBAG, Switzerland's biggest Mercedes workshop...\n\nTrained on AMG performance cars... gearbox rebuilds from the ground up... four months in diagnostics... HV-certified...\n\nWhy I'm here: ..."},
+  {id:"st2", title:"The gearbox rebuild (your best craft story)",
+   tip:"Situation → what YOU did (strip, measure, shim, torque sequence, document) → result. Add one real number (a tolerance, a torque value), specifics are credibility.",
+   ph:"The gearbox that came in was...\nI stripped it down and measured...\nThe rebuild: ...\nThe result: ..."},
+  {id:"st3", title:"A mistake I owned",
+   tip:"The mistake → you flagged it immediately → the fix → what changed so it can't recur. The honesty reflex IS the answer.",
+   guide:{
+     good:["Pick a SMALL, real, early-career mistake (a wrong part ordered, a step done out of sequence)","10% of the story is the mistake, 90% is the catch, the fix, and what changed","End on the system: 'since then I always double-check X', that's the F1 answer","You caught it or flagged it yourself, fast"],
+     bad:["A safety-critical disaster (it plants doubt, not trust)","'I don't really make mistakes' (instant red flag in this culture)","Blaming a colleague, the tools, or the customer","Dwelling on guilt. They want the reflex, not the drama"]},
+   ph:"Early on, I once...\nAs soon as I noticed, I...\nWe fixed it by...\nSince then I always..."},
+  {id:"st4", title:"Delivering under time pressure",
+   tip:"Hard deadline, methodical work, delivered WITHOUT skipping checks. That last part is the F1 point.",
+   ph:"A customer's car had to be ready by...\nThe pressure was...\nI stayed methodical by...\nIt went out on time because..."},
+  {id:"st5", title:"Leading / carrying responsibility (Scouts)",
+   tip:"You were responsible for other people's safety and experience, planned under pressure, stayed calm. Map it to being dependable in a crew.",
+   ph:"As a Pfadi leader I was responsible for...\nOne situation where it got difficult:...\nWhat I did:...\nWhat it taught me about teams:..."},
+  {id:"st6", title:"The go-kart (your origin story)",
+   tip:"You BUILT a working vehicle at school, moped engine in a go-kart. It's proof the passion predates the paycheck. Keep it short and warm; it humanises you.",
+   ph:"At school I built a go-kart with a moped engine...\nThe hardest part was...\nThat's when I knew..."},
+  {id:"st7", title:"Why Audi, why now (your closing argument)",
+   tip:"Works-team ramp-up + rules reset + home. End with commitment: you're here to build a career, not to visit.",
+   ph:"This team is building itself right now...\n2026 resets the whole sport...\nAnd it's home: ...\nI'm not looking for a season, I'm looking for the place I grow for the next decade."},
+  {id:"st9", title:"The Bortoleto handshake (optional wildcard)",
+   tip:"True story: you were Gabriel Bortoleto's body double on an Audi F1 shoot, and you shook his hand. Dropped lightly near the END, it's funny, memorable, and shows you've already been around this team. Handled wrong, it reads as glamour-chasing. This one is timing-sensitive.",
+   guide:{
+     good:["Drop it LATE: near the end, or as a light aside if drivers come up naturally","Two sentences max, with a smile, then straight back to the job: 'so technically I've already stood in for your driver, now I'd rather build his car'","Let THEM laugh and ask questions; only expand if they do","Self-deprecating beats impressive: it's a funny coincidence, not a credential"],
+     bad:["Leading with it, or telling it in the first half (glamour flag before you've proven substance)","Making the modelling the point: the job you want is mechanic, not model","Sounding starstruck about Bortoleto","Forcing it in if the mood is formal or time is tight. It's optional: no natural moment, no story"]},
+   ph:"My two-sentence version:\n\nFunny thing: I've actually worked for this team once already, as Gabriel Bortoleto's body double on a photo shoot. So I've stood in for your driver... now I'd rather build his car."},
+  {id:"st8", title:"My questions for them",
+   tip:"Write your final 3, in your own words. You'll actually ask 2–3 depending on time.",
+   guide:{
+     good:["Questions about growth, standards and how the team works (see the bank below)","Questions only THEY can answer, it proves you did the homework","One per interviewer if you can: craft (Brunner), trackside (Pompei), people (Plüss)"],
+     bad:["Salary, holidays or perks as your FIRST question","Anything Google answers in 5 seconds ('how many races are there?')","Questions about the drivers or 'meeting the stars'","Asking nothing ('no, all clear'), it reads as no genuine interest"]},
+   ph:"1. (Brunner) What does the first year look like, and what would I need to prove to earn trackside travel?\n2. (Pompei) ...\n3. (Plüss) ...",
+   extra:"<details><summary>💡 Question bank: steal and rephrase</summary><p class='small'><b>For Brunner (craft & growth):</b></p><ul class='small'><li>What does the first year look like in car assembly, and what would I need to prove to earn trackside travel?</li><li>Would I start on sub-assembly or on the car itself, and how does that progress?</li><li>What's the hardest part of the build to get right, and how do you train people up on it?</li><li>What separates the build mechanics you rate most highly from the rest?</li><li>How closely does car build work with the designers when a brand-new part arrives?</li></ul><p class='small'><b>For Pompei (trackside & operations):</b></p><ul class='small'><li>How much does someone in car assembly travel in the first season, and how does that grow?</li><li>How do you decide who earns a trackside seat?</li><li>What does the hand-over between the factory build and the race team look like in practice?</li><li>With the works-team ramp-up, how is the trackside operation changing?</li></ul><p class='small'><b>For Plüss (team & fit):</b></p><ul class='small'><li>What kind of person thrives here during this building phase, and who struggles?</li><li>What do you hope the person in this role becomes in three or four years?</li><li>What does training and development look like for someone starting out here?</li></ul><p class='small'><b>Curiosity closers (any of them):</b></p><ul class='small'><li>Coming from road cars, what surprises new mechatronics technicians most about how an F1 car goes together?</li><li>What does this team do better than anywhere else you've worked?</li></ul></details>"}
+];
+
+const CHECKS = {
+  wed: [
+    {id:"c_docs", t:"Print 3 copies of CV + pack EFZ certificate + HV certificates + ID"},
+    {id:"c_uniform", t:"MERBAG uniform clean, complete and ready. It looks sharp: a working technician's uniform says more than a shirt"},
+    {id:"c_route", t:"Route checked: MERBAG → Wildbachstrasse 9, Hinwil. Google says 36 min; know your exit and where visitor parking is"},
+    {id:"c_car", t:"The MERBAG car sorted: keys arranged, fuelled/charged"},
+    {id:"c_standings", t:"Glance at latest F1 standings + last race result (link in Links)"},
+    {id:"c_questions", t:"Your 2–3 questions for them chosen and said out loud once (Stories tab)"},
+    {id:"c_phone", t:"Phone on charge overnight, 100% by morning: it's your navigation tomorrow. Alarm set, career@audif1.com saved"},
+    {id:"c_sleep", t:"In bed EARLY. Game day starts tonight: sleep beats any last-minute cramming"}
+  ],
+  thu: [
+    {id:"c_eat", t:"Proper breakfast. Water bottle in the car"},
+    {id:"c_move", t:"Light movement: a short walk or easy session, nothing maximal"},
+    {id:"c_leave", t:"09:50 at the latest: leave MERBAG. 36-min drive + buffer for traffic and a wrong turn"},
+    {id:"c_park", t:"~10:25: arrive, park in a visitor spot in front of the main entrance"},
+    {id:"c_decompress", t:"10:25–10:40 in the car: decompress. One glance at the cheat card, then put it away. Music, no scrolling"},
+    {id:"c_warmup", t:"10:40: your comedy warm-up, 3–4 min. Power poses, breathing, until you're relaxed and present. You've done everything: this is just the walk-on"},
+    {id:"c_arrive", t:"10:45: walk into reception and ask for Regula Plüss, Martin Brunner & Dario Pompei"},
+    {id:"c_breathe", t:"While waiting: 4-4-4 breathing (in 4 · hold 4 · out 4). Shoulders down. You belong here"}
+  ]
+};
+
+const LINKS = [
+  {ico:"🌐", t:"audif1.com", d:"Official team site", u:"https://www.audif1.com/en"},
+  {ico:"🏁", t:"Formula1.com: Audi team page", d:"Official F1 profile, latest results", u:"https://www.formula1.com/en/teams/audi"},
+  {ico:"📊", t:"F1 2026 standings", d:"Check Wednesday night!", u:"https://www.formula1.com/en/results/2026/team"},
+  {ico:"📖", t:"Wikipedia: Audi in Formula One", d:"Full history, always current", u:"https://en.wikipedia.org/wiki/Audi_in_Formula_One"},
+  {ico:"🎬", t:"2026 launch film (Berlin)", d:"\"To start something. Stop at Nothing\" (official)", u:"https://www.youtube.com/watch?v=4PU8FyfCYxk"},
+  {ico:"🎬", t:"Audi(o) Ep.1: Montreal", d:"Official behind-the-scenes at a race weekend", u:"https://www.youtube.com/watch?v=PrKEQMwUUYo"},
+  {ico:"🧪", t:"\"All for One\": Roger, Composite Support, Hinwil", d:"A real Hinwil factory craftsman: read this one", u:"https://www.audif1.com/en/news/2026/all-for-one-roger"},
+  {ico:"📺", t:"YouTube: Audi F1 team channel", d:"@AudiF1TV, launch + series", u:"https://www.youtube.com/@AudiF1TV"},
+  {ico:"📸", t:"Instagram: @audif1", d:"Team feed. Recent posts = small-talk fuel", u:"https://www.instagram.com/audif1/"},
+  {ico:"🎵", t:"TikTok: @audif1", d:"Team clips", u:"https://www.tiktok.com/@audif1"},
+  {ico:"💼", t:"LinkedIn: Audi F1 company page", d:"Vacancies are posted here", u:"https://www.linkedin.com/company/audif1project/"},
+  {ico:"💼", t:"Careers at Audi F1", d:"How the team presents working there (3 sites)", u:"https://www.audif1.com/careers"},
+  {ico:"👤", t:"Regula Plüss: LinkedIn", d:"HR (interview panel)", u:"https://ch.linkedin.com/in/regula-pl%C3%BCss-16662b102"},
+  {ico:"👤", t:"Dario Pompei: LinkedIn", d:"Race Team Operations Manager (interview panel)", u:"https://ch.linkedin.com/in/dario-pompei-85243ba"},
+  {ico:"🔧", t:"Williams careers: How to become an F1 mechanic", d:"Great background read", u:"https://careers.williamsf1.com/blog/2025-8/how-to-become-an-f1-mechanic"}
+];
+
+/* ============================================================
+   PROGRESS / GAMIFICATION
+   ============================================================ */
+function totals(){
+  let total = 0, done = 0;
+  MODULES.forEach(m => m.chunks.forEach(c => { total++; if(S.chunks[c.id]) done++; }));
+  FLASH.forEach((f,i) => { total++; if(S.flash["f"+i]==="known") done++; });
+  DRILL.forEach(d => { total++; if(S.drill[d.id]) done++; });
+  STORIES.forEach(st => { total++; if((S.stories[st.id]||"").trim().length > 40) done++; });
+  [...CHECKS.wed, ...CHECKS.thu].forEach(c => { total++; if(S.checks[c.id]) done++; });
+  return {total, done, frac: done/total};
+}
+function gridPos(){
+  const {frac} = totals();
+  return Math.max(1, 20 - Math.round(frac * 19));
+}
+function updateBadge(){
+  const p = gridPos();
+  const b = document.getElementById("posBadge");
+  b.innerHTML = p === 1 ? "🏆 <b>P1</b>" : "<b>P" + p + "</b>";
+}
+
+/* ============================================================
+   ROUTER + VIEWS
+   ============================================================ */
+const app = document.getElementById("app");
+let view = "home", sub = null;
+
+function nav(v, s){ view = v; sub = s || null; render(); window.scrollTo(0,0); }
+document.getElementById("nav").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  nav(b.dataset.view);
+});
+
+function render(){
+  document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("active", b.dataset.view === view));
+  if(view === "home") renderHome();
+  else if(view === "learn") sub ? renderModule(sub) : renderLearn();
+  else if(view === "drill") renderDrill();
+  else if(view === "stories") renderStories();
+  else if(view === "gameday") renderGameday();
+  updateBadge();
+}
+
+/* ---------- HOME ---------- */
+const PEP = [
+  "You got into Mercedes at 16. You've opened harder doors than this one.",
+  "P1 isn't given. It's built, one chunk at a time.",
+  "They wrote that job ad for someone exactly like you.",
+  "Confident about the fundamentals. Humble about the gaps. That's the whole game.",
+  "Four years of zero-mistake work is not 'no experience'.",
+  "The best build mechanic isn't the flashiest, it's the one who's right every time.",
+  "Prep beats nerves. Every time."
+];
+function renderHome(){
+  const {total, done, frac} = totals();
+  const pct = Math.round(frac*100);
+  const pep = PEP[new Date().getDate() % PEP.length];
+  const now = Date.now();
+  let cd = "";
+  if(now < INTERVIEW_TS){
+    const s = Math.floor((INTERVIEW_TS - now)/1000);
+    const d = Math.floor(s/86400), h = Math.floor((s%86400)/3600), m = Math.floor((s%3600)/60);
+    cd = `<div class="countdown">
+      <div class="cell"><div class="num">${d}</div><div class="unit">days</div></div>
+      <div class="cell"><div class="num">${h}</div><div class="unit">hours</div></div>
+      <div class="cell"><div class="num">${m}</div><div class="unit">min</div></div>
+    </div>`;
+  } else {
+    cd = `<p class="center" style="font-size:1.1rem">🏁 <b>It's go time. You're ready.</b></p>`;
+  }
+  app.innerHTML = `
+    <div class="card center">
+      <div class="small muted" style="letter-spacing:1px; text-transform:uppercase">Thursday 9 July · 11:00 · Hinwil</div>
+      <h1>Audi F1 Interview</h1>
+      ${cd}
+      <div class="progress-outer"><div class="progress-inner" style="width:${pct}%"></div></div>
+      <div class="small muted">${done} / ${total} items done · ${pct}% · Grid position: <b class="red">P${gridPos()}</b></div>
+    </div>
+
+    <div class="card tight center" style="border-color:#3a2b00; background:#1a1503">
+      <span class="small">💬 ${pep}</span>
+    </div>
+
+    <h2>Where to go next</h2>
+    ${nextUp()}
+
+    <details>
+      <summary>📅 Your plan: Monday → Thursday</summary>
+      <table>
+        <tr><td><b>Mon eve</b></td><td>Learn: "Know the Team" + "The Three People" (~25 min)</td></tr>
+        <tr><td><b>Tue day</b></td><td>Chunks in small gaps: "How an F1 Team Works" + a few flashcards each break</td></tr>
+        <tr><td><b>Tue eve</b></td><td>Write your Stories. Then first Drill pass, OUT LOUD (~45 min)</td></tr>
+        <tr><td><b>Wed day</b></td><td>"Sell Yourself" module + flashcards to 100% + redo weak drills</td></tr>
+        <tr><td><b>Wed eve</b></td><td>Full drill run-through out loud · Game Day checklist · pack · sleep early</td></tr>
+        <tr><td><b>Thu</b></td><td>NO cramming. Leave MERBAG by <b>09:50</b>, park ~10:25, warm-up 10:40, reception 10:45 🏁</td></tr>
+      </table>
+    </details>
+
+    <details>
+      <summary>🔗 Links (team, people, standings)</summary>
+      ${LINKS.map(l => `<div class="linkrow"><div class="ico">${l.ico}</div><div><a href="${l.u}" target="_blank" rel="noopener"><div class="lt">${l.t}</div></a><div class="ld">${l.d}</div></div></div>`).join("")}
+    </details>
+
+    <p class="small dim center" style="margin-top:20px">Everything you do here is saved only on this device. 🔒</p>
+  `;
+}
+function nextUp(){
+  for(const m of MODULES){
+    const remaining = m.chunks.filter(c => !S.chunks[c.id]).length;
+    if(remaining > 0){
+      return `<div class="modrow" onclick="nav('learn','${m.id}')">
+        <div class="ico">${m.icon}</div>
+        <div class="info"><div class="t">${m.title}</div><div class="small muted">${remaining} chunk${remaining>1?"s":""} left · ~${remaining*2} min</div></div>
+        <div class="pct">▶</div></div>`;
+    }
+  }
+  const weak = DRILL.filter(d => S.drill[d.id] === "work").length;
+  const undone = DRILL.filter(d => !S.drill[d.id]).length;
+  if(undone > 0 || weak > 0)
+    return `<div class="modrow" onclick="nav('drill')"><div class="ico">🎯</div>
+      <div class="info"><div class="t">Drill questions</div><div class="small muted">${undone} new · ${weak} marked "needs work"</div></div>
+      <div class="pct">▶</div></div>`;
+  const st = STORIES.filter(s => (S.stories[s.id]||"").trim().length <= 40).length;
+  if(st > 0)
+    return `<div class="modrow" onclick="nav('stories')"><div class="ico">✍️</div>
+      <div class="info"><div class="t">Write your stories</div><div class="small muted">${st} still to write</div></div>
+      <div class="pct">▶</div></div>`;
+  return `<div class="card center"><b class="green">All learning done.</b><br><span class="small muted">Re-drill the weak ones, then Game Day checklist. You're genuinely ready.</span></div>`;
+}
+
+/* ---------- LEARN ---------- */
+function renderLearn(){
+  app.innerHTML = `<h1>📚 Learn</h1>
+    <p class="muted small">Four modules, chunked to 2–3 minutes each. Every chunk ends with a question that actually tests you. Green tick = answered correctly.</p>
+    ${MODULES.map(m => {
+      const done = m.chunks.filter(c => S.chunks[c.id]).length;
+      const pct = Math.round(done / m.chunks.length * 100);
+      return `<div class="modrow" onclick="nav('learn','${m.id}')">
+        <div class="ico">${m.icon}</div>
+        <div class="info"><div class="t">${m.title}</div><div class="small muted">${m.sub}</div>
+        <div class="progress-outer" style="margin:6px 0 0"><div class="progress-inner" style="width:${pct}%"></div></div></div>
+        <div class="pct ${pct===100?"done":""}">${pct===100?"✓":pct+"%"}</div>
+      </div>`;
+    }).join("")}
+    <h2 style="margin-top:20px">🃏 Flashcards</h2>
+    ${flashRow()}`;
+}
+function flashRow(){
+  const known = FLASH.filter((f,i) => S.flash["f"+i]==="known").length;
+  return `<div class="modrow" onclick="nav('learn','flash')">
+    <div class="ico">🗂️</div>
+    <div class="info"><div class="t">F1 vocabulary</div><div class="small muted">Speak the language, ${known}/${FLASH.length} known</div>
+    <div class="progress-outer" style="margin:6px 0 0"><div class="progress-inner" style="width:${Math.round(known/FLASH.length*100)}%"></div></div></div>
+    <div class="pct ${known===FLASH.length?"done":""}">${known===FLASH.length?"✓":Math.round(known/FLASH.length*100)+"%"}</div>
+  </div>`;
+}
+
+function renderModule(id){
+  if(id === "flash") return renderFlash();
+  const m = MODULES.find(x => x.id === id);
+  if(!m) return renderLearn();
+  app.innerHTML = `<span class="back" onclick="nav('learn')">← All modules</span>
+    <h1>${m.icon} ${m.title}</h1>
+    <p class="muted small">${m.sub}</p>
+    ${m.chunks.map((c,i) => chunkHTML(m, c, i)).join("")}`;
+}
+function chunkHTML(m, c, i){
+  const done = !!S.chunks[c.id];
+  const open = !done && (i === 0 || !!S.chunks[m.chunks[i-1].id]);
+  return `<div class="chunk" id="chunk_${c.id}">
+    <div class="chunk-head" onclick="toggleChunk('${c.id}')">
+      <div class="state">${done ? "✅" : "▫️"}</div>
+      <div class="t">${c.title}</div>
+      <div class="mins">${c.mins} min</div>
+    </div>
+    <div class="chunk-body" style="display:${open ? "block" : "none"}">
+      ${c.body}
+      <div class="quizbox" id="quiz_${c.id}">
+        <div class="q">⚡ Check yourself: ${c.quiz.q}</div>
+        ${c.quiz.opts.map((o,j) => `<button class="opt" onclick="answer('${c.id}',${j})">${o}</button>`).join("")}
+        <div id="exp_${c.id}"></div>
+      </div>
+    </div>
+  </div>`;
+}
+window.toggleChunk = function(id){
+  const el = document.querySelector(`#chunk_${id} .chunk-body`);
+  el.style.display = el.style.display === "none" ? "block" : "none";
+};
+window.answer = function(cid, j){
+  let chunk = null;
+  MODULES.forEach(m => m.chunks.forEach(c => { if(c.id === cid) chunk = c; }));
+  const box = document.getElementById("quiz_" + cid);
+  const opts = box.querySelectorAll(".opt");
+  const exp = document.getElementById("exp_" + cid);
+  if(j === chunk.quiz.correct){
+    opts.forEach((o,k) => { o.disabled = true; if(k === j) o.classList.add("correct"); });
+    exp.innerHTML = `<div class="explain">✅ <b>Correct.</b> ${chunk.quiz.explain}</div>`;
+    if(!S.chunks[cid]){ S.chunks[cid] = true; S.xp += 10; save(); toast("Chunk done ✓ " + posMsg()); }
+    document.querySelector(`#chunk_${cid} .state`).textContent = "✅";
+  } else {
+    opts[j].classList.add("wrong");
+    exp.innerHTML = `<div class="explain bad">❌ Not that one, read the chunk again and retry. (The trap answers exist for a reason.)</div>`;
+  }
+};
+function posMsg(){
+  const p = gridPos();
+  return p === 1 ? "· P1! 🏆" : "· now P" + p;
+}
+
+/* ---------- FLASHCARDS ---------- */
+let flashIdx = 0, flashShow = false;
+function renderFlash(){
+  const order = FLASH.map((f,i) => i).sort((a,b) => {
+    const sa = S.flash["f"+a]==="known" ? 1 : 0, sb = S.flash["f"+b]==="known" ? 1 : 0;
+    return sa - sb;
+  });
+  if(flashIdx >= order.length) flashIdx = 0;
+  const i = order[flashIdx];
+  const f = FLASH[i];
+  const known = FLASH.filter((x,k) => S.flash["f"+k]==="known").length;
+  app.innerHTML = `<span class="back" onclick="nav('learn')">← All modules</span>
+    <h1>🗂️ F1 Vocabulary</h1>
+    <p class="muted small">${known}/${FLASH.length} known · tap the card to flip · "Got it" = you could explain it in the room</p>
+    <div class="flashcard" onclick="flipFlash()">
+      ${flashShow
+        ? `<div class="def">${f.d}</div>`
+        : `<div class="term">${f.t}</div><div class="small dim" style="margin-top:8px">tap to reveal</div>`}
+    </div>
+    <div class="row">
+      <button class="btn" onclick="rateFlash(${i}, 'again')">🔁 Again</button>
+      <button class="btn primary" onclick="rateFlash(${i}, 'known')">✓ Got it</button>
+    </div>`;
+}
+window.flipFlash = function(){ flashShow = !flashShow; renderFlash(); };
+window.rateFlash = function(i, r){
+  S.flash["f"+i] = r; save();
+  flashShow = false; flashIdx++;
+  const known = FLASH.filter((x,k) => S.flash["f"+k]==="known").length;
+  if(known === FLASH.length) toast("Vocab complete 🏆 " + posMsg());
+  renderFlash();
+};
+
+/* ---------- DRILL ---------- */
+let drillMode = null, drillQueue = [], drillCur = 0, drillRevealed = false;
+function renderDrill(){
+  if(drillMode) return renderDrillCard();
+  const stats = {new:0, work:0, ok:0, nailed:0};
+  DRILL.forEach(d => {
+    const r = S.drill[d.id];
+    if(!r) stats.new++; else if(r === "work") stats.work++; else if(r === "ok") stats.ok++; else stats.nailed++;
+  });
+  const cats = {hr:"HR, Plüss", build:"Car Build, Brunner", ops:"Operations, Pompei", curve:"Curveballs"};
+  app.innerHTML = `<h1>🎯 Drill</h1>
+    <p class="muted small">This is the part that actually gets you hired. For each question: <b>say your answer OUT LOUD</b> (yes, actually, mumbling in your head doesn't count), then reveal the coaching and rate yourself honestly.</p>
+    <div class="card tight">
+      <div class="small"><span class="green">●</span> Nailed: ${stats.nailed} &nbsp; <span class="amber">●</span> Getting there: ${stats.ok} &nbsp; <span class="red">●</span> Needs work: ${stats.work} &nbsp; <span class="dim">●</span> New: ${stats.new}</div>
+    </div>
+    <button class="btn primary full" onclick="startDrill('all')">▶ Drill everything (${DRILL.length})</button>
+    ${stats.work > 0 ? `<button class="btn full" onclick="startDrill('work')">🔥 Fix the weak ones (${stats.work})</button>` : ""}
+    <button class="btn full" onclick="startDrill('rand5')">🎲 Random 5, pressure round</button>
+    <h3 style="margin-top:18px">Or pick a category</h3>
+    ${Object.entries(cats).map(([k,v]) => {
+      const n = DRILL.filter(d => d.cat === k).length;
+      return `<button class="btn full ghost" onclick="startDrill('${k}')">${v} (${n})</button>`;
+    }).join("")}`;
+}
+window.startDrill = function(mode){
+  let q = [...DRILL];
+  if(mode === "work") q = q.filter(d => S.drill[d.id] === "work");
+  else if(mode === "rand5") q = q.sort(() => Math.random() - .5).slice(0,5);
+  else if(mode !== "all") q = q.filter(d => d.cat === mode);
+  if(q.length === 0){ toast("Nothing in that pile 🎉"); return; }
+  drillMode = mode; drillQueue = q; drillCur = 0; drillRevealed = false;
+  renderDrillCard();
+};
+function renderDrillCard(){
+  if(drillCur >= drillQueue.length){
+    drillMode = null;
+    app.innerHTML = `<div class="card center" style="margin-top:40px">
+      <div style="font-size:3rem">🏁</div>
+      <h2>Set complete</h2>
+      <p class="muted">Honest ratings = a real picture. Anything you marked "needs work", say it out loud again tonight.</p>
+      <button class="btn primary" onclick="nav('drill')">Back to Drill</button></div>`;
+    return;
+  }
+  const d = drillQueue[drillCur];
+  const catNames = {hr:"HR · Plüss", build:"Car Build · Brunner", ops:"Operations · Pompei", curve:"Curveball"};
+  const catCls = {hr:"hr", build:"build", ops:"ops", curve:"curve"};
+  app.innerHTML = `
+    <span class="back" onclick="drillMode=null; renderDrill()">← Exit drill</span>
+    <div class="small dim">Question ${drillCur+1} / ${drillQueue.length}</div>
+    <div class="progress-outer"><div class="progress-inner" style="width:${Math.round(drillCur/drillQueue.length*100)}%"></div></div>
+    <div class="card">
+      <span class="tag ${catCls[d.cat]}">${catNames[d.cat]}</span>
+      <div class="drill-q">"${d.q}"</div>
+      <p class="small muted">🗣️ Say your answer out loud. Aim for 30–90 seconds. <b>Then stop talking.</b></p>
+      ${drillRevealed
+        ? `<div class="coach">${d.coach}</div>
+           <p class="small muted" style="margin-top:12px">How did your out-loud answer compare?</p>
+           <div class="row">
+             <button class="btn" style="border-color:var(--red)" onclick="rateDrill('${d.id}','work')">😬 Needs work</button>
+             <button class="btn" style="border-color:var(--amber)" onclick="rateDrill('${d.id}','ok')">🙂 Getting there</button>
+             <button class="btn" style="border-color:var(--green)" onclick="rateDrill('${d.id}','nailed')">💪 Nailed it</button>
+           </div>`
+        : `<button class="btn primary full" onclick="drillRevealed=true; renderDrillCard()">Reveal coaching</button>`}
+    </div>`;
+}
+window.rateDrill = function(id, r){
+  S.drill[id] = r; S.xp += 5; save();
+  drillCur++; drillRevealed = false;
+  renderDrillCard();
+};
+
+/* ---------- STORIES ---------- */
+function renderStories(){
+  const guideHTML = g => !g ? "" : `<div class="quizbox" style="margin:8px 0 12px">
+      <div class="small"><b class="green">✓ Good version</b></div>
+      <ul class="small" style="margin-top:2px">${g.good.map(x => `<li>${x}</li>`).join("")}</ul>
+      <div class="small" style="margin-top:8px"><b class="red">✗ Kills it</b></div>
+      <ul class="small" style="margin-top:2px">${g.bad.map(x => `<li>${x}</li>`).join("")}</ul>
+    </div>`;
+  app.innerHTML = `<h1>✍️ Your Stories</h1>
+    <p class="muted small">Interviews are won with 4–5 rehearsed, TRUE stories told in under 90 seconds. Write yours in your own words, then practise them out loud in Drill. Saved only on this phone.</p>
+    <div class="card tight">
+      <b>What makes a story GOOD</b>
+      <ul class="small" style="margin:6px 0 4px">
+        <li><b>Specific.</b> One real moment, one real car, one real number. "A G63 gearbox in March" beats "I often did gearboxes".</li>
+        <li><b>YOU are the actor.</b> "I measured, I flagged, I fixed", not "we somehow sorted it".</li>
+        <li><b>Under 90 seconds, with an ending.</b> Land on the result or the lesson, then stop.</li>
+        <li><b>True.</b> They will ask follow-ups. Never build on something you can't back up.</li>
+      </ul>
+      <b>What makes a story BAD</b>
+      <ul class="small" style="margin:6px 0 0">
+        <li><b>Vague self-praise.</b> "I'm a hard worker" is a claim; a story is proof. Only tell proof.</li>
+        <li><b>No ending.</b> Trailing off invites rambling. Know your last sentence before you start.</li>
+        <li><b>Selling yourself DOWN.</b> No "it was nothing really", no "I only...", no apologising for road-car work. MERBAG is a serious foundation. Say it straight.</li>
+        <li><b>Selling yourself UP falsely.</b> No "I basically ran the workshop". One overclaim can sink the whole interview.</li>
+      </ul>
+    </div>
+    ${STORIES.map(st => {
+      const val = S.stories[st.id] || "";
+      const done = val.trim().length > 40;
+      return `<div class="card">
+        <h3>${done ? "✅" : "▫️"} ${st.title}</h3>
+        <p class="small muted">${st.tip}</p>
+        ${guideHTML(st.guide)}
+        ${st.extra || ""}
+        <textarea data-story="${st.id}" placeholder="${st.ph.replace(/"/g,"&quot;")}">${val.replace(/</g,"&lt;")}</textarea>
+        <div class="small dim center" id="wc_${st.id}">${val.trim() ? val.trim().split(/\s+/).length + " words" : ""}</div>
+      </div>`;
+    }).join("")}`;
+  app.querySelectorAll("textarea[data-story]").forEach(ta => {
+    ta.addEventListener("input", () => {
+      const id = ta.dataset.story;
+      S.stories[id] = ta.value; save();
+      const words = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
+      document.getElementById("wc_"+id).textContent = words ? words + " words" + (words > 220 ? ", too long for 90 sec, tighten it ✂️" : "") : "";
+    });
+  });
+}
+
+/* ---------- GAME DAY ---------- */
+function renderGameday(){
+  const list = (items) => items.map(c => `
+    <div class="check-item ${S.checks[c.id] ? "done" : ""}" onclick="toggleCheck('${c.id}')">
+      <div class="box">${S.checks[c.id] ? "✓" : ""}</div>
+      <div class="lbl small">${c.t}</div>
+    </div>`).join("");
+  app.innerHTML = `<h1>🏆 Game Day</h1>
+
+    <div class="card tight">
+      <b>📍 The facts</b>
+      <table>
+        <tr><td>When</td><td><b>Thu 9 July, 11:00</b> · at reception <b>10:45</b></td></tr>
+        <tr><td>Where</td><td>Wildbachstrasse 9, 8340 Hinwil (glass building, Audi F1 flags)</td></tr>
+        <tr><td>Parking</td><td>Visitor spots at the main entrance</td></tr>
+        <tr><td>Reception</td><td>Ask for <b>Regula Plüss, Martin Brunner & Dario Pompei</b></td></tr>
+        <tr><td>If stuck</td><td>Call reception: <a href="tel:+41449379000"><b>+41 44 937 90 00</b></a></td></tr>
+      </table>
+    </div>
+
+    <div class="card center" style="border-color:var(--red); background:#1a0605">
+      <div class="small muted" style="letter-spacing:1px; text-transform:uppercase">The one time that matters</div>
+      <div style="font-size:1.6rem; font-weight:800; margin:4px 0">🚗 Leave MERBAG by <span class="red">09:50</span></div>
+      <div class="small muted">36 min is the no-traffic number. The buffer covers traffic, a wrong turn, parking, and 15 minutes to get your head right before reception at 10:45.</div>
+    </div>
+
+    <div class="card">
+      <h3>🌙 Wednesday night</h3>
+      ${list(CHECKS.wed)}
+    </div>
+
+    <div class="card">
+      <h3>☀️ Thursday morning</h3>
+      ${list(CHECKS.thu)}
+    </div>
+
+    <div class="card">
+      <h3>🧠 In the room: four rules</h3>
+      <ul class="small">
+        <li><b>3 sentences, then STOP.</b> If they want more, they'll ask. Your risk is saying too much, not too little.</li>
+        <li><b>Pausing is power.</b> "Good question, let me think for a second" is a strong move.</li>
+        <li><b>Don't know? Say so.</b> "I don't know, but here's how I'd find out." Never bluff.</li>
+        <li><b>The close.</b> If it feels right at the end: "I want this. What's the next step?"</li>
+      </ul>
+      <p class="small dim">German or English both fine, answer in whichever the question comes in.</p>
+    </div>
+
+    <div class="card">
+      <h3>🗒️ Cheat card (one glance in the car, then put it away)</h3>
+      <table>
+        <tr><td>Boss</td><td><b>Binotto</b> (Wheatley left in March, don't name him)</td></tr>
+        <tr><td>Drivers</td><td>Hülkenberg · <b>Bortoleto</b> (scored the first Audi points)</td></tr>
+        <tr><td>Sites</td><td>Hinwil = assembly (YOU) · Neuburg = engine</td></tr>
+        <tr><td>Form</td><td>~9th, building year, "that's why joining NOW is the opportunity"</td></tr>
+        <tr><td>Your cards</td><td>Gearbox rebuilds · HV cert (safety around the car) · zero-mistake AMG culture</td></tr>
+        <tr><td>The sentence</td><td>"Car build is the first link in the operations chain…"</td></tr>
+        <tr><td>Posture</td><td>Confident fundamentals · humble about F1 gaps · 3 sentences, stop</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>📧 After the interview (same day)</h3>
+      <p class="small muted">Short thank-you to the recruiter. One genuine line about why you're even more keen after visiting, not generic.</p>
+      <div class="bigscript small">Subject: Thank you, interview for Race Team Mechanic (Car Assembly)<br><br>
+      Hallo Herr Hardegger,<br><br>
+      Vielen Dank für heute, es war grossartig, das Team und die Facility in Hinwil zu erleben. [One specific thing that impressed you, the build shop, something Brunner/Pompei said.] Das Gespräch hat meine Motivation nur bestärkt: Genau hier möchte ich meine Präzisionsarbeit einbringen und mich langfristig entwickeln.<br><br>
+      Beste Grüsse,<br>Benjamin Madani</div>
+      <a class="btn full" href="mailto:career@audif1.com?subject=Thank%20you%20%E2%80%94%20Race%20Team%20Mechanic%20(Car%20Assembly)%20interview">✉️ Open email draft</a>
+    </div>`;
+}
+window.toggleCheck = function(id){
+  S.checks[id] = !S.checks[id]; save();
+  renderGameday();
+};
+
+/* ---------- INIT ---------- */
+render();
+</script>
+</body>
+</html>
