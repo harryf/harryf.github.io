@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ben's first car: shortlist, Zurich area, September 2026</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #ffffff; --ink: #1d1f22; --muted: #5d6169; --line: #dcdad3;
+    --accent: #0b5cad; --good: #1e7f4f; --goodbg: #e8f5ec; --warn: #a15c00; --warnbg: #fff4e0;
+    --bad: #a12a2a; --badbg: #fbe9e9; --tag: #ebe9e2;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.5; }
+  main { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; }
+  h2 { font-size: 1.35rem; margin: 40px 0 12px; border-bottom: 2px solid var(--line); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; margin: 0 0 6px; }
+  p { margin: 0 0 10px; }
+  a { color: var(--accent); }
+  .sub { color: var(--muted); margin-bottom: 18px; }
+  .note { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+  .tldr { background: var(--goodbg); border-color: #bfe3cc; }
+  .tldr ol { margin: 6px 0 0 20px; padding: 0; }
+  .tldr li { margin-bottom: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .card.best { border: 2px solid var(--good); box-shadow: 0 0 0 4px var(--goodbg); }
+  .card.caution { border: 2px solid var(--warn); }
+  .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; }
+  .badge.best { background: var(--good); color: #fff; }
+  .badge.caution { background: var(--warn); color: #fff; }
+  .badge.family { background: var(--tag); color: var(--muted); }
+  .price { font-size: 1.4rem; font-weight: 700; }
+  .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; font-size: 0.9rem; color: var(--muted); }
+  .specs b { color: var(--ink); font-weight: 600; }
+  .watch { background: var(--warnbg); border-left: 4px solid var(--warn); padding: 8px 10px; border-radius: 6px; font-size: 0.92rem; }
+  .why { background: var(--goodbg); border-left: 4px solid var(--good); padding: 8px 10px; border-radius: 6px; font-size: 0.92rem; }
+  .value { font-size: 0.88rem; color: var(--muted); }
+  .adlink { margin-top: auto; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 0.9rem; }
+  th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--tag); }
+  .tablewrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--line); }
+  .verdict-good { color: var(--good); font-weight: 700; }
+  .verdict-ok { color: var(--warn); font-weight: 700; }
+  .verdict-bad { color: var(--bad); font-weight: 700; }
+  ul.tight { margin: 4px 0 8px 20px; padding: 0; }
+  ul.tight li { margin-bottom: 4px; }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .small { font-size: 0.85rem; color: var(--muted); }
+  code { background: var(--tag); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  @media (max-width: 600px) { h1 { font-size: 1.5rem; } .specs { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ben's first car: Zurich-area shortlist</h1>
+  <p class="sub">Budget CHF 10,000 (headroom to about CHF 11,000). Listings checked on <b>3 September 2026</b>. Every link below was opened on the day; used cars in this price band sell within days, so treat this as a snapshot and re-check before driving anywhere.</p>
+
+  <div class="note tldr">
+    <h3>Short version</h3>
+    <ol>
+      <li><b>The Abarth he found (85,000 km, CHF 10,000) is at the top of the market, not a bargain.</b> Live Abarth Puntos with 100 to 120k km are asking CHF 9,000 to 10,700; only sub-100k examples justify CHF 10k+. See the verdict section below for what to check and how to negotiate.</li>
+      <li><b>Best value for a Mercedes mechanic:</b> the private <a href="#m3">C 200 Kompressor Kombi, manual, 106,500 km, fresh MFK, CHF 8,500</a> and the private <a href="#m1">C 250 CGI, 129,000 km, full Mercedes history, CHF 9,900</a>. Both are W204s he can service himself with parts he already knows.</li>
+      <li><b>Most car for the money:</b> the <a href="#m2">CLK 350 Cabrio, 115,870 km, CHF 9,999</a> (272 PS V6) and the <a href="#b2">BMW 130i, 265 PS, CHF 6,800</a>. Both need one specific engine question answered first (balance shaft on the M272, and a 195k km history on the N52).</li>
+      <li><b>Still want the Abarth?</b> The <a href="#a1">2010 Grande Punto Abarth SS, 121,000 km, first Swiss hand, CHF 8,980</a> is the best-documented one on the market and CHF 1,000 cheaper than his.</li>
+      <li><b>Two things that should decide it, and that no ad tells you.</b> First, Ben's edge as a Mercedes mechanic (diagnostic access, workshop time, trade parts pricing) is worth thousands on a W204 and nothing on a Fiat or a BMW; that alone tilts the answer to M1 or M3. Second, young-driver insurance: on a probationary licence, a 265 to 306 PS car can cost more per year to insure than it loses in value, and some insurers will not quote a driver under 25 on anything over about 150 kW. Get quotes for three cars before falling in love with one.</li>
+      <li><b>Cheaper to run and quicker than the Abarth:</b> the <a href="#x1">Ford Fiesta ST, 108,300 km, MFK this week, CHF 6,800</a>. The reliability-and-resale hedge is the <a href="#x2">Suzuki Swift Sport, CHF 7,490</a>.</li>
+    </ol>
+  </div>
+
+  <h2>Comparison table</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Car</th><th>Year</th><th>km</th><th>Price CHF</th><th>Seller</th><th>Where</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><a href="#a1">A1</a></td><td>Abarth Grande Punto SS 1.4 T-Jet 180 PS</td><td>04.2010</td><td>121,000</td><td>8,980</td><td>Dealer</td><td>Teufenthal AG</td><td class="verdict-good">Best of the Abarths</td></tr>
+      <tr><td><a href="#a2">A2</a></td><td>Abarth Punto Evo Supersport 180 PS</td><td>2014</td><td>117,000</td><td>9,000 (negotiable)</td><td>Private</td><td>Immensee SZ</td><td class="verdict-ok">Good if MultiAir oil history is clean</td></tr>
+      <tr><td><a href="#a3">A3</a></td><td>Abarth Punto Supersport 180 PS</td><td>01.2014</td><td>172,736</td><td>7,200</td><td>Dealer</td><td>Neuhausen SH</td><td class="verdict-ok">Cheap, high km</td></tr>
+      <tr><td><a href="#m1">M1</a></td><td>Mercedes C 250 CGI (W204, M271 EVO 204 PS)</td><td>2011</td><td>129,000</td><td>9,900</td><td>Private</td><td>Zürich-Altstetten</td><td class="verdict-good">Best daily, full history</td></tr>
+      <tr><td><a href="#m2">M2</a></td><td>Mercedes CLK 350 Cabrio 7G-Tronic (M272 272 PS)</td><td>02.2006</td><td>115,870</td><td>9,999</td><td>Dealer</td><td>Rümlang ZH</td><td class="verdict-ok">Fun, balance shaft question</td></tr>
+      <tr><td><a href="#m3">M3</a></td><td>Mercedes C 200 Kompressor Kombi, manual (S204, M271 184 PS)</td><td>02.2009</td><td>106,500</td><td>8,500</td><td>Private</td><td>Ehrendingen AG</td><td class="verdict-good">Best value overall</td></tr>
+      <tr><td><a href="#m4">M4</a></td><td>Mercedes C 250 CDI Kombi 7G-Tronic (OM651 204 PS)</td><td>03.2012</td><td>160,000</td><td>8,900</td><td>Dealer</td><td>Fischenthal ZH</td><td class="verdict-ok">Strong commuter, injector check</td></tr>
+      <tr><td><a href="#m5">M5</a></td><td>Mercedes C 350 4Matic 7G-Tronic (M276 306 PS)</td><td>03.2013</td><td>194,800</td><td>9,500</td><td>Dealer</td><td>Elsau ZH</td><td class="verdict-ok">Fast, high km</td></tr>
+      <tr><td><a href="#b1">B1</a></td><td>BMW 125i F20 3-door, manual (N20 218 PS)</td><td>10.2012</td><td>172,000</td><td>9,100</td><td>Private</td><td>Zürich</td><td class="verdict-ok">Only with chain proof</td></tr>
+      <tr><td><a href="#b2">B2</a></td><td>BMW 130i E87 Steptronic (N52 265 PS)</td><td>11.2007</td><td>195,000</td><td>6,800</td><td>Dealer</td><td>Pfäffikon ZH</td><td class="verdict-good">Cheapest big engine</td></tr>
+      <tr><td><a href="#b3">B3</a></td><td>BMW 125i Cabrio E88, manual (N52 218 PS)</td><td>04.2012</td><td>168,000</td><td>8,400</td><td>Dealer</td><td>Bülach ZH</td><td class="verdict-ok">Honest six-cylinder, cabrio</td></tr>
+      <tr><td><a href="#x1">X1</a></td><td>Ford Fiesta ST-1 1.6 EcoBoost 182 PS</td><td>12.2013</td><td>108,300</td><td>6,800</td><td>Dealer</td><td>Hinwil ZH</td><td class="verdict-good">Cheapest quick car with fresh MFK</td></tr>
+      <tr><td><a href="#x2">X2</a></td><td>Suzuki Swift Sport 1.6 136 PS</td><td>2013</td><td>117,700</td><td>7,490</td><td>Dealer</td><td>Bellach SO</td><td class="verdict-good">Reliability and resale hedge</td></tr>
+      <tr><td><a href="#x3">X3</a></td><td>Mini Cooper S Cabrio R57 (N18 184 PS)</td><td>08.2012</td><td>115,600</td><td>8,900</td><td>Private</td><td>Rupperswil AG</td><td class="verdict-ok">Fun, chain and turbo checks</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Abarth Punto</h2>
+  <div class="grid">
+
+    <div class="card best" id="a1">
+      <div><span class="badge best">Good deal</span> <span class="badge family">Abarth</span></div>
+      <h3>FIAT Grande Punto Abarth SuperSport (esseesse) 1.4 T-Jet 180 PS</h3>
+      <div class="price">CHF 8,980</div>
+      <div class="specs">
+        <span><b>First reg.</b> 04.2010</span><span><b>km</b> 121,000</span>
+        <span><b>Gearbox</b> manual</span><span><b>Seller</b> Dealer, Auto Blick Schmittengasse</span>
+        <span><b>Location</b> 5723 Teufenthal AG (about 45 min from Zurich)</span><span><b>MFK</b> 02.02.2026, ab MFK</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> 12 months / 20,000 km engine and gearbox, at extra cost</span>
+      </div>
+      <p>First Swiss hand, all services done, fresh service, limited SS edition with the original 180 PS, special red paint, leather, 18-inch wheels, 8 tyres.</p>
+      <div class="why"><b>Why it is a good deal:</b> this is the pre-2010 T-Jet without MultiAir (the simpler, more robust version of the engine), with the lowest km-to-price ratio of any Abarth Punto live today, first-hand and dealer-sold with an optional warranty. It is CHF 1,000 under the car Ben found while being fully documented.</div>
+      <div class="watch"><b>Watch out for:</b> ask for the cam belt and water pump date (interval 5 years / 100,000 km, not mentioned in the ad). Check the clutch and dual-mass flywheel on a hard test drive, and listen for bearing whine from the M32 gearbox in 5th and 6th. Look for seam rust at door and tailgate edges and bubbling at the rear arches. Test Blue&amp;Me and both window regulators.</div>
+      <div class="value">Value: Grande Punto SS cars are at their price floor and the 180 PS esseesse is starting to be collected. Kept stock and MFK-clean, expect to lose CHF 1,500 to 2,500 over three years.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/fiat-punto-14-16v-turbo-abarth-supersport-180-ps-frisch-ab-mfk-and-frisch-ab-service-20728729" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card" id="a2">
+      <div><span class="badge family">Abarth</span></div>
+      <h3>FIAT Punto Evo Abarth Supersport 180 PS</h3>
+      <div class="price">CHF 9,000 <span class="small">(VHB, negotiable)</span></div>
+      <div class="specs">
+        <span><b>First reg.</b> 2014</span><span><b>km</b> 117,000</span>
+        <span><b>Gearbox</b> manual</span><span><b>Seller</b> Private</span>
+        <span><b>Location</b> 6405 Immensee SZ (Küssnacht am Rigi, about 50 min)</span><span><b>MFK</b> last done 2024, so due again soon</span>
+        <span><b>Accident</b> not stated</span><span><b>Warranty</b> none (private sale)</span>
+      </div>
+      <p>Posted on the day of this search. Fresh service, cam belt 2025, new brakes 2025, 8 tyres on Abarth rims, G-Tech exhaust with Swiss approval sheet, DAB / CarPlay head unit.</p>
+      <div class="watch"><b>Watch out for:</b> this is the MultiAir version. The MultiAir brick fails almost only when the wrong oil was used, so demand receipts showing Fiat-approved 9.55535-S2 oil at every change; a cold check-engine light or missing start-stop is the tell. Exhaust and stereo mods mean an enthusiast owner, which cuts both ways: check for chip tuning (a chipped car eats clutches and flywheels). No current MFK means budget the inspection into the price.</div>
+      <div class="value">Value: the closest live match to the car Ben found (117k vs 85k km) at CHF 1,000 less, and the seller says the price is negotiable.</div>
+      <a class="adlink" href="https://www.tutti.ch/de/vi/schwyz/fahrzeuge/autos/fiat-punto-abarth/82757272" target="_blank" rel="noopener">Open the ad on tutti.ch</a>
+    </div>
+
+    <div class="card" id="a3">
+      <div><span class="badge family">Abarth</span></div>
+      <h3>FIAT Punto Abarth Supersport 180 PS</h3>
+      <div class="price">CHF 7,200</div>
+      <div class="specs">
+        <span><b>First reg.</b> 01.2014</span><span><b>km</b> 172,736</span>
+        <span><b>Gearbox</b> manual</span><span><b>Seller</b> Dealer, Autohaus Neuhausen AG (Google 4.3, 28 reviews)</span>
+        <span><b>Location</b> 8212 Neuhausen am Rheinfall SH (about 40 min)</span><span><b>MFK</b> fresh, ab MFK</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none included (Quality1 offered as add-on)</span>
+      </div>
+      <p>Swiss car, fresh service and MFK, cruise control, painted calipers, 17-inch wheels.</p>
+      <div class="watch"><b>Watch out for:</b> 172,000 km on a MultiAir turbo engine. Expect the clutch, front top mounts and rear wheel bearings to be near the end of their life; check the turbo for shaft play and smoke on overrun. Same oil-history rule as A2. Fresh MFK is worth something but a dealer with no warranty included is telling you something.</div>
+      <div class="value">Value: cheap entry to the 180 PS car, but high-km Abarths are hard to resell. Only worth it if Ben will do the wear items himself.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/fiat-punto-14-16v-turbo-abarth-supersport-top-fahrzeug-frisch-ab-service-und-frisch-ab-mfk-20615452" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+  </div>
+
+  <h2>Mercedes-Benz</h2>
+  <div class="grid">
+
+    <div class="card best" id="m1">
+      <div><span class="badge best">Good deal</span> <span class="badge family">Mercedes</span></div>
+      <h3>Mercedes-Benz C 250 CGI BlueEfficiency (W204, M271 EVO, 204 PS)</h3>
+      <div class="price">CHF 9,900</div>
+      <div class="specs">
+        <span><b>First reg.</b> 2011</span><span><b>km</b> 129,000</span>
+        <span><b>Gearbox</b> automatic (7G-Tronic)</span><span><b>Seller</b> Private</span>
+        <span><b>Location</b> 8048 Zürich-Altstetten</span><span><b>MFK</b> ad says valid to 12/2025, so an inspection is due now</span>
+        <span><b>Accident</b> not stated</span><span><b>Warranty</b> none (private sale)</span>
+      </div>
+      <p>AMG Line, full service records from 2011 to 2026 with the last service on 15.06.2026, 8 tyres, seat heating, cruise control, parking sensors, daily driven.</p>
+      <div class="why"><b>Why it is a good deal:</b> the only W204 in the set with a complete, recent service file, at 129,000 km in the city he lives in. Swiss asking prices for 2011 to 2013 C 250s average CHF 8,450 to 9,350 at 180,000 to 196,000 km, so this one is priced at market with 50,000 km fewer. For a Mercedes mechanic it is the lowest-risk purchase on this page.</div>
+      <div class="watch"><b>Watch out for:</b> the M271 EVO has a simplex timing chain and camshaft adjusters that stretch early (cold-start rattle, then timing codes). Check whether the chain was ever done; if not, price it in, it is a job he can do himself. Direct injection means carbon on the intake valves and a high-pressure fuel pump that can fail around 140,000 km (code P0002). Check the 7G-Tronic oil change history (no dipstick, conductor plate fails around 80 to 150k km if neglected). Look at the rear subframe and the tailgate around the third brake light for rust, and ask if the electric steering lock (ESL) has ever been replaced. One caution: tutti shows the original posting date as 31 May 2025, although the text mentions a service in June 2026, so the seller has been editing an old ad. Message first and confirm it is still for sale before visiting; if it has really been listed for 15 months, that is negotiating room.</div>
+      <div class="value">Value: 2011 to 2013 C 250s still lose a few hundred francs a month but are near their floor at CHF 8,000 to 10,000.</div>
+      <a class="adlink" href="https://www.tutti.ch/de/vi/zuerich/altstetten/fahrzeuge/autos/mercedes-benz-c250-benzin-mit-frisch-mfkservice/81476113" target="_blank" rel="noopener">Open the ad on tutti.ch</a>
+    </div>
+
+    <div class="card caution" id="m2">
+      <div><span class="badge caution">Ask first</span> <span class="badge family">Mercedes</span></div>
+      <h3>Mercedes-Benz CLK 350 Elégance Cabrio 7G-Tronic (A209, M272 V6, 272 PS)</h3>
+      <div class="price">CHF 9,999</div>
+      <div class="specs">
+        <span><b>First reg.</b> 02.2006</span><span><b>km</b> 115,870</span>
+        <span><b>Gearbox</b> automatic (7G-Tronic)</span><span><b>Seller</b> Dealer, Roj Automobile AG (Google 3.6, 209 reviews)</span>
+        <span><b>Location</b> 8153 Rümlang ZH</span><span><b>MFK</b> fresh, ab MFK</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none</span>
+      </div>
+      <p>Swiss car, fresh service and MFK, new front brake discs, black, rear-wheel drive.</p>
+      <div class="watch"><b>Watch out for:</b> treat this as a reject unless the engine number is verified past the balance-shaft fix. A 2006 M272 sits inside the balance-shaft sprocket window (engines built roughly 2005 to early 2007, and 2006 builds also had the idler-gear variant). A worn sprocket throws cam-timing codes on one bank and the fix is engine-out, CHF 3,000 to 8,000 depending on who does it. Ask for an invoice showing it was replaced, or pull the engine number and check it against the Mercedes bulletin, before any money moves. Also: intake manifold swirl-flap arms break around 130 to 160k km (cheap repair kit), test the roof hydraulics cold and warm, check the 7G-Tronic oil history and the parking brake for seizing. A convertible on a daily commute with a young-driver insurance load is also the wrong shape for the brief; it is here because the mileage and price are genuinely good.</div>
+      <div class="value">Value: 20-year-old CLK 350s have finished depreciating (Swiss listings CHF 4,300 to 15,000, buyer's market with visible price cuts). If the balance shaft is proven, this is a lot of car for the money and it will not lose much.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/mercedes-benz-clk-350-elegance-7g-tronic-20767104" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card best" id="m3">
+      <div><span class="badge best">Good deal</span> <span class="badge family">Mercedes</span></div>
+      <h3>Mercedes-Benz C 200 Kompressor Kombi Avantgarde, manual (S204, M271, 184 PS)</h3>
+      <div class="price">CHF 8,500 <span class="small">(was 8,900)</span></div>
+      <div class="specs">
+        <span><b>First reg.</b> 02.2009</span><span><b>km</b> 106,500</span>
+        <span><b>Gearbox</b> 6-speed manual</span><span><b>Seller</b> Private</span>
+        <span><b>Location</b> 5420 Ehrendingen AG (about 30 min)</span><span><b>MFK</b> 11.05.2026, fresh</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none (private sale)</span>
+      </div>
+      <p>Fresh MFK plus a big service in May 2026, rear-wheel drive, estate body.</p>
+      <div class="why"><b>Why it is a good deal:</b> lowest mileage of any Mercedes under CHF 11,000 in the region, manual gearbox (no 7G-Tronic conductor plate, no dual-clutch risk), fresh MFK and service, and the price already dropped by CHF 400. A W204 with the supercharged M271 is the car a Mercedes mechanic can maintain in his sleep, and 184 PS in a light estate is quick enough for a first car without the insurance premium of a 250 PS badge.</div>
+      <div class="watch"><b>Watch out for:</b> M271 Kompressor timing chain and camshaft adjusters (cold-start rattle) and oil pooling in the intercooler from clogged crankcase breather hoses ("almost every M271 has it", cheap parts, tedious labour). Camshaft solenoids can leak oil into the wiring harness; the oil-stop cable is cheap insurance. Rear subframe rust and the ESL steering lock as on every W204. Confirm it is the Kompressor, not the CGI, by the engine bay.</div>
+      <div class="value">Value: near the floor for a 2009 W204; CHF 8,500 today, probably CHF 6,000 to 7,000 in three years if kept tidy.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/mercedes-benz-avantgarde-20511686" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card" id="m4">
+      <div><span class="badge family">Mercedes</span></div>
+      <h3>Mercedes-Benz C 250 CDI Kombi 7G-Tronic (S204, OM651, 204 PS)</h3>
+      <div class="price">CHF 8,900</div>
+      <div class="specs">
+        <span><b>First reg.</b> 03.2012</span><span><b>km</b> 160,000</span>
+        <span><b>Gearbox</b> automatic (7G-Tronic)</span><span><b>Seller</b> Dealer, Garage M. Künzli AG (Google 4.9, 96 reviews)</span>
+        <span><b>Location</b> 8497 Fischenthal ZH (Tösstal, about 50 min)</span><span><b>MFK</b> 13.12.2024, marked ab MFK</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> not stated, ask</span>
+      </div>
+      <p>Seat heating, 8 tyres, rain sensor, start-stop, cruise control. 5 l/100 km on a commute is the point of this car.</p>
+      <div class="watch"><b>Watch out for:</b> the 250 CDI kept the piezo injectors that Mercedes replaced on the 200/220 CDI in 2011, so injector failure is the known risk (CHF 400 to 1,800 depending on how many). Timing chain rattle from about 120k km, thermostat and glow relay are cheap. A diesel with a DPF wants a commute long enough to regenerate; short hops will clog it. 7G-Tronic oil history as always. Rear subframe rust.</div>
+      <div class="value">Value: diesels are falling fastest in Switzerland right now (about minus 6% a year), so buy it to run, not to resell. Whether it makes sense at all depends on the commute: 8 km through town will clog the DPF and the fuel saving disappears; 40 km of motorway each way is exactly what this car is for.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/mercedes-benz-c-250-cdi-7g-tronic-12752848" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card" id="m5">
+      <div><span class="badge family">Mercedes</span></div>
+      <h3>Mercedes-Benz C 350 Elégance 4Matic 7G-Tronic (W204 facelift, M276 V6, 306 PS)</h3>
+      <div class="price">CHF 9,500</div>
+      <div class="specs">
+        <span><b>First reg.</b> 03.2013</span><span><b>km</b> 194,800</span>
+        <span><b>Gearbox</b> automatic (7G-Tronic Plus)</span><span><b>Seller</b> Dealer, TS Autos</span>
+        <span><b>Location</b> 8352 Elsau ZH (near Winterthur)</span><span><b>MFK</b> 30.08.2026, fresh</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none</span>
+      </div>
+      <p>Fresh MFK and service, 8 tyres, second key, all-wheel drive, saloon.</p>
+      <div class="watch"><b>Watch out for:</b> the M276 does not have the M272 balance-shaft problem, but at 195,000 km look for oil leaks at the cam covers and the oil cooler seals, and listen for timing-chain noise on a cold start. Direct injection means carboned intake valves. 4Matic adds a transfer case to inspect. A 306 PS car will cost a young driver noticeably more to insure and 7.4 l/100 km is the brochure number, not the commute number.</div>
+      <div class="value">Value: a lot of engine for CHF 9,500, but a 195k km V6 is a consumable, not a value-holder; it will be hard to resell and it will be the most expensive car here to insure at his age. Only if the drive matters more than the money.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/mercedes-benz-c-350-elegance-4matic-7g-tronic-20762752" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+  </div>
+
+  <h2>BMW</h2>
+  <div class="grid">
+
+    <div class="card caution" id="b1">
+      <div><span class="badge caution">Ask first</span> <span class="badge family">BMW</span></div>
+      <h3>BMW 125i 3-door, manual (F20, N20 2.0 turbo, 218 PS)</h3>
+      <div class="price">CHF 9,100 <span class="small">(was 9,900)</span></div>
+      <div class="specs">
+        <span><b>First reg.</b> 10.2012</span><span><b>km</b> 172,000</span>
+        <span><b>Gearbox</b> 6-speed manual</span><span><b>Seller</b> Private</span>
+        <span><b>Location</b> 8032 Zürich</span><span><b>MFK</b> not stated in the ad, ask</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none (private sale)</span>
+      </div>
+      <p>Urban line, large navigation, tinted rear glass, 8 tyres on two full wheel sets, rear-wheel drive. Price has been cut twice since August.</p>
+      <div class="watch"><b>Watch out for:</b> the N20's plastic timing-chain guides from the 2012 to 2014 build years crumble; a rattle from the front of the engine on start-up is the warning and a skipped chain wrecks the valves. Ask for an invoice showing the chain, guides and tensioner were replaced; without one, budget CHF 1,500 in parts and two days with special tools. Also the electric water pump, valve cover and oil filter housing gaskets, and the F20's rear window regulators.</div>
+      <div class="value">Value: F20 four-cylinders sit at scrap-plus prices and keep sliding; the seller's repeated cuts confirm it. Negotiate hard.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/bmw-125i-ab-chf-180-monat-20688853" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card best" id="b2">
+      <div><span class="badge best">Good deal</span> <span class="badge family">BMW</span></div>
+      <h3>BMW 130i Steptronic (E87, N52 3.0 six, 265 PS)</h3>
+      <div class="price">CHF 6,800</div>
+      <div class="specs">
+        <span><b>First reg.</b> 11.2007</span><span><b>km</b> 195,000</span>
+        <span><b>Gearbox</b> automatic (ZF 6HP)</span><span><b>Seller</b> Dealer, Autopark-Pfäffikon</span>
+        <span><b>Location</b> 8330 Pfäffikon ZH</span><span><b>MFK</b> 23.07.2026, fresh</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none</span>
+      </div>
+      <p>Fresh MFK and service, rear-wheel drive, 5-door.</p>
+      <div class="why"><b>Why it is a good deal:</b> the N52 is the BMW engine to want: port injection, no high-pressure pump, no injector saga, no timing-chain horror story. 265 PS for CHF 6,800 with a fresh MFK is the cheapest genuinely fast car on this page, and a 130i is the last of the naturally aspirated six-cylinder hatchbacks. Even for someone BMW-shy, the wear items (water pump, gaskets, VANOS solenoids) are intermediate jobs with cheap parts.</div>
+      <div class="watch"><b>Watch out for:</b> 195,000 km with a dealer who says little. Electric water pump and thermostat (about 130k km life), valve cover and oil filter housing gaskets (oil on the belt is the dangerous one), pre-2008 lifter tick, eccentric shaft sensor leak. The ZF 6HP mechatronic sleeve leaks and the fluid must have been changed at least once. Check the rear subframe bushings and window regulators. Insurance on a 265 PS car for a young driver will be steep; get the quote before the test drive.</div>
+      <div class="value">Value: be honest about what this is. A 195,000 km car is a consumable, not an asset: 130i prices have flattened at CHF 5,500 to 7,000 for 200k km cars, so it will not lose much in francs, but it also will not be worth anything meaningful when he sells. That contradicts the "holds value" wish; it satisfies the "quick and cheap" one.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/bmw-130i-steptronic-20774492" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card" id="b3">
+      <div><span class="badge family">BMW</span></div>
+      <h3>BMW 125i Cabrio, manual (E88, N52 3.0 six, 218 PS)</h3>
+      <div class="price">CHF 8,400</div>
+      <div class="specs">
+        <span><b>First reg.</b> 04.2012</span><span><b>km</b> 168,000</span>
+        <span><b>Gearbox</b> 6-speed manual</span><span><b>Seller</b> Dealer, Kubi Star Automobile (Google 4.2, 11 reviews)</span>
+        <span><b>Location</b> 8180 Bülach ZH</span><span><b>MFK</b> 27.07.2026, fresh</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none</span>
+      </div>
+      <p>Swiss car, regular service, M package, new brake discs and pads, fresh service and MFK, rear-wheel drive.</p>
+      <div class="watch"><b>Watch out for:</b> same N52 list as the 130i (water pump, gaskets, VANOS solenoids), plus the cabrio roof: run it fully through both ways and check the drains. A 2012 E88 is late in the run, so the N52 revisions are in, but at 168k km the clutch and rear bushings will be tired. Cabrio body means less boot and more wind noise on the commute.</div>
+      <div class="value">Value: E8x six-cylinder cabrios hold at CHF 8,000 to 11,000; sensible money for a manual six.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/bmw-125i-cabrio-20665130" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+  </div>
+
+  <h2>Alternatives he has not looked at</h2>
+  <p class="sub">Picked for the same brief (quick, reliable, holds value, no Golf) and for cheaper young-driver insurance than a six-cylinder.</p>
+  <div class="grid">
+
+    <div class="card best" id="x1">
+      <div><span class="badge best">Good deal</span> <span class="badge family">Ford</span></div>
+      <h3>Ford Fiesta ST-1 1.6 EcoBoost (Mk7, 182 PS)</h3>
+      <div class="price">CHF 6,800</div>
+      <div class="specs">
+        <span><b>First reg.</b> 12.2013</span><span><b>km</b> 108,300</span>
+        <span><b>Gearbox</b> 6-speed manual</span><span><b>Seller</b> Dealer, BMB Autohandel AG</span>
+        <span><b>Location</b> 8340 Hinwil ZH</span><span><b>MFK</b> 01.09.2026, fresh</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none</span>
+      </div>
+      <p>Ford-serviced, Recaro seats, reversing camera, 8 tyres. Price-comparison sites rate this one under market value.</p>
+      <div class="why"><b>Why it is a good deal:</b> the Fiesta ST is quicker than the Abarth in every magazine test, cheaper to insure, cheaper on parts, and this one has 108,000 km, a Ford service history and an MFK from this week for CHF 3,200 less than the car Ben found.</div>
+      <div class="watch"><b>Watch out for:</b> the 2013 to 2015 1.6 EcoBoost has the coolant-loss and cracked-cylinder-head problem (recall added a coolant level sensor; a revised head came in 2016). Check the coolant level and history, white smoke on start, and any overheating story. Also carboned intake valves, wastegate rattle, worn synchros on 1st and 2nd, rear beam bushes and sticking caliper slide pins. Timing belt is due at 10 years, so budget it now.</div>
+      <div class="value">Value: Mk7 STs are at the bottom of their curve (CHF 4,900 to 7,900 for 105 to 217k km in Switzerland), so there is little left to lose. The 2016 ST-2 in Obfelden (CHF 7,700, 155,000 km, 12-month warranty, revised head) is the safer engine if this one has any coolant history.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/ford-fiesta-20771221" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+
+    <div class="card best" id="x2">
+      <div><span class="badge best">Good deal</span> <span class="badge family">Suzuki</span></div>
+      <h3>Suzuki Swift Sport 1.6 (ZC32S, 136 PS)</h3>
+      <div class="price">CHF 7,490</div>
+      <div class="specs">
+        <span><b>First reg.</b> 2013</span><span><b>km</b> 117,700</span>
+        <span><b>Gearbox</b> 6-speed manual</span><span><b>Seller</b> Dealer, SOCARS Autocenter AG</span>
+        <span><b>Location</b> 4512 Bellach SO (about 1 h)</span><span><b>MFK</b> 26.08.2026, fresh</span>
+        <span><b>Accident</b> "unfallfrei" stated</span><span><b>Warranty</b> not stated, ask</span>
+      </div>
+      <p>Swiss car, service-maintained, 8 tyres.</p>
+      <div class="why"><b>Why it is a good deal:</b> the ZC32S is the most reliable car on this page by a distance: naturally aspirated, timing chain, no turbo, no direct injection, owner-rated 4.5/5 with only minor electrical niggles. It is not as fast as the Abarth (136 PS) but it is light and the insurance and running costs are the lowest here. Swift Sport values are flat-to-firm in Switzerland because the newer turbo model still asks CHF 13,000 to 20,000.</div>
+      <div class="watch"><b>Watch out for:</b> clutch bite point, leaking rear dampers, squeaking suspension bushes, a clunky cold gearshift (normal), and any aftermarket exhaust without Swiss approval. Otherwise there is not much to find.</div>
+      <div class="value">Value: best value retention of the hatchbacks. If Ben wants one in canton Zurich, a 2016 with 78,000 km, 12-month warranty and MFK 26.08.2026 is at Autoshow Aathal for CHF 11,900, which a dealer will move on.</div>
+      <a class="adlink" href="https://www.tutti.ch/de/vi/solothurn/fahrzeuge/autos/suzuki-swift-1-6i-16v-sport-mfk-26-08-2026-8-fach/10010779617" target="_blank" rel="noopener">Open the ad on tutti.ch</a>
+    </div>
+
+    <div class="card" id="x3">
+      <div><span class="badge family">Mini</span></div>
+      <h3>Mini Cooper S Cabriolet (R57, N18 1.6 turbo, 184 PS)</h3>
+      <div class="price">CHF 8,900</div>
+      <div class="specs">
+        <span><b>First reg.</b> 08.2012</span><span><b>km</b> 115,600</span>
+        <span><b>Gearbox</b> 6-speed manual</span><span><b>Seller</b> Private, second owner</span>
+        <span><b>Location</b> 5102 Rupperswil AG (about 35 min)</span><span><b>MFK</b> passed 31.08.2026</span>
+        <span><b>Accident</b> none declared</span><span><b>Warranty</b> none (private sale)</span>
+      </div>
+      <p>Chili pack, automatic climate, parking sensors, heated seats. Second hand, MFK from this week.</p>
+      <div class="watch"><b>Watch out for:</b> the N18 fixed the N14's "death rattle" but the chain and guides still wear if oil changes were stretched, so listen on a cold start. Turbo oil-feed line coking, internal water pump, carboned intake valves (clean at 100 to 130k km), plastic thermostat housing, oil filter housing and valve cover gaskets. Test the roof and check the drains.</div>
+      <div class="value">Value: weakest of the alternatives; R56/R57 prices keep falling because the repair bills are real. Buy for fun, not for resale.</div>
+      <a class="adlink" href="https://www.autoscout24.ch/de/d/mini-16i-cooper-s-20768794" target="_blank" rel="noopener">Open the ad on autoscout24.ch</a>
+    </div>
+  </div>
+  <div class="note">
+    <p><b>Also worth a look further away:</b> <a href="https://www.tutti.ch/de/vi/bern/fahrzeuge/autos/mazda-mx-5-2-0/82253038" target="_blank" rel="noopener">Mazda MX-5 NC 2.0, 2006, 72,000 km, CHF 10,000, private, Affoltern im Emmental BE</a> (MFK and service 20.01.2026; the lowest-km NC under budget in Switzerland and the best value-holder of anything on this page, but two seats and rust checks on sills and rear arches are mandatory), and <a href="https://www.autoscout24.ch/de/d/honda-civic-20i-vtec-type-r-plus-champion-20451838" target="_blank" rel="noopener">Honda Civic Type R FN2, 10.2008, 177,000 km, CHF 9,500, Honda dealer, Biglen BE</a> (fresh MFK and service, new springs and exhaust; FN2 checks are 3rd-gear synchro, oil pump chain tensioner and roof-edge rust). Toyota GT86, Peugeot 208 GTi, Seat Leon Cupra and Audi S3 do not exist under CHF 11,000 in Switzerland right now.</p>
+  </div>
+
+  <h2>The Abarth Ben found (85,000 km, CHF 10,000): is it a good deal?</h2>
+  <div class="note">
+    <p><b>Short answer: it is priced at the very top of the market, and only justified if it is a Supersport 180 with a full oil and belt history and no chip.</b> Nothing at 85,000 km showed up on autoscout24 or tutti today, so it may be on Ricardo or Comparis, or already sold. Either way, here is how to judge it.</p>
+    <div class="two">
+      <div>
+        <h3>What the live market says</h3>
+        <ul class="tight">
+          <li>Under CHF 11,000 there are only about 3 Abarth Puntos on autoscout24 and 5 on tutti in the whole of Switzerland today.</li>
+          <li>Asking prices seen: CHF 7,200 at 173k km, CHF 8,980 at 121k km, CHF 9,000 at 117k km, CHF 10,000 at 142k km (Bern), CHF 10,690 at 109k km (Vaud). Over budget: CHF 11,900 at 99,900 km, CHF 12,500 at 107k km.</li>
+          <li>Rule of thumb from that data: about CHF 7k at 170 to 190k km, CHF 9 to 11k at 100 to 120k km, CHF 12 to 14k under 100k km.</li>
+          <li>So CHF 10,000 for 85,000 km is fair-to-slightly-high, not a bargain. There is CHF 500 to 1,000 of room, more if any of the checks below fails.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Questions that decide it</h3>
+        <ul class="tight">
+          <li><b>Which engine?</b> 2008 to 2010 Grande Punto Abarth = plain 1.4 T-Jet (155 PS, or 180 PS esseesse kit). 2010 to 2014 Punto Evo Abarth = 1.4 MultiAir Turbo (163 PS, 180 PS Supersport). The T-Jet is the more robust one; the MultiAir needs the right oil, every time.</li>
+          <li><b>Cam belt and water pump done?</b> Interval 5 years / 100,000 km. At 85k km on a 12-plus-year-old car it is due by age. If no receipt, deduct CHF 800 to 1,200.</li>
+          <li><b>Chipped?</b> Ask outright and read the ECU. A chipped T-Jet eats its clutch and dual-mass flywheel (CHF 1,200 to 2,000).</li>
+          <li><b>Clutch and M32 gearbox:</b> hard pull in 5th and 6th, listen for bearing whine, check 5th engages cleanly under load.</li>
+          <li><b>Rust:</b> rear wheel arches, door and tailgate seams, rear-left corner of the engine bay.</li>
+          <li><b>MFK date and service book:</b> "frisch ab MFK" within the last few months, stamps from a Fiat or Abarth dealer.</li>
+          <li><b>85,000 km in 12+ years is very low.</b> Low-km cars can have perished hoses, seized calipers and a flat-spotted clutch; a low-km car that sat is not better than a 120k km car that was driven and serviced.</li>
+        </ul>
+      </div>
+    </div>
+    <p><b>Compare directly with A1:</b> the Teufenthal SS is CHF 1,000 cheaper, first Swiss hand, MFK in February, all services documented, and a dealer will add a 12-month engine and gearbox warranty. Unless Ben's car is a Supersport with everything proven, A1 is the better Abarth.</p>
+  </div>
+
+  <h2>Known problems by model, at 100,000 to 200,000 km</h2>
+  <div class="two">
+    <div class="note">
+      <h3>Abarth Punto 1.4 T-Jet and MultiAir</h3>
+      <ul class="tight">
+        <li>Engine itself is strong; owners run to 190k km without oil top-ups. Cam belt and water pump every 5 years / 100k km, plugs every 30k km.</li>
+        <li>Clutch is the number one wear item; dual-mass flywheel fails on chipped cars. M32 gearbox bearings on the Grande Punto (whine, 5th gear).</li>
+        <li>MultiAir (Evo, 2010 to 2014): brick failure after wrong oil, documented at 38k, 44k and 65k km. Use only 9.55535-S2 oil.</li>
+        <li>Turbo: isolated early failures and boost-hose leaks; typical life 100 to 150k km.</li>
+        <li>Rust at door, bonnet and tailgate seams, rear arches, exhaust hangers. Blue&amp;Me can drain the battery; window regulators; weak battery gives odd steering and temperature warnings.</li>
+        <li>Parts: cheap and plentiful (shared with Fiat 500 Abarth). Abarth service partners near Zurich include Schloss-Garage Winterthur, Häusermann Zürich and Herrlig-Garage Uitikon.</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>Mercedes engines and gearboxes</h3>
+      <ul class="tight">
+        <li><b>M271 (C 200 K, C 180/200/250 CGI, CLK 200 K, SLK 200 K):</b> simplex timing chain and camshaft adjusters stretch, sometimes under 100k km. Breather hoses clog and oil pools in the intercooler. Cam solenoids leak oil into the harness. CGI: high-pressure pump and carboned intake valves.</li>
+        <li><b>M272 V6 (C 280/350 pre-facelift, CLK 280/350, SLK 280/350, E 280/350):</b> balance-shaft sprocket on engines built roughly 2005 to early 2007, engine-out repair. Intake manifold swirl-flap arms break at 130 to 160k km. 2008 onward is past the sprocket problem.</li>
+        <li><b>M276 V6 (C 350 facelift 2011+):</b> no balance-shaft issue; watch oil cooler seals, cam cover leaks and chain noise at high km.</li>
+        <li><b>OM651 diesel (C 200/220/250 CDI):</b> early piezo injectors fail; 200/220 got better solenoid injectors from 2011, the 250 CDI did not. Chain tensioner and oil-loss recall. DPF needs real driving.</li>
+        <li><b>7G-Tronic (722.9):</b> conductor plate fails from 80k km, needs coding after replacement. Change the fluid every 50 to 100k km regardless of what "lifetime" says.</li>
+        <li><b>7G-DCT (A/B/CLA/GLA):</b> clutch judder, mechatronics at 120 to 170k km; fluid every 60k km. The only A 250 in region under budget was marked "for export" and left out.</li>
+        <li><b>W204 body:</b> electric steering lock (ESL) dies at 8 to 12 years; rear subframe rusts from the inside; rust on tailgate and front wings; parking brake seizes. W203 (pre-2007) rusts everywhere; W211 pre-2006 has SBC brakes; both left off this list.</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>BMW engines and gearboxes</h3>
+      <ul class="tight">
+        <li><b>N52 (125i, 130i, 325i, 328i, 330i to 2010, and xDrive 330s later):</b> the good one. Electric water pump and thermostat around 130k km, valve cover and oil filter housing gaskets, VANOS solenoids, eccentric shaft sensor seal. No direct injection, no high-pressure pump.</li>
+        <li><b>N43 (118i/120i/318i/320i 2007 to 2013):</b> chain guides break up and block the oil pick-up; piezo injectors and the NOx sensor fail and need coding. Widely advised to avoid.</li>
+        <li><b>N53 (325i/330i rear-drive 2007 to 2011):</b> high-pressure pump, leaking injectors, NOx sensor and NOx cat. Worst-quartile reliability.</li>
+        <li><b>N20 (F20 125i, F30 320i/328i 2012 to 2015):</b> plastic chain guides from bad polymer batches, rattle then skipped chain. Needs proof of replacement.</li>
+        <li><b>N13 (F20 116i/118i):</b> same chain-guide family problem.</li>
+        <li><b>N47 diesel (118d/120d/320d 2007 to 2011):</b> chain at the back of the engine, gearbox out to fix, CHF 2,000 to 4,000 preventive. Swirl flaps, DPF. Left off this list.</li>
+        <li><b>ZF 6HP automatic:</b> mechatronic sleeve and adapter seals leak; pan, filter, sleeve and fluid is a known service.</li>
+        <li><b>E87/E90 chassis:</b> rear subframe and trailing-arm bushings, brittle cooling plastics, window regulators, tie rods, broken coil springs.</li>
+        <li>Parts cost is comparable to Mercedes; the tool to buy first is an ISTA/INPA laptop, because injectors and many sensors need coding.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Dealer or private seller? What is different in Switzerland</h2>
+  <div class="two">
+    <div class="note">
+      <h3>Buying from a dealer (Händler)</h3>
+      <ul class="tight">
+        <li><b>Garantie:</b> dealers can include or sell an Occasionsgarantie (typically 12 months / 20,000 km, often engine and gearbox only, sometimes via Quality1). Read what it covers; wear items are excluded.</li>
+        <li><b>Ab MFK / frisch ab MFK:</b> the car passed the cantonal inspection recently. It is a roadworthiness check, not a mechanical guarantee: a car can pass MFK with a stretched timing chain.</li>
+        <li><b>Frisch ab Service:</b> ask for the invoice showing what was actually done. "Service" can mean an oil change.</li>
+        <li>The Occasionsgarantie is voluntary, not a legal right. Statutory Gewährleistung under the Code of Obligations can be, and usually is, excluded in the contract with "ohne Garantie / wie besichtigt"; that exclusion holds unless the seller actively hid a defect. So the paper matters more than the reputation.</li>
+        <li>Prices are higher, but negotiation room of 5 to 10% is normal, more on cars listed for over 60 days.</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>Buying private (Privatverkauf)</h3>
+      <ul class="tight">
+        <li>Cheaper, and for a mechanic who can inspect the car himself it is often the better deal: M1 and M3 above are both private and both have better history than the dealer cars.</li>
+        <li>Private sales in Switzerland almost always exclude Gewährleistung in writing ("wie gesehen", "ohne Garantie", Article 199 of the Code of Obligations) and the exclusion is valid unless the seller lied, so the inspection is entirely on him. Bring a scanner (Xentry or a good OBD tool for Mercedes, INPA for BMW, MultiECUScan for Fiat) and read every module.</li>
+        <li>Ask for the Serviceheft (stamps), all invoices, both keys, the Fahrzeugausweis and the last MFK report (Prüfbericht) with any Mängel listed.</li>
+        <li>Payment: bank transfer at the Strassenverkehrsamt or cash against the signed Fahrzeugausweis; never pay a deposit to "hold" a car sight unseen.</li>
+        <li>Check for an open Eintausch or leasing: the Fahrzeugausweis must be in the seller's name and free of a "Code 178" (halter change block).</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Checklist before money changes hands</h2>
+  <div class="two">
+    <div class="note">
+      <h3>Questions to ask the seller</h3>
+      <ul class="tight">
+        <li>When was the last MFK, and can I see the Prüfbericht?</li>
+        <li>Full service history? Where was it serviced? Can I see the invoices, not just stamps?</li>
+        <li>Timing chain or belt: has it ever been replaced, and when? (Chain on M271, N20, N43; belt on the Abarth.)</li>
+        <li>Automatic gearbox: when was the fluid last changed?</li>
+        <li>Any accident, any repainted panels, any Eintausch or open finance?</li>
+        <li>Is the car chipped or modified, and is every modification entered on the Fahrzeugausweis?</li>
+        <li>Why are you selling, and how long has it been for sale?</li>
+        <li>How many keys, and is the second one coded?</li>
+        <li>Summer and winter wheels included (8-fach bereift)? What condition?</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>Red flags</h3>
+      <ul class="tight">
+        <li>No service book, or stamps without invoices.</li>
+        <li>Imported car (Typenschein X, "Italienisches Fahrzeug", "Direktimport") with no Swiss history: harder to sell on, and often a hidden-damage history.</li>
+        <li>Tuning, lowering or exhaust mods without a Beiblatt or entry in the Fahrzeugausweis: the MFK will fail it.</li>
+        <li>"Für Export", "Bastler", "wird ab Platz verkauft": project cars, not commuter cars.</li>
+        <li>Fresh paint on one panel, mismatched tyre brands, new underbody coating (hides rust), warning lights that were cleared before you arrived (check freeze-frame data).</li>
+        <li>Dealer with no Google reviews, or a "Probefahrt kostet CHF 60" policy.</li>
+        <li>MFK expired more than a few months ago and the seller "can arrange it for a surcharge".</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Running costs for a young driver</h2>
+  <div class="note">
+    <ul class="tight">
+      <li><b>Insurance is the big one, and it can rule out half this page.</b> Comparis (January 2025, 43,877 quotes) found drivers under 25 pay up to CHF 2,361 a year more between the cheapest and dearest insurer, and 18 to 25 year olds pay roughly three times what a 35-year-old pays for liability. On a probationary licence (Führerausweis auf Probe) the loading is heavier still, and some insurers refuse young drivers on cars above roughly 150 kW. A 265 to 306 PS car (130i, C 350, CLK 350) can cost CHF 3,000 to 5,000 a year to insure, which is more than it loses in value. A 184 PS C 200, a 182 PS Fiesta ST, a 180 PS Abarth or a 136 PS Swift Sport will quote far lower. Get real quotes for two or three cars (AXA, Zurich, Mobiliar, Smile) before choosing; every autoscout24 ad has a "Versicherungsprämie berechnen" button. AXA gives a 15% under-26 discount and Mobiliar CleverDrive up to 25% with telematics.</li>
+      <li><b>Teilkasko, not Vollkasko:</b> on a CHF 10,000 car bought with cash the full-cover premium rarely pays for itself. If any of it is financed, the lender will require Vollkasko, which is another reason not to finance a first car.</li>
+      <li><b>Fuel:</b> Abarth real-world 7 to 8 l/100 km, C 200 K about 8, C 250 CGI about 8, C 250 CDI about 5.5, 130i about 9 to 10, C 350 about 10. On a 40 km round-trip commute the diesel saves roughly CHF 600 a year over a V6.</li>
+      <li><b>Cantonal road tax (Verkehrsabgabe):</b> each canton has its own formula (engine size, total weight or CO2), and the Zurich Strassenverkehrsamt has an online calculator per model. Heavier estates and the 3.0 and 3.5 litre cars will cost more per year than the 1.4 Abarth or the Swift; the difference is a few hundred francs, not thousands.</li>
+      <li><b>Tyres:</b> 8-fach bereift (two wheel sets) is worth CHF 800 to 1,500; several cars above include it.</li>
+      <li><b>Budget for year one:</b> whichever car, put CHF 1,500 aside for the first big job (belt on the Abarth, chain on the M271, water pump on the N52) and do it in the first month rather than waiting for it to fail.</li>
+    </ul>
+  </div>
+
+  <h2>Also seen, but not on the shortlist</h2>
+  <div class="note">
+    <ul class="tight">
+      <li><a href="https://www.autoscout24.ch/de/d/fiat-14-t-multiair-abarth-supersp-20763499" target="_blank" rel="noopener">Abarth Punto Supersport 180 PS, 12.2012, 142,000 km, CHF 10,000, private, Niederwangen BE</a>: MFK 15.01.2026, but 142k km at CHF 10k is expensive and it is near Bern.</li>
+      <li><a href="https://www.autoscout24.ch/de/d/fiat-punto-abarth-12171009" target="_blank" rel="noopener">Punto Evo Abarth 163 PS, 06.2012, 108,690 km, CHF 10,690, dealer, Denges VD</a>: belt and pump 2024, 12-month warranty, but 163 PS and 230 km away.</li>
+      <li><a href="https://www.tutti.ch/de/vi/zuerich/fahrzeuge/autos/fiat-grande-punto-abarth-ss-1-4-t-jet-180-ps-aus-1er-hand/82753791" target="_blank" rel="noopener">Grande Punto Abarth SS, 2009, 226,000 km, CHF 5,900, private, Schlieren ZH</a>: first hand and belt done 01.2025, but MFK expired 12.2022 and the mileage is too high.</li>
+      <li><a href="https://www.autoscout24.ch/de/d/mercedes-benz-c-250-coupe-sport-7g-tronic-20648845" target="_blank" rel="noopener">Mercedes C 250 Coupé Sport 7G-Tronic, 02.2013, 164,570 km, CHF 9,990, dealer, Wetzikon ZH</a>: MFK 26.08.2026 and a 12-month warranty included; a real alternative to M1 if he wants the coupé shape, same M271 EVO checks.</li>
+      <li><a href="https://www.tutti.ch/de/vi/zuerich/fahrzeuge/autos/mercedes-benz-slk-350/10010178782" target="_blank" rel="noopener">Mercedes SLK 350, 2006, 112,000 km, CHF 9,999, dealer, Wetzikon ZH</a>: two seats and the M272 balance-shaft window; roof hydraulics are the R171 weak point.</li>
+      <li><a href="https://www.tutti.ch/de/vi/aargau/fahrzeuge/autos/mercedes-benz-c200-cdi-amg-2012-ab-service-und-mfk-07-26/82702187" target="_blank" rel="noopener">Mercedes C 200 CDI AMG, 2012, 162,000 km, CHF 10,900, private first owner, Rekingen AG</a>: the best-documented car found (all services at Mercedes, new DPF 07.2026, MFK 07.2026), but 136 PS is not quick.</li>
+      <li><a href="https://www.tutti.ch/de/vi/zuerich/fahrzeuge/autos/bmw-118i-sport-line-steptronic/10010730133" target="_blank" rel="noopener">BMW 118i Sport Line F20, 2012, 150,900 km, CHF 9,990, dealer, Otelfingen ZH</a>: timing chain already replaced, fresh MFK and service; sensible commuter, but 170 PS is not what he asked for.</li>
+      <li><a href="https://www.autoscout24.ch/de/d/bmw-330i-xdrive-coupe-12839937" target="_blank" rel="noopener">BMW 330i xDrive Coupé, 04.2009, 187,069 km, CHF 9,900, dealer, Rümlang ZH</a>: 272 PS, MFK 24.03.2025 (due again), verify which engine (xDrive cars generally kept the N52) from the VIN before believing anything.</li>
+      <li>Mercedes A 250 AMG Line 4Matic, 2014, 146,000 km, CHF 9,900, Regensdorf: marked "für Export" with a CHF 60 test-drive fee; not recommended.</li>
+      <li>VW Golf, Scirocco and Polo GTI were skipped on request. Old Golfs are not unreliable as such, but Ben's point stands for the 1.4 TSI twincharger (2008 to 2012 chain and piston issues) and the early DSG.</li>
+    </ul>
+  </div>
+
+  <h2>How this list was made</h2>
+  <p class="small">Searches on autoscout24.ch and tutti.ch on 3 September 2026, filtered to CHF 11,000 or less and to cantons ZH, AG, ZG, SH, SZ, TG and SG. Every linked ad was opened and the price, mileage, first registration, seller and MFK details were read from the ad page itself; nothing here is from memory or from a cached search result. Ricardo.ch, carforyou.ch and comparis.ch could not be read by the tools used, so a few in-region Abarths seen only in search snippets there (Winterthur CHF 7,350, Wettingen CHF 5,000, Münchwilen CHF 7,800) are worth a manual look. Reliability notes come from owner forums (abarth-forum.de, fiatforum.com, 1erforum.de, e90-forum.de, benzworld.org, mercedes-forum.com), German buyer guides (gebrauchtwagenberater.de, autobild.de) and specialist workshops (mercedesmedic.com, mercedes-specialist.uk, bmwtuning.co). Swiss price data from autouncle.ch. Insurance figures from Comparis via 20min.ch.</p>
+</main>
+</body>
+</html>
