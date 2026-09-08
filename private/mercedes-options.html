@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ben's buy-today guide: Mercedes C 220 d Swiss Star (Däniken) and nine alternatives near Zürich</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #ffffff; --ink: #1d1f22; --muted: #5d6169; --line: #dcdad3;
+    --accent: #0b5cad; --good: #1e7f4f; --goodbg: #e8f5ec; --warn: #a15c00; --warnbg: #fff4e0;
+    --bad: #a12a2a; --badbg: #fbe9e9; --tag: #ebe9e2;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.5; }
+  main { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; }
+  h2 { font-size: 1.35rem; margin: 40px 0 12px; border-bottom: 2px solid var(--line); padding-bottom: 6px; }
+  h3 { font-size: 1.05rem; margin: 0 0 6px; }
+  p { margin: 0 0 10px; }
+  a { color: var(--accent); }
+  .sub { color: var(--muted); margin-bottom: 18px; }
+  .note { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+  .tldr { background: var(--goodbg); border-color: #bfe3cc; }
+  .alert { background: var(--badbg); border-color: #efc3c3; }
+  .tldr ol, .alert ol { margin: 6px 0 0 20px; padding: 0; }
+  .tldr li, .alert li { margin-bottom: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .card.best { border: 2px solid var(--good); box-shadow: 0 0 0 4px var(--goodbg); }
+  .card.caution { border: 2px solid var(--warn); }
+  .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; }
+  .badge.best { background: var(--good); color: #fff; }
+  .badge.caution { background: var(--warn); color: #fff; }
+  .badge.bad { background: var(--bad); color: #fff; }
+  .badge.family { background: var(--tag); color: var(--muted); }
+  .price { font-size: 1.4rem; font-weight: 700; }
+  .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; font-size: 0.9rem; color: var(--muted); }
+  .specs b { color: var(--ink); font-weight: 600; }
+  .watch { background: var(--warnbg); border-left: 4px solid var(--warn); padding: 8px 10px; border-radius: 6px; font-size: 0.92rem; }
+  .why { background: var(--goodbg); border-left: 4px solid var(--good); padding: 8px 10px; border-radius: 6px; font-size: 0.92rem; }
+  .stop { background: var(--badbg); border-left: 4px solid var(--bad); padding: 8px 10px; border-radius: 6px; font-size: 0.92rem; }
+  .adlink { font-weight: 600; }
+  .actions { margin-top: auto; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 0.9rem; }
+  th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--tag); }
+  .tablewrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--line); }
+  .verdict-good { color: var(--good); font-weight: 700; }
+  .verdict-ok { color: var(--warn); font-weight: 700; }
+  .verdict-bad { color: var(--bad); font-weight: 700; }
+  ul.tight { margin: 4px 0 8px 20px; padding: 0; }
+  ul.tight li { margin-bottom: 4px; }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .small { font-size: 0.85rem; color: var(--muted); }
+  code { background: var(--tag); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  .check { list-style: none; margin: 0; padding: 0; }
+  .check li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .check li:last-child { border-bottom: 0; }
+  .check input { margin-top: 5px; width: 18px; height: 18px; flex: 0 0 18px; }
+  .check .t { font-weight: 700; margin-right: 6px; color: var(--accent); white-space: nowrap; }
+  .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+  .picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; margin: 8px 0 12px; }
+  .pick { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; cursor: pointer; font: inherit; color: var(--ink); line-height: 1.3; }
+  .pick:hover { border-color: var(--accent); }
+  .pick.on { border: 2px solid var(--accent); box-shadow: 0 0 0 3px #d8e6f7; }
+  .pick .n { font-weight: 700; font-size: 0.9rem; display: block; }
+  .pick .m { color: var(--muted); font-size: 0.8rem; }
+  .btn { font: inherit; font-size: 0.85rem; font-weight: 600; background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+  .btn.on { background: var(--good); }
+  .sel { background: var(--card); border: 2px solid var(--accent); border-radius: 12px; padding: 14px 16px; margin: 0 0 14px; }
+  .sel .specs { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .dyn { background: #eef4fb; border-left: 4px solid var(--accent); padding: 8px 10px; border-radius: 6px; font-size: 0.92rem; }
+  @media (max-width: 700px) { h1 { font-size: 1.5rem; } .specs { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ben's buy-today guide: Mercedes near Zürich, CHF 8,000 to 11,000</h1>
+  <p class="sub">Starting point is the <a href="https://www.autoscout24.ch/de/d/mercedes-benz-c-220-d-swiss-star-avantgarde-4matic-9g-tronic-20695839">C 220 d Swiss Star in Däniken (CHF 8,999)</a>. Nine alternatives, all within about 25 km of Zürich, were opened on AutoScout24 the same morning. Everything on this page was read from the live ads and the Kanton Zürich pages on <b>Tuesday 8 September 2026</b>. Prices and availability change daily.</p>
+
+  <h2 id="checklist">1. Today's checklist</h2>
+  <p>Pick the car you are going for. The seller, the address, the opening hours, the nearest plate counter, and the MFK and damage steps below all change with it. Ticks are remembered per car in this browser.</p>
+
+  <div class="picker" id="picker"></div>
+  <div class="sel" id="sel"></div>
+
+  <div class="note">
+    <h3>How plates work today (same for every car)</h3>
+    <p>Kanton Zürich issues the new Fahrzeugausweis and plates <b>at the counter, on the spot</b>, but only with the <b>original</b> Fahrzeugausweis of the car, your ID, and an insurance proof (eVN) that the insurer has already sent electronically. Counters are open <b>Mon and Tue 07:15 to 17:00</b>, Wed to Fri 07:15 to 16:00. Today is Tuesday, so the hard deadline is <b>17:00</b>. Phone +41 43 257 00 00. Road tax is billed by post afterwards, not paid at the counter. Source: <a href="https://www.zh.ch/de/mobilitaet/fahrzeuge-kontrollschilder/fahrzeug-neue-nummer-einloesen.html">zh.ch, Fahrzeug mit neuen Kontrollschildern einlösen</a>.</p>
+  </div>
+
+  <div class="note">
+    <h3 id="cl-title">Timeline</h3>
+    <ul class="check" id="cl"></ul>
+  </div>
+
+  <div class="two">
+    <div class="note">
+      <h3>In your pocket at the StVA counter</h3>
+      <ul class="tight">
+        <li>ID or passport</li>
+        <li>Original Fahrzeugausweis of the car (from the seller, not a photo)</li>
+        <li>eVN confirmation from the insurer (they send it electronically, keep the number)</li>
+        <li>Card or cash for plates and Ausweis fee (not published on the page, budget about CHF 150, confirm at the counter)</li>
+        <li>Kaufvertrag and receipt</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>In your pocket at the seller</h3>
+      <ul class="tight">
+        <li>The ad on the phone, including any damage photos</li>
+        <li>The seller's written answers from this morning</li>
+        <li>Torch, rag, gloves, paint depth gauge, diagnostic tool if you can borrow one</li>
+        <li>Payment method and ID</li>
+        <li>A draft Kaufvertrag (TCS template) in case the seller has none</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="daeniken">2. The Däniken car: what the ad does not say out loud</h2>
+  <div class="hero">
+    <div class="card">
+      <span class="badge caution">Damaged car at a damaged-car price</span>
+      <div class="specs">
+        <div><b>First registration</b><br>06.2018</div>
+        <div><b>Mileage</b><br>146,800 km</div>
+        <div><b>Engine</b><br>Diesel, 170 PS (125 kW), "B6b"</div>
+        <div><b>Gearbox / drive</b><br>9G-Tronic automatic, 4Matic</div>
+        <div><b>Body</b><br>Kombi (S205 estate), dark brown</div>
+        <div><b>Consumption / label</b><br>4.7 l/100 km, energy label B</div>
+        <div><b>MFK</b><br>"Ab MFK: Ja", last MFK 13.12.2024</div>
+        <div><b>Warranty</b><br>None. Dealer offers Quality1 as a paid add-on</div>
+        <div><b>Accident car (ad field)</b><br>"Nein"</div>
+        <div><b>Description says</b><br>"Seitenschaden rechts, siehe Fotos"</div>
+        <div><b>Keys</b><br>2</div>
+        <div><b>Contact</b><br>WhatsApp, mail or Viber only, 078 777 07 75. "Bitte um Voranmeldung"</div>
+      </div>
+      <div class="small">Auto K GmbH, Mühleweg, 4658 Däniken SO. Mon to Fri 09:00 to 11:30 and 13:00 to 18:00, Sat 09:00 to 12:00. Not always on site, so message before driving.</div>
+    </div>
+    <div class="note alert">
+      <h3>Read this before driving to Däniken</h3>
+      <ol>
+        <li><b>The ad contradicts itself.</b> The "Unfallfahrzeug" field says no, the description says right-side damage. The last gallery image shows scrapes along the right front door and a dent with paint damage above the right rear wheel arch. The rear quarter panel is a welded panel, not a bolt-on. That is the one thing that decides whether this is a bargain or a trap.</li>
+        <li><b>The price is the damage.</b> The cheapest undamaged C 220 d 4Matic estate on AutoScout24 today has 247,000 km and asks CHF 7,999. At 146,800 km, CHF 8,999 only makes sense because of the side damage.</li>
+        <li><b>170 PS means the older OM651 2.1-litre engine,</b> not the 194 PS OM654 that the facelift got in 2018. Not a problem, but it changes what to check (timing chain, injector seals, AdBlue system). Confirm the engine on the Fahrzeugausweis.</li>
+        <li><b>Däniken is in Kanton Solothurn, 55 km from Zürich.</b> The car has no plates, so the day needs a plan for getting the Ausweis to a Zürich counter and the plates back to the car. The checklist above spells it out when this car is selected. Every one of the nine alternatives is inside Kanton Zürich and avoids that problem.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="inspect">3. What to check on the car</h2>
+  <p>Order matters. Any declared damage first, then the engine, then the drivetrain, then the paperwork. All ten cars on this page use the same Mercedes OM651 diesel family (1.8 or 2.1 litre), so the engine card applies to every one of them.</p>
+  <div class="dyn" id="drv"></div>
+
+  <div class="grid">
+    <div class="card caution">
+      <span class="badge caution">Decides the deal on the Däniken car</span>
+      <h3>Right-side damage</h3>
+      <ul class="tight">
+        <li><b>Rear quarter panel above the wheel arch:</b> is it a dent in the original panel, or has it been filled and painted? Paint depth gauge on the quarter, the door, and the sill, compared with the left side. Anything over about 200 microns or wildly uneven means filler.</li>
+        <li><b>Inner wheel arch and sill from underneath:</b> creases, fresh underseal, or a bent jacking point mean the hit went deeper than the skin.</li>
+        <li><b>Rear door and tailgate gaps:</b> even gap top to bottom, door closes without lifting, tailgate seals evenly.</li>
+        <li><b>Right front door:</b> scrapes only, or a dent that pulls the door skin? Open it fully and feel along the crease line.</li>
+        <li><b>Wheels and alignment:</b> check the right rear alloy for kerb damage. On the test drive the car must track straight with hands off at 80 km/h. A rear-wheel hit often bends a control arm.</li>
+        <li><b>Glass and trim:</b> right-side window seals, mirror, and the B-pillar cover; replacements without the Mercedes marking suggest a bigger repair.</li>
+        <li><b>Airbag light:</b> must come on with ignition and go off. A side hit can trigger the seat or curtain airbag. If any airbag deployed and the ad says "Unfallfahrzeug: Nein", walk away.</li>
+      </ul>
+      <div class="stop">Get a body shop quote for the quarter panel before agreeing a price. A proper repair and paint on the rear quarter plus door is realistically CHF 2,000 to 4,000, which is your negotiating number. On the undamaged alternatives, use this list anyway on every panel: a cheap Mercedes with a repaint somewhere is normal, a repaint nobody mentioned is not.</div>
+    </div>
+
+    <div class="card">
+      <span class="badge family">Engine, OM651 diesel (all ten cars)</span>
+      <h3>Known OM651 weak points</h3>
+      <ul class="tight">
+        <li><b>Timing chain:</b> cold start rattle for the first two seconds is the sign of a stretched chain. Ask to start it stone cold, so do not let them warm it up before you arrive.</li>
+        <li><b>Injector seals ("black death"):</b> pull the engine cover and look for black tar-like carbon around the injector bases. Also smell for exhaust under the bonnet at idle.</li>
+        <li><b>AdBlue system (2015 and newer cars):</b> check for any AdBlue warning or a start countdown in the cluster. NOx sensors, the tank heater, and the metering unit are the usual expensive failures. Ask when the tank was last filled.</li>
+        <li><b>DPF and EGR:</b> most of these cars have 150,000 to 250,000 km of unknown use. Check for a DPF load reading or at least a limp-free hard acceleration under load without smoke. A regeneration that never completes means short trips.</li>
+        <li><b>Oil leaks:</b> oil cooler seals and the vacuum pump area at the front of the head. Look for wet lower block and sump.</li>
+        <li><b>Turbo:</b> whistle or blue smoke on hard acceleration, and play in the wastegate arm.</li>
+        <li><b>Glow plugs and cold start smoke:</b> white smoke on a cold start that clears is fine, persistent is not.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge family">Drivetrain</span>
+      <h3>Gearboxes and 4Matic</h3>
+      <ul class="tight">
+        <li><b>9G-Tronic and 7G-Tronic (torque converter, C, E, GLK):</b> shifts should be invisible on a gentle drive. Flare between 2 and 3, a thump on downshift to 1 when stopping, or hunting at 50 km/h are the warning signs. Ask for proof of the transmission oil and filter service; Mercedes calls for it around 125,000 km, and at the mileages here it is either done or due.</li>
+        <li><b>7G-DCT (dual clutch, B, CLA, GLA):</b> creep from standstill must be smooth, no judder or shunt in stop-start traffic, no hesitation when going from reverse to drive. Fluid change is due every 60,000 km or so; a DCT with no service history is the expensive one. A clutch actuator or mechatronic unit is a four-figure repair.</li>
+        <li><b>4Matic:</b> listen for a whine that changes with speed and not engine revs. On full lock at walking pace there must be no binding or clunking. Front driveshaft CV boots intact, no clicking on full lock.</li>
+        <li><b>Tyres:</b> all four the same size and ideally the same brand and wear. Mismatched tyres on a 4Matic wear the transfer case. Note the DOT dates.</li>
+        <li><b>Brakes:</b> discs for lips and scoring, and check the electric handbrake (where fitted) releases cleanly.</li>
+        <li><b>Suspension:</b> bounce each corner, listen for knocks over speed bumps.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge family">Electronics and body</span>
+      <h3>Assistance systems the ad promises</h3>
+      <ul class="tight">
+        <li><b>Camera, blind spot, lane keeping, Attention Assist, PDC:</b> switch each one on and confirm it works. A side hit can damage a radar or camera and the ad still lists them as working.</li>
+        <li><b>Diagnostic scan:</b> if you can bring Xentry or a decent scanner, read all modules. Stored crash events in the airbag module (SRS) and a mismatched VIN in any module are deal breakers.</li>
+        <li><b>Electric tailgate, seat heating, navigation, both keys:</b> test each. Two working keys should start the car; one key means budget CHF 300 to 400.</li>
+        <li><b>Water ingress:</b> lift the boot floor and the spare wheel well, and feel the rear footwells.</li>
+        <li><b>Rust:</b> tailgate lower edge, sills behind the plastic covers, and on the older W212 and GLK the front wings and boot lid seams.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge family">Paperwork</span>
+      <h3>Documents that must match</h3>
+      <ul class="tight">
+        <li><b>Fahrzeugausweis:</b> VIN matches the plate on the B-pillar and the windscreen. Note the engine code, Hubraum, Gesamtgewicht, and the number of previous Halter.</li>
+        <li><b>Service book or digital service record (DSB):</b> Mercedes went digital around 2008. Ask the seller to print it or check it yourself at a Mercedes dealer by VIN. Gaps after about 100,000 km are common on cheap cars.</li>
+        <li><b>Last MFK report:</b> read the Mängel list, not just the stamp. "Ab MFK" in an ad only means the seller says it passed recently.</li>
+        <li><b>"CH-Fahrzeug" or import:</b> a Swiss-market car (Swiss Star editions always are) is easier to insure and to sell on. Confirm on the Ausweis.</li>
+        <li><b>Kaufvertrag:</b> mileage, damage described, "Ab MFK", keys, and the price. Sign nothing that says "gekauft wie gesehen" without any damage itemised.</li>
+      </ul>
+    </div>
+
+    <div class="card best">
+      <span class="badge best">Negotiation</span>
+      <h3>How to price it</h3>
+      <div class="why">Every C 220 d 4Matic estate on the market under CHF 12,000 today is either damaged or past 240,000 km, so the Däniken car's price is the damage, nothing else. The nine alternatives are all undamaged (per the ads) but older or smaller. If the Däniken quarter panel is skin-deep and the gearbox has had its oil service, CHF 8,999 is defensible. If not, the B 220 CDI Swiss Star in Nürensdorf with a July 2026 MFK is the cleanest same-day buy on this page.</div>
+    </div>
+  </div>
+
+  <h2 id="alternatives">4. Nine alternatives near Zürich</h2>
+  <p>Search: AutoScout24, Mercedes-Benz, CHF 7,000 to 11,000, within 15 km of 8001 Zürich (82 results), plus the Wetzikon C 220 d from a C-Class search. Kept: diesels from 2011 onwards with no declared accident and a realistic chance of being driven home today. Dropped: petrol V6 and V8 cars, anything older than 2011, declared accident cars, and anything without an MFK in the last three years unless it was very cheap. Click "Use in checklist" to load a car into section 1.</p>
+
+  <div class="grid" id="alts"></div>
+
+  <div class="note">
+    <h3>Price context: cars that did not make the list but tell you what the market is</h3>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Car</th><th>Year</th><th>km</th><th>Price CHF</th><th>Where</th><th>Why it is here</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.autoscout24.ch/de/d/20669057">C 220 d 4Matic Kombi, 194 PS</a></td><td>12.2019</td><td>260,474</td><td>9,900</td><td>RS Automobile, 8105 Regensdorf</td><td class="verdict-ok">Also "Seitenschaden hinten rechts", declared as accident car, MFK 15.01.2026. Proof of what a damaged C 220 d 4Matic sells for.</td></tr>
+        <tr><td><a href="https://www.autoscout24.ch/de/d/20554397">C 250 d 4Matic, 204 PS</a></td><td>10.2015</td><td>188,000</td><td>10,000 (was 11,900)</td><td>Private, 6048 Horw LU</td><td class="verdict-good">Ab MFK 17.11.2025, no accident. The cleanest 4Matic diesel estate near the budget, but 50 km away in Luzern.</td></tr>
+        <tr><td><a href="https://www.autoscout24.ch/de/d/20131654">C 220 BlueTEC AMG Line, 170 PS, rear-wheel drive</a></td><td>11.2014</td><td>203,000</td><td>10,990</td><td>FALG AG, 4600 Olten SO</td><td class="verdict-ok">Ab MFK 15.01.2026, no accident. Same Solothurn plate problem as Däniken.</td></tr>
+        <tr><td><a href="https://www.autoscout24.ch/de/d/20801908">E 250 BlueTEC Avantgarde 4Matic, 204 PS</a></td><td>01.2016</td><td>269,800</td><td>10,700</td><td>Auto Macchi, 8304 Wallisellen</td><td class="verdict-ok">Ab MFK 14.03.2025, no accident, but 270,000 km.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="small">Sources for the admin steps: <a href="https://www.zh.ch/de/mobilitaet/fahrzeuge-kontrollschilder/fahrzeug-neue-nummer-einloesen.html">zh.ch, Fahrzeug mit neuen Kontrollschildern einlösen</a> and <a href="https://www.zh.ch/de/mobilitaet/verkehrsabgaben/verkehrsabgabe-auto-kleinbus.html">zh.ch, Verkehrsabgabe für Auto und Kleinbus</a>. Travel times are rough estimates from central Zürich by car. Young-driver insurance figures are not quoted here on purpose: get three phone quotes.</p>
+  </div>
+</main>
+
+<script>
+(function () {
+  var STVA = {
+    albisguetli: { name: "Zürich-Albisgütli", addr: "Uetlibergstrasse 301, 8036 Zürich" },
+    regensdorf:  { name: "Regensdorf", addr: "Riedthofstrasse 192, 8105 Regensdorf" },
+    bassersdorf: { name: "Bassersdorf", addr: "Grindelstrasse 22, 8303 Bassersdorf" },
+    buelach:     { name: "Bülach", addr: "Schützenmattstrasse 120, 8180 Bülach" },
+    hinwil:      { name: "Hinwil", addr: "Studbachstrasse 8, 8340 Hinwil" },
+    winterthur:  { name: "Winterthur", addr: "Taggenbergstrasse 1, 8408 Winterthur" }
+  };
+
+  var CARS = [
+    {
+      id: "20695839", url: "https://www.autoscout24.ch/de/d/mercedes-benz-c-220-d-swiss-star-avantgarde-4matic-9g-tronic-20695839",
+      name: "C 220 d Swiss Star Avantgarde 4Matic 9G-Tronic", short: "C 220 d 4Matic Kombi (Däniken)", body: "Kombi",
+      price: "8,999", year: "06.2018", km: "146,800", ps: "170", gearbox: "9G-Tronic", drive: "4Matic",
+      mfkAb: true, mfkLast: "13.12.2024", accident: "Nein", damage: "right-side damage (front door scrapes, dent above the rear right wheel arch), while the Unfallfahrzeug field says Nein",
+      warranty: false, sellerType: "dealer", seller: "Auto K GmbH", addr: "Mühleweg, 4658 Däniken SO", phone: "078 777 07 75 (WhatsApp, mail or Viber only, no calls)",
+      hours: "Tue 09:00 to 11:30 and 13:00 to 18:00, not always on site, message first", travel: "about 55 km, 45 min by car on the A1, or Zürich HB to Däniken SBB in about 45 min",
+      canton: "SO", stva: "regensdorf", stvaNote: "Regensdorf is right by the A1 on the way back from Däniken; Albisgütli if you come by train into Zürich HB",
+      gap: "The car is in Kanton Solothurn with no plates, and the Zürich counter is 55 km away. Realistic options: (A) buy in the morning, take the train back to Zürich with the original Ausweis, get the plates, train back to Däniken, fit them, drive home; about three hours of travel, so leave Däniken by 13:00. (B) Buy today, dealer keeps the car, plates at Regensdorf from 07:15 tomorrow, collect tomorrow morning. (C) Ask whether the dealer delivers to Zürich on garage plates for a fee.",
+      badge: "caution", tag: "The starting point", why: "Newest 4Matic estate for the money by a wide margin, and the lowest mileage of any damaged C 220 d on the market.", watch: "Side damage decides it. See section 2 and the damage card in section 3."
+    },
+    {
+      id: "20374899", url: "https://www.autoscout24.ch/de/d/20374899",
+      name: "B 220 CDI Swiss Star Edition 4Matic 7G-DCT", short: "B 220 CDI Swiss Star 4Matic (Nürensdorf)", body: "B-Class hatch",
+      price: "8,890", year: "07.2016", km: "178,570", ps: "177", gearbox: "7G-DCT", drive: "4Matic",
+      mfkAb: true, mfkLast: "23.07.2026", accident: "Nein", damage: "",
+      warranty: false, sellerType: "dealer", seller: "Auto Alpa GmbH (4.0, 24 reviews)", addr: "Alte Winterthurerstrasse 11, 8309 Nürensdorf ZH", phone: "044 841 19 00, WhatsApp 076 226 19 00",
+      hours: "Tue 09:00 to 18:30 (closed 12:00 to 13:00)", travel: "about 15 km, 20 min by car; S-Bahn to Bassersdorf then bus",
+      canton: "ZH", stva: "bassersdorf", stvaNote: "Bassersdorf counter is about 3 km from the dealer",
+      gap: "Seller and counter are 3 km apart. Buy, walk or get a lift to the Bassersdorf counter with the Ausweis, come back with plates, drive home. Ask the dealer whether they will bring the car over on their garage plates; at this distance most will.",
+      badge: "best", tag: "Cleanest same-day buy", why: "MFK from July 2026, 4Matic, the same 2.1 OM651 as the Däniken car, Swiss Star edition, leather, seat heating, blind spot and lane assist per the ad, and the seller is 3 km from a plate counter.", watch: "7G-DCT dual clutch: check creep, judder and the fluid service history. It is a tall hatchback, not an estate."
+    },
+    {
+      id: "20322182", url: "https://www.autoscout24.ch/de/d/20322182",
+      name: "B 220 CDI 7G-DCT", short: "B 220 CDI, 128,400 km (Nürensdorf)", body: "B-Class hatch",
+      price: "9,900", year: "05.2014", km: "128,400", ps: "170", gearbox: "7G-DCT", drive: "front-wheel drive",
+      mfkAb: true, mfkLast: "04.10.2024", accident: "Nein", damage: "",
+      warranty: false, sellerType: "dealer", seller: "Auto Alpa GmbH (4.0, 24 reviews)", addr: "Alte Winterthurerstrasse 11, 8309 Nürensdorf ZH", phone: "044 841 19 00, WhatsApp 076 226 19 00",
+      hours: "Tue 09:00 to 18:30 (closed 12:00 to 13:00)", travel: "about 15 km, 20 min by car; S-Bahn to Bassersdorf then bus",
+      canton: "ZH", stva: "bassersdorf", stvaNote: "Bassersdorf counter is about 3 km from the dealer",
+      gap: "Seller and counter are 3 km apart. Buy, walk or get a lift to the Bassersdorf counter with the Ausweis, come back with plates, drive home. Ask the dealer whether they will bring the car over on their garage plates.",
+      badge: "family", tag: "Lowest mileage on the page", why: "128,400 km is 50,000 less than anything else here, with rear camera, leather steering wheel and seat heating per the ad. Same dealer as the Swiss Star, so you can see both in one visit.", watch: "Front-wheel drive only. MFK is from October 2024, so expect a call-up within a year. CHF 1,000 more than the newer 4Matic next to it, negotiate."
+    },
+    {
+      id: "20528570", url: "https://www.autoscout24.ch/de/d/20528570",
+      name: "C 220 BlueTEC Exclusive 7G-Tronic", short: "C 220 BlueTEC (Rümlang)", body: "C-Class",
+      price: "10,900", year: "03.2016", km: "213,000", ps: "170", gearbox: "7G-Tronic", drive: "rear-wheel drive",
+      mfkAb: true, mfkLast: "", accident: "Nein", damage: "",
+      warranty: false, sellerType: "dealer", seller: "Auto Garmian (4.6, 228 reviews)", addr: "Riedackerstrasse 17, 8153 Rümlang ZH", phone: "078 645 55 55 (also WhatsApp), 044 554 95 54",
+      hours: "Tue 09:30 to 18:30", travel: "about 12 km, 15 min by car; S-Bahn to Rümlang",
+      canton: "ZH", stva: "regensdorf", stvaNote: "Regensdorf counter is about 5 km from the dealer",
+      gap: "Seller and counter are 5 km apart. Buy, get to Regensdorf with the Ausweis (bus, taxi or the dealer), come back with plates, drive home.",
+      badge: "family", tag: "Same model, no 4Matic", why: "A W205 C 220 diesel like the Däniken car, 'frisch ab MFK und Service' per the ad, part leather, navigation, rear camera, PDC. Well-reviewed dealer 15 minutes from the city.", watch: "213,000 km and the highest price on the page. Rear-wheel drive, not 4Matic. Ask for the MFK date in writing, the ad does not show it."
+    },
+    {
+      id: "20801926", url: "https://www.autoscout24.ch/de/d/20801926",
+      name: "C 220 d Avantgarde 4Matic 7G-Tronic", short: "C 220 d 4Matic Kombi (Wetzikon)", body: "Kombi",
+      price: "7,999", year: "08.2016", km: "247,000", ps: "170", gearbox: "7G-Tronic", drive: "4Matic",
+      mfkAb: false, mfkLast: "24.04.2023", accident: "Nein", damage: "",
+      warranty: false, sellerType: "dealer", seller: "Farhat-Automobile", addr: "Riedstrasse 6, 8620 Wetzikon ZH", phone: "079 231 08 80, sales 077 996 72 62",
+      hours: "Tue 09:00 to 12:00 and 13:00 to 18:00", travel: "about 25 km, 30 min by car; S-Bahn to Wetzikon",
+      canton: "ZH", stva: "hinwil", stvaNote: "Hinwil counter is about 6 km from the dealer",
+      gap: "Seller and counter are 6 km apart. Buy, get to Hinwil with the Ausweis, come back with plates, drive home.",
+      badge: "caution", tag: "Cheapest undamaged C 220 d 4Matic estate", why: "The exact same body, engine and drivetrain as the Däniken car, no declared damage, CHF 1,000 cheaper, inside Kanton Zürich.", watch: "247,000 km, and the last MFK was April 2023, so it is not 'ab MFK'. Budget for an MFK soon and check the DPF and gearbox hard. Only two keys? Ask."
+    },
+    {
+      id: "20781547", url: "https://www.autoscout24.ch/de/d/20781547",
+      name: "GLA 220 CDI AMG Line 4Matic 7G-DCT", short: "GLA 220 CDI AMG Line 4Matic (Volketswil)", body: "GLA crossover",
+      price: "10,490", year: "06.2014", km: "168,000", ps: "170", gearbox: "7G-DCT", drive: "4Matic",
+      mfkAb: true, mfkLast: "19.06.2023", accident: "Nein", damage: "",
+      warranty: true, sellerType: "dealer", seller: "Auto Salon Volketswil AG (4.8, 441 reviews)", addr: "Javastrasse 2, 8604 Volketswil ZH", phone: "044 442 30 00",
+      hours: "Tue 09:00 to 12:00 and 13:15 to 19:00", travel: "about 15 km, 20 min by car; S-Bahn to Schwerzenbach then bus",
+      canton: "ZH", stva: "hinwil", stvaNote: "Hinwil and Bassersdorf counters are both about 10 km from the dealer",
+      gap: "Seller and counter are about 10 km apart. Buy, get to Hinwil or Bassersdorf with the Ausweis, come back with plates, drive home. A dealer this size usually handles the Einlösung for you for a fee; ask.",
+      badge: "family", tag: "Warranty included, big dealer", why: "CH-Fahrzeug, 4Matic, AMG Line, and 'Garantie: Ja' per the ad from the best-reviewed dealer on this page. The dealer is open until 19:00 today.", watch: "Ad says 'Ab MFK' but the last MFK date is June 2023; get that in writing and expect a call-up. 7G-DCT. Ask exactly what the warranty covers and for how long."
+    },
+    {
+      id: "20508308", url: "https://www.autoscout24.ch/de/d/20508308",
+      name: "CLA Shooting Brake 200 CDI AMG Line 4Matic 7G-DCT", short: "CLA Shooting Brake 200 CDI 4Matic (Bachenbülach)", body: "CLA Shooting Brake",
+      price: "9,800", year: "12.2015", km: "164,300", ps: "136", gearbox: "7G-DCT", drive: "4Matic",
+      mfkAb: true, mfkLast: "", accident: "Nein", damage: "",
+      warranty: true, sellerType: "dealer", seller: "Auto-Petri GmbH (4.5, 93 reviews)", addr: "Kasernenstrasse 4d, 8184 Bachenbülach ZH", phone: "044 501 70 09, WhatsApp 076 702 50 27",
+      hours: "Tue 09:00 to 12:30 and 14:00 to 18:00", travel: "about 20 km, 25 min by car; S-Bahn to Bülach",
+      canton: "ZH", stva: "buelach", stvaNote: "Bülach counter is about 2 km from the dealer",
+      gap: "Seller and counter are 2 km apart, the shortest hop on this page. Buy, walk to the Bülach counter with the Ausweis, come back with plates, drive home.",
+      badge: "family", tag: "Estate shape, warranty, counter next door", why: "A small estate with 4Matic, AMG Line, 'Ab MFK' and 'Garantie: Ja' per the ad, and the plate counter is two kilometres away.", watch: "136 PS 1.8 OM651, noticeably slower than the 170 PS cars. 7G-DCT. MFK date not shown in the ad, ask."
+    },
+    {
+      id: "20708488", url: "https://www.autoscout24.ch/de/d/20708488",
+      name: "GLA 200 CDI 4Matic", short: "GLA 200 CDI 4Matic, private (Volketswil)", body: "GLA crossover",
+      price: "10,000", year: "06.2015", km: "158,000", ps: "136", gearbox: "7G-DCT", drive: "4Matic",
+      mfkAb: true, mfkLast: "25.08.2026", accident: "Nein", damage: "",
+      warranty: false, sellerType: "private", seller: "Private seller (Adis)", addr: "8604 Volketswil ZH (exact address by phone)", phone: "076 388 48 66",
+      hours: "private seller, by arrangement", travel: "about 15 km, 20 min by car",
+      canton: "ZH", stva: "hinwil", stvaNote: "Hinwil and Bassersdorf counters are both about 10 km away",
+      gap: "Private sale. If the seller's plates are still on the car, the seller can drive it to the counter with you; otherwise you take the Ausweis to Hinwil or Bassersdorf and come back with plates.",
+      badge: "family", tag: "Freshest MFK of all, private", why: "MFK from 25 August 2026, two weeks old, so the car has just been checked. 158,000 km, 4Matic, 8 wheels, heated seats and cruise control per the ad.", watch: "Private seller: no warranty, no dealer paperwork, bring the TCS contract, pay by bank transfer at the seller's e-banking. 136 PS. 7G-DCT. Negotiate, private asking prices move."
+    },
+    {
+      id: "20757898", url: "https://www.autoscout24.ch/de/d/20757898",
+      name: "GLK 220 CDI 4Matic 7G-Tronic", short: "GLK 220 CDI 4Matic (Dietikon)", body: "GLK SUV",
+      price: "8,900", year: "12.2012", km: "215,000", ps: "170", gearbox: "7G-Tronic", drive: "4Matic",
+      mfkAb: true, mfkLast: "28.08.2026", accident: "Nein", damage: "",
+      warranty: false, sellerType: "dealer", seller: "Sportgarage Dietikon GmbH (4.7, 95 reviews)", addr: "Bergstrasse 10a, 8953 Dietikon ZH", phone: "044 741 75 15, 079 629 58 15",
+      hours: "Tue 07:30 to 12:00 and 13:00 to 18:00", travel: "about 12 km, 20 min by car; S-Bahn to Dietikon",
+      canton: "ZH", stva: "albisguetli", stvaNote: "Albisgütli and Regensdorf counters are both about 10 km from the dealer",
+      gap: "Seller and counter are about 10 km apart. Buy, get to Albisgütli or Regensdorf with the Ausweis, come back with plates, drive home. The dealer opens at 07:30, so this can be the earliest start of the day.",
+      badge: "family", tag: "MFK ten days old, torque-converter automatic", why: "MFK from 28 August 2026, 4Matic, the conventional 7G-Tronic rather than a dual clutch, and a well-reviewed garage that opens at 07:30.", watch: "2012 and 215,000 km, the oldest and highest-mileage 4Matic here. GLK is thirsty compared with the C-Class. Check the front wings for rust."
+    },
+    {
+      id: "20571138", url: "https://www.autoscout24.ch/de/d/20571138",
+      name: "E 250 CDI BlueEfficiency Elegance 4Matic", short: "E 250 CDI 4Matic, private (Zürich 8048)", body: "E-Class",
+      price: "9,500", year: "11.2011", km: "152,000", ps: "204", gearbox: "7G-Tronic", drive: "4Matic",
+      mfkAb: true, mfkLast: "10.03.2026", accident: "Nein", damage: "",
+      warranty: false, sellerType: "private", seller: "Private seller", addr: "8048 Zürich-Altstetten (exact address by phone)", phone: "076 346 75 76",
+      hours: "private seller, by arrangement", travel: "inside the city, 10 min",
+      canton: "ZH", stva: "albisguetli", stvaNote: "Albisgütli counter is about 5 km from Altstetten",
+      gap: "Private sale inside the city, 5 km from the Albisgütli counter. If the seller's plates are still on, the seller can drive it there with you; otherwise tram to Albisgütli with the Ausweis and back with plates.",
+      badge: "family", tag: "Most car, in the city", why: "204 PS 2.1 OM651, 4Matic, 152,000 km, MFK from March 2026, and it is in Zürich, so the whole day happens inside the city.", watch: "2011 W212, the oldest car here. Private seller: no warranty, bring the TCS contract. Check the rear subframe and the wiring harness under the boot floor for corrosion, and the 7G-Tronic for a hard 2 to 1 downshift."
+    }
+  ];
+
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c]; }); };
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  var current = store.get("ben_car_sel") || CARS[0].id;
+
+  function byId(id) { for (var i = 0; i < CARS.length; i++) if (CARS[i].id === id) return CARS[i]; return CARS[0]; }
+
+  function mfkText(c) {
+    if (c.mfkAb && c.mfkLast) {
+      var y = parseInt(c.mfkLast.slice(-4), 10);
+      if (y >= 2026) return "Last MFK " + c.mfkLast + ", so the car has just been inspected. Keep the report in the glovebox. Zürich does not demand a new inspection on the change of owner for a car under 15 years old.";
+      return "Last MFK " + c.mfkLast + " (ad says 'Ab MFK'). Zürich does not demand a new inspection on the change of owner for a car under 15 years old, but the next call-up letter is due within about a year. Read the Mängel list on the report.";
+    }
+    if (c.mfkAb) return "Ad says 'Ab MFK' but shows no date. Ask for the date and the report in writing before you pay. Zürich does not demand a new inspection on the change of owner for a car under 15 years old.";
+    return "Not 'ab MFK': last MFK " + (c.mfkLast || "unknown") + ". You can still register it today (the car is under 15 years old), but expect the StVA call-up soon. Budget CHF 100 to 150 for the inspection plus whatever it finds, and use that in the price.";
+  }
+
+  function steps(c) {
+    var st = STVA[c.stva];
+    var contactAsk = "Ask: is the car still available, can I come today, and please send a photo of both sides of the Fahrzeugausweis plus the service record. You need the Stammnummer and Typengenehmigung from the Ausweis for insurance quotes. Ask whether the Ausweis is currently deposited (annulliert). If they refuse to send it, that is a warning sign on its own.";
+    var dmg = c.damage
+      ? "<b>Ask two damage questions in writing.</b> The ad admits " + esc(c.damage) + ". (a) Was it reported to an insurer, and is there a Schadengutachten or repair quote? (b) Why does the ad say 'Unfallfahrzeug: Nein'? Keep the chat as evidence."
+      : "<b>Ask for 'unfallfrei' and 'keine Vorschäden' in writing.</b> The ad says no accident. Ask whether any panel has been repainted, whether there are open recalls, and how many previous owners. Keep the chat; it goes into the Kaufvertrag.";
+    var pay = c.sellerType === "dealer"
+      ? "Get a written Kaufvertrag that lists the mileage, MFK status, " + (c.damage ? "the declared damage, " : "'unfallfrei', ") + "the keys, and " + (c.warranty ? "exactly what the warranty covers and for how long" : "'keine Garantie' if that is the deal") + ". Pay by bank transfer or card with a receipt. Take the original Fahrzeugausweis, service book, all keys."
+      : "Private sale: bring the TCS Kaufvertrag template, fill in mileage, MFK status, 'unfallfrei', keys, price. Pay by bank transfer from the seller's e-banking screen, not cash. Take the original Fahrzeugausweis, service book, all keys. There is no warranty in a private sale, so the inspection in section 3 is the only protection you get.";
+    return [
+      ["Now", "<b>Contact " + esc(c.seller) + ": " + esc(c.phone) + ".</b> " + contactAsk],
+      ["Now", dmg],
+      ["09:00", "<b>Insurance: call, do not use web forms.</b> Three quotes by phone (Mobiliar, AXA, Zurich, Smile, Allianz are the usual suspects) for a " + esc(c.year.slice(-4)) + " " + esc(c.name) + ", and tell each one you need the elektronischer Versicherungsnachweis at the Strassenverkehrsamt Zürich today. Haftpflicht is mandatory. At Ben's age the young-driver loading is large and varies a lot between insurers. Ask for the eVN confirmation number by SMS or mail."],
+      ["09:00", "<b>Teilkasko or Vollkasko, decide before the eVN goes out.</b>" + (c.damage ? " If Vollkasko: tell the insurer about the existing damage and send the ad photos, so it is recorded as a Vorschaden and a later claim is not refused." : " At this price and age Teilkasko is the usual choice; Vollkasko only if the premium is sane.")],
+      ["10:00", "<b>Go to the seller: " + esc(c.addr) + ".</b> " + esc(c.travel) + ". Open today: " + esc(c.hours) + ". Bring the pocket list below. Do the inspection in section 3 and a test drive of at least 20 minutes including motorway."],
+      ["11:30", "<b>Negotiate and pay.</b> " + pay],
+      ["13:00", "<b>Confirm the eVN has arrived.</b> Call +41 43 257 00 00 with the Stammnummer. If the insurer has not sent it, nothing else today works."],
+      ["14:00", "<b>Plates: Strassenverkehrsamt " + esc(st.name) + ", " + esc(st.addr) + ", before 17:00.</b> " + esc(c.stvaNote) + ". Bring ID, the original Fahrzeugausweis, and money for plates and the new Ausweis. You walk out with plates and the new Fahrzeugausweis."],
+      ["15:30", "<b>Get the plates onto the car.</b> " + esc(c.gap)],
+      ["Later", "<b>Road tax (Verkehrsabgabe) is not paid at the counter.</b> Kanton Zürich bills it by post after registration, pro rata for the rest of the year, then annually in November. It depends on Hubraum and Gesamtgewicht; run the <a href=\"https://www.zh.ch/de/mobilitaet/verkehrsabgaben/verkehrsabgabe-auto-kleinbus.html\">calculator</a> with the numbers from the Fahrzeugausweis. The A/B label rebate only covers the first four years, so it no longer applies to any car on this page. Expect a few hundred francs a year."],
+      ["Later", "<b>MFK.</b> " + esc(mfkText(c))]
+    ];
+  }
+
+  function renderPicker() {
+    var html = "";
+    CARS.forEach(function (c) {
+      html += "<button class=\"pick" + (c.id === current ? " on" : "") + "\" data-id=\"" + c.id + "\"><span class=\"n\">" + esc(c.short) + "</span><span class=\"m\">CHF " + esc(c.price) + ", " + esc(c.year.slice(-4)) + ", " + esc(c.km) + " km</span></button>";
+    });
+    $("#picker").innerHTML = html;
+  }
+
+  function renderSel(c) {
+    var st = STVA[c.stva];
+    $("#sel").innerHTML =
+      "<span class=\"badge " + c.badge + "\">" + esc(c.tag) + "</span> " +
+      "<h3 style=\"margin-top:6px\">" + esc(c.name) + ", CHF " + esc(c.price) + " <a class=\"adlink\" href=\"" + c.url + "\">(ad " + c.id + ")</a></h3>" +
+      "<div class=\"specs\">" +
+      "<div><b>Year / km</b><br>" + esc(c.year) + ", " + esc(c.km) + " km</div>" +
+      "<div><b>Engine / gearbox / drive</b><br>" + esc(c.ps) + " PS, " + esc(c.gearbox) + ", " + esc(c.drive) + "</div>" +
+      "<div><b>MFK</b><br>" + (c.mfkAb ? "Ab MFK" : "not ab MFK") + (c.mfkLast ? ", last " + esc(c.mfkLast) : ", no date in ad") + "</div>" +
+      "<div><b>Accident (ad) / warranty</b><br>" + esc(c.accident) + (c.damage ? " but damage declared" : "") + " / " + (c.warranty ? "yes" : "none") + "</div>" +
+      "<div><b>Seller</b><br>" + esc(c.seller) + "<br>" + esc(c.addr) + "</div>" +
+      "<div><b>Open today</b><br>" + esc(c.hours) + "</div>" +
+      "<div><b>Nearest plate counter</b><br>StVA " + esc(st.name) + ", " + esc(st.addr) + "</div>" +
+      "</div>" +
+      "<div class=\"why\" style=\"margin-top:8px\">" + esc(c.why) + "</div>" +
+      "<div class=\"watch\" style=\"margin-top:8px\">" + esc(c.watch) + "</div>";
+  }
+
+  function renderChecklist(c) {
+    $("#cl-title").textContent = "Timeline for the " + c.short;
+    var html = "";
+    steps(c).forEach(function (s, i) {
+      var key = "ben_car_" + c.id + "_" + i;
+      html += "<li><input type=\"checkbox\" data-key=\"" + key + "\"" + (store.get(key) === "1" ? " checked" : "") + "><span><span class=\"t\">" + esc(s[0]) + "</span>" + s[1] + "</span></li>";
+    });
+    $("#cl").innerHTML = html;
+  }
+
+  function renderDrv(c) {
+    var g = c.gearbox === "7G-DCT"
+      ? "dual-clutch 7G-DCT: the creep, judder and fluid-service points in the drivetrain card are the ones that matter"
+      : c.gearbox + " torque-converter automatic: ask for the 125,000 km oil and filter service proof";
+    $("#drv").innerHTML = "<b>Selected car:</b> " + esc(c.name) + ", " + esc(c.ps) + " PS OM651, " + esc(g) + ". Drive: " + esc(c.drive) + (c.drive === "4Matic" ? ", so do the transfer case and tyre checks." : ", so skip the 4Matic items.") + (c.damage ? " Declared damage: " + esc(c.damage) + ", start with the damage card." : " No damage declared: still run the paint gauge over every panel.");
+  }
+
+  function renderAlts() {
+    var html = "";
+    CARS.slice(1).forEach(function (c, i) {
+      var st = STVA[c.stva];
+      html += "<div class=\"card " + (c.badge === "family" ? "" : c.badge) + "\" id=\"a" + (i + 1) + "\">" +
+        "<span class=\"badge " + c.badge + "\">" + esc(c.tag) + "</span>" +
+        "<h3>" + esc(c.name) + "</h3>" +
+        "<div class=\"price\">CHF " + esc(c.price) + "</div>" +
+        "<div class=\"specs\">" +
+        "<div><b>Year / km</b><br>" + esc(c.year) + ", " + esc(c.km) + " km</div>" +
+        "<div><b>Power / gearbox / drive</b><br>" + esc(c.ps) + " PS, " + esc(c.gearbox) + ", " + esc(c.drive) + "</div>" +
+        "<div><b>MFK</b><br>" + (c.mfkAb ? "Ab MFK" : "Not ab MFK") + (c.mfkLast ? ", " + esc(c.mfkLast) : ", no date shown") + "</div>" +
+        "<div><b>Accident (ad) / warranty</b><br>" + esc(c.accident) + " / " + (c.warranty ? "yes" : "none") + "</div>" +
+        "<div><b>Seller</b><br>" + esc(c.seller) + "<br>" + esc(c.addr) + "</div>" +
+        "<div><b>Open today / plates</b><br>" + esc(c.hours) + "<br>StVA " + esc(st.name) + "</div>" +
+        "</div>" +
+        "<div class=\"why\">" + esc(c.why) + "</div>" +
+        "<div class=\"watch\">" + esc(c.watch) + "</div>" +
+        "<div class=\"actions\"><a class=\"adlink\" href=\"" + c.url + "\">Listing " + c.id + "</a><button class=\"btn use\" data-id=\"" + c.id + "\">Use in checklist</button></div>" +
+        "</div>";
+    });
+    $("#alts").innerHTML = html;
+  }
+
+  function select(id, scroll) {
+    current = id;
+    store.set("ben_car_sel", id);
+    var c = byId(id);
+    renderPicker();
+    renderSel(c);
+    renderChecklist(c);
+    renderDrv(c);
+    var btns = document.querySelectorAll(".use");
+    for (var i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute("data-id") === id;
+      btns[i].className = "btn use" + (on ? " on" : "");
+      btns[i].textContent = on ? "In the checklist" : "Use in checklist";
+    }
+    if (scroll) $("#checklist").scrollIntoView({ behavior: "smooth" });
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-id]") : null;
+    if (b) select(b.getAttribute("data-id"), b.classList.contains("use"));
+  });
+  document.addEventListener("change", function (e) {
+    if (e.target && e.target.getAttribute && e.target.getAttribute("data-key")) store.set(e.target.getAttribute("data-key"), e.target.checked ? "1" : "0");
+  });
+
+  renderAlts();
+  select(current, false);
+})();
+</script>
+</body>
+</html>
