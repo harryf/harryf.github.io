@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patch notes 2.0: The Nerdy Comedy Show</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17123A;
+    --purple:#3F2FA0;
+    --purple-soft:#E9E4FF;
+    --paper:#F8F6FF;
+    --gold:#FFC83D;
+    --red:#E0453B;
+    --green:#2E9E6B;
+    --mute:#6B668C;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+    font-size:17px;line-height:1.6;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",Arial,sans-serif;font-weight:800;line-height:1.05;margin:0;letter-spacing:-0.01em}
+  h2{font-size:2rem;margin-bottom:.6rem}
+  h3{font-size:1.15rem;font-weight:600;margin:1.6rem 0 .4rem}
+  p{margin:0 0 1rem}
+  a{color:var(--purple)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 1.25rem}
+
+  /* hero */
+  .hero{background:var(--ink);color:#fff;padding:4rem 0 3.5rem}
+  .hero .ver{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--gold);font-size:1.05rem;margin-bottom:1.2rem}
+  .hero h1{font-size:clamp(2.6rem,7.5vw,4.4rem);max-width:14ch}
+  .hero h1 s{text-decoration-color:var(--red);text-decoration-thickness:.12em;color:#B9B3E6}
+  .hero p{color:#C9C4EE;max-width:52ch;font-size:1.15rem;margin-top:1.5rem}
+  .hero .who{color:#8E88BD;font-size:.95rem;margin-top:2rem}
+
+  section{padding:3rem 0;border-bottom:1px solid #D9D3F5}
+  section:last-of-type{border-bottom:0}
+  .lede{font-size:1.2rem;max-width:56ch}
+
+  /* bug list */
+  .bugs{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem}
+  .bugs li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;padding:1.1rem 1.25rem;background:#fff;border-left:5px solid var(--red);border-radius:0 6px 6px 0}
+  .bugs .sev{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--red);font-size:.95rem;padding-top:.2rem;white-space:nowrap}
+  .bugs strong{display:block;font-size:1.05rem;margin-bottom:.25rem}
+  .bugs p{margin:0;color:#3A3560}
+
+  /* nerd vs geek */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:1.5rem 0;border:2px solid var(--ink);border-radius:8px;overflow:hidden}
+  .split > div{padding:1.25rem}
+  .split .nerd{background:#fff}
+  .split .geek{background:var(--purple);color:#fff}
+  .split h3{margin:0 0 .5rem;font-size:1.5rem;font-weight:800}
+  .split ul{margin:.5rem 0 0;padding-left:1.1rem}
+  .split li{margin-bottom:.25rem}
+  .split .verdict{margin-top:1rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.35);font-weight:600}
+  .nerd .verdict{border-top-color:#D9D3F5}
+
+  /* names */
+  .names{margin:1.5rem 0 0;padding:0;list-style:none;display:grid;gap:.75rem}
+  .names li{display:grid;grid-template-columns:minmax(150px,1fr) 2fr;gap:1rem;padding:1rem 1.1rem;background:#fff;border-radius:6px;border:1px solid #D9D3F5}
+  .names li.pick{border:2px solid var(--purple);background:var(--purple-soft)}
+  .names .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.5rem;line-height:1.1}
+  .names .n small{display:block;font-family:"IBM Plex Sans",sans-serif;font-weight:500;font-size:.85rem;color:var(--mute);margin-top:.35rem}
+  .names p{margin:0;font-size:.98rem}
+  .pick .n small{color:var(--purple)}
+
+  /* nerfs and buffs */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem}
+  .card{padding:1.25rem 1.35rem;border-radius:8px;background:#fff}
+  .card.nerf{border-top:6px solid var(--red)}
+  .card.buff{border-top:6px solid var(--green)}
+  .card h3{margin:0 0 .75rem;font-size:1.35rem;font-weight:800}
+  .card ul{margin:0;padding-left:1.15rem}
+  .card li{margin-bottom:.7rem}
+  .card li b{font-weight:600}
+
+  /* rule */
+  .rule{background:var(--gold);color:var(--ink);padding:1.5rem 1.6rem;border-radius:8px;margin:2rem 0 0;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.3rem;line-height:1.3}
+
+  /* experiment */
+  .exp{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:1.5rem 1.6rem;margin-top:1.5rem}
+  .exp ol{margin:0;padding-left:1.25rem}
+  .exp li{margin-bottom:.6rem}
+  .exp .win{margin-top:1.25rem;padding-top:1rem;border-top:1px dashed #B9B3E6;font-weight:600}
+
+  .notsaying{background:var(--purple-soft);padding:1.25rem 1.4rem;border-radius:8px;margin-top:1.5rem}
+  .notsaying ul{margin:.5rem 0 0;padding-left:1.15rem}
+
+  footer{padding:2.5rem 0 3rem;color:var(--mute);font-size:.9rem}
+
+  @media (max-width:640px){
+    .split,.cols{grid-template-columns:1fr}
+    .names li{grid-template-columns:1fr}
+    h2{font-size:1.7rem}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero h1{animation:rise .6s ease-out both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="ver">Patch notes 2.0</div>
+    <h1><s>The Nerdy Comedy Show</s><br>needs a new name.</h1>
+    <p>The concept is good. The room, the format and the jokes are not the problem. The label on the door is, and it's costing us the audience the show was built for.</p>
+    <p class="who">For Pavel and Joshua. From Harry. Five minutes to read, then let's argue.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Known issues</h2>
+    <p class="lede">Read the current page as a stranger who plays 200 hours of Baldur's Gate a year. Here's what they hit.</p>
+    <ul class="bugs">
+      <li>
+        <span class="sev">Critical</span>
+        <div>
+          <strong>"Nerdy" describes us, not the night</strong>
+          <p>Cold, "The Nerdy Comedy Show" reads as a night of awkward comedians. It's also a label outsiders give people. Nobody with a Steam backlog searches for "nerd events". They search for the thing they actually play.</p>
+        </div>
+      </li>
+      <li>
+        <span class="sev">Critical</span>
+        <div>
+          <strong>The show speaks to five tribes at once, so none of them hear it</strong>
+          <p>The tagline is pure D&amp;D (alignment charts, chaotic neutral). Two lines later it's Magic, anime filler, Steam and the multiverse. The D&amp;D reader sees a list that's three quarters not for them. The anime reader never gets past the header.</p>
+        </div>
+      </li>
+      <li>
+        <span class="sev">High</span>
+        <div>
+          <strong>The best part of the format is buried</strong>
+          <p>"Comedians argue with the audience about what actually matters" is the most distinctive thing we do, and it's in paragraph two. A hot-take format is a stronger hook than any topic list, because it makes the audience the content.</p>
+        </div>
+      </li>
+      <li>
+        <span class="sev">High</span>
+        <div>
+          <strong>We're advertising in the wrong place</strong>
+          <p>Our channels reach people who like English comedy. This show's audience lives on Discord, in board game cafés, at game shops, at ETH and at Zurich Game Show. Selling a fandom night to a general comedy list is why turnout is thin, whatever the name says.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Nerd is not geek</h2>
+    <p class="lede">These are different people, and the show is named after the wrong one.</p>
+    <div class="split">
+      <div class="nerd">
+        <h3>Nerd</h3>
+        <p>Defined by intellect and technical depth.</p>
+        <ul>
+          <li>Maths, Linux, compilers</li>
+          <li>ETH, the Arch Linux guy</li>
+          <li>Proud of knowing how things work</li>
+        </ul>
+        <p class="verdict">Almost none of our material is for them.</p>
+      </div>
+      <div class="geek">
+        <h3>Geek</h3>
+        <p>Defined by enthusiasm for a fandom.</p>
+        <ul>
+          <li>D&amp;D, Magic, Warhammer</li>
+          <li>Anime, JRPGs, Souls games</li>
+          <li>Proud of knowing the lore</li>
+        </ul>
+        <p class="verdict">This is the whole show. The title never says so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Rename</h2>
+    <p class="lede">The title should name the lane, not the audience. Pick one; all of these beat the current name.</p>
+    <ul class="names">
+      <li class="pick">
+        <div class="n">Side Quest<small>Harry's pick</small></div>
+        <p>Anyone who's touched a game gets it, and it describes the night: a detour from your main life. Works for the RPG and tabletop crowds too. Give the argue-with-the-audience segment its own name inside it.</p>
+      </li>
+      <li>
+        <div class="n">Nerd Court<small>Format-led</small></div>
+        <p>If the hot-take segment is the real product, name that. Comedians as judges, the audience brings a case. Strongest hook, narrowest name.</p>
+      </li>
+      <li>
+        <div class="n">Critical Hit<small>Gaming / RPG</small></div>
+        <p>Instantly readable across dice and video games. Downside: heavily used name, weak on search.</p>
+      </li>
+      <li>
+        <div class="n">Roll for Comedy<small>Tabletop</small></div>
+        <p>Clear and warm, but locks us to dice games and reads a bit cute.</p>
+      </li>
+      <li>
+        <div class="n">Filler Arc<small>Anime only</small></div>
+        <p>Very funny to that crowd and signals "we know". Only if anime becomes the whole show, which is a different show.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Nerfs and buffs</h2>
+    <p class="lede">A show for everyone is a show for no one. This is the part that hurts.</p>
+    <div class="cols">
+      <div class="card nerf">
+        <h3>Nerfed</h3>
+        <ul>
+          <li><b>Marvel: removed.</b> The MCU is mainstream. Everyone's seen it and nobody identifies as a community around it. It costs us credibility with actual geeks and buys nothing with anyone else.</li>
+          <li><b>Anime: removed unless it's the whole show.</b> Its own community, younger, more international, with its own events. As a side item it's a token gesture.</li>
+          <li><b>The topic list: removed.</b> One lane in the copy. Everything else can still turn up on stage.</li>
+        </ul>
+      </div>
+      <div class="card buff">
+        <h3>Buffed</h3>
+        <ul>
+          <li><b>Tabletop as the core.</b> D&amp;D, board games, Magic. Smaller than video games but they gather physically, in cafés, shops and Vereine. We can flyer them, partner with a venue, get a shop to co-host. They already go out on Saturdays.</li>
+          <li><b>Video games as the expansion.</b> Let the gaming crowd in naturally; don't lead with it. Gamers are online and fragmented and much harder to put in a room.</li>
+          <li><b>The argument segment.</b> Move it to the top of the page and give it a name.</li>
+          <li><b>A guest expert.</b> A DM, a Magic judge, a speedrunner. Someone who isn't a comedian and can't be faked.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule">The audience will know within five minutes whether the hosts can actually argue about which D&amp;D edition peaked. If we can't, we book someone who can.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>You don't have to agree. Just run the test.</h2>
+    <p class="lede">One show, one lane, one targeted channel. Then we look at the numbers together.</p>
+    <div class="exp">
+      <ol>
+        <li>Rename the next show and rewrite the page for one lane. Harry does the copy.</li>
+        <li>Lead the page with the argument segment, not the topic list.</li>
+        <li>Partner with one game shop or board game café for cross-promotion. One post on r/zurich and the relevant Zürich Discords.</li>
+        <li>Time it near Zurich Game Show weekend if the dates line up.</li>
+        <li>Keep everything else the same: venue, hosts, ticket price.</li>
+      </ol>
+      <p class="win">Success is simple: more tickets than the last two shows combined, and at least half the room from the partner channel. If that fails, we change the name back and Harry buys the beers.</p>
+    </div>
+    <div class="notsaying">
+      <strong>What this is not saying</strong>
+      <ul>
+        <li>That the jokes are wrong. They aren't.</li>
+        <li>That you have to become a different act. You have to sharpen the door, not the set.</li>
+        <li>That this is decided. It's a proposal with a test attached.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Based on inyourfacecomedy.ch/nerdycomedyshow as of September 2026. IN YOUR FACE Comedy, Zürich.</div>
+</footer>
+
+</body>
+</html>
