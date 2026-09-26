@@ -82,6 +82,8 @@
   dl { margin: 0; }
   dt { font-weight: 650; margin-top: 12px; }
   dd { margin: 4px 0 0; color: var(--ink); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 650; padding: 10px 16px; border-radius: 10px; }
+  .btn:hover { filter: brightness(1.08); }
   footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 14px; }
   @media (max-width: 480px) {
     body { font-size: 16px; }
@@ -103,13 +105,14 @@
   </div>
 
   <h2>How the sheet works</h2>
+  <p><a class="btn" href="https://docs.google.com/spreadsheets/d/1luICe1u2z1Ru4VTEvFZVXbxnqSmkW-I5/edit" target="_blank" rel="noopener">Open the sheet in Google Sheets</a></p>
   <p><strong>One rule:</strong> change only the blue cells. The yellow ones matter most. Everything in black is a formula and updates itself.</p>
   <ul class="tabs">
     <li><b>README</b><span>How to use it, what the words mean.</span></li>
     <li><b>Assumptions</b><span>All the inputs: rent, your salary, drink prices, the regular crowd, staff hours, how slow summer is, and which scenario you are looking at (1 to 4).</span></li>
     <li><b>Schemes</b><span>The two proposals, with the rates you can adjust. And a side-by-side table: at 100, 200, 350 and 500 comedy guests a week, what you earn and what the owner keeps.</span></li>
     <li><b>Forecast</b><span>Twelve months, month by month, with July and August slower.</span></li>
-    <li><b>Scenarios</b><span>The same at every level from 50 to 500 guests a week. This is where you see what it takes to reach CHF 10,000.</span></li>
+    <li><b>Scenarios</b><span>The same at every level from 50 to 500 guests a week. This is where you see what it takes to reach CHF 10,000. Open it from the button above.</span></li>
     <li><b>Pitch</b><span>The one page to print and put on the table. The owner's side comes first.</span></li>
     <li><b>Sources</b><span>Where every number came from.</span></li>
   </ul>
@@ -223,7 +226,7 @@
   </div>
 
   <footer>
-    Numbers on this page come from the sheet at its starting values and will change when you put in the real ones. Made with Harry, September 2026.
+    Numbers on this page come from <a href="https://docs.google.com/spreadsheets/d/1luICe1u2z1Ru4VTEvFZVXbxnqSmkW-I5/edit" target="_blank" rel="noopener">the sheet</a> at its starting values and will change when you put in the real ones. Made with Harry, September 2026.
   </footer>
 </main>
 </body>
