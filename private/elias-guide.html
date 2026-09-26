@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elias: the sheet and the talk</title>
+<meta name="description" content="A plain guide to the ROBIN's earnings sheet and how to use it in the pay negotiation.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --paper: #ffffff;
+    --ink: #1f2328;
+    --muted: #5c6470;
+    --line: #e6e1d8;
+    --accent: #b5462a;
+    --accent-soft: #fbeae4;
+    --good: #2f6f4e;
+    --good-soft: #e6f2ea;
+    --note: #fff6d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17191d;
+      --paper: #1f2227;
+      --ink: #e8e6e1;
+      --muted: #a4a9b3;
+      --line: #33373e;
+      --accent: #e8825f;
+      --accent-soft: #3a2a24;
+      --good: #7fc79b;
+      --good-soft: #223a2c;
+      --note: #3a3520;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17191d; --paper: #1f2227; --ink: #e8e6e1; --muted: #a4a9b3; --line: #33373e;
+    --accent: #e8825f; --accent-soft: #3a2a24; --good: #7fc79b; --good-soft: #223a2c; --note: #3a3520;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 700px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .lede { color: var(--muted); font-size: 1.05rem; margin: 0 0 28px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 10px; padding-top: 18px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.02rem; margin: 20px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 650; }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 14px 0;
+  }
+  .say { background: var(--accent-soft); border-color: transparent; }
+  .say .who { color: var(--accent); font-weight: 650; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .good { background: var(--good-soft); border-color: transparent; }
+  .note { background: var(--note); border-color: transparent; }
+  .tabs { display: grid; gap: 8px; margin: 0 0 14px; padding: 0; list-style: none; }
+  .tabs li { display: grid; grid-template-columns: 110px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .tabs b { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 6px; font-size: 0.95rem; }
+  th, td { text-align: right; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-weight: 650; color: var(--muted); font-size: 0.82rem; }
+  td.hi { font-weight: 650; color: var(--good); }
+  .small { color: var(--muted); font-size: 0.9rem; }
+  .ask { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .ask .card { margin: 0; }
+  .ask h3 { margin: 0 0 6px; }
+  .pill { display: inline-block; font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); margin-right: 6px; }
+  .pill.g { background: var(--good-soft); color: var(--good); }
+  dl { margin: 0; }
+  dt { font-weight: 650; margin-top: 12px; }
+  dd { margin: 4px 0 0; color: var(--ink); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 14px; }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .tabs li { grid-template-columns: 1fr; gap: 2px; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 7px 4px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Your bar, the comedy crowd, and your pay</h1>
+  <p class="lede">A guide to the sheet, and a plan for the conversation with the owner.</p>
+
+  <p><strong>The idea in one line:</strong> the comedy nights bring people into the bar who would not be there otherwise. That is new money for the owner. You make those nights work. So a share of that new money should be yours, and the owner keeps the rest. The sheet shows how much new money there is, what your share could be, and what the owner still gains.</p>
+
+  <div class="card note">
+    <strong>Honest warning first.</strong> The sheet is full of guesses until you replace them: how many regulars come in a week, the real rent, the real staff hours. Fix those numbers before the meeting. The plan below only works if the numbers are yours.
+  </div>
+
+  <h2>How the sheet works</h2>
+  <p><strong>One rule:</strong> change only the blue cells. The yellow ones matter most. Everything in black is a formula and updates itself.</p>
+  <ul class="tabs">
+    <li><b>README</b><span>How to use it, what the words mean.</span></li>
+    <li><b>Assumptions</b><span>All the inputs: rent, your salary, drink prices, the regular crowd, staff hours, how slow summer is, and which scenario you are looking at (1 to 4).</span></li>
+    <li><b>Schemes</b><span>The two proposals, with the rates you can adjust. And a side-by-side table: at 100, 200, 350 and 500 comedy guests a week, what you earn and what the owner keeps.</span></li>
+    <li><b>Forecast</b><span>Twelve months, month by month, with July and August slower.</span></li>
+    <li><b>Scenarios</b><span>The same at every level from 50 to 500 guests a week. This is where you see what it takes to reach CHF 10,000.</span></li>
+    <li><b>Pitch</b><span>The one page to print and put on the table. The owner's side comes first.</span></li>
+    <li><b>Sources</b><span>Where every number came from.</span></li>
+  </ul>
+
+  <h3>The three ways of paying you</h3>
+  <ul>
+    <li><strong>Today (A):</strong> 10 percent of the bar's profit once it is above break-even.</li>
+    <li><strong>Proposal B:</strong> a share of the bar's profit, in steps. The first CHF 5,000 of profit pays you 20 percent, the next 5,000 pays 30 percent, everything above pays 40 percent. Each rate only applies to its own slice, so the owner's share never shrinks as the bar does better.</li>
+    <li><strong>Proposal C:</strong> a fixed amount per comedy guest in the month, above a floor of 400 guests. CHF 2.50 a guest up to 1,000 guests, then 4.00, then 6.00 above 1,500. Only paid in months where the bar made a profit. Easy to check: ticket counts and the till.</li>
+  </ul>
+
+  <h2>The numbers, as the sheet stands today</h2>
+  <p class="small">Typical month, with the estimates still in. Your pay is base salary plus bonus. Owner gain is what he has after paying you and the social costs on your bonus, compared with a bar without comedy.</p>
+  <table>
+    <thead>
+      <tr><th>Comedy guests a week</th><th>Bar profit a month</th><th>Your pay today</th><th>Proposal B</th><th>Proposal C</th><th>Owner gain</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>100 (quiet)</td><td>(3,126)</td><td>5,000</td><td>5,000</td><td>5,000</td><td class="hi">4,982</td></tr>
+      <tr><td>200 (normal)</td><td>1,857</td><td>5,186</td><td>5,371</td><td>6,010</td><td class="hi">9,538</td></tr>
+      <tr><td>350 (last week)</td><td>6,810</td><td>5,681</td><td>6,543</td><td>8,127</td><td class="hi">13,144</td></tr>
+      <tr><td>500 (more shows)</td><td>13,653</td><td>6,365</td><td>8,961</td><td>11,558</td><td class="hi">17,206</td></tr>
+    </tbody>
+  </table>
+  <p class="small">All figures CHF. Brackets mean a loss.</p>
+
+  <p><strong>Why today's deal gives you almost nothing.</strong> The bar has to take about CHF 37,000 a month through the till before there is any profit at all. Ten percent of what is left after that is a few hundred francs, even in a great month. The deal was never going to pay you properly.</p>
+
+  <p><strong>Where CHF 10,000 a month happens.</strong> With the current guesses, only at about 450 comedy guests a week under proposal C, or 500 under proposal B. At last week's 350 the honest number is between 6,500 and 8,100. If the regular crowd is bigger than the sheet assumes, all of these go up. That is why counting a normal week matters so much.</p>
+
+  <h2>Before the meeting</h2>
+  <ol>
+    <li>Count a normal week: how many people come in when there is no comedy, and roughly what they spend. Put it in the Assumptions tab.</li>
+    <li>Put in the real rent and the real staff hours. Ask for the last three months of till totals if you can.</li>
+    <li>Get the comedy guest numbers per show from Harry for the last two months. Those are your proof.</li>
+    <li>Pick your scenario (2 for a normal week, 3 for a strong one) and print the Pitch tab.</li>
+    <li>Decide your ask and your floor for each situation (below), and write them down. Do not decide them in the room.</li>
+  </ol>
+
+  <h2>How to run the conversation</h2>
+  <p>Start with his side, not yours. Three sentences:</p>
+  <div class="card say">
+    <div class="who">What to say</div>
+    "Comedy nights put about 350 people in the bar last week. That is roughly CHF 7,000 through the till that we would not have had. Over a normal month comedy leaves you about 9,000 to 13,000 more than an empty bar, after paying me. I want a share of that new money, and I want it set up so that more guests is always better for you too."
+  </div>
+  <p>Then put the Pitch page on the table and offer <strong>two ways to pay</strong>, B and C, and let him pick. People agree more easily when they choose. Say which one you prefer (C is simpler to check and pays better at high numbers).</p>
+  <p><strong>Keep your base.</strong> Do not trade salary for bonus. July and August are slow; the base is what carries you through them.</p>
+
+  <h3>Open high, know your floor</h3>
+  <p>The rates in the sheet are the <strong>ask</strong>: 20, 30, 40 percent for B, or CHF 2.50, 4.00, 6.00 a guest for C. A reasonable place to <strong>settle</strong> is 10, 15, 20 percent for B, or CHF 1.50, 2.50, 3.50 a guest for C. At 350 guests a week, settling still means about 5,800 (B) or 6,900 (C) a month instead of 5,700 today. Change the rates in the Schemes tab and the whole sheet follows.</p>
+
+  <h2>What to ask for, by situation</h2>
+  <div class="ask">
+    <div class="card">
+      <h3>Quiet weeks, about 100 comedy guests</h3>
+      <p><span class="pill">Ask</span> Nothing extra this month, and say so. The bar is not in profit. What you ask for instead is the rule: bonus measured month by month, no clawback later, and your base untouched.</p>
+      <p><span class="pill g">Floor</span> The same. A quiet month must never cost you.</p>
+    </div>
+    <div class="card">
+      <h3>Normal weeks, about 200 comedy guests</h3>
+      <p><span class="pill">Ask</span> Proposal C: about CHF 6,000 a month in total.</p>
+      <p><span class="pill g">Floor</span> Proposal B at the ask rates, about 5,400. Below that you are back to today's deal with a different name.</p>
+    </div>
+    <div class="card">
+      <h3>Strong weeks, about 350 comedy guests</h3>
+      <p><span class="pill">Ask</span> Proposal C: about CHF 8,100 a month. The owner still gains about 11,000 that month compared with no comedy.</p>
+      <p><span class="pill g">Floor</span> Proposal B: about 6,500. If he only accepts the lower rates, about 6,900 (C) or 5,800 (B).</p>
+    </div>
+    <div class="card">
+      <h3>Growth, 450 to 500 comedy guests with more shows</h3>
+      <p><span class="pill">Ask</span> This is where CHF 10,000 lives: about 10,400 to 11,600 under C, 8,000 to 9,000 under B. Show him the Scenarios tab, and say you are only paid this when the bar is making 11,000 to 14,000 a month.</p>
+      <p><span class="pill g">Floor</span> Agree the scheme now, at today's numbers, so the upside is already in writing when the shows grow. Do not wait for the growth to negotiate.</p>
+    </div>
+  </div>
+
+  <h2>What he will say, and what you answer</h2>
+  <dl>
+    <dt>"The comedians bring the crowd, not you."</dt>
+    <dd>"They bring them to the door. I get 100 people served in twenty minutes, keep them for a second drink, and keep the stock and the margin right. Without a bar that copes, the shows cannot run here. Spend per head is mine."</dd>
+    <dt>"I am not paying a bonus in a month where I lose money."</dt>
+    <dd>"Agreed. Both proposals pay nothing in a loss month. If you prefer, we settle once a year so a weak month is covered by a strong one."</dd>
+    <dt>"40 percent of my profit? No."</dt>
+    <dd>"It is 40 percent only of the slice above 10,000 a month. On the first 5,000 it is 20. And every franc of that profit is new: without comedy the bar is not making it. You keep at least 60 percent of every band, plus everything the regulars bring."</dd>
+    <dt>"Let's keep 10 percent above break-even, that is fair."</dt>
+    <dd>"Then let's change what break-even means. The line should be what the bar makes today without comedy, and the rate should rise above it. Break-even is set so high that 10 percent of what is left is almost nothing. You can see that in the Forecast tab."</dd>
+    <dt>"I will think about it."</dt>
+    <dd>"Fine. I will leave the sheet with you. Which of the two ways of paying do you like better, so I can put that one in writing?"</dd>
+  </dl>
+
+  <h2>What to give, if he needs a win</h2>
+  <ul>
+    <li>No bonus in loss months (already in the sheet).</li>
+    <li>Yearly settlement instead of monthly payments.</li>
+    <li>A review after six months, with the real numbers on the table.</li>
+    <li>A monthly cap, if he insists. Around CHF 4,000 leaves your target reachable.</li>
+    <li>The lower rates (10, 15, 20 or CHF 1.50, 2.50, 3.50), but only in exchange for one of the things below being agreed in writing.</li>
+  </ul>
+
+  <h2>Put it in writing</h2>
+  <ul>
+    <li>Which proposal (B or C) and the exact rates and bands.</li>
+    <li>What "profit" means: drink revenue after VAT, minus cost of drinks, rent, salaries, staff hours and the other fixed costs. Name them.</li>
+    <li>Who counts comedy guests (the promoter's ticket numbers) and who reads the till.</li>
+    <li>When the bonus is paid and how it shows on the payslip.</li>
+    <li>Your base salary stays as it is.</li>
+    <li>Review date in six months.</li>
+  </ul>
+
+  <div class="card good">
+    <strong>The one sentence to remember:</strong> comedy is new money, you make it happen, and every version of this deal leaves the owner better off than a bar without it.
+  </div>
+
+  <footer>
+    Numbers on this page come from the sheet at its starting values and will change when you put in the real ones. Made with Harry, September 2026.
+  </footer>
+</main>
+</body>
+</html>
