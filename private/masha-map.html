@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masha's Map</title>
+<meta name="description" content="Six short chapters: what Masha has done, what she asked for, and the paths open to her around Zürich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F1; --bg-2:#F1ECE2; --surface:#FFFFFF; --ink:#172230; --muted:#5A6572; --line:#E3DCCF;
+  --lake:#1D5C8A; --lake-ink:#FFFFFF; --lake-soft:#E3EEF7;
+  --sign:#F6C445; --sign-ink:#2B2200;
+  --pine:#2F6B4F; --pine-soft:#E1F0E7;
+  --coral:#AD3F28; --coral-soft:#FBE4DE;
+  --star:#8A5F00;
+  --shadow:0 1px 2px rgba(23,34,48,.05),0 10px 30px rgba(23,34,48,.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1621; --bg-2:#141E2B; --surface:#182331; --ink:#E9EEF3; --muted:#A3AEBA; --line:#27333F;
+    --lake:#7CB9E8; --lake-ink:#08131C; --lake-soft:#1C2E40;
+    --sign:#F6C445; --sign-ink:#2B2200;
+    --pine:#7CC29A; --pine-soft:#173226;
+    --coral:#FF8F73; --coral-soft:#3B221B;
+    --star:#F6C445;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1621; --bg-2:#141E2B; --surface:#182331; --ink:#E9EEF3; --muted:#A3AEBA; --line:#27333F;
+  --lake:#7CB9E8; --lake-ink:#08131C; --lake-soft:#1C2E40;
+  --sign:#F6C445; --sign-ink:#2B2200;
+  --pine:#7CC29A; --pine-soft:#173226;
+  --coral:#FF8F73; --coral-soft:#3B221B;
+  --star:#F6C445;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.12;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+h3{font-size:1.15rem;font-family:Inter,system-ui,sans-serif;font-weight:700;margin:0}
+h4{font:600 .8rem/1.3 Inter,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+p{margin:0 0 .9em}
+a{color:var(--lake)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:10px;height:56px}
+.top .brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.top .where{flex:1;color:var(--muted);font-size:.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn.primary{background:var(--lake);color:var(--lake-ink);border-color:transparent}
+.btn.small{padding:6px 11px;font-size:.82rem}
+.dots{display:flex;gap:6px}
+.dots span{width:8px;height:8px;border-radius:50%;background:color-mix(in srgb,var(--muted) 35%,transparent)}
+.dots span.on{background:var(--lake)}
+/* screens */
+.screen{display:none;padding:40px 0 64px}
+.screen.active{display:block;animation:in .28s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+.lede{font-size:clamp(1.05rem,2.1vw,1.25rem);color:var(--ink);max-width:56ch}
+.thesis{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.3;max-width:34ch;margin:12px 0 16px}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+/* signpost */
+.signpost{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px}
+.signpost a{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .15s ease,border-color .15s ease}
+.signpost a:hover{transform:translateX(4px);border-color:var(--lake)}
+.signpost .n{width:44px;height:44px;border-radius:12px;background:var(--sign);color:var(--sign-ink);font:700 1.1rem/44px Fraunces,Georgia,serif;text-align:center}
+.signpost .t{font-weight:700}
+.signpost .s{color:var(--muted);font-size:.9rem;margin-top:2px}
+.signpost .m{color:var(--muted);font-size:.82rem;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+/* chunks */
+.chunk{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin:0 0 12px}
+.chunk summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.chunk summary::-webkit-details-marker{display:none}
+.chunk summary .k{font-weight:700;font-size:1.02rem}
+.chunk summary .tease{color:var(--muted);font-size:.92rem;margin-top:3px}
+.chunk summary .arrow{width:28px;height:28px;border-radius:50%;background:var(--bg-2);display:grid;place-items:center;color:var(--ink);font-weight:700;transition:transform .2s ease}
+.chunk[open] summary .arrow{transform:rotate(45deg);background:var(--sign);color:var(--sign-ink)}
+.chunk .body{padding:0 18px 18px;border-top:1px dashed var(--line);margin-top:0;padding-top:12px;font-size:.98rem}
+.chunk .body p:last-child{margin-bottom:0}
+.pill{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:middle}
+.pill.new{background:var(--coral-soft);color:var(--coral)}
+.pill.yours{background:var(--lake-soft);color:var(--lake)}
+.pill.later{background:var(--bg-2);color:var(--muted)}
+.pill.fit{background:var(--pine-soft);color:var(--pine)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.chip{background:var(--bg-2);border-radius:999px;padding:4px 11px;font-size:.86rem}
+.chip.hot{background:var(--coral-soft);color:var(--coral)}
+blockquote{margin:0 0 12px;padding:12px 16px;background:var(--lake-soft);border-left:3px solid var(--lake);border-radius:0 10px 10px 0;font-size:.96rem}
+blockquote .src{display:block;color:var(--muted);font-size:.8rem;margin-top:5px}
+blockquote .de{font-family:Fraunces,Georgia,serif;font-size:1.04rem;font-weight:500}
+blockquote .en{display:block;color:var(--muted);font-size:.9rem;margin-top:3px}
+ul.tight{margin:0 0 .9em 1.15em;padding:0}
+ul.tight li{margin:0 0 .35em}
+ol.q{margin:0;padding:0;list-style:none;counter-reset:q}
+ol.q li{counter-increment:q;display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line)}
+ol.q li:last-child{border-bottom:0}
+ol.q li::before{content:counter(q);flex:none;width:26px;height:26px;border-radius:50%;background:var(--sign);color:var(--sign-ink);font:700 .9rem/26px Fraunces,Georgia,serif;text-align:center}
+.timeline{list-style:none;margin:0;padding:0 0 0 2px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 14px 18px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--lake);border:2px solid var(--surface)}
+.timeline .when{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.timeline .what{font-weight:600}
+.timeline .how{color:var(--muted);font-size:.9rem}
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin:0 0 12px}
+.grade{background:var(--bg-2);border-radius:10px;padding:10px;text-align:center}
+.grade .n{font-family:Fraunces,Georgia,serif;font-size:1.7rem;font-weight:700;color:var(--lake);line-height:1}
+.grade .l{font-size:.74rem;color:var(--muted);margin-top:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.two > div{background:var(--bg-2);border-radius:12px;padding:12px 14px}
+.two h3{font-size:.98rem;margin-bottom:6px}
+.two ul{margin:0;padding-left:1.05em;font-size:.92rem}
+.two li{margin:0 0 .3em}
+.two .ok{border-top:4px solid var(--pine)}
+.two .no{border-top:4px solid var(--coral)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:8px 8px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-weight:700;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.tablewrap{overflow-x:auto}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px}
+.dot.y{background:var(--pine)} .dot.m{background:var(--sign)} .dot.n{background:var(--line)}
+.co{font-weight:600}
+.step{background:var(--pine-soft);border-radius:10px;padding:10px 12px;margin-top:8px}
+.step b{color:var(--pine)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.callout{background:color-mix(in srgb,var(--sign) 22%,var(--surface));border-left:4px solid var(--sign);color:var(--ink);border-radius:14px;padding:14px 18px;margin:0 0 14px}
+.callout p{margin:0}
+.callout a{color:var(--lake);font-weight:700;text-decoration-thickness:2px;text-underline-offset:3px}
+#start{margin-top:18px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
+.tease .pill{display:inline-block;margin-bottom:4px}
+.eyebrow .sub{font-weight:600}
+.aside{border:1px dashed var(--line);border-radius:12px;padding:12px 16px;margin-top:6px}
+footer{padding:20px 0 40px;color:var(--muted);font-size:.85rem}
+/* her input: comments, stars, board */
+.chunk{scroll-margin-top:72px}
+.fb{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.fb .note{display:block;width:100%;font:inherit;font-size:16px;line-height:1.45;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:84px;resize:vertical}
+.fb .note:placeholder-shown:not(:focus){min-height:0;height:44px;resize:none;background:transparent;border-style:dashed;overflow:hidden}
+.fb .note::placeholder{color:var(--muted);opacity:1}
+.fb .note:focus{outline:2px solid var(--lake);outline-offset:1px}
+.fb .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:.82rem;color:var(--muted)}
+.fb .row a{color:var(--muted)}
+.fb .state:empty{display:none}
+.fb .keep{font:inherit;font-size:.8rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer;margin-left:6px}
+.stars{display:flex;align-items:center;gap:0;flex-wrap:wrap;margin:0 0 6px}
+.star{width:44px;height:44px;border:0;background:transparent;font-size:1.75rem;line-height:1;color:var(--muted);cursor:pointer;padding:0;border-radius:8px}
+.star.on{color:var(--sign);-webkit-text-stroke:1px var(--pine)}
+.star:focus-visible{outline:2px solid var(--lake)}
+.stars .lbl{font-size:.86rem;color:var(--muted);margin-right:8px;order:-1}
+.mine{display:block;color:var(--star);letter-spacing:1px;font-size:.82rem;margin-top:2px}
+.mine[hidden]{display:none}
+.step .add{margin-left:8px;font:inherit;font-size:.8rem;font-weight:600;border:1px solid var(--pine);background:transparent;color:var(--pine);border-radius:999px;padding:4px 10px;cursor:pointer;vertical-align:middle}
+.step .onb{margin-left:8px;font-size:.86rem;color:var(--pine);font-weight:600;white-space:nowrap}
+.addform{display:flex;gap:8px;margin:0 0 18px}
+.addform .btn{border-radius:10px;padding:10px 16px}
+.addform input{flex:1;min-width:0;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.addform input:focus{outline:2px solid var(--lake);outline-offset:1px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+.col{background:var(--bg-2);border-radius:14px;padding:12px;border-top:4px solid var(--lake)}
+.col.doing{border-top-color:var(--sign)} .col.done{border-top-color:var(--pine)}
+.col h3{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 8px;box-shadow:var(--shadow);scroll-margin-top:72px}
+.card.hl{outline:3px solid var(--sign)}
+.card .t{font-weight:600;font-size:.95rem}
+.col.done .card .t{color:var(--muted);text-decoration:line-through}
+.card .r{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.card .r a{color:var(--lake);text-decoration:none;font-size:.86rem}
+.card .r a:hover,.card .r a:focus-visible{text-decoration:underline}
+.card select{font:inherit;font-size:.86rem;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-height:36px}
+.card .rm{font:inherit;font-size:.8rem;border:0;background:transparent;color:var(--muted);cursor:pointer;text-decoration:underline;padding:0}
+.col .empty{color:var(--muted);font-size:.86rem;padding:4px 2px 8px}
+.said{margin-top:28px}
+.said .item{padding:10px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.said .item:last-child{border-bottom:0}
+.said .item .w{color:var(--muted);font-size:.82rem;margin-top:2px}
+.said .item .q{margin-top:2px}
+@media (max-width:640px){
+  .cols{grid-template-columns:1fr}
+  .card select{min-height:44px}
+  .top .dots{display:none}
+  .screen{padding:28px 0 48px}
+  .signpost a{grid-template-columns:38px 1fr;gap:10px;padding:12px 12px}
+  .signpost .n{width:38px;height:38px;line-height:38px;font-size:1rem}
+  .signpost .m{display:none}
+  .two{grid-template-columns:1fr}
+  .chunk summary{padding:14px}
+  .chunk .body{padding:10px 14px 14px}
+  .top .where{display:none}
+  .eyebrow .sub{display:none}
+}
+@media print{.screen{display:block !important}.top,.foot{display:none}.chunk .body{display:block}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <button class="btn small" id="back" type="button" aria-label="Back">‹ Back</button>
+    <a class="brand" href="#map">Masha's Map</a>
+    <span class="where" id="where"></span>
+    <span class="dots" id="dots" aria-hidden="true"></span>
+    <a class="btn small" id="boardLink" href="#board">Board</a>
+    <button class="btn small" id="theme" type="button" aria-label="Switch colour scheme">Dark</button>
+  </div>
+</div>
+
+<!-- 0 MAP -->
+<section class="screen" id="map" data-title="Map">
+  <div class="wrap">
+    <div class="eyebrow">For Masha · September 2026</div>
+    <h1>Your map</h1>
+    <p class="thesis">You asked for a way of working, not a technology. That way of working exists in more places around Zürich than the one you named.</p>
+    <p class="lede">Six short chapters, a few minutes each. Open what interests you, skip what does not, and write back under any part. You can give each of the six paths up to five stars.</p>
+    <div class="cta"><a class="btn primary" href="#c1">Start with chapter 1</a><span class="muted small">or pick a chapter below</span></div>
+    <div class="callout" id="start"><p><b>Only five minutes? Three stops:</b> <a href="#c3:c3-seats">the two seats</a>, then <a href="#c3:c3-filter">your ten questions</a>, then <a href="#c4:c4-c">one path to try first</a>.</p><p id="resume" style="display:none;margin-top:6px"><a href="#map" id="resumeLink">Continue where you left off</a></p></div>
+    <ol class="signpost">
+      <li><a href="#c1"><span class="n">1</span><span><span class="t">In your words</span><div class="s">What you told us you want</div></span><span class="m">3 min</span></a></li>
+      <li><a href="#c2"><span class="n">2</span><span><span class="t">On paper</span><div class="s">Your grades, your references, what you can do</div></span><span class="m">4 min</span></a></li>
+      <li><a href="#c3"><span class="n">3</span><span><span class="t">What worked, what didn't</span><div class="s">Two seats at the same company, and a filter for the next one</div></span><span class="m">5 min</span></a></li>
+      <li><a href="#c4"><span class="n">4</span><span><span class="t">Six paths</span><div class="s">Your own, plus four you had not named</div></span><span class="m">6 min</span></a></li>
+      <li><a href="#c5"><span class="n">5</span><span><span class="t">The next years</span><div class="s">Three ways it could run, and one date that matters</div></span><span class="m">3 min</span></a></li>
+      <li><a href="#c6"><span class="n">6</span><span><span class="t">Practical</span><div class="s">Part-time, RAV, pay, interview questions, sources</div></span><span class="m">4 min</span></a></li>
+      <li><a href="#board"><span class="n">✓</span><span><span class="t">Your board</span><div class="s">Six small things to do now, plus anything you add</div></span><span class="m">yours</span></a></li>
+    </ol>
+    <p class="small muted" style="margin-top:18px">Built from ten files you and Harry provided: your CV, the Notenausweis, the Lehrzeugnis, the Arbeitszeugnis, your Target Role document and three voice notes. Employers and rules were checked on 26 September 2026.</p>
+  </div>
+</section>
+
+<!-- 1 IN YOUR WORDS -->
+<section class="screen" id="c1" data-title="1 · In your words">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 1 of 6</div>
+    <h2>In your words</h2>
+    <p class="lede">From your Target Role document and the three voice notes of 21 September. You made the keyword list with AI, then kept only what you had lived or wanted. This is that list, reflected back.</p>
+
+    <details class="chunk" data-id="c1-company"><summary><span><span class="k">The company you pictured</span><div class="tease">Swiss roots, international product, B2B, a real mission</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="chips"><span class="chip">Swiss roots, international outlook</span><span class="chip">scale-up or modern established company</span><span class="chip">B2B SaaS</span><span class="chip">technically sophisticated</span><span class="chip">some prestige</span><span class="chip">a socially meaningful mission</span><span class="chip">business and technology both interesting</span></div>
+      <p>Industries you named: aerospace, climate tech, biotech, cybersecurity, research and deep tech, cloud, privacy and data sovereignty, education. You added that the industry can vary, as long as the problem is hard and the work matters. And "Swiss aviation software sounds pretty cool".</p>
+    </div></details>
+
+    <details class="chunk" data-id="c1-work"><summary><span><span class="k">How you want to work</span><div class="tease">A team, code reviews, a monthly rhythm, involved but not the one who decides</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="chips"><span class="chip">international team</span><span class="chip">self-organised</span><span class="chip">direct communication</span><span class="chip">technical discussions</span><span class="chip">no ticket factory</span><span class="chip">Scrum</span><span class="chip">tickets as units of work</span><span class="chip">code reviews</span><span class="chip">customer feedback</span><span class="chip">regular releases, for example monthly</span><span class="chip">mentoring by experienced engineers</span><span class="chip">individual contributor track</span></div>
+      <blockquote>"An individual contributor with a lot of involvement and discussion with other team members. Technical discussions where I don't have a huge responsibility to make a decision, but I can be involved."<span class="src">Voice note, 21:15</span></blockquote>
+      <blockquote>"Not a weekly deadline, more like a monthly deadline, then I'm really cool with that."<span class="src">Voice note, 21:16</span></blockquote>
+    </div></details>
+
+    <details class="chunk" data-id="c1-tech"><summary><span><span class="k">What lights you up technically</span><div class="tease">Complex problems, distributed systems, security, data; full-stack first, infrastructure second</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="chips"><span class="chip">full-stack as the main focus</span><span class="chip">backend and APIs</span><span class="chip">microservices</span><span class="chip">containers and Kubernetes</span><span class="chip">CI/CD</span><span class="chip">infrastructure as code</span><span class="chip">distributed systems</span><span class="chip">scalability</span><span class="chip">security and privacy</span><span class="chip">complex data</span><span class="chip">automation</span><span class="chip">AI/ML with a real use case</span></div>
+      <p>Your order: <b>Full-Stack / Product Engineering, then Backend, then Infrastructure</b>. You want to understand the infrastructure, not own it. Languages: Java, TypeScript, JavaScript, SQL, C# from work; happy to learn Python; curious about Scala. Your last apprenticeship project was event-driven, and you like Kafka and Elasticsearch being in the picture, "not necessarily every day".</p>
+      <p>Values you underlined: data sovereignty, privacy, security, responsible technology, Swiss and European roots, societal impact, high technical quality.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c1-voice"><summary><span><span class="k">The whole picture, as you wrote it</span><div class="tease">Your own paragraph, unchanged</div></span><span class="arrow">+</span></summary><div class="body">
+      <blockquote>"A Full-Stack Software Engineer at an internationally oriented Swiss B2B SaaS scale-up developing a technically challenging product with meaningful societal impact. A self-organized, passionate engineering team with a direct communication culture, Scrum, and plenty of technical discussion. Modern cloud-native architecture using microservices, containers, Kubernetes, and CI/CD. A strong focus on Product Engineering and customer interaction, combined with a solid understanding of the underlying infrastructure. A culture where technical quality, data sovereignty, privacy, and security genuinely matter - and where I can work on problems that are intellectually exciting and meaningful."<span class="src">Target Role document, "Overall Picture"</span></blockquote>
+      <p>One line from the same document is worth keeping close: <b>"I want to be involved not only in how something is built, but also in understanding why it is being built."</b></p>
+    </div></details>
+
+    <div class="foot"><a class="btn" href="#map">Map</a><a class="btn primary" href="#c2">Next: On paper</a></div>
+  </div>
+</section>
+
+<!-- 2 ON PAPER -->
+<section class="screen" id="c2" data-title="2 · On paper">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 2 of 6</div>
+    <h2>On paper</h2>
+    <p class="lede">Your CV, your Notenausweis and two references from Rhomberg Sersa. Short version: the record is strong, and the people who signed it liked working with you.</p>
+
+    <details class="chunk" data-id="c2-timeline"><summary><span><span class="k">Your timeline</span><div class="tease">2018 to 2026, including the year that was different</div></span><span class="arrow">+</span></summary><div class="body">
+      <ul class="timeline">
+        <li><span class="when">2018</span><div class="what">Sekundarschule A done</div></li>
+        <li><span class="when">2018 to 2021</span><div class="what">Apprenticeship years 1 and 2, Zürcher Kantonalbank</div></li>
+        <li><span class="when">2021 to 2022</span><div class="what">A different year</div><div class="how">Three months in a hotel kitchen and service, three months as a face-to-face fundraiser for Ärzte ohne Grenzen</div></li>
+        <li><span class="when">2022 to 2025</span><div class="what">Apprenticeship years 3 and 4, Noser Young and Rhomberg Sersa</div><div class="how">Rhomberg Sersa Rail AG, 1 August 2023 to 31 July 2025</div></li>
+        <li><span class="when">June 2025</span><div class="what">Informatikerin EFZ, overall 5.6</div></li>
+        <li><span class="when">Aug 2025 to May 2026</span><div class="what">Application Manager Process &amp; SHEQ, Rhomberg Sersa</div><div class="how">You left on 31 May 2026 at your own request</div></li>
+        <li><span class="when">Summer 2026</span><div class="what">A pause. Then this map.</div></li>
+      </ul>
+    </div></details>
+
+    <details class="chunk" data-id="c2-grades"><summary><span><span class="k">Your grades</span><div class="tease">5.6 overall, 5.9 in IT, 44 modules at 5.9</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="grades">
+        <div class="grade"><div class="n">5.6</div><div class="l">Overall</div></div>
+        <div class="grade"><div class="n">5.9</div><div class="l">IT competencies</div></div>
+        <div class="grade"><div class="n">6.0</div><div class="l">Experience grade</div></div>
+        <div class="grade"><div class="n">5.7</div><div class="l">General education</div></div>
+        <div class="grade"><div class="n">5.3</div><div class="l">Practical work</div></div>
+      </div>
+      <p>Notenausweis of 27 June 2025. Your CV adds 44 IT modules at an average of 5.9, and Scala, Python, Node.js and Express learned on your own for project work.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c2-shipped"><summary><span><span class="k">Two things you shipped</span><div class="tease">A Parliament events app in Java, a reservation app in C#</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Noser Young.</b> A full-stack app for the annual events of the Swiss Parliament: Java, Spring Boot, React, TypeScript. Planned, built, documented and handed to the customer. Scrum, team of seven.</p>
+      <p><b>Rhomberg Sersa.</b> A full-stack reservation app for any kind of object: C#, .NET, React, TypeScript. Kanban, team of three, Docker, deployed on Azure. You also set up an event streaming platform with microservices.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c2-refs"><summary><span><span class="k">What Rhomberg Sersa wrote about you</span><div class="tease">Two references, both clearly positive, quoted in their words</div></span><span class="arrow">+</span></summary><div class="body">
+      <h4>Lehrzeugnis, July 2025</h4>
+      <blockquote><span class="de">"Sie erkannte bei neuen Aufgaben rasch das Wesentliche und behielt die Übersicht."</span><span class="en">You saw quickly what mattered in new tasks and kept the overview.</span></blockquote>
+      <blockquote><span class="de">"Mit ihrer äusserst zuverlässigen und genauen Arbeitsweise waren wir vollumfänglich zufrieden."</span><span class="en">Completely satisfied with your reliable, precise way of working. In Swiss reference language, that is the top grade.</span></blockquote>
+      <h4>Arbeitszeugnis, May 2026</h4>
+      <blockquote><span class="de">"Die Qualität ihrer Arbeit entsprach stets unseren hohen Erwartungen."</span><span class="en">Your work always met their high expectations.</span></blockquote>
+      <blockquote><span class="de">"Ihre aufrichtige, herzliche sowie zupackende Art wurde im Team geschätzt. Sie war sowohl fachlich wie auch menschlich ein Gewinn und eine Stütze ihrer Abteilung."</span><span class="en">Sincere, warm, hands-on. An asset and a support to the department, as a professional and as a person.</span></blockquote>
+      <p>Both say "Offenheit und Interesse für neue Herausforderungen" was a great strength. You can quote these, and you can name the people who signed them.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c2-skills"><summary><span><span class="k">What you can do</span><div class="tease">Languages, platforms, practices, and the people skills nobody puts on a CV</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="tablewrap"><table>
+        <thead><tr><th></th><th>Used at work</th><th>School or self-taught</th><th>Curious about</th></tr></thead>
+        <tbody>
+          <tr><td>Languages</td><td>Java, C#, TypeScript, JavaScript, SQL</td><td>Scala, Python</td><td>more Python, more Scala</td></tr>
+          <tr><td>Platforms</td><td>Spring Boot, .NET, React, Postgres, Docker, Azure, microservices, event streaming</td><td>Node.js, Express</td><td>Kubernetes, Kafka, Elasticsearch</td></tr>
+          <tr><td>Practices</td><td>Git, Bitbucket, Jira, Confluence, Scrum, Kanban, code reviews, system tests, documentation, clean code</td><td>IT project management</td><td>software architecture, later</td></tr>
+          <tr><td>People</td><td>requirements with internal customers, vendor and stakeholder coordination, user training, reports, presenting, organising events, onboarding apprentices, face-to-face fundraising</td><td></td><td></td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted" style="margin-top:8px">Native German and English. Off duty: yoga and meditation, reading, hiking and jogging, new places, cooking and baking.</p>
+    </div></details>
+
+    <div class="foot"><a class="btn" href="#c1">Back</a><a class="btn primary" href="#c3">Next: What worked</a></div>
+  </div>
+</section>
+
+<!-- 3 WHAT WORKED -->
+<section class="screen" id="c3" data-title="3 · What worked, what didn't">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 3 of 6<span class="sub"> · a first reading, yours to correct</span></div>
+    <h2>What worked, what didn't</h2>
+    <p class="lede">Chapters 1 and 2 are your files. From here on it is our reading of them. If it does not fit, say so and we change it.</p>
+
+    <details class="chunk" data-id="c3-seats" open><summary><span><span class="k">Same person, same company, two seats</span><div class="tease">The apprenticeship worked. The manager job did not. The difference was the seat.</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="two">
+        <div class="ok"><h3>Apprenticeship, years 3 and 4</h3><ul><li>Bounded tasks inside a curriculum</li><li>A team of three, a Berufsbildner responsible for you, a cohort</li><li>Knowledge flowed in by design</li><li>Feedback often, both ways</li><li>A clear finish line: the exam</li><li>Learning time was part of the job</li></ul></div>
+        <div class="no"><h3>Application Manager</h3><ul><li>Sole owner of three company systems</li><li>Single point of contact for vendors, internal IT and stakeholders in several markets; no engineering peers</li><li>Expected to be the expert from day one</li><li>Feedback when something broke</li><li>No stated definition of success</li><li>Every learning hour was a backlog hour</li></ul></div>
+      </div>
+      <p style="margin-top:12px">The technical difficulty barely changed. What changed was interrupt load and sole accountability. A first-year professional alone in charge of three enterprise systems is a design with a bus factor of one. Nobody can see the overload except the person carrying it. Leaving was the only signal you had. That reads as judgement, not failure.</p>
+      <p>For the record: in that seat you still kept three systems running, trained their users, coordinated vendors, and were called "eine Stütze ihrer Abteilung". That is not nothing. It is a lot, done alone.</p>
+      <p>Two more things your papers show. You paused the apprenticeship once, came back, and finished with a 5.6 and a top-band reference: you finish things. And Rhomberg Sersa is a rail group, so you already carry domain knowledge that rail and mobility employers pay for.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c3-questions"><summary><span><span class="k">Two questions only you can answer</span><div class="tease">Before you read on. A voice note to Harry is enough.</div></span><span class="arrow">+</span></summary><div class="body">
+      <ul class="tight" style="margin-bottom:0">
+        <li>What was different between the first apprenticeship attempt and the second? If the second had the support the first lacked, the reading above holds. If not, tell us and we rewrite it.</li>
+        <li>What was the tipping point in the manager role: overload, one incident, isolation, or the manager?</li>
+      </ul>
+    </div></details>
+
+    <details class="chunk" data-id="c3-filter"><summary><span><span class="k">Your filter: ten questions for any job</span><div class="tease">A tool, built from your own wishes and the two seats. Use it on any advert or interview.</div></span><span class="arrow">+</span></summary><div class="body">
+      <ol class="q">
+        <li>Will at least two people know the systems I work on? Who covers when I am on holiday?</li>
+        <li>Is there a named person responsible for my development, with a plan for months 3, 6 and 12?</li>
+        <li>Does someone review my code or my work every week?</li>
+        <li>Is my scope bounded at the start, with expansion as a planned step?</li>
+        <li>Is the release rhythm closer to monthly than weekly?</li>
+        <li>Are technical decisions made together, so I contribute without being the one who decides?</li>
+        <li>Can someone see my workload and rebalance it? Is there no solo on-call?</li>
+        <li>Would I be glad to explain to a friend what the product does?</li>
+        <li>Does the company have Swiss or European roots and take privacy and security seriously?</li>
+        <li>Is the title one I grow into, rather than one I must defend?</li>
+      </ol>
+      <p class="small muted" style="margin-top:10px">Seven or more yes: worth a second look. A no on 1, 2 or 7: the old seat with a new title.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c3-flags"><summary><span><span class="k">Phrases that describe the old seat</span><div class="tease">Another tool: if an advert says these, read it twice</div></span><span class="arrow">+</span></summary><div class="body">
+      <div class="chips" style="margin-bottom:0"><span class="chip hot">sole</span><span class="chip hot">you'll own</span><span class="chip hot">very independent role</span><span class="chip hot">we've been without anyone for months</span><span class="chip hot">the previous person left</span><span class="chip hot">Applikationsverantwortliche/r, alone</span><span class="chip hot">a first job that hands over a whole system</span></div>
+    </div></details>
+
+    <details class="chunk" data-id="c3-summer"><summary><span><span class="k">The summer, in one sentence</span><div class="tease">Optional. If anyone asks about the months since June, and only if it sounds like you.</div></span><span class="arrow">+</span></summary><div class="body">
+      <blockquote style="margin-bottom:0">"After finishing my EFZ with a 5.6 and a year as application manager, a role that turned out to be a one-person seat for three systems, I took the summer to decide what kind of team I want to work in. I am looking for a junior engineering role with peers and code reviews."</blockquote>
+    </div></details>
+
+    <div class="foot"><a class="btn" href="#c2">Back</a><a class="btn primary" href="#c4">Next: Six paths</a></div>
+  </div>
+</section>
+
+<!-- 4 SIX PATHS -->
+<section class="screen" id="c4" data-title="4 · Six paths">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 4 of 6<span class="sub"> · a first reading, yours to correct</span></div>
+    <h2>Six paths, none prescribed</h2>
+    <p class="lede">Your own path first, then four you had not named, then two for later. Every one ends with a first step that fits in a week.</p>
+    <div class="callout"><p><b>If you had to pick one today, which would it be?</b> If it helps: C is the one we would try first, because it scores highest on peers, a named mentor and weekly reviews. A suggestion, not a verdict.</p></div>
+
+    <details class="chunk" data-id="c4-a"><summary><span><span class="k">A · Junior full-stack engineer at a Swiss B2B product company</span><div class="tease"><span class="pill yours">yours</span><span class="pill fit">our fit 7 of 10</span> The list as you wrote it</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Why it fits.</b> Product engineering in a Scrum team, Swiss roots, an international product. It is what you asked for.</p>
+      <p><b>What to watch.</b> Scale-ups tend to release weekly and support juniors thinly. Ask questions 1, 2 and 5 first. Most openings we saw were senior; a junior one is worth waiting for.</p>
+      <p><b>Around Zürich.</b> <span class="co" data-co="Beekeeper">Beekeeper</span> (frontline-worker platform), <span class="co" data-co="Scandit">Scandit</span> (scanning SDKs, internships), <span class="co" data-co="Sherpany">Sherpany</span> (board meetings), <span class="co" data-co="Smallpdf">Smallpdf</span>, <span class="co" data-co="Wingtra">Wingtra</span> (mapping drones), <span class="co" data-co="Proton">Proton</span> (privacy, Zürich office), <span class="co" data-co="bexio">bexio</span> (Rapperswil).</p>
+      <div class="step"><b>First step.</b> Pick three, read their engineering pages, and note which of your ten questions each one seems to answer.</div>
+    </div></details>
+
+    <details class="chunk" data-id="c4-b"><summary><span><span class="k">B · Developer at a mission employer</span><div class="tease"><span class="pill new">new to you</span><span class="pill fit">our fit 8 of 10</span> Research, public IT, rail, energy, health, aerospace</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Why it fits.</b> Your industries and values point here more directly than at SaaS. These teams run monthly, review code, and know what an EFZ junior can do.</p>
+      <p><b>What to watch.</b> Research posts are often fixed-term. Public bodies can be slow. Aim at software teams, not shift-based operations.</p>
+      <p><b>Around Zürich.</b> Research and public: <span class="co" data-co="Eawag">Eawag</span> (water, Dübendorf), <span class="co" data-co="Empa">Empa</span>, <span class="co" data-co="WSL">WSL</span> (forest and climate; a 50 to 80 percent full-stack post was open), <span class="co" data-co="MeteoSwiss">MeteoSwiss</span>, <span class="co" data-co="ETH Zürich (IT Services / Scientific IT Services)">ETH IT Services</span>, <span class="co" data-co="Stadt Zürich OIZ (Organisation und Informatik)">Stadt Zürich OIZ</span>. Rail, which you know: <span class="co" data-co="SBB Informatik">SBB Informatik</span> (Altstetten, Java), <span class="co" data-co="Siemens Mobility">Siemens Mobility</span>, <span class="co" data-co="Stadler Rail (Signalling)">Stadler Signalling</span>. Energy and climate: <span class="co" data-co="ewz">ewz</span> (.NET post open), <span class="co" data-co="Sensirion">Sensirion</span> (sensors, Stäfa). Health: <span class="co" data-co="Universitätsspital Zürich (USZ) ICT">USZ ICT</span>, <span class="co" data-co="Biognosys">Biognosys</span> (.NET, Schlieren), <span class="co" data-co="Oviva">Oviva</span> (Java). Aerospace: <span class="co" data-co="Beyond Gravity">Beyond Gravity</span>, <span class="co" data-co="Flughafen Zürich AG">Flughafen Zürich AG</span>.</p>
+      <div class="step"><b>First step.</b> Open the job pages of Eawag, WSL and ewz once. Note which one you would happily explain to a friend.</div>
+    </div></details>
+
+    <details class="chunk" data-id="c4-c"><summary><span><span class="k">C · A structured-learning employer</span><div class="tease"><span class="pill new">new to you</span><span class="pill fit">our fit 8 of 10</span> Engineering houses with a junior programme, in-house teams at stable companies</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Why it fits.</b> The apprenticeship worked because someone was responsible for your growth. Some employers build that in for juniors: named programmes, mentors, real code reviews.</p>
+      <p><b>What to watch.</b> Consultancies can place juniors at client sites against billable targets. Ask whether juniors work in-house or at the client, and whether the junior programme has a name and a mentor.</p>
+      <p><b>Around Zürich.</b> Engineering houses: <span class="co" data-co="Ergon Informatik">Ergon</span> (junior post open, Airlock), <span class="co" data-co="Netcetera">Netcetera</span> (graduate post, Java), <span class="co" data-co="Adnovum">Adnovum</span> (junior Java), <span class="co" data-co="bbv Software Services">bbv</span> (Young Professional Program), <span class="co" data-co="Zühlke">Zühlke</span>, <span class="co" data-co="Noser Engineering">Noser Engineering</span> (you know the group), <span class="co" data-co="Liip">Liip</span> (self-organised). In-house teams: <span class="co" data-co="Digitec Galaxus (Migros group)">Digitec Galaxus</span> (junior post open, C#/.NET, 80 to 100 percent), <span class="co" data-co="Helsana">Helsana</span> (C#/React), <span class="co" data-co="Sanitas">Sanitas</span> (Java), <span class="co" data-co="Swisscom">Swisscom</span>, <span class="co" data-co="Swiss Re">Swiss Re</span> and <span class="co" data-co="Zurich Insurance">Zurich Insurance</span> (graduate programmes).</p>
+      <div class="step"><b>First step.</b> Write to Netcetera and Ergon. Ask whether their junior intake is open and what the first six months look like.</div>
+    </div></details>
+
+    <details class="chunk" data-id="c4-d"><summary><span><span class="k">D · A specialist track</span><div class="tease"><span class="pill new">new to you</span><span class="pill fit">our fit 7 of 10</span> Test automation, data engineering, technical writing</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Why it fits.</b> You planned and documented system tests, you wrote reports on SQL data, and both references praise your documentation. These tracks give bounded scope and clear tickets while you keep coding.</p>
+      <p><b>What to watch.</b> Test roles are under-valued in some small firms. Data roles range from dashboards to real engineering. Technical writing is a side track, not a first job. Python helps for both test and data work, and you said you are willing.</p>
+      <p><b>Around Zürich.</b> <span class="co" data-co="Exeon Analytics">Exeon Analytics</span> (QA role seen, security analytics), <span class="co" data-co="Trapeze Switzerland">Trapeze</span> (transit software, test roles, Neuhausen), <span class="co" data-co="Swisscom">Swisscom</span>, <span class="co" data-co="Digitec Galaxus (Migros group)">Digitec Galaxus</span>, <span class="co" data-co="Universitätsspital Zürich (USZ) ICT">USZ</span> (data and integration posts).</p>
+      <div class="step"><b>First step.</b> Spend one afternoon on a Python test-automation tutorial (pytest or Playwright). Notice whether it feels like relief or a detour.</div>
+    </div></details>
+
+    <details class="chunk" data-id="c4-e"><summary><span><span class="k">E · Learn while you work: BM2, then FH part-time</span><div class="tease"><span class="pill new">new to you</span><span class="pill later">longer horizon</span> A ladder Swiss employers read at once</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Why it fits.</b> Harry asked for a direction over several years. In Switzerland, EFZ then BM2 then Fachhochschule is that direction, and your grades open it without an exam.</p>
+      <p><b>What to watch.</b> August 2027 looks like your last exam-free BM2 intake (the rule and sources are in chapter 6). Two years of BM2 part-time plus four of FH part-time is a long double load; a 60 percent job is the usual pairing.</p>
+      <p><b>Alternatives.</b> The eidg. Fachausweis needs two years of development practice first, so 2028 at the earliest. The dipl. Informatikerin HF at WISS runs six semesters in the evenings beside a 50 percent job.</p>
+      <div class="step"><b>First step.</b> Ask BFS Uster or BMS Winterthur for the information evening for the 2027 intake.</div>
+    </div></details>
+
+    <details class="chunk" data-id="c4-f"><summary><span><span class="k">F · Security, as a specialisation after two years in a team</span><div class="tease"><span class="pill later">longer horizon</span> On your list, and Zürich has a cluster</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Why it fits.</b> Cybersecurity is on your list. Entering through product engineering keeps you off shifts.</p>
+      <p><b>What to watch.</b> Security operations (SOC, incident response) means shifts and incidents, the opposite of a monthly rhythm. Security product engineering does not.</p>
+      <p><b>Around Zürich.</b> <span class="co" data-co="Ergon Informatik">Ergon</span> (Airlock), <span class="co" data-co="Open Systems">Open Systems</span>, <span class="co" data-co="Exeon Analytics">Exeon Analytics</span>, <span class="co" data-co="Futurae">Futurae</span> (authentication), <span class="co" data-co="Nevis Security">Nevis Security</span> (identity, Java), <span class="co" data-co="ti&m">ti&amp;m</span> (junior security analyst post seen), <span class="co" data-co="Oneconsult">Oneconsult</span> (junior consultant track).</p>
+      <div class="step"><b>First step.</b> None now. Note it on the map and come back after a year in a team.</div>
+    </div></details>
+
+    <details class="chunk" data-id="c4-aside"><summary><span><span class="k">Considered and set aside</span><div class="tease">Four options we looked at, and why they are not cards</div></span><span class="arrow">+</span></summary><div class="body">
+      <ul class="tight" style="margin-bottom:0">
+        <li><b>Bridge roles</b> (solutions engineer, implementation engineer, technical consultant). They use your warmth and your training experience, but they are customer-facing, interrupt-driven and escalation-heavy. The application-manager shape under a new title.</li>
+        <li><b>Junior product owner, business analyst.</b> They own decisions and carry stakeholder pressure, which you said you do not want yet. Worth revisiting in a few years.</li>
+        <li><b>ERP and low-code consulting.</b> Well paid, same shape as what you left.</li>
+        <li><b>Teaching and vocational training</b> (Berufsbildnerin, coding schools). A real later option, given how you helped onboard apprentices, but it needs years of practice first.</li>
+      </ul>
+    </div></details>
+
+    <details class="chunk" data-id="c4-compare"><summary><span><span class="k">The six paths side by side</span><div class="tease">Against your filter, our estimate</div></span><span class="arrow">+</span></summary><div class="body">
+      <p class="small muted"><span class="dot y"></span> usually yes &nbsp; <span class="dot m"></span> depends on the employer &nbsp; <span class="dot n"></span> usually no. "Openings" means junior openings seen around Zürich in September 2026.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Path</th><th>Peers and reviews</th><th>Bounded scope</th><th>Monthly rhythm</th><th>Decisions shared</th><th>Mission</th><th>Learning ladder</th><th>Pay</th><th>Openings</th></tr></thead>
+        <tbody>
+          <tr><td>A · SaaS product company</td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot n"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td></tr>
+          <tr><td>B · Mission employer</td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td></tr>
+          <tr><td>C · Structured-learning employer</td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot y"></span></td></tr>
+          <tr><td>D · Specialist track</td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot m"></span></td><td><span class="dot m"></span></td><td><span class="dot m"></span></td><td><span class="dot m"></span></td></tr>
+          <tr><td>E · BM2 then FH</td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot n"></span></td><td><span class="dot y"></span></td></tr>
+          <tr><td>F · Security, later</td><td><span class="dot y"></span></td><td><span class="dot m"></span></td><td><span class="dot n"></span></td><td><span class="dot m"></span></td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot y"></span></td><td><span class="dot m"></span></td></tr>
+        </tbody>
+      </table></div>
+    </div></details>
+
+    <p class="muted small">Fit scores are our guess against your ten questions. Employers are named because they exist, sit in or near Zürich and were checked on 26 September 2026. None of this is a job offer.</p>
+    <div class="foot"><a class="btn" href="#c3">Back</a><a class="btn primary" href="#c5">Next: The next years</a></div>
+  </div>
+</section>
+
+<!-- 5 NEXT YEARS -->
+<section class="screen" id="c5" data-title="5 · The next years">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 5 of 6<span class="sub"> · a first reading, yours to correct</span></div>
+    <h2>Three ways the next years could run</h2>
+    <p class="lede">Sketches, not plans. They mix the cards from chapter 4, and you can mix them differently.</p>
+
+    <details class="chunk" data-id="c5-team"><summary><span><span class="k">Team first</span><div class="tease">A junior seat in a real team, then a specialisation</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>2026 to 2028.</b> A junior engineering seat at a structured-learning or mission employer (paths C or B), 80 to 100 percent, with the ten questions answered yes.</p>
+      <p><b>2028.</b> Two years of development practice unlock the eidg. Fachausweis, if you want a title.</p>
+      <p><b>2029.</b> Choose a specialisation (security, data, architecture) from inside a team, not from outside.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c5-ladder"><summary><span><span class="k">The ladder</span><div class="tease">Work 60 percent, BM2 in 2027, FH from 2028 or 2029</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>Now to summer 2027.</b> A 60 to 80 percent junior or internship seat (paths B, C or D).</p>
+      <p><b>August 2027.</b> BM2 part-time at Uster or Winterthur (two years) or full-time at BMS Zürich (one year), exam-free because of your 5.6.</p>
+      <p><b>2028 or 2029 to about 2032.</b> BSc Informatik part-time at ZHAW or OST at 50 to 60 percent work. A Bachelor that Swiss employers read at once.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c5-mission"><summary><span><span class="k">Mission</span><div class="tease">A research or public-sector developer post, decide later</div></span><span class="arrow">+</span></summary><div class="body">
+      <p><b>2026 to 2028.</b> A developer post at a research institute, a utility or a hospital (path B). Fixed-term is fine. Monthly rhythm, a mission you can explain.</p>
+      <p><b>At the end of the contract.</b> A natural decision point: stay, move to path A with two years of code reviews behind you, or take the ladder.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c5-date" open><summary><span><span class="k">The one date that matters</span><div class="tease">August 2027, and why</div></span><span class="arrow">+</span></summary><div class="body">
+      <p>With an EFZ average of 5.0 or more you can enter the BM2 without the entrance exam, but only in the school year straight after the EFZ or the one after. For you that makes <b>August 2027</b> the last exam-free intake, as we read the rule on zh.ch. Confirm it with the school before you plan around it. Everything else on this map can wait a month. This one has a calendar.</p>
+    </div></details>
+
+    <div class="foot"><a class="btn" href="#c4">Back</a><a class="btn primary" href="#c6">Next: Practical</a></div>
+  </div>
+</section>
+
+<!-- 6 PRACTICAL -->
+<section class="screen" id="c6" data-title="6 · Practical">
+  <div class="wrap">
+    <div class="eyebrow">Chapter 6 of 6<span class="sub"> · facts, with sources</span></div>
+    <h2>Practical</h2>
+    <p class="lede">The rules, the numbers and the questions. Checked in September 2026; check again before you sign anything.</p>
+
+    <details class="chunk" data-id="c6-parttime"><summary><span><span class="k">Part-time is normal here</span><div class="tease">Asking for 80 percent at entry level is an ordinary request</div></span><span class="arrow">+</span></summary><div class="body">
+      <p>Just under four in ten people working in Switzerland work part-time, per the Federal Statistical Office's 2024 labour force survey. In ICT the share is lower, about one in five (IWSB for ICT-Berufsbildung Schweiz, 2020), yet many adverts say "80 to 100 percent". An 80 percent seat is what makes the BM2 and FH part-time models work.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c6-bm2"><summary><span><span class="k">BM2 and FH: the rules</span><div class="tease">Exam-free entry, schools, cost, part-time models, with sources</div></span><span class="arrow">+</span></summary><div class="body">
+      <ul class="tight">
+        <li>Exam-free BM2 entry with an EFZ average of 5.0 or more, in the school year straight after the EFZ or the one after (zh.ch, Zentrale Aufnahmeprüfung). For a June 2025 EFZ that is August 2026 or August 2027.</li>
+        <li>Technical direction (TALS) in Kanton Zürich: full-time one year at BMS Zürich and BMS Winterthur; part-time two years at BFS Uster and BMS Winterthur (zh.ch, bms-zuerich.ch, bms-w.ch, bfsu.ch).</li>
+        <li>Tuition free for Zürich residents; materials and project weeks roughly CHF 800 to 1,600 (bms-w.ch, bm2.ch).</li>
+        <li>BM plus a related EFZ admits directly to a BSc Informatik at ZHAW, OST, FHNW or HSLU, with no extra practice year. Part-time takes eight semesters at about 50 to 60 percent work (zhaw.ch, ost.ch, fhnw.ch, hslu.ch). OST registration closes 30 April for a September start.</li>
+        <li>Eidg. Fachausweis (ICT-Application Development Specialist): needs two years of development practice after the EFZ, so 2028 at the earliest; the Confederation refunds half the course fees up to CHF 9,500 (ict-berufsbildung.ch, sbfi.admin.ch).</li>
+      </ul>
+    </div></details>
+
+    <details class="chunk" data-id="c6-rav"><summary><span><span class="k">After a resignation</span><div class="tease">You keep the right to benefit, with penalty days</div></span><span class="arrow">+</span></summary><div class="body">
+      <p>You keep the right to unemployment benefit after resigning, but the fund imposes penalty days (Einstelltage) of between 1 and 60. A resignation without a new job lined up is usually treated as the heavier case, 31 to 60 days. Registration at the RAV must happen by the first day of unemployment. Source: zh.ch, Arbeitslosenentschädigung. If you have not registered, a phone call will tell you what still applies.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c6-interview"><summary><span><span class="k">Five questions to ask in any interview</span><div class="tease">They test the filter without sounding like a test</div></span><span class="arrow">+</span></summary><div class="body">
+      <ul class="tight" style="margin-bottom:0">
+        <li>How many engineers are on the team, and who would review my code?</li>
+        <li>Who had this role before me, and are they still here?</li>
+        <li>How often do you release, and what happens when a release slips?</li>
+        <li>Is there on-call, and who covers when someone is away?</li>
+        <li>What should I be able to do after six months, and who decides that?</li>
+      </ul>
+    </div></details>
+
+    <details class="chunk" data-id="c6-pay"><summary><span><span class="k">Indicative pay, Zürich, gross per year</span><div class="tease">Rough bands from public pages, checked September 2026</div></span><span class="arrow">+</span></summary><div class="body">
+      <p class="small muted">Averages on these pages skew toward degree holders. Use the bands to sanity-check an offer, not to choose a path.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Role</th><th>Band (CHF)</th><th>Source, year</th></tr></thead>
+        <tbody>
+          <tr><td>Junior software developer with EFZ, 0 to 2 years</td><td>about 70,000 to 85,000 (entry average listed 89,000)</td><td>jobs.ch Zürich, lohncheck.ch, 2025 to 2026</td></tr>
+          <tr><td>Test engineer, entry</td><td>about 85,000 to 90,000</td><td>jobs.ch Zürich, lohncheck.ch, 2025 to 2026</td></tr>
+          <tr><td>Data engineer, junior</td><td>60,000 to 100,000</td><td>Glassdoor Zürich, 2025 to 2026</td></tr>
+          <tr><td>Application manager, entry</td><td>about 70,000 to 95,000</td><td>jobs.ch Zürich, 2024 to 2026</td></tr>
+          <tr><td>FH Bachelor Informatik graduate, median</td><td>90,000</td><td>FH Schweiz Lohnstudie, 2023</td></tr>
+        </tbody>
+      </table></div>
+    </div></details>
+
+    <details class="chunk" data-id="c6-month"><summary><span><span class="k">The next 30 days, if you want a list</span><div class="tease">Optional. Six small things, none of them an application.</div></span><span class="arrow">+</span></summary><div class="body">
+      <ol class="q">
+        <li>Read the map once. Strike out the paths you do not want. Tell Harry which, and why.</li>
+        <li>Answer the two questions in chapter 3. A voice note is enough.</li>
+        <li>Check with the RAV what applies to you after the May resignation.</li>
+        <li>Open the job pages of four employers from paths B or C and hold each against the ten questions. No applying, just reading.</li>
+        <li>Ask BFS Uster or BMS Winterthur for the 2027 BM2 information evening date.</li>
+        <li>Rewrite the "Werdegang" line of your CV so the application-manager year reads as a seat you outgrew. The sentence in chapter 3 is a start.</li>
+      </ol>
+      <p class="small muted" style="margin:10px 0 0">These six are already on <a href="#board">your board</a>, where you can move them or add your own.</p>
+    </div></details>
+
+    <details class="chunk" data-id="c6-sources"><summary><span><span class="k">Sources</span><div class="tease">Your ten files, and what was checked on the web</div></span><span class="arrow">+</span></summary><div class="body">
+      <h4>Your files</h4>
+      <ul class="tight small">
+        <li>Lebenslauf_Masha_Madani.pdf (CV)</li>
+        <li>Notenausweis.pdf (EFZ grade certificate, 27 June 2025)</li>
+        <li>Lehrzeugnis.pdf (apprenticeship reference, 31 July 2025)</li>
+        <li>WhatsApp Image 2026-09-21 at 21.42.53.jpeg and (1).jpeg (Arbeitszeugnis, 31 May 2026, two pages)</li>
+        <li>Target Role.docx and fullstack.txt</li>
+        <li>WhatsApp Audio 2026-09-21 at 21.15.07.txt, 21.16.36.txt and 21.40.22.txt (voice-note transcripts)</li>
+      </ul>
+      <h4>Checked on the web, 26 September 2026</h4>
+      <ul class="tight small" style="margin-bottom:0">
+        <li>Employers: each name on this map was confirmed to exist, with its Swiss location and what it does, from its own site or a job posting. The list with links is in research/verified.json beside this page.</li>
+        <li>BM2, FH, Fachausweis, HF: zh.ch, bms-zuerich.ch, bms-w.ch, bfsu.ch, zhaw.ch, ost.ch, fhnw.ch, hslu.ch, ict-berufsbildung.ch, sbfi.admin.ch, wiss.ch.</li>
+        <li>Pay and part-time: jobs.ch, lohncheck.ch, Glassdoor, FH Schweiz, swissICT, Federal Statistical Office (SAKE 2024), IWSB 2020.</li>
+        <li>Unemployment: zh.ch (Arbeitslosenentschädigung), SECO leaflet.</li>
+        <li>Chapters 3 to 5 are Harry's assistant's reading of your documents, with a second opinion from a separate model. They are there to be argued with.</li>
+      </ul>
+    </div></details>
+
+    <div class="foot"><a class="btn" href="#c5">Back</a><a class="btn primary" href="#map">Back to the map</a></div>
+  </div>
+</section>
+
+<!-- 7 BOARD -->
+<section class="screen" id="board" data-title="Your board">
+  <div class="wrap">
+    <h2>Your board</h2>
+    <p class="lede">Small things the map suggested, and anything you add. Move a card when it changes. It is the same board on your phone and your laptop.</p>
+    <form class="addform" id="addTodo" autocomplete="off"><input id="todoText" type="text" maxlength="200" placeholder="Add something of your own" aria-label="New item"><button class="btn" id="addBtn" type="submit">Add</button></form>
+    <div class="cols">
+      <div class="col todo" data-status="To do"><h3>To do</h3><div class="cards"></div></div>
+      <div class="col doing" data-status="Doing"><h3>Doing</h3><div class="cards"></div></div>
+      <div class="col done" data-status="Done"><h3>Done</h3><div class="cards"></div></div>
+    </div>
+    <p class="small muted" id="sync" style="margin-top:10px"></p>
+    <div class="said" id="said" hidden><h4>What you have said so far</h4><div id="saidList"></div></div>
+    <div class="foot"><a class="btn" href="#map">Map</a><a class="btn primary" href="#c4">Six paths</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap">Made for Masha, September 2026. No adverts, no tracking. Your comments, stars and board are saved in a shared Grist document that you and Harry can open; nothing else leaves this page. The colour scheme follows your device; the button at the top overrides it.</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  var screens=[].slice.call(document.querySelectorAll('.screen'));
+  var ids=screens.map(function(s){return s.id;});
+  var walk=ids.filter(function(i){return i!=='board';}); // arrow keys walk the map and the six chapters
+  var where=document.getElementById('where'), dots=document.getElementById('dots');
+  ids.forEach(function(){var d=document.createElement('span');dots.appendChild(d);});
+  var boxes={}, timers={}; // comment boxes by chunk id, and their debounce timers (used by the router before they are built)
+
+  // ---- routing. A screen change is a history entry; a chunk opening or closing only rewrites the hash.
+  var depth=0, routing=false, first=true, screen='';
+  function go(h){ if(location.hash===h) return; flushNotes(); depth++; history.pushState({i:depth},'',h); route(); }
+  function rewrite(h){ if(location.hash!==h) history.replaceState(history.state,'',h); try{ if(screen!=='map') localStorage.setItem('masha-map-last',h); }catch(e){} }
+  function show(id, chunk){
+    if(ids.indexOf(id)<0) id='map';
+    var changed=id!==screen; screen=id;
+    flushNotes();
+    screens.forEach(function(s){s.classList.toggle('active',s.id===id);});
+    var i=ids.indexOf(id);
+    [].slice.call(dots.children).forEach(function(d,j){d.classList.toggle('on',j===i);});
+    where.textContent=id==='map'?'':document.getElementById(id).getAttribute('data-title');
+    if(changed) window.scrollTo(0,0);
+    var sec=document.getElementById(id);
+    routing=true;
+    if(chunk&&id!=='board'){
+      var c=sec.querySelector('.chunk[data-id="'+CSS.escape(chunk)+'"]');
+      if(c){ sec.querySelectorAll('.chunk[open]').forEach(function(o){ if(o!==c) o.open=false; }); c.open=true; setTimeout(function(){ c.scrollIntoView({block:'start'}); },60); }
+    } else if(!first){ sec.querySelectorAll('.chunk[open]').forEach(function(o){ o.open=false; }); }
+    routing=false; first=false;
+    try{ if(id!=='map') localStorage.setItem('masha-map-last', location.hash); }catch(e){}
+    if(id==='map'){ try{var last=localStorage.getItem('masha-map-last');var r=document.getElementById('resume');if(last&&r){r.style.display='block';document.getElementById('resumeLink').setAttribute('href',last);}}catch(e){} }
+    if(id==='board'){ renderBoard(); if(chunk) highlightCard(chunk); }
+  }
+  function route(){var h=(location.hash||'#map').slice(1).split(':');show(h[0],h[1]);}
+  window.addEventListener('popstate',function(){ depth=(history.state&&history.state.i)||0; route(); });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+    e.preventDefault(); go(a.getAttribute('href'));
+  });
+  document.getElementById('back').addEventListener('click',function(){ if(depth>0) history.back(); else go('#map'); });
+  document.addEventListener('keydown',function(e){
+    var t=e.target.tagName; if(t==='INPUT'||t==='TEXTAREA'||t==='SELECT') return;
+    var i=walk.indexOf(screen); if(i<0) return;
+    if(e.key==='ArrowRight'&&i<walk.length-1) go('#'+walk[i+1]);
+    if(e.key==='ArrowLeft'&&i>0) go('#'+walk[i-1]);
+  });
+  // one chunk open at a time per screen; the open chunk is in the URL so it can be linked
+  document.querySelectorAll('.chunk').forEach(function(d){
+    d.addEventListener('toggle',function(){
+      var scr=d.closest('.screen'), sec=scr.id, own='#'+sec+':'+d.dataset.id;
+      if(d.open) d.parentNode.querySelectorAll('.chunk[open]').forEach(function(o){ if(o!==d) o.open=false; });
+      if(routing||!scr.classList.contains('active')) return; // parse-time toggles of default-open chunks on other screens must not touch the URL
+      if(d.open) rewrite(own); else if(location.hash===own){ flushNotes(); rewrite('#'+sec); }
+    });
+  });
+
+  // ---- theme
+  function current(){var t=root.getAttribute('data-theme');if(t)return t;return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function label(){btn.textContent=current()==='dark'?'Light':'Dark';}
+  try{var saved=localStorage.getItem('masha-map-theme');if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved);}catch(e){}
+  label();
+  btn.addEventListener('click',function(){var next=current()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('masha-map-theme',next);}catch(e){}label();});
+
+  // ---- Grist: three tables, one key field each, anonymous reads and upserts, a queue that survives reloads
+  var DOC='https://docs.getgrist.com/api/docs/ujophYm1hVYi';
+  var KEY={Comments:'ChunkId',Ratings:'PathId',Todos:'TodoId'};
+  // 'phone' or 'laptop' plus a short token kept per browser, so two laptops never look like one device
+  var DEVICE=(matchMedia('(max-width:640px)').matches||matchMedia('(pointer:coarse)').matches)?'phone':'laptop';
+  try{ var tok=localStorage.getItem('masha-map-device'); if(!tok){ tok=Math.random().toString(36).slice(2,6); localStorage.setItem('masha-map-device',tok); } DEVICE+='-'+tok; }catch(e){}
+  var SK='masha-map-grist.v1';
+  var st={remote:{Comments:{},Ratings:{},Todos:{}},queue:[],parked:[],writes:0};
+  try{ var s0=JSON.parse(localStorage.getItem(SK)||'null'); if(s0&&s0.remote){ st=s0; } }catch(e){}
+  Object.keys(KEY).forEach(function(t){ if(!st.remote[t]||typeof st.remote[t]!=='object') st.remote[t]={}; });
+  if(!Array.isArray(st.queue)) st.queue=[]; if(!Array.isArray(st.parked)) st.parked=[]; st.writes=st.writes||0;
+  function save(){ try{ localStorage.setItem(SK,JSON.stringify(st)); }catch(e){} }
+  function kv(k,v){ var o={}; o[k]=v; return o; }
+  function nowSec(){ return Math.floor(Date.now()/1000); }
+  // effective row = remote plus every queued change for it, in order; parked changes are not applied
+  function row(t,id){ var r=st.remote[t][id]?Object.assign({},st.remote[t][id]):null; st.queue.forEach(function(q){ if(q.t===t&&q.id===id) r=Object.assign(r||kv(KEY[t],id),q.fields); }); return r; }
+  function pending(t,id){ return st.queue.some(function(q){ return q.t===t&&q.id===id; }); }
+  function parkedFor(t,id){ return st.parked.filter(function(p){ return p.t===t&&p.id===id; })[0]||null; }
+  var inflight=null, retryTimer=null, backoff=20000, lastError=null, fetchError=null;
+  // a change refused last time gets up to three more tries on later loads (conflicts stay parked until she decides)
+  st.parked=st.parked.filter(function(p){ if(p.error==='conflict') return true; p.tries=(p.tries||0)+1; if(p.tries>3) return true; delete p.error; st.queue.push(p); return false; }); save();
+  function enqueue(t,id,fields,opt){
+    opt=opt||{};
+    var f=Object.assign({},fields,{UpdatedBy:DEVICE});
+    var open=null; st.queue.forEach(function(q){ if(q.t===t&&q.id===id&&q!==inflight&&!q.noupdate&&!opt.noupdate) open=q; });
+    if(open) Object.assign(open.fields,f); else st.queue.push({t:t,id:id,fields:f,noupdate:!!opt.noupdate,base:opt.base==null?null:opt.base});
+    st.parked=st.parked.filter(function(p){ return !(p.t===t&&p.id===id); });
+    save(); renderOne(t,id); drain();
+  }
+  function drop(q){ var i=st.queue.indexOf(q); if(i>=0) st.queue.splice(i,1); }
+  function withTimeout(ms){ var c=new AbortController(); setTimeout(function(){ c.abort(); },ms); return c.signal; }
+  function conflicts(q){ var r=st.remote.Comments[q.id]; return !!(r&&(r.UpdatedAt||0)>q.base&&r.UpdatedBy!==DEVICE); }
+  function park(q,err){ drop(q); st.parked.push(Object.assign({},q,{error:err})); save(); renderOne(q.t,q.id); }
+  function drain(force){
+    if(inflight||!st.queue.length) return;
+    if(retryTimer&&!force) return; // a retry is scheduled after a 429, 5xx or network error; wait for it
+    clearTimeout(retryTimer); retryTimer=null;
+    var q=st.queue[0];
+    if(!KEY[q.t]){ park(q,'unknown table'); return drain(force); }
+    // a comment edited on the other device after she started this one: park it and let her choose
+    if(q.t==='Comments'&&q.base!=null&&conflicts(q)){ park(q,'conflict'); return drain(force); }
+    inflight=q; renderOne(q.t,q.id); renderSync();
+    var url=DOC+'/tables/'+q.t+'/records?onmany=all'+(q.noupdate?'&noupdate=true':'');
+    // before sending a comment, look at the live row once, so a phone edit the laptop has not fetched yet is not overwritten
+    var check=(q.t==='Comments'&&q.base!=null)
+      ? fetch(DOC+'/tables/Comments/records?filter='+encodeURIComponent(JSON.stringify({ChunkId:[q.id]})),{signal:withTimeout(15000)}).then(function(r){ return r.ok?r.json():null; }).then(function(j){ var f=j&&j.records&&j.records[0]&&j.records[0].fields; if(f) st.remote.Comments[q.id]=f; return conflicts(q); },function(){ return false; })
+      : Promise.resolve(false);
+    check.then(function(conflict){
+      if(conflict){ inflight=null; park(q,'conflict'); renderSync(); return drain(force); }
+      return fetch(url,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({records:[{require:kv(KEY[q.t],q.id),fields:q.fields}]}),signal:withTimeout(15000),keepalive:document.visibilityState==='hidden'})
+        .then(function(res){ return res.text().then(function(b){ return {ok:res.ok,status:res.status,body:b.slice(0,200),ra:Number(res.headers.get('Retry-After'))}; },function(){ return {ok:res.ok,status:res.status,body:''}; }); },function(){ return {ok:false,status:0,body:''}; })
+        .then(function(res){
+          var stc=res.status||0;
+          if(res.ok){
+            drop(q); st.writes++; lastError=null; backoff=20000;
+            if(!(q.noupdate&&st.remote[q.t][q.id])) st.remote[q.t][q.id]=Object.assign({},st.remote[q.t][q.id]||kv(KEY[q.t],q.id),q.fields,{UpdatedAt:nowSec()});
+          } else if(stc>=400&&stc<500&&stc!==429){
+            drop(q); st.parked.push(Object.assign({},q,{error:stc+' '+res.body}));
+            console.warn('map: parked a write',q.t,q.id,stc,res.body);
+          } else {
+            lastError=stc||'network';
+            var wait=backoff; if(stc===429&&res.ra>0) wait=Math.max(wait,res.ra*1000);
+            backoff=Math.min(backoff*2,5*60000);
+            retryTimer=setTimeout(function(){ drain(true); },wait);
+            inflight=null; save(); renderOne(q.t,q.id); renderSync(); return;
+          }
+          inflight=null; save(); renderOne(q.t,q.id); renderSync();
+          if(st.queue.length) drain(); else fetchAll(); // pick up the server's timestamps once the queue is empty
+        });
+    }).catch(function(e){ console.error('map: write failed',e); inflight=null; lastError='error'; retryTimer=setTimeout(function(){ drain(true); },backoff); save(); renderSync(); });
+  }
+  var fetching=false;
+  function fetchAll(attempt){
+    if(fetching) return; fetching=true; var before=st.writes;
+    Promise.all(Object.keys(KEY).map(function(t){ return fetch(DOC+'/tables/'+t+'/records',{signal:withTimeout(15000)}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).then(function(j){ return [t,j.records||[]]; }); }))
+      .then(function(all){
+        fetching=false;
+        if(st.writes!==before){ if((attempt||0)<2) return fetchAll((attempt||0)+1); return; } // stale: a write landed meanwhile
+        all.forEach(function(p){ var t=p[0], remote={}; p[1].forEach(function(rec){ var f=rec.fields||{}; var id=String(f[KEY[t]]||''); if(!id) return; if(!remote[id]||(f.UpdatedAt||0)>=(remote[id].UpdatedAt||0)) remote[id]=f; }); st.remote[t]=remote; });
+        st.fetchedAt=Date.now(); fetchError=null; save(); renderAll();
+      },function(e){ fetching=false; fetchError=String(e&&e.message||e); console.warn('map: could not read the shared document',fetchError); renderSync(); });
+  }
+
+  // ---- the controls in every chunk: stars on the six paths, a comment box everywhere, a link
+  var PATH=/^c4-[a-f]$/, LINK=/^#(c[1-6]|board)(:[a-z0-9-]+)?$/i;
+  function titleOf(d){ return d.querySelector('summary .k').textContent.trim(); }
+  document.querySelectorAll('.chunk').forEach(function(d){
+    var id=d.dataset.id, sec=d.closest('.screen').id, title=titleOf(d), body=d.querySelector('.body');
+    var fb=document.createElement('div'); fb.className='fb';
+    if(PATH.test(id)){
+      var stars=document.createElement('div'); stars.className='stars'; stars.setAttribute('role','group'); stars.setAttribute('aria-label','Your interest in this path');
+      for(var n=1;n<=5;n++){ (function(n){ var b=document.createElement('button'); b.type='button'; b.className='star'; b.textContent='☆'; b.setAttribute('aria-label',n+' of 5'); b.setAttribute('aria-pressed','false'); b.dataset.n=n;
+        b.addEventListener('click',function(){ var cur=(row('Ratings',id)||{}).Stars||0; enqueue('Ratings',id,{Stars:cur===n?null:n,Path:title}); }); stars.appendChild(b); })(n); }
+      var lbl=document.createElement('span'); lbl.className='lbl'; stars.appendChild(lbl); fb.appendChild(stars);
+      var k=d.querySelector('summary .k'); var mine=document.createElement('span'); mine.className='mine'; mine.hidden=true; k.parentNode.insertBefore(mine,k.nextSibling); // her stars on their own line under the title, apart from our fit pill
+      var step=d.querySelector('.step'); if(step){ var add=document.createElement('button'); add.type='button'; add.className='add'; add.textContent='Add to my board';
+        add.addEventListener('click',function(){ var text=step.textContent.replace(/^\s*First step\.\s*/,'').replace(/\s*(Add to my board|On your board.*)$/,'').trim(); enqueue('Todos','step-'+id,{Title:text,Status:'To do',Source:'map',Link:'#c4:'+id,PathId:id},{noupdate:true}); });
+        var onb=document.createElement('a'); onb.className='onb'; onb.hidden=true; onb.href='#board:step-'+id; step.appendChild(add); step.appendChild(onb); }
+    }
+    var ta=document.createElement('textarea'); ta.className='note'; ta.rows=3; ta.placeholder='Write back to Harry'; ta.setAttribute('aria-label','Write back to Harry about: '+title);
+    var rowEl=document.createElement('div'); rowEl.className='row';
+    var state=document.createElement('span'); state.className='state';
+    var lnk=document.createElement('a'); lnk.className='lnk'; lnk.href='#'+sec+':'+id; lnk.textContent='Link to this';
+    rowEl.appendChild(state); rowEl.appendChild(lnk);
+    fb.appendChild(ta); fb.appendChild(rowEl); body.appendChild(fb);
+    boxes[id]={ta:ta,state:state,title:title,d:d};
+    // base = the server's timestamp of the row she started editing from; the conflict guard compares against it
+    function takeBase(){ var r=st.remote.Comments[id]; ta.dataset.base=r&&r.UpdatedAt?String(r.UpdatedAt):'0'; }
+    ta.addEventListener('focus',takeBase);
+    ta.addEventListener('input',function(){ if(!ta.dataset.base) takeBase(); clearTimeout(timers[id]); timers[id]=setTimeout(function(){ commit(id); },1000); });
+    ta.addEventListener('blur',function(){ commit(id); delete ta.dataset.base; });
+  });
+  function commit(id){
+    clearTimeout(timers[id]); delete timers[id];
+    var b=boxes[id], v=b.ta.value, r=row('Comments',id), had=(r?r.Comment||'':''), p=parkedFor('Comments',id);
+    if(p&&p.error==='conflict'&&v===(p.fields.Comment||'')) return; // her parked text is on screen; the buttons decide
+    if(v===had) return; if(!v.trim()&&!st.remote.Comments[id]&&!pending('Comments',id)) return;
+    enqueue('Comments',id,{Comment:v,Title:b.title},{base:Number(b.ta.dataset.base||0)});
+  }
+  function flushNotes(){ Object.keys(timers).forEach(commit); }
+  function renderComment(id){
+    var b=boxes[id]; if(!b) return; var r=row('Comments',id), p=parkedFor('Comments',id);
+    if(document.activeElement!==b.ta&&!p) b.ta.value=r?(r.Comment||''):'';
+    b.state.textContent='';
+    if(p&&p.error==='conflict'){
+      if(document.activeElement!==b.ta) b.ta.value=p.fields.Comment||'';
+      b.state.textContent='Changed on your other device. ';
+      var keep=document.createElement('button'); keep.type='button'; keep.className='keep'; keep.textContent='Keep this version';
+      keep.addEventListener('pointerdown',function(e){ e.preventDefault(); }); // do not blur the box first
+      keep.addEventListener('click',function(){ var rr=st.remote.Comments[id]; enqueue('Comments',id,{Comment:b.ta.value,Title:b.title},{base:rr&&rr.UpdatedAt||0}); });
+      var use=document.createElement('button'); use.type='button'; use.className='keep'; use.textContent='Use the other';
+      use.addEventListener('pointerdown',function(e){ e.preventDefault(); });
+      use.addEventListener('click',function(){ st.parked=st.parked.filter(function(x){ return x!==p; }); save(); b.ta.blur(); renderComment(id); });
+      b.state.appendChild(keep); b.state.appendChild(use);
+    } else if(p) b.state.textContent="Couldn't save";
+    else if(pending('Comments',id)) b.state.textContent=lastError?'Not saved yet, will retry':'Saving';
+    else if(r&&r.Comment) b.state.textContent='Saved';
+  }
+  function renderStars(id){
+    var b=boxes[id]; if(!b||!PATH.test(id)) return; var r=row('Ratings',id), n=r&&r.Stars?Math.max(0,Math.min(5,Number(r.Stars)||0)):0, p=parkedFor('Ratings',id);
+    b.d.querySelectorAll('.star').forEach(function(s){ var k=Number(s.dataset.n); s.classList.toggle('on',k<=n); s.textContent=k<=n?'★':'☆'; s.setAttribute('aria-pressed',k===n?'true':'false'); });
+    b.d.querySelector('.stars .lbl').textContent=p?"Couldn't save":(pending('Ratings',id)?(lastError?'Not saved yet, will retry':'Saving'):'How does this path feel?');
+    var mine=b.d.querySelector('summary .mine'); mine.hidden=!n; mine.textContent=n?'you '+'★★★★★'.slice(0,n):''; mine.setAttribute('aria-label',n?'your rating '+n+' of 5':'');
+    var t=row('Todos','step-'+id), add=b.d.querySelector('.step .add'), onb=b.d.querySelector('.step .onb');
+    if(add&&onb){ var on=t&&t.Status!=='Dropped'; add.hidden=!!on; onb.hidden=!on; if(on) onb.textContent='On your board · '+(['To do','Doing','Done'].indexOf(t.Status)>=0?t.Status:'To do'); }
+  }
+  function renderOne(t,id){ if(t==='Comments') renderComment(id); else if(t==='Ratings') renderStars(id); else { renderStars((id.match(/^step-(c4-[a-f])$/)||[])[1]||''); renderBoard(); } renderSaid(); }
+  function renderAll(){ Object.keys(boxes).forEach(function(id){ renderComment(id); renderStars(id); }); renderBoard(); renderSaid(); renderSync(); }
+
+  // ---- the board
+  var COLS=['To do','Doing','Done'];
+  function todos(){ var ids=Object.keys(st.remote.Todos); st.queue.concat(st.parked).forEach(function(q){ if(q.t==='Todos'&&ids.indexOf(q.id)<0) ids.push(q.id); });
+    return ids.map(function(id){ var r=row('Todos',id); var p=parkedFor('Todos',id); if(!r&&p) r=Object.assign(kv('TodoId',id),p.fields); r=r||{}; r.TodoId=id; r._parked=!!p; return r; }).filter(function(r){ return r.Status!=='Dropped'&&r.Title; })
+      .sort(function(a,b){ var oa=Number(a.Order)||0, ob=Number(b.Order)||0; if((oa>0)!==(ob>0)) return oa>0?-1:1; if(oa!==ob) return oa-ob; return (Number(a.CreatedAt)||0)-(Number(b.CreatedAt)||0); }); }
+  function renderBoard(){
+    var sec=document.getElementById('board'); if(!sec.classList.contains('active')) return;
+    var list=todos();
+    COLS.forEach(function(stName){
+      var col=sec.querySelector('.col[data-status="'+stName+'"] .cards'); col.textContent='';
+      var mine=list.filter(function(r){ return (COLS.indexOf(r.Status)>=0?r.Status:'To do')===stName; });
+      if(!mine.length){ var e=document.createElement('div'); e.className='empty'; e.textContent=stName==='To do'?'Nothing here':(stName==='Doing'?'Move a card here when you start it':'Done cards land here'); col.appendChild(e); return; }
+      mine.forEach(function(r){
+        var card=document.createElement('div'); card.className='card'; card.dataset.id=r.TodoId;
+        var t=document.createElement('div'); t.className='t'; t.textContent=r.Title; card.appendChild(t);
+        var rr=document.createElement('div'); rr.className='r';
+        var left=document.createElement('span');
+        if(r._parked) left.textContent="Couldn't save";
+        else if(LINK.test(String(r.Link||''))){ var a=document.createElement('a'); a.href=r.Link; a.textContent='See: '+linkLabel(r.Link)+' ›'; left.appendChild(a); } else left.textContent=r.Source==='mine'?'Yours':'';
+        var right=document.createElement('span');
+        var sel=document.createElement('select'); sel.setAttribute('aria-label','Move this card');
+        var o0=document.createElement('option'); o0.value=''; o0.textContent='Move to…'; o0.disabled=true; o0.selected=true; sel.appendChild(o0);
+        COLS.forEach(function(c){ if(c===stName) return; var o=document.createElement('option'); o.value=c; o.textContent=c; sel.appendChild(o); });
+        sel.addEventListener('change',function(){ if(sel.value) enqueue('Todos',r.TodoId,{Status:sel.value}); });
+        right.appendChild(sel);
+        if(r.Source==='mine'){ var rm=document.createElement('button'); rm.type='button'; rm.className='rm'; rm.textContent='Remove'; rm.style.marginLeft='10px'; rm.addEventListener('click',function(){ enqueue('Todos',r.TodoId,{Status:'Dropped'}); }); right.appendChild(rm); }
+        rr.appendChild(left); rr.appendChild(right); card.appendChild(rr); col.appendChild(card);
+      });
+    });
+  }
+  function linkLabel(h){ var m=String(h).match(/^#(c[1-6]|board)(?::([a-z0-9-]+))?$/i); if(!m) return 'the map'; if(m[2]&&boxes[m[2]]) return boxes[m[2]].title; if(m[1]==='board') return 'your board'; var s=document.getElementById(m[1]); return s?s.getAttribute('data-title').replace(/^\d+ · /,''):'the map'; }
+  function highlightCard(id){ var c=document.querySelector('.card[data-id="'+CSS.escape(id)+'"]'); if(!c) return; c.classList.add('hl'); setTimeout(function(){ c.scrollIntoView({block:'center'}); },60); setTimeout(function(){ c.classList.remove('hl'); },2500); }
+  function newId(){ var u=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); return 't-'+u; }
+  document.getElementById('todoText').addEventListener('input',function(){ document.getElementById('addBtn').classList.toggle('primary',!!this.value.trim()); });
+  document.getElementById('addTodo').addEventListener('submit',function(e){
+    e.preventDefault(); var inp=document.getElementById('todoText'), v=inp.value.trim(); if(!v) return;
+    enqueue('Todos',newId(),{Title:v.slice(0,200),Status:'To do',Source:'mine'}); inp.value=''; document.getElementById('addBtn').classList.remove('primary');
+  });
+  function renderSaid(){
+    var box=document.getElementById('said'), list=document.getElementById('saidList'); list.textContent='';
+    var items=[];
+    Object.keys(boxes).forEach(function(id){ var r=row('Ratings',id); if(r&&r.Stars){ items.push({at:Number(r.UpdatedAt)||0,href:'#c4:'+id,title:boxes[id].title,q:'',w:'★★★★★'.slice(0,Math.min(5,Number(r.Stars)))}); } });
+    Object.keys(boxes).forEach(function(id){ var r=row('Comments',id); if(r&&r.Comment&&r.Comment.trim()){ items.push({at:Number(r.UpdatedAt)||0,href:'#'+boxes[id].d.closest('.screen').id+':'+id,title:boxes[id].title,q:r.Comment.trim(),w:(r.UpdatedBy?'from your '+r.UpdatedBy:'')}); } });
+    items.sort(function(a,b){ return b.at-a.at; });
+    box.hidden=!items.length;
+    items.forEach(function(it){ var d=document.createElement('div'); d.className='item'; var a=document.createElement('a'); a.href=it.href; a.textContent=it.title; d.appendChild(a);
+      if(it.q){ var q=document.createElement('div'); q.className='q'; q.textContent=it.q; d.appendChild(q); }
+      var w=document.createElement('div'); w.className='w'; if(it.w&&!it.q) w.className+=' mine'; w.textContent=it.w; d.appendChild(w); list.appendChild(d); });
+  }
+  function renderSync(){
+    var el=document.getElementById('sync'), q=st.queue.length, p=st.parked.length, msg='';
+    if(fetchError&&!st.fetchedAt) msg='Could not reach the shared document. What you do here is kept and sent later.';
+    else if(fetchError) msg='Could not refresh from the shared document just now; showing the last copy.';
+    else if(q) msg=lastError?'Not saved yet, will retry.':'Saving';
+    else if(p) msg=p+(p===1?' change could not be saved.':' changes could not be saved.');
+    el.textContent=msg;
+  }
+
+  // ---- lifecycle: route only now, when the board and the boxes exist (a first load straight at #board needs them)
+  history.replaceState({i:0},'',location.hash||'#map');
+  route();
+  renderAll(); fetchAll(); drain();
+  document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden') flushNotes(); else { fetchAll(); drain(); } });
+  window.addEventListener('online',function(){ drain(true); fetchAll(); });
+  window.addEventListener('pagehide',flushNotes);
+  window.__map={st:st,enqueue:enqueue,drain:drain,fetchAll:fetchAll,flushNotes:flushNotes,row:row,todos:todos,DEVICE:DEVICE};
+})();
+</script>
+</body>
+</html>
