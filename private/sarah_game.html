@@ -701,7 +701,7 @@ function renderNote(){
   s.append(el("div", { class:"hero", html: bearSvg() }), el("div", { class:"note" }, ...FIRST_NOTE.split(/(?<=\. )/).map(t => el("p", {}, t))));
   const b = el("button", { class:"btn primary", type:"button", style:"margin-top:14px" }, "D'accord");
   b.addEventListener("click", () => { store.set("noteSeen", true); renderHome(); show("s-home"); });
-  s.append(el("div", { class:"center" }, b));
+  s.append(el("div", { class:"center" }, b), el("p", { class:"quiet center", style:"margin-top:14px" }, "Petite astuce : ouvre ce lien dans Safari ou Chrome plutôt que dans WhatsApp, pour que le terrier se souvienne de toi d'une fois à l'autre."));
 }
 
 /* ---------- boot ---------- */
