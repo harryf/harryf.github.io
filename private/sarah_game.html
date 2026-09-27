@@ -192,7 +192,7 @@ const QUOTES = [["Buy less, choose well, make it last.","Vivienne Westwood"],["Y
 const SONGS = [["Rose","Anna Tsuchiya inspi' Nana (Black Stones)","l'ouverture de NANA, à chanter fort"],["Glamorous Sky","Mika Nakashima (NANA)","le film, la scène, les cheveux"],["Kuroi Namida","Anna Tsuchiya (NANA)","pour les jours gris"],["Lucy","Anna Tsuchiya","punk, vite, sans s'excuser"],["Own Devices","Sophie Hunter","ta rappeuse, ton rythme"],["Mic Check","Sophie Hunter","un, deux, un, deux"],["Cha Cha","Sophie Hunter","pour bouger un peu les épaules"],["Wish","Olivia Lufkin (NANA)","la fin d'un épisode, en douceur"]];
 const IMPRO = [["Le bus s'arrête et le chauffeur se retourne : « Bon, qui a le dragon ? »",["« C'est moi. Mais il est petit. »","« Il descend au prochain arrêt. »","« Le dragon a un abonnement. »"]],["Une ourse entre dans un salon de tatouage.",["« Un cœur, s'il vous plaît. Discret. »","« J'ai rendez-vous à 14 h. »","« Vous faites les griffes aussi ? »"]],["Ta voisine te tend une boîte : « C'est pour toi, mais ne l'ouvre pas avant mardi. »",["Tu l'ouvres tout de suite.","Tu la ranges au frigo, par respect.","Tu demandes : « Mardi de quelle année ? »"]],["Sur scène, la lumière s'éteint. Une voix dit : « Improvise. »",["Tu chantes un nom de légume.","Tu allumes ton téléphone et tu dis « lever de soleil ».","Tu fais la statue jusqu'à ce que quelqu'un rie."]],["Un poro te suit dans la rue.",["Tu lui donnes un biscuit imaginaire.","Tu l'adoptes, il s'appelle Jean.","Tu lui demandes le chemin."]],["La machine à café te parle : « Tu es sûre ? »",["« Oui. Double. »","« Non, mais fais-le quand même. »","« Depuis quand tu parles ? »"]],["Ton reflet te fait un clin d'œil.",["Tu lui rends le clin d'œil.","Tu lui demandes s'il a bien dormi.","Tu dis « pas maintenant » et tu souris."]],["Il pleut des confettis, mais personne ne remarque.",["Tu en gardes un dans ta poche.","Tu déclares que c'est ton anniversaire.","Tu ouvres un parapluie rose."]],["Un client veut un tatouage de « rien du tout ».",["Tu proposes un point. Très beau.","Tu lui tatoues un espace vide, avec cadre.","Tu dis « ça prendra trois heures ». "]],["Le karaoké affiche une chanson qui n'existe pas.",["Tu l'inventes, couplet par couplet.","Tu chantes la mélodie de ton micro-ondes.","Tu lis les paroles du menu."]],["Un chat te tend une lettre.",["Tu la lis à voix haute : « Miaou. »","Tu réponds sur une boîte de thon.","Tu lui donnes la tienne en échange."]],["Nana Osaki s'assied à ta table.",["Tu lui montres tes dessins.","Vous ne dites rien, et c'est très bien.","Tu lui demandes où elle a eu ses chaussures."]]];
 const ENDINGS = ["Bois un verre d'eau, doucement.","Enroule-toi dans une couverture cinq minutes.","Pose tes pieds bien à plat, sens le sol.","Ouvre une fenêtre, respire l'air une fois.","Étire tes bras au-dessus de ta tête.","Mets une main sur ton cœur, juste un moment.","Regarde une couleur que tu aimes dans la pièce."];
-const FIRST_NOTE = "Salut Sarah. C'est un petit endroit que j'ai fait pour toi. Il n'y a rien à faire, rien à réussir, rien à répondre. Ce que tu écris ici reste sur ton téléphone, sauf si tu décides un jour de le partager. Les couleurs et les cartes que tu vois vont dans un petit carnet que je peux voir, rien d'autre. Reste le temps que tu veux, pars quand tu veux. Harry";
+const FIRST_NOTE = "Salut Sarah. C'est un petit endroit que j'ai fait pour toi. Il n'y a rien à faire, rien à réussir, rien à répondre. Un ours t'attend, et tes dessins aussi. Reste le temps que tu veux, pars quand tu veux. Harry";
 const DEFAULT_MESSAGES = [["Le terrier reste ouvert. Tu peux revenir quand tu veux, ou pas.","le Terrier"],["Il n'y a rien à réussir ici.","le Terrier"],["Merci d'être passée.","le Terrier"]];
 
 /* ---------- card catalogue ---------- */
@@ -231,10 +231,10 @@ const store = {
   set(k, v){ try{ localStorage.setItem(K(k), JSON.stringify(v)); return true; }catch(e){ console.error("store.set failed", k, e); return false; } },
 };
 const device = (() => { let d = store.get("device"); if(!d){ d = (("ontouchstart" in window) ? "phone-" : "laptop-") + Math.random().toString(16).slice(2,6); store.set("device", d); } return d; })();
-const settings = Object.assign({ sound:false, reduce:false, privateToday:null, share:false }, store.get("settings", {}));
+const settings = Object.assign({ sound:false, reduce:false }, store.get("settings", {}));
 const saveSettings = () => store.set("settings", settings);
 const todayKey = () => new Date().toISOString().slice(0,10);
-const isPrivate = () => settings.privateToday === todayKey();
+const isPrivate = () => false; // the private-day switch was removed on 2026-09-27 (Harry: the warnings would worry her)
 
 /* ---------- Grist client: upserts through a local queue, never blocks the visit ---------- */
 const GRIST = "https://docs.getgrist.com/api/docs/io7cKbM6Bu4k";
@@ -687,7 +687,6 @@ function renderSheet(){
   p.append(
     sw("Son", () => settings.sound, v => setSound(v)),
     sw("Moins de mouvement", () => settings.reduce, v => { settings.reduce = v; saveSettings(); document.body.classList.toggle("reduce", v); }),
-    sw("Ne rien enregistrer aujourd'hui", () => isPrivate(), v => { settings.privateToday = v ? todayKey() : null; saveSettings(); }),
     sw("Garder mes mots aussi dans le carnet partagé", () => settings.share, v => { settings.share = v; saveSettings(); }),
     sw("Thème sombre", () => document.documentElement.getAttribute("data-theme") === "dark", v => { document.documentElement.setAttribute("data-theme", v ? "dark" : "light"); store.set("theme", v ? "dark" : "light"); }),
   );
@@ -706,6 +705,8 @@ function renderNote(){
 
 /* ---------- boot ---------- */
 (function boot(){
+  // ?reset on the URL clears everything the page kept on this device (for Harry's tests), then drops the parameter
+  if(new URLSearchParams(location.search).has("reset")){ try{ Object.keys(localStorage).filter(k => k.startsWith("terrier.v1.")).forEach(k => localStorage.removeItem(k)); }catch(e){} history.replaceState(null, "", location.pathname); }
   const theme = store.get("theme", null); if(theme) document.documentElement.setAttribute("data-theme", theme);
   if(settings.reduce) document.body.classList.add("reduce");
   $("#soundChip").addEventListener("click", () => setSound(!settings.sound));
