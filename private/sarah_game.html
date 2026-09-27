@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Le Terrier</title>
+<meta name="description" content="Un petit endroit pour toi. Rien à faire, rien à réussir.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Le Terrier">
+<meta property="og:description" content="Un petit endroit doux, fait pour toi. Pas de notifications, pas de pression. Un ours t'attend.">
+<meta property="og:url" content="https://harryf.github.io/private/sarah_game.html">
+<meta property="og:image" content="https://harryf.github.io/private/sarah_game/card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le Terrier">
+<meta name="twitter:description" content="Un petit endroit doux, fait pour toi. Pas de notifications, pas de pression. Un ours t'attend.">
+<meta name="twitter:image" content="https://harryf.github.io/private/sarah_game/card.jpg">
+<meta name="theme-color" content="#F2C4A8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Caveat:wght@600&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root{
+  --peche:#F2C4A8; --orange:#F3B36A; --menthe:#A9E3C6; --lavande:#CDBDEB;
+  --citron:#D6DE8C; --ciel:#A9D3E8; --rose:#F3BFD1; --sarcelle:#8FCFC8;
+  --ink:#2B2430; --ink2:#5A5060; --paper:#FBF6EF; --paper2:#FFFFFF;
+  --line:rgba(43,36,48,.14); --accent:#D8553F; --tartan1:#B8483C; --tartan2:#2F3A5A; --tartan3:#E7C86A;
+  --day:var(--peche); --day-soft:#F7DCCB;
+  --radius:22px; --shadow:0 10px 30px rgba(43,36,48,.10);
+  --display:"Bowlby One", "Arial Black", Impact, sans-serif;
+  --body:"Nunito", "Segoe UI", Helvetica, Arial, sans-serif;
+  --hand:"Caveat", "Comic Sans MS", cursive;
+  --fade:220ms;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --ink:#F3EDE6; --ink2:#C9BFD2; --paper:#1E1A24; --paper2:#2A2431; --line:rgba(243,237,230,.16); --shadow:0 10px 30px rgba(0,0,0,.35); }
+}
+:root[data-theme="dark"]{ --ink:#F3EDE6; --ink2:#C9BFD2; --paper:#1E1A24; --paper2:#2A2431; --line:rgba(243,237,230,.16); --shadow:0 10px 30px rgba(0,0,0,.35); }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--body); color:var(--ink); background:var(--paper);
+  font-size:17px; line-height:1.45; -webkit-font-smoothing:antialiased;
+  min-height:100vh; min-height:100dvh;
+  background-image:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--day) 55%, var(--paper)) 0, transparent 38%),
+    radial-gradient(circle at 88% 85%, color-mix(in srgb, var(--day) 40%, var(--paper)) 0, transparent 42%);
+  transition:background-color 400ms;
+}
+@supports not (color: color-mix(in srgb, red, blue)){ body{background-image:none} }
+.stage{ max-width:440px; margin:0 auto; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; }
+@media (min-width:900px){
+  body{ background-image:
+    repeating-linear-gradient(45deg, transparent 0 34px, rgba(43,36,48,.035) 34px 36px),
+    repeating-linear-gradient(-45deg, transparent 0 34px, rgba(43,36,48,.035) 34px 36px),
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--day) 55%, var(--paper)) 0, transparent 38%),
+    radial-gradient(circle at 88% 85%, color-mix(in srgb, var(--day) 40%, var(--paper)) 0, transparent 42%); }
+  .stage{ margin:28px auto; min-height:calc(100vh - 56px); min-height:calc(100dvh - 56px); background:var(--paper); border-radius:32px; box-shadow:var(--shadow); overflow:hidden; border:1px solid var(--line); }
+}
+/* top bar: a tartan strip, the name, two literal buttons */
+.top{ position:relative; padding:14px 16px 8px; display:flex; align-items:center; gap:10px; }
+.top::before{ content:""; position:absolute; left:0; right:0; top:0; height:12px;
+  background: repeating-linear-gradient(90deg, var(--tartan1) 0 18px, var(--tartan2) 18px 26px, var(--tartan3) 26px 30px, var(--tartan1) 30px 40px); opacity:1; }
+.brand{ font-family:var(--display); font-size:22px; letter-spacing:.5px; margin:6px auto 0 0; color:var(--ink); text-decoration:none; }
+.brand small{ display:none }
+@media (min-width:520px){ .brand small{ display:inline; font-family:var(--hand); font-size:18px; color:var(--ink2); margin-left:8px; font-weight:600 } }
+.chip{ white-space:nowrap; font:inherit; font-size:14px; font-weight:700; color:var(--ink); background:var(--paper2); border:1px solid var(--line); border-radius:999px; padding:8px 12px; min-height:44px; min-width:44px; cursor:pointer; margin-top:6px }
+.chip[aria-pressed="true"]{ background:var(--ink); color:var(--paper) }
+main{ flex:1; display:flex; flex-direction:column; padding:6px 16px 12px; }
+.screen{ display:none; flex:1; flex-direction:column; animation:fade var(--fade) ease-out; }
+.screen.on{ display:flex }
+@keyframes fade{ from{opacity:0} to{opacity:1} }
+h1,h2{ font-family:var(--display); font-weight:400; line-height:1.1; margin:0 0 8px; }
+h1{ font-size:30px } h2{ font-size:24px }
+p{ margin:0 0 12px }
+.quiet{ color:var(--ink2); font-size:15px }
+.hand{ font-family:var(--hand); font-size:22px; font-weight:600 }
+.btn{ font:inherit; font-weight:700; font-size:17px; color:var(--ink); background:var(--paper2); border:2px solid var(--ink); border-radius:999px; padding:12px 20px; min-height:48px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+.btn.primary{ background:var(--ink); color:var(--paper); }
+.btn.soft{ border-color:var(--line); font-weight:600 }
+.btn:disabled{ opacity:.5; cursor:default }
+.row{ display:flex; flex-wrap:wrap; gap:10px; align-items:center }
+.stack{ display:flex; flex-direction:column; gap:10px }
+.card{ background:var(--paper2); border-radius:var(--radius); padding:18px 18px 16px; box-shadow:var(--shadow); border:1px solid var(--line); position:relative; margin-top:12px }
+.card .kind{ font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); margin-bottom:4px }
+.pin{ position:absolute; right:14px; top:-12px; width:64px; height:24px; transform:rotate(-8deg) }
+.dots{ display:flex; gap:6px; margin:10px 2px 0 }
+.dots i{ width:8px; height:8px; border-radius:50%; background:color-mix(in srgb, var(--ink) 22%, transparent); display:block }
+.dots i.done{ background:var(--ink) }
+.dots i.now{ background:var(--accent) }
+.nav{ display:flex; gap:10px; margin-top:16px; align-items:center }
+.nav .spacer{ flex:1 }
+.stop{ font:inherit; font-size:14px; color:var(--ink2); background:none; border:0; text-decoration:underline; cursor:pointer; min-height:44px; padding:0 6px }
+textarea, input[type=text]{ font:inherit; font-size:17px; width:100%; border:1.5px solid var(--ink2); border-radius:14px; padding:10px 12px; background:var(--paper); color:var(--ink); resize:vertical; }
+textarea{ min-height:64px }
+.swatches{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:6px 0 4px }
+.sw{ height:56px; border-radius:16px; border:3px solid transparent; cursor:pointer; padding:0; font:inherit; font-size:13px; font-weight:700; color:#2B2430; display:flex; align-items:flex-end; justify-content:flex-start; padding:0 0 4px 8px }
+.sw[aria-pressed="true"]{ border-color:var(--ink); }
+.moods{ display:flex; gap:8px; justify-content:space-between }
+.mood{ flex:1; background:none; border:2px solid transparent; border-radius:16px; padding:6px 2px; cursor:pointer; font:inherit; font-size:12px; color:var(--ink2); display:flex; flex-direction:column; align-items:center; gap:2px; min-height:44px }
+.mood[aria-pressed="true"]{ border-color:var(--ink); background:var(--paper2) }
+.mood svg{ width:52px; height:52px }
+.hero{ display:flex; justify-content:center; margin:4px 0 0 }
+.hero svg{ width:150px; height:150px }
+.art{ width:100%; border-radius:16px; display:block; max-height:52vh; object-fit:contain; background:var(--paper) }
+.artwrap{ padding:10px; border-radius:20px; margin:4px 0 10px }
+.emojis{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px }
+.emojis button{ font-size:28px; min-height:52px; border-radius:14px; border:1px solid var(--line); background:var(--paper); cursor:pointer }
+.emojis button[aria-pressed="true"]{ border-color:var(--ink); background:var(--paper2) }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 10px }
+.reply{ margin-top:10px; font-family:var(--hand); font-size:22px; font-weight:600; color:var(--ink) }
+.blob{ width:180px; height:180px; border-radius:50%; margin:14px auto; background:var(--day); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:20px; color:var(--ink); transform:scale(.7); transition:transform 4s ease-in-out, background-color 4s ease-in-out; }
+.blob.in{ transform:scale(1); transition-duration:4s }
+.blob.out{ transform:scale(.7); transition-duration:6s }
+.sticker{ display:inline-block; background:var(--day); color:var(--ink); font-family:var(--hand); font-size:30px; font-weight:600; padding:10px 22px; border-radius:18px 8px 20px 10px; transform:rotate(-2deg); box-shadow:var(--shadow); margin:14px 0 }
+.stamp{ display:inline-block; font-family:var(--display); font-size:34px; color:var(--accent); border:4px solid var(--accent); border-radius:10px; padding:2px 12px; transform:rotate(-6deg); opacity:.9; letter-spacing:2px }
+.hold{ position:relative; height:220px; border-radius:20px; border:2px dashed var(--line); overflow:hidden; display:flex; align-items:center; justify-content:center; touch-action:none; user-select:none; -webkit-user-select:none; cursor:pointer }
+.hold .fill{ position:absolute; left:0; right:0; bottom:0; height:0; background:var(--day); transition:height 200ms linear }
+.hold span{ position:relative; font-weight:700; color:var(--ink) }
+.palette{ display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 }
+.palette button{ width:44px; height:44px; border-radius:50%; border:3px solid transparent; cursor:pointer }
+.palette button[aria-pressed="true"]{ border-color:var(--ink) }
+.colour svg{ width:100%; height:auto; max-height:46vh }
+.colour path, .colour ellipse, .colour circle, .colour rect{ cursor:pointer; stroke:var(--ink); stroke-width:2 }
+.weather{ display:grid; grid-template-columns:repeat(5,1fr); gap:6px }
+.weather button{ background:var(--paper); border:2px solid transparent; border-radius:14px; padding:8px 2px; font:inherit; font-size:12px; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px; min-height:60px }
+.weather button[aria-pressed="true"]{ border-color:var(--ink) }
+.weather svg{ width:34px; height:34px }
+.list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px }
+.list li{ background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:10px 12px }
+.list .when{ font-size:13px; color:var(--ink2) }
+.sheet{ position:fixed; inset:0; background:rgba(43,36,48,.35); display:none; align-items:flex-end; justify-content:center; z-index:9 }
+.sheet.on{ display:flex }
+.sheet .panel{ background:var(--paper); color:var(--ink); width:100%; max-width:440px; border-radius:24px 24px 0 0; padding:18px 18px 28px; max-height:88vh; overflow:auto }
+@media (min-width:900px){ .sheet{ align-items:center } .sheet .panel{ border-radius:24px } }
+.switch{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); min-height:52px }
+.switch button{ font:inherit; font-size:14px; font-weight:700; min-width:64px; min-height:44px; border-radius:999px; border:2px solid var(--ink); background:var(--paper2); color:var(--ink); cursor:pointer }
+.switch button[aria-pressed="true"]{ background:var(--ink); color:var(--paper) }
+.note{ background:var(--paper2); border-radius:var(--radius); padding:18px; border:1px solid var(--line); box-shadow:var(--shadow) }
+.note p{ font-size:17px }
+.songs a{ color:var(--ink) }
+.ending .hero svg{ width:130px; height:130px }
+.center{ text-align:center }
+.sr{ position:absolute; left:-9999px }
+audio{ display:none }
+.reduce *, .reduce *::before, .reduce *::after{ animation:none !important; transition:none !important }
+.reduce .blob{ transform:scale(.85) !important } .reduce .blob.in{ background:var(--day-soft) } .reduce .blob.out{ background:var(--day) }
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation:none !important; transition:none !important }
+  .blob.in{ background:var(--day-soft); transform:scale(.85) } .blob.out{ background:var(--day); transform:scale(.85) }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <header class="top">
+    <a class="brand" href="#" id="brand">le terrier <small>un petit endroit pour toi</small></a>
+    <button class="chip" id="soundChip" aria-pressed="false" type="button">son : éteint</button>
+    <button class="chip" id="settingsChip" type="button">réglages</button>
+  </header>
+  <main>
+    <section class="screen" id="s-note"></section>
+    <section class="screen" id="s-home"></section>
+    <section class="screen" id="s-card"></section>
+    <section class="screen" id="s-end"></section>
+    <section class="screen" id="s-good"></section>
+    <section class="screen" id="s-choose"></section>
+  </main>
+</div>
+<div class="sheet" id="sheet" role="dialog" aria-label="réglages"><div class="panel" id="panel"></div></div>
+<audio id="audio" preload="none" loop></audio>
+
+<script>
+/* ---------- data ---------- */
+const ART = [{"file":"01.jpg","w":636,"h":900,"colour":"#dbc1b5"},{"file":"02.jpg","w":636,"h":900,"colour":"#f4c090"},{"file":"03.jpg","w":634,"h":900,"colour":"#ccb6b6"},{"file":"04.jpg","w":900,"h":854,"colour":"#e4ccd1"},{"file":"05.jpg","w":636,"h":900,"colour":"#e4c6be"},{"file":"06.jpg","w":900,"h":636,"colour":"#e3e3e3"},{"file":"07.jpg","w":577,"h":900,"colour":"#e5e7ed"},{"file":"08.jpg","w":900,"h":881,"colour":"#f0f0f0"},{"file":"09.jpg","w":739,"h":900,"colour":"#c1dbca"},{"file":"10.jpg","w":704,"h":900,"colour":"#c9a8bf"},{"file":"11.jpg","w":636,"h":900,"colour":"#f3c479"},{"file":"12.jpg","w":900,"h":741,"colour":"#e8e6e4"},{"file":"13.jpg","w":637,"h":900,"colour":"#d5c89c"},{"file":"14.jpg","w":636,"h":900,"colour":"#d1ccca"},{"file":"15.jpg","w":862,"h":900,"colour":"#e5d9d7"},{"file":"16.jpg","w":888,"h":900,"colour":"#ede0e1"},{"file":"17.jpg","w":900,"h":741,"colour":"#e6eae7"},{"file":"18.jpg","w":636,"h":900,"colour":"#eae8e0"},{"file":"19.jpg","w":602,"h":900,"colour":"#c6bbbe"},{"file":"20.jpg","w":798,"h":900,"colour":"#dddedd"},{"file":"21.jpg","w":629,"h":900,"colour":"#f1e5d2"},{"file":"22.jpg","w":634,"h":900,"colour":"#9aadad"},{"file":"23.jpg","w":617,"h":900,"colour":"#ece6db"},{"file":"24.jpg","w":900,"h":881,"colour":"#f2e6e0"},{"file":"25.jpg","w":744,"h":900,"colour":"#dae1d3"},{"file":"26.jpg","w":636,"h":900,"colour":"#dbc1b5"},{"file":"27.jpg","w":636,"h":900,"colour":"#c7d1c6"},{"file":"28.jpg","w":900,"h":636,"colour":"#d9d0cf"},{"file":"29.jpg","w":636,"h":900,"colour":"#d1b6b2"},{"file":"30.jpg","w":900,"h":896,"colour":"#c0bfc4"},{"file":"31.jpg","w":720,"h":900,"colour":"#be9790"},{"file":"32.jpg","w":720,"h":900,"colour":"#facba0"},{"file":"33.jpg","w":796,"h":900,"colour":"#b4bcdc"},{"file":"34.jpg","w":900,"h":637,"colour":"#a9ac9b"},{"file":"35.jpg","w":887,"h":900,"colour":"#b7a89e"},{"file":"36.jpg","w":883,"h":900,"colour":"#b4aaa1"},{"file":"37.jpg","w":724,"h":900,"colour":"#d9cfc9"}];
+const BEARS = [["bear-01.jpg","étalé sur un rocher"],["bear-02.jpg","allongé sur un rocher, vacances"],["bear-03.jpg","endormi, tout près"],["bear-04.jpg","un ourson avec un bâton, comme un chef d'orchestre"],["bear-05.jpg","un ours qui tire l'oreille de l'autre"],["bear-06.jpg","deux oursons qui jouent"],["bear-07.jpg","assis, il te regarde"],["bear-08.jpg","assis, pensif"],["bear-09.jpg","assis tout seul sur les cailloux"],["bear-10.jpg","deux ours nez à nez"],["bear-11.jpg","un ourson noir qui serre une branche"],["bear-12.jpg","une estampe japonaise, un ourson grimpe"],["bear-13.jpg","un ourson polaire avec des lunettes de soleil"]];
+const COLOURS = [["peche","pêche","#F2C4A8"],["orange","orange","#F3B36A"],["menthe","menthe","#A9E3C6"],["lavande","lavande","#CDBDEB"],["citron","citron","#D6DE8C"],["ciel","ciel","#A9D3E8"],["rose","rose","#F3BFD1"],["sarcelle","sarcelle","#8FCFC8"]];
+const EMOJI = ["😴","😌","🤨","😆","🥺","😎","🫠","💅"];
+const BEAR_REPLIES = ["Oui, c'est tout à fait ça.","Je l'aurais choisi aussi.","Cet ours approuve.","Bien vu.","L'ours dit merci.","C'est noté quelque part de doux.","Il est d'accord, je crois."];
+const GOOD_CHIPS = ["un café","un chat","du soleil","une chanson","un message","dormir","un dessin","de l'eau","quelqu'un","un silence"];
+const GG_CHIPS = ["je me suis levée","j'ai bu de l'eau","j'ai ouvert cette page","j'ai respiré","j'ai mangé quelque chose","j'ai répondu à quelqu'un","j'ai dessiné","je suis sortie"];
+const BOTH = [["Je suis fatiguée.","Je suis encore là."],["Aujourd'hui c'est lourd.","Aujourd'hui a une fin."],["Je ne sais pas quoi faire.","Je n'ai rien à faire tout de suite."],["Tout semble noir.","Il y a huit couleurs sur cet écran."],["J'ai peur.","J'ai déjà eu peur avant, et je suis là."],["Je me sens seule.","Quelqu'un a fait cette page pour moi."],["Je ne me reconnais pas.","Mes dessins sont toujours à moi."],["Ça ne va pas.","Ça peut aller autrement dans une heure."],["Je n'arrive à rien.","J'ai ouvert cette page."],["Je suis en colère.","La colère passe, comme la pluie."],["Je ne veux voir personne.","Je peux rester ici tranquille."],["Je me sens vide.","Le vide laisse de la place."],["Je suis trop.","Je suis exactement assez pour ce terrier."]];
+const ABSURD = ["Donne un nom à ta tasse.","Salue un objet dans la pièce, à voix basse.","Trouve quelque chose de rond et regarde-le trois secondes.","Fais le bruit d'un ours qui bâille.","Invente un titre de film pour ta journée.","Dis bonjour à tes pieds.","Choisis un mot qui sonne bien et dis-le deux fois.","Imagine que ton téléphone est un petit animal. Comment il s'appelle ?","Compte les choses bleues autour de toi.","Fais un mini-salut de scène, juste pour toi.","Décide quel meuble est le roi de la pièce.","Donne une note sur dix à la lumière d'aujourd'hui.","Trouve la chose la plus douce à portée de main. Touche-la.","Chante un mot. Un seul.","Regarde par la fenêtre et choisis un nuage préféré (ou une lumière).","Dessine un ours dans l'air avec ton doigt.","Invente un nom de groupe pour les objets sur ta table."];
+const KARAOKE = ["La première ligne d'une chanson de Nana, dans ta tête.","Un « la la la » très long.","Un cri de punk, mais en silence.","Ton prénom, chanté comme une pub.","Le mot « terrier » sur trois notes.","Un refrain que tu connais par cœur.","La chanson que tu chantes toujours au karaoké.","Le bruit d'une guitare, avec la bouche, sans son.","Une note très grave, puis une très aiguë."];
+const SCENE1 = ["Miss","Lady","Duchess","Kitty","Velvet","Cherry","Ruby","Baby","Madame","Mademoiselle","Sister","Captain","Saint","Lola","Bébé","Reine","Countess","Little","Sugar","Dame","Queen"];
+const SCENE2 = ["Tartan","Fléau","Nuit","Orage","Menthe","Velours","Cassis","Rocking Horse","Safety Pin","Bonbon","Volcan","Lausanne","Poro","Marmelade","Tempête","Paillette","Guimauve","Vivienne","Cactus","Lune","Ours"];
+const SOFT = ["doucement","tu es là","respire","ça passe","tout doux","tranquille","à ton rythme","rien à prouver","ici c'est calme","une chose à la fois","tu comptes","reste si tu veux","pas de pression","le terrier est là","tu fais ce que tu peux","c'est déjà bien","on a le temps","gentle","you are allowed to rest","soft punk","tendresse","chill, l'ours"];
+const QUOTES = [["Buy less, choose well, make it last.","Vivienne Westwood"],["You have a more interesting life if you wear impressive clothes.","Vivienne Westwood"],["Whimsy is more than an aesthetic.","From The Diving Board, épisode 45"],["Kindness and revolt.","Le Fléau, ton studio"],["Une chose petite et douce, c'est déjà une chose.","le Terrier"],["Tu n'as rien à prouver ici.","le Terrier"],["Pas de bonne ou de mauvaise façon de faire ça.","le Terrier"],["Le calme, c'est punk aussi.","le Terrier"],["Nana chante fort parce qu'elle a quelque chose à dire. Toi aussi.","le Terrier"],["Ce que tu ressens a du sens.","le Terrier"],["GG WP.","le Terrier"],["Dessine, chante, respire : trois façons de rester.","le Terrier"]];
+const SONGS = [["Rose","Anna Tsuchiya inspi' Nana (Black Stones)","l'ouverture de NANA, à chanter fort"],["Glamorous Sky","Mika Nakashima (NANA)","le film, la scène, les cheveux"],["Kuroi Namida","Anna Tsuchiya (NANA)","pour les jours gris"],["Lucy","Anna Tsuchiya","punk, vite, sans s'excuser"],["Own Devices","Sophie Hunter","ta rappeuse, ton rythme"],["Mic Check","Sophie Hunter","un, deux, un, deux"],["Cha Cha","Sophie Hunter","pour bouger un peu les épaules"],["Wish","Olivia Lufkin (NANA)","la fin d'un épisode, en douceur"]];
+const IMPRO = [["Le bus s'arrête et le chauffeur se retourne : « Bon, qui a le dragon ? »",["« C'est moi. Mais il est petit. »","« Il descend au prochain arrêt. »","« Le dragon a un abonnement. »"]],["Une ourse entre dans un salon de tatouage.",["« Un cœur, s'il vous plaît. Discret. »","« J'ai rendez-vous à 14 h. »","« Vous faites les griffes aussi ? »"]],["Ta voisine te tend une boîte : « C'est pour toi, mais ne l'ouvre pas avant mardi. »",["Tu l'ouvres tout de suite.","Tu la ranges au frigo, par respect.","Tu demandes : « Mardi de quelle année ? »"]],["Sur scène, la lumière s'éteint. Une voix dit : « Improvise. »",["Tu chantes un nom de légume.","Tu allumes ton téléphone et tu dis « lever de soleil ».","Tu fais la statue jusqu'à ce que quelqu'un rie."]],["Un poro te suit dans la rue.",["Tu lui donnes un biscuit imaginaire.","Tu l'adoptes, il s'appelle Jean.","Tu lui demandes le chemin."]],["La machine à café te parle : « Tu es sûre ? »",["« Oui. Double. »","« Non, mais fais-le quand même. »","« Depuis quand tu parles ? »"]],["Ton reflet te fait un clin d'œil.",["Tu lui rends le clin d'œil.","Tu lui demandes s'il a bien dormi.","Tu dis « pas maintenant » et tu souris."]],["Il pleut des confettis, mais personne ne remarque.",["Tu en gardes un dans ta poche.","Tu déclares que c'est ton anniversaire.","Tu ouvres un parapluie rose."]],["Un client veut un tatouage de « rien du tout ».",["Tu proposes un point. Très beau.","Tu lui tatoues un espace vide, avec cadre.","Tu dis « ça prendra trois heures ». "]],["Le karaoké affiche une chanson qui n'existe pas.",["Tu l'inventes, couplet par couplet.","Tu chantes la mélodie de ton micro-ondes.","Tu lis les paroles du menu."]],["Un chat te tend une lettre.",["Tu la lis à voix haute : « Miaou. »","Tu réponds sur une boîte de thon.","Tu lui donnes la tienne en échange."]],["Nana Osaki s'assied à ta table.",["Tu lui montres tes dessins.","Vous ne dites rien, et c'est très bien.","Tu lui demandes où elle a eu ses chaussures."]]];
+const ENDINGS = ["Bois un verre d'eau, doucement.","Enroule-toi dans une couverture cinq minutes.","Pose tes pieds bien à plat, sens le sol.","Ouvre une fenêtre, respire l'air une fois.","Étire tes bras au-dessus de ta tête.","Mets une main sur ton cœur, juste un moment.","Regarde une couleur que tu aimes dans la pièce."];
+const FIRST_NOTE = "Salut Sarah. C'est un petit endroit que j'ai fait pour toi. Il n'y a rien à faire, rien à réussir, rien à répondre. Ce que tu écris ici reste sur ton téléphone, sauf si tu décides un jour de le partager. Les couleurs et les cartes que tu vois vont dans un petit carnet que je peux voir, rien d'autre. Reste le temps que tu veux, pars quand tu veux. Harry";
+const DEFAULT_MESSAGES = [["Le terrier reste ouvert. Tu peux revenir quand tu veux, ou pas.","le Terrier"],["Il n'y a rien à réussir ici.","le Terrier"],["Merci d'être passée.","le Terrier"]];
+
+/* ---------- card catalogue ---------- */
+// weight: [low mood, middle, high]; gives: something offered; quiet: asks nothing
+const DECK = [
+  {id:"respire", title:"Respire", label:"un souffle", w:[3,2,1], quiet:true},
+  {id:"sens", title:"5 4 3 2 1", label:"les sens", w:[3,2,1]},
+  {id:"galerie", title:"Un de tes dessins", label:"galerie", w:[3,3,2], gives:true},
+  {id:"titre", title:"Titre du tableau", label:"galerie", w:[1,2,2]},
+  {id:"ours", title:"Un ours", label:"quel émoji ?", w:[2,3,3], gives:true},
+  {id:"bonne", title:"Une bonne chose", label:"petite, ça suffit", w:[2,3,3]},
+  {id:"mot", title:"Un mot", label:"quelqu'un pense à toi", w:[3,2,1], gives:true, quiet:true},
+  {id:"chanson", title:"Une chanson", label:"à écouter si tu veux", w:[2,2,3], gives:true, quiet:true},
+  {id:"son", title:"Un son", label:"pluie, forêt, chat", w:[3,2,1], gives:true, quiet:true},
+  {id:"absurde", title:"Petite chose absurde", label:"whimsy", w:[1,2,3]},
+  {id:"nomme", title:"Nomme l'ours", label:"il n'a pas encore de nom", w:[1,2,2], once:"bearName"},
+  {id:"impro", title:"Oui, et...", label:"impro", w:[1,2,3]},
+  {id:"deux", title:"Les deux sont vrais", label:"en même temps", w:[3,2,1]},
+  {id:"karaoke", title:"Karaoké muet", label:"dans ta tête", w:[1,2,3]},
+  {id:"scene", title:"Nom de scène", label:"pour ce soir", w:[1,2,3], gives:true},
+  {id:"colorie", title:"Colorie", label:"l'ours du terrier", w:[2,3,2]},
+  {id:"tiens", title:"Appuie et tiens", label:"tant que tu veux", w:[3,2,1], quiet:true},
+  {id:"meteo", title:"Météo intérieure", label:"sans chiffre", w:[2,2,2]},
+  {id:"vrai", title:"Ce qui est vrai maintenant", label:"des choses vraies", w:[3,2,1], gives:true},
+  {id:"poro", title:"Nourris le poro", label:"il est déjà content", w:[1,2,3]},
+  {id:"gg", title:"GG", label:"une chose faite", w:[2,3,2]},
+  {id:"doux", title:"Mot doux", label:"à garder", w:[3,2,2], gives:true, quiet:true},
+  {id:"nana", title:"Nana dit", label:"une phrase", w:[2,2,2], gives:true, quiet:true},
+];
+const SOFT_PATH = ["tiens","respire","vrai","mot"];
+
+/* ---------- storage ---------- */
+const K = k => "terrier.v1." + k;
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(K(k)); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(K(k), JSON.stringify(v)); return true; }catch(e){ console.error("store.set failed", k, e); return false; } },
+};
+const device = (() => { let d = store.get("device"); if(!d){ d = (("ontouchstart" in window) ? "phone-" : "laptop-") + Math.random().toString(16).slice(2,6); store.set("device", d); } return d; })();
+const settings = Object.assign({ sound:false, reduce:false, privateToday:null, share:false }, store.get("settings", {}));
+const saveSettings = () => store.set("settings", settings);
+const todayKey = () => new Date().toISOString().slice(0,10);
+const isPrivate = () => settings.privateToday === todayKey();
+
+/* ---------- Grist client: upserts through a local queue, never blocks the visit ---------- */
+const GRIST = "https://docs.getgrist.com/api/docs/io7cKbM6Bu4k";
+const grist = {
+  queue: store.get("queue", []),
+  busy:false, retryAt:0,
+  put(table, key, fields){
+    if(isPrivate()) return;
+    const require = {}; require[Object.keys(key)[0]] = Object.values(key)[0];
+    this.queue.push({ path:`/tables/${table}/records?onmany=all`, body:{ records:[{ require, fields }] } });
+    if(this.queue.length > 200) this.queue = this.queue.slice(-200);
+    store.set("queue", this.queue); this.drain();
+  },
+  async drain(){
+    if(isPrivate()){ if(this.queue.length){ this.queue = []; store.set("queue", this.queue); } return; }
+    if(this.busy || !this.queue.length || Date.now() < this.retryAt) return;
+    this.busy = true;
+    const job = this.queue[0];
+    try{
+      const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 15000);
+      const r = await fetch(GRIST + job.path, { method:"PUT", headers:{ "Content-Type":"application/json" }, body:JSON.stringify(job.body), signal:ctl.signal });
+      clearTimeout(t);
+      if(r.ok){ this.queue.shift(); store.set("queue", this.queue); this.retryAt = 0; }
+      else if(r.status >= 400 && r.status < 500){ console.error("grist refused, dropping", r.status, job.path); this.queue.shift(); store.set("queue", this.queue); this.retryAt = 0; }
+      else { this.retryAt = Date.now() + 30000; }
+    }catch(e){ this.retryAt = Date.now() + 20000; }
+    this.busy = false;
+    if(this.queue.length && Date.now() >= this.retryAt) setTimeout(() => this.drain(), 300);
+  },
+  async get(table, params){
+    const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 10000);
+    try{
+      const r = await fetch(GRIST + `/tables/${table}/records` + (params ? "?" + params : ""), { signal:ctl.signal });
+      clearTimeout(t); if(!r.ok) return null; return (await r.json()).records || [];
+    }catch(e){ clearTimeout(t); return null; }
+  }
+};
+["visibilitychange","online","focus"].forEach(ev => addEventListener(ev, () => grist.drain()));
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const el = (tag, attrs, ...kids) => { const n = document.createElement(tag); for(const k in (attrs||{})){ if(k === "class") n.className = attrs[k]; else if(k === "html") n.innerHTML = attrs[k]; else if(k.startsWith("on")) n.addEventListener(k.slice(2), attrs[k]); else n.setAttribute(k, attrs[k]); } for(const c of kids){ if(c == null) continue; n.append(c.nodeType ? c : document.createTextNode(String(c))); } return n; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const pick = (arr, rnd) => arr[Math.floor((rnd || Math.random)() * arr.length)];
+const mulberry = seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const BASE = location.hostname.endsWith("github.io") ? "https://harryf.github.io/private/sarah_game/" : "../assets/";
+const dateFr = d => d.toLocaleDateString("fr-CH", { weekday:"long", day:"numeric", month:"long" });
+const timeFr = d => d.toLocaleTimeString("fr-CH", { hour:"2-digit", minute:"2-digit" });
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+const show = id => { document.querySelectorAll(".screen").forEach(s => s.classList.remove("on")); $("#" + id).classList.add("on"); window.scrollTo(0,0); };
+
+/* ---------- the bear ---------- */
+function bearSvg(opts){
+  opts = opts || {};
+  const eyes = opts.asleep ? `<path d="M64 76 q6 4 12 0" stroke="#2B2430" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M88 76 q6 4 12 0" stroke="#2B2430" stroke-width="3" fill="none" stroke-linecap="round"/>` : `<circle cx="70" cy="76" r="4" fill="#2B2430"/><circle cx="94" cy="76" r="4" fill="#2B2430"/><circle cx="71.5" cy="74.5" r="1.3" fill="#fff"/><circle cx="95.5" cy="74.5" r="1.3" fill="#fff"/>`;
+  const mouth = opts.asleep ? `<path d="M78 92 q4 3 8 0" stroke="#2B2430" stroke-width="2.5" fill="none" stroke-linecap="round"/>` : `<path d="M76 91 q6 6 12 0" stroke="#2B2430" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
+  const zz = opts.asleep ? `<text x="118" y="46" font-family="Bowlby One, Arial Black, sans-serif" font-size="16" fill="#2B2430" opacity=".7">z</text><text x="130" y="32" font-family="Bowlby One, Arial Black, sans-serif" font-size="12" fill="#2B2430" opacity=".5">z</text>` : "";
+  return `<svg viewBox="0 0 164 164" role="img" aria-label="${opts.asleep ? "l'ours dort" : "l'ours du terrier"}">
+    <ellipse cx="82" cy="126" rx="44" ry="30" fill="#8C6B52"/>
+    <ellipse cx="82" cy="132" rx="24" ry="17" fill="#C9A98B"/>
+    <circle cx="50" cy="52" r="15" fill="#8C6B52"/><circle cx="114" cy="52" r="15" fill="#8C6B52"/>
+    <circle cx="50" cy="52" r="8" fill="var(--day)"/><circle cx="114" cy="52" r="8" fill="var(--day)"/>
+    <circle cx="82" cy="78" r="36" fill="#8C6B52"/>
+    <ellipse cx="82" cy="90" rx="15" ry="11" fill="#C9A98B"/>
+    <ellipse cx="82" cy="86" rx="6" ry="4.5" fill="#2B2430"/>
+    ${eyes}${mouth}
+    <path d="M52 108 q30 14 60 0 l4 10 q-34 12 -68 0 z" fill="var(--tartan1)"/>
+    <path d="M52 108 q30 14 60 0 l4 10 q-34 12 -68 0 z" fill="url(#tart)" opacity=".6"/>
+    <defs><pattern id="tart" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="none"/><rect width="3" height="10" fill="#2F3A5A"/><rect width="10" height="3" fill="#E7C86A" opacity=".9"/></pattern></defs>
+    <g transform="translate(112 104) rotate(20)"><rect x="0" y="0" width="22" height="6" rx="3" fill="#E9E4DA" stroke="#2B2430" stroke-width="1.5"/><circle cx="4" cy="3" r="3.5" fill="none" stroke="#2B2430" stroke-width="1.5"/></g>
+    ${zz}
+  </svg>`;
+}
+function moodSvg(level){
+  const fur = ["#9C9AA6","#A89A8C","#A8866A","#B08052","#C08A45"][level-1];
+  const mouths = ["M14 31 q8 -6 16 0","M14 30 q8 -3 16 0","M14 30 h16","M14 27 q8 7 16 0","M12 26 q10 11 20 0"];
+  const eyes = level === 5 ? `<path d="M13 21 q3 -3 6 0" stroke="#2B2430" stroke-width="2" fill="none"/><path d="M25 21 q3 -3 6 0" stroke="#2B2430" stroke-width="2" fill="none"/>` : `<circle cx="16" cy="21" r="2.2" fill="#2B2430"/><circle cx="28" cy="21" r="2.2" fill="#2B2430"/>`;
+  const brow = level === 1 ? `<path d="M12 18 l7 -3" stroke="#2B2430" stroke-width="2" stroke-linecap="round"/><path d="M32 18 l-7 -3" stroke="#2B2430" stroke-width="2" stroke-linecap="round"/>` : "";
+  const cheeks = level >= 4 ? `<circle cx="11" cy="27" r="2.5" fill="#F3BFD1"/><circle cx="33" cy="27" r="2.5" fill="#F3BFD1"/>` : "";
+  return `<svg viewBox="0 0 44 44"><circle cx="10" cy="11" r="6" fill="${fur}"/><circle cx="34" cy="11" r="6" fill="${fur}"/><circle cx="22" cy="24" r="15" fill="${fur}"/><ellipse cx="22" cy="31" rx="7" ry="5" fill="#E9E4DA"/>${eyes}${brow}${cheeks}<path d="${mouths[level-1]}" stroke="#2B2430" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>`;
+}
+const pinSvg = `<svg class="pin" viewBox="0 0 64 24" aria-hidden="true"><rect x="10" y="9" width="46" height="6" rx="3" fill="#E9E4DA" stroke="var(--accent)" stroke-width="2"/><circle cx="9" cy="12" r="7" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="M54 8 l6 4 -6 4" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>`;
+const weatherSvg = {
+  soleil:`<svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="7" fill="#F3B36A"/><g stroke="#F3B36A" stroke-width="2.5" stroke-linecap="round"><path d="M17 3v5M17 26v5M3 17h5M26 17h5M7 7l3.5 3.5M23.5 23.5L27 27M27 7l-3.5 3.5M10.5 23.5L7 27"/></g></svg>`,
+  nuages:`<svg viewBox="0 0 34 34"><path d="M9 24a5 5 0 0 1 1-9.9A7 7 0 0 1 23.5 13 5 5 0 0 1 26 24z" fill="#A9D3E8"/></svg>`,
+  brume:`<svg viewBox="0 0 34 34"><g stroke="#CDBDEB" stroke-width="3" stroke-linecap="round"><path d="M5 11h24M8 17h20M5 23h24M9 29h16"/></g></svg>`,
+  orage:`<svg viewBox="0 0 34 34"><path d="M9 20a5 5 0 0 1 1-9.9A7 7 0 0 1 23.5 9 5 5 0 0 1 26 20z" fill="#8FCFC8"/><path d="M18 19l-4 8h4l-2 6 6-9h-4l2-5z" fill="#F3B36A"/></svg>`,
+  neige:`<svg viewBox="0 0 34 34"><g stroke="#A9D3E8" stroke-width="2.5" stroke-linecap="round"><path d="M17 5v24M6.6 11l20.8 12M6.6 23l20.8-12"/></g><circle cx="17" cy="17" r="3" fill="#F3BFD1"/></svg>`,
+};
+
+/* ---------- state for the visit ---------- */
+let visit = null; // {id, colour, mood, name, cards, i, encore, soft}
+let bearName = store.get("bearName", "");
+let currentAudio = null;
+
+/* ---------- the visit engine ---------- */
+function draw(mood, history, seed, opts){
+  const rnd = mulberry(seed);
+  const n = 3 + Math.floor(rnd() * 3);
+  const recent = new Set([].concat(...history.slice(-3).map(h => h.cards || [])));
+  const band = !mood ? 1 : mood <= 2 ? 0 : mood >= 4 ? 2 : 1;
+  const pool = DECK.filter(c => !(c.once && (opts||{})[c.once]));
+  const weight = c => c.w[band] * (recent.has(c.id) ? 0.25 : 1);
+  const chosen = [];
+  const take = filter => {
+    const cands = pool.filter(c => !chosen.includes(c) && (!filter || filter(c)));
+    if(!cands.length) return;
+    let total = cands.reduce((s, c) => s + weight(c), 0), r = rnd() * total;
+    for(const c of cands){ r -= weight(c); if(r <= 0){ chosen.push(c); return; } }
+    chosen.push(cands[cands.length - 1]);
+  };
+  take(c => c.gives); take(c => c.quiet);
+  while(chosen.length < n) take();
+  // naming the bear comes early, once, and only if it was drawn
+  return chosen.map(c => c.id);
+}
+
+function startVisit(cards, soft){
+  const history = store.get("history", []);
+  const count = store.get("count", 0) + 1; store.set("count", count);
+  const colour = visit && visit.colour || store.get("lastColour", "peche");
+  const mood = visit ? visit.mood : null;
+  const name = visit ? visit.name : "";
+  const list = cards || draw(mood, history, Date.now() ^ (count * 2654435761), { bearName: !!bearName });
+  visit = { id: uid(), colour, mood, name, weather:null, cards:list, i:0, encore:false, soft:!!soft, entries:[] };
+  grist.put("Visits", { VisitId: visit.id }, { Colour: colour, Mood: mood || null, Cards: list.join(","), Device: device });
+  renderCard();
+}
+
+function endVisit(){
+  if(!visit) return show("s-home");
+  const history = store.get("history", []);
+  history.push({ at: Date.now(), cards: visit.cards, colour: visit.colour, mood: visit.mood });
+  store.set("history", history.slice(-30));
+  grist.put("Visits", { VisitId: visit.id }, { Cards: visit.cards.join(","), Weather: visit.weather || "", Mood: visit.mood || null });
+  stopAudio();
+  renderEnd();
+}
+
+function saveEntry(kind, text, extra){
+  if(!text || !text.trim()) return;
+  const e = { id: uid(), kind, text: text.trim(), extra: extra || "", at: Date.now(), visit: visit ? visit.id : "" };
+  const entries = store.get("entries", []); entries.push(e);
+  if(!store.set("entries", entries.slice(-500))){ if(visit) visit.entries.push(e); const warn = document.querySelector("#s-card .card .body"); if(warn) warn.append(el("p", { class:"quiet" }, "Le téléphone n'a pas pu garder ça. Ce n'est pas grave, c'est dit.")); }
+  if(settings.share) grist.put("Entries", { EntryId: e.id }, { VisitId: e.visit, Kind: kind, Text: e.text, Extra: e.extra, Device: device });
+  return e;
+}
+
+/* ---------- screens ---------- */
+function renderHome(){
+  const s = $("#s-home"); s.innerHTML = "";
+  const now = new Date();
+  const goods = store.get("entries", []).filter(e => e.kind === "good" || e.kind === "gg");
+  const lastColour = store.get("lastColour", null);
+  let colour = null, mood = null, name = "";
+  const bear = el("div", { class:"hero", html: bearSvg() });
+  const title = el("h1", {}, bearName ? `${bearName} est là.` : "Tu es ici.");
+  s.append(
+    el("p", { class:"quiet" }, dateFr(now)),
+    bear, title,
+    el("p", {}, "Tu es en sécurité ici. Rien à faire, rien à réussir."),
+    el("p", { class:"hand" }, "Une couleur pour aujourd'hui ?"),
+  );
+  const sw = el("div", { class:"swatches" });
+  const nameBox = el("div", { class:"stack", style:"display:none;margin:8px 0 4px" });
+  COLOURS.forEach(([id, label, hex]) => {
+    const b = el("button", { class:"sw", type:"button", "aria-pressed":"false", style:`background:${hex}`, "aria-label":`couleur ${label}` }, label);
+    b.addEventListener("click", () => { colour = id; sw.querySelectorAll(".sw").forEach(x => x.setAttribute("aria-pressed", x === b)); setDay(id); nameBox.style.display = "flex"; });
+    sw.append(b);
+  });
+  s.append(sw);
+  s.append(el("p", { class:"quiet", style:"margin-top:8px" }, "Et là, comment ça va ? (tu peux passer)"));
+  const moods = el("div", { class:"moods" });
+  ["très bas","bas","moyen","plutôt bien","bien"].forEach((lab, i) => {
+    const b = el("button", { class:"mood", type:"button", "aria-pressed":"false", "aria-label": lab }, el("span", { html: moodSvg(i+1) }), lab);
+    b.addEventListener("click", () => { mood = mood === i+1 ? null : i+1; moods.querySelectorAll(".mood").forEach((x, j) => x.setAttribute("aria-pressed", mood === j+1)); });
+    moods.append(b);
+  });
+  s.append(moods);
+  const nameInput = el("input", { type:"text", placeholder:"un prénom, un surnom, ou rien", maxlength:"30", autocomplete:"off" });
+  nameBox.append(el("p", { class:"quiet", style:"margin:0" }, "Comment tu veux qu'on t'appelle aujourd'hui ? (ça reste ici, pas ailleurs)"), nameInput);
+  s.append(nameBox);
+  const go = el("button", { class:"btn primary", type:"button" }, "Commencer");
+  go.addEventListener("click", () => { visit = { colour: colour || lastColour || "peche", mood, name: nameInput.value.trim().slice(0,30) }; if(colour) store.set("lastColour", colour); const replay = store.get("replay", null); startVisit(replay ? replay : null); store.set("replay", null); });
+  const soft = el("button", { class:"btn soft", type:"button" }, "Ça va pas fort");
+  soft.addEventListener("click", () => { visit = { colour: colour || lastColour || "peche", mood, name: nameInput.value.trim().slice(0,30) }; startVisit(SOFT_PATH, true); });
+  const choose = el("button", { class:"btn soft", type:"button" }, "Choisir une carte");
+  choose.addEventListener("click", () => { visit = { colour: colour || lastColour || "peche", mood, name: nameInput.value.trim().slice(0,30) }; renderChoose(); show("s-choose"); });
+  const row = el("div", { class:"stack", style:"margin-top:14px" }, go, el("div", { class:"row" }, soft, choose));
+  if(goods.length){ const g = el("button", { class:"btn soft", type:"button" }, "Mes bonnes choses"); g.addEventListener("click", () => { renderGood(); show("s-good"); }); row.append(g); }
+  s.append(row);
+  if(lastColour) setDay(lastColour);
+}
+
+function setDay(id){
+  const c = COLOURS.find(x => x[0] === id) || COLOURS[0];
+  document.documentElement.style.setProperty("--day", c[2]);
+  document.documentElement.style.setProperty("--day-soft", c[2] + "99");
+  const meta = document.querySelector('meta[name="theme-color"]'); if(meta) meta.setAttribute("content", c[2]);
+}
+
+function renderChoose(){
+  const s = $("#s-choose"); s.innerHTML = "";
+  s.append(el("h2", {}, "Choisir une carte"), el("p", { class:"quiet" }, "Une seule, puis c'est fini. Ou plusieurs, si tu veux."));
+  const ul = el("ul", { class:"list" });
+  DECK.forEach(c => { const li = el("li", {}); const b = el("button", { class:"btn soft", type:"button", style:"width:100%;justify-content:flex-start" }, c.title, el("span", { class:"quiet" }, " · " + c.label)); b.addEventListener("click", () => startVisit([c.id])); li.append(b); ul.append(li); });
+  s.append(ul, el("div", { class:"nav" }, el("button", { class:"stop", type:"button", onclick: () => show("s-home") }, "retour au terrier")));
+}
+
+function renderGood(){
+  const s = $("#s-good"); s.innerHTML = "";
+  const goods = store.get("entries", []).filter(e => e.kind === "good" || e.kind === "gg").slice().reverse().slice(0, 40);
+  s.append(el("h2", {}, "Mes bonnes choses"), el("p", { class:"quiet" }, "Des choses que tu as écrites ici, les plus récentes d'abord."));
+  const ul = el("ul", { class:"list" });
+  goods.forEach(e => ul.append(el("li", {}, el("div", { class:"when" }, "le " + dateFr(new Date(e.at)) + (e.kind === "gg" ? " · GG" : "")), el("div", {}, e.text))));
+  s.append(ul, el("div", { class:"nav" }, el("button", { class:"stop", type:"button", onclick: () => show("s-home") }, "retour au terrier")));
+}
+
+function renderEnd(){
+  const s = $("#s-end"); s.innerHTML = ""; s.className = "screen ending";
+  s.append(
+    el("div", { class:"hero", html: bearSvg({ asleep:true }) }),
+    el("h1", {}, "C'est assez pour maintenant."),
+    el("p", {}, visit.name ? `Merci d'être passée, ${visit.name}.` : "Merci d'être passée."),
+    el("p", { class:"hand" }, pick(ENDINGS)),
+    el("p", { class:"quiet" }, "Le terrier reste ouvert. Une couleur, c'est déjà une visite."),
+  );
+  if(visit.soft) s.append(el("div", { class:"card" }, el("p", { class:"hand" }, "Tu n'es pas seule. Quelqu'un a fait cette page pour toi."), el("p", { class:"quiet" }, "Les gens qui t'aident sont toujours là aussi, en dehors du terrier.")));
+  const btns = el("div", { class:"stack", style:"margin-top:14px" });
+  if(!visit.encore){ const more = el("button", { class:"btn soft", type:"button" }, "Encore un peu"); more.addEventListener("click", () => { visit.encore = true; const extra = draw(visit.mood, store.get("history", []), Date.now(), { bearName: !!bearName }).filter(id => !visit.cards.includes(id)).slice(0,2); visit.cards = visit.cards.concat(extra.length ? extra : ["doux"]); visit.i = visit.cards.length - (extra.length || 1); s.className = "screen"; renderCard(); }); btns.append(more); }
+  const same = el("button", { class:"btn soft", type:"button", "aria-pressed": String(!!store.get("replay", null)) }, "La même chose la prochaine fois");
+  same.addEventListener("click", () => { const on = same.getAttribute("aria-pressed") !== "true"; same.setAttribute("aria-pressed", String(on)); store.set("replay", on ? visit.cards : null); same.textContent = on ? "La même chose la prochaine fois : oui" : "La même chose la prochaine fois"; });
+  const home = el("button", { class:"btn primary", type:"button" }, "Retour au terrier");
+  home.addEventListener("click", () => { visit = null; renderHome(); show("s-home"); });
+  btns.append(same, home); s.append(btns);
+  show("s-end");
+}
+
+function renderCard(){
+  const id = visit.cards[visit.i];
+  const def = DECK.find(c => c.id === id) || DECK[0];
+  const s = $("#s-card"); s.innerHTML = "";
+  const dots = el("div", { class:"dots" });
+  visit.cards.forEach((c, i) => dots.append(el("i", { class: i < visit.i ? "done" : i === visit.i ? "now" : "" })));
+  const card = el("article", { class:"card" });
+  card.innerHTML = pinSvg;
+  card.append(el("div", { class:"kind" }, def.label), el("h2", {}, def.title));
+  const body = el("div", { class:"body" });
+  card.append(body);
+  const nav = el("div", { class:"nav" });
+  const next = el("button", { class:"btn primary", type:"button" }, visit.i === visit.cards.length - 1 ? "Terminer" : "Suivant");
+  const skip = el("button", { class:"btn soft", type:"button" }, "Passer");
+  const stop = el("button", { class:"stop", type:"button" }, "arrêter");
+  const advance = () => { stopAudio(); if(card._leave) card._leave(); visit.i++; if(visit.i >= visit.cards.length) endVisit(); else renderCard(); };
+  next.addEventListener("click", () => { try{ if(card._commit) card._commit(); }catch(e){ console.error("commit failed", id, e); } advance(); });
+  skip.addEventListener("click", advance);
+  stop.addEventListener("click", () => { if(card._leave) card._leave(); endVisit(); });
+  nav.append(next, skip, el("span", { class:"spacer" }), stop);
+  s.append(dots, card, nav);
+  try{ CARDS[id](body, card); }catch(e){ console.error("card failed", id, e); body.append(el("p", { class:"quiet" }, "Un petit souci ici. Appuie sur Passer, ça continue.")); }
+  show("s-card");
+}
+
+/* ---------- audio: only ever started by a tap ---------- */
+function stopAudio(){ const a = $("#audio"); if(!a.paused){ a.pause(); } a.removeAttribute("src"); a.load(); currentAudio = null; document.querySelectorAll("[data-sound]").forEach(b => b.setAttribute("aria-pressed", "false")); }
+function setSound(on){ settings.sound = on; saveSettings(); $("#soundChip").setAttribute("aria-pressed", String(on)); $("#soundChip").textContent = on ? "son : allumé" : "son : éteint"; if(!on) stopAudio(); }
+
+/* ---------- the cards ---------- */
+const CARDS = {
+  respire(body, card){
+    let phase = null, timer = null;
+    const blob = el("div", { class:"blob" }, "prêt ?");
+    const p = el("p", { class:"quiet" }, "Quatre secondes pour inspirer, six pour expirer. Tu arrêtes quand tu veux.");
+    const start = el("button", { class:"btn", type:"button" }, "commencer");
+    const cycle = () => { phase = "in"; blob.className = "blob in"; blob.textContent = "inspire"; timer = setTimeout(() => { blob.className = "blob out"; blob.textContent = "expire"; timer = setTimeout(cycle, 6000); }, 4000); };
+    start.addEventListener("click", () => { if(timer){ clearTimeout(timer); timer = null; blob.className = "blob"; blob.textContent = "merci"; start.textContent = "encore"; return; } cycle(); start.textContent = "ça suffit"; });
+    card._leave = () => { if(timer) clearTimeout(timer); };
+    body.append(p, blob, el("div", { class:"center" }, start));
+  },
+  sens(body, card){
+    const steps = [["5","choses que tu vois"],["4","choses que tu peux toucher"],["3","sons que tu entends"],["2","odeurs, ou choses que tu aimerais sentir"],["1","chose que tu goûtes, ou ton propre souffle"]];
+    let i = 0; const box = el("div", { class:"stack" });
+    const render = () => { box.innerHTML = ""; const [n, t] = steps[i]; box.append(el("div", { class:"stamp" }, n), el("p", { class:"hand" }, t), el("textarea", { placeholder:"si tu veux les noter, sinon non", rows:"2" })); if(i < steps.length - 1){ const b = el("button", { class:"btn soft", type:"button" }, "suivant : " + steps[i+1][0]); b.addEventListener("click", () => { const v = box.querySelector("textarea").value; if(v.trim()) saveEntry("sense", v, steps[i][0]); i++; render(); }); box.append(b); } else box.append(el("p", { class:"quiet" }, "Voilà. Tu es dans la pièce, et la pièce est là.")); };
+    render(); body.append(box);
+    card._commit = () => { const v = box.querySelector("textarea"); if(v && v.value.trim()) saveEntry("sense", v.value, steps[i][0]); };
+  },
+  galerie(body, card){
+    const a = pick(ART); let feel = null;
+    const wrap = el("div", { class:"artwrap", style:`background:${a.colour}` }, el("img", { class:"art", src: BASE + "art/" + a.file, alt:"un de tes dessins", loading:"lazy", width:a.w, height:a.h }));
+    body.append(el("p", { class:"hand" }, "Tu fais ça."), wrap);
+    const row = el("div", { class:"chips" });
+    ["ça me plaît","bof","je ne sais pas"].forEach(t => { const b = el("button", { class:"chip", type:"button", "aria-pressed":"false" }, t); b.addEventListener("click", () => { feel = t; row.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b)); }); row.append(b); });
+    const note = el("textarea", { placeholder:"un mot dessus, si tu veux", rows:"2" });
+    body.append(row, note);
+    card._commit = () => { if(note.value.trim() || feel) saveEntry("note", note.value.trim() || feel, a.file + (feel ? " · " + feel : "")); };
+  },
+  titre(body, card){
+    const a = pick(ART);
+    body.append(el("div", { class:"artwrap", style:`background:${a.colour}` }, el("img", { class:"art", src: BASE + "art/" + a.file, alt:"un de tes dessins", loading:"lazy", width:a.w, height:a.h })), el("p", {}, "Il n'a pas de titre. Donne-lui-en un, sérieux ou pas."));
+    const inp = el("input", { type:"text", placeholder:"un titre", maxlength:"80" }); body.append(inp);
+    card._commit = () => saveEntry("title", inp.value, a.file);
+  },
+  ours(body, card){
+    const [file, desc] = pick(BEARS);
+    body.append(el("img", { class:"art", src: BASE + "bears/" + file, alt: "un ours, " + desc, loading:"lazy" }), el("p", { class:"quiet", style:"margin-top:8px" }, desc), el("p", { class:"hand" }, "Quel émoji lui va ?"));
+    const grid = el("div", { class:"emojis" }); const reply = el("div", { class:"reply" });
+    EMOJI.forEach(e => { const b = el("button", { type:"button", "aria-pressed":"false", "aria-label":"émoji " + e }, e); b.addEventListener("click", () => { grid.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); reply.textContent = pick(BEAR_REPLIES); }); grid.append(b); });
+    body.append(grid, reply);
+  },
+  bonne(body, card){
+    body.append(el("p", {}, "Une bonne chose aujourd'hui. Petite, ça suffit."));
+    const chips = el("div", { class:"chips" }); const inp = el("textarea", { placeholder:"ou autre chose", rows:"2" });
+    GOOD_CHIPS.forEach(t => { const b = el("button", { class:"chip", type:"button" }, t); b.addEventListener("click", () => { inp.value = inp.value.trim() ? inp.value.trim() + ", " + t : t; }); chips.append(b); });
+    body.append(chips, inp);
+    card._commit = () => saveEntry("good", inp.value);
+  },
+  mot(body, card){
+    const local = pick(DEFAULT_MESSAGES);
+    const p = el("p", { class:"hand" }, local[0]); const from = el("p", { class:"quiet" }, local[1]);
+    body.append(p, from, el("p", { class:"quiet" }, "Pas besoin de répondre."));
+    grist.get("Messages", "filter=" + encodeURIComponent(JSON.stringify({ Kind:["message"], Active:[true] }))).then(rows => {
+      if(!rows || !rows.length) return;
+      const shown = store.get("shownMessages", []);
+      const fresh = rows.filter(r => !shown.includes(r.fields.MessageId));
+      const r = (fresh.length ? fresh : rows).slice(-1)[0];
+      p.textContent = r.fields.Text; from.textContent = r.fields.From || "le Terrier";
+      store.set("shownMessages", shown.concat(r.fields.MessageId).slice(-100));
+    });
+  },
+  chanson(body, card){
+    const box = el("div", { class:"songs" });
+    const render = s => { box.innerHTML = ""; box.append(el("p", { class:"hand" }, s[0]), el("p", {}, s[1]), el("p", { class:"quiet" }, s[2] || ""), el("a", { class:"btn soft", href: s[3] || ("https://www.youtube.com/results?search_query=" + encodeURIComponent(s[0] + " " + s[1])), target:"_blank", rel:"noopener" }, "écouter ailleurs ↗")); };
+    render(pick(SONGS)); body.append(el("p", { class:"quiet" }, "Rien ne se lance tout seul. Le lien ouvre une autre page, si tu veux."), box);
+    grist.get("Messages", "filter=" + encodeURIComponent(JSON.stringify({ Kind:["song"], Active:[true] }))).then(rows => { if(rows && rows.length && Math.random() < 0.5){ const r = pick(rows).fields; render([r.Text, r.From || "", "ajoutée au terrier", r.Url || ""]); } });
+  },
+  son(body, card){
+    const loops = [["pluie","de la pluie sur une fenêtre"],["foret","une forêt le matin"],["mer","la mer"],["chat","un chat qui ronronne"],["piano","un piano doux"],["nuit","une nuit d'été"]];
+    body.append(el("p", {}, "Un son en boucle, tant que tu veux. Rien ne démarre sans toi."));
+    const list = el("div", { class:"stack" });
+    loops.forEach(([id, label]) => { const b = el("button", { class:"btn soft", type:"button", "data-sound": id, "aria-pressed":"false" }, "▶ " + label); b.addEventListener("click", () => {
+      const a = $("#audio");
+      if(currentAudio === id){ stopAudio(); return; }
+      stopAudio(); setSound(true); a.src = BASE + "audio/" + id + ".mp3"; currentAudio = id; b.setAttribute("aria-pressed", "true");
+      a.play().catch(() => { b.textContent = "▶ " + label + " (pas disponible)"; });
+    }); list.append(b); });
+    body.append(list, el("p", { class:"quiet" }, "Le bouton « son » en haut coupe tout."));
+  },
+  absurde(body, card){
+    const p = el("p", { class:"hand" }, pick(ABSURD)); const b = el("button", { class:"btn soft", type:"button" }, "une autre");
+    b.addEventListener("click", () => { p.textContent = pick(ABSURD); });
+    body.append(el("p", { class:"quiet" }, "Une chose sans aucune utilité. C'est le but."), p, b);
+  },
+  nomme(body, card){
+    body.append(el("div", { class:"hero", html: bearSvg() }), el("p", {}, "L'ours du terrier n'a pas encore de nom. Tu peux lui en donner un, ou pas."));
+    const inp = el("input", { type:"text", placeholder:"son nom", maxlength:"24" }); body.append(inp);
+    card._commit = () => { const n = inp.value.trim().slice(0,24); if(!n) return; bearName = n; store.set("bearName", n); grist.put("Bear", { Key:"bear" }, { Name:n }); };
+  },
+  impro(body, card){
+    const [open, conts] = pick(IMPRO);
+    body.append(el("p", { class:"quiet" }, "Une scène commence. Choisis une suite, ou écris la tienne. Tout est juste."), el("p", { class:"hand" }, open));
+    const row = el("div", { class:"stack" }); let chosen = "";
+    conts.forEach(c => { const b = el("button", { class:"btn soft", type:"button", style:"justify-content:flex-start;text-align:left" }, c); b.addEventListener("click", () => { chosen = c; row.querySelectorAll(".btn").forEach(x => x.setAttribute("aria-pressed", x === b)); }); row.append(b); });
+    const inp = el("textarea", { placeholder:"ou ta suite à toi", rows:"2" });
+    body.append(row, inp);
+    card._commit = () => saveEntry("impro", inp.value.trim() || chosen, open);
+  },
+  deux(body, card){
+    const pair = pick(BOTH);
+    body.append(el("p", { class:"quiet" }, "Deux phrases. Les deux sont vraies en même temps."), el("p", { class:"hand" }, pair[0]), el("p", { class:"hand", style:"color:var(--accent)" }, "et " + pair[1]));
+    const ok = el("button", { class:"chip", type:"button", "aria-pressed":"false" }, "ça me parle"); ok.addEventListener("click", () => ok.setAttribute("aria-pressed", ok.getAttribute("aria-pressed") !== "true"));
+    const a = el("input", { type:"text", placeholder:"c'est vrai...", maxlength:"120" }); const b = el("input", { type:"text", placeholder:"et c'est vrai aussi...", maxlength:"120" });
+    body.append(ok, el("p", { class:"quiet", style:"margin-top:12px" }, "Les tiennes, si tu veux :"), el("div", { class:"stack" }, a, b));
+    card._commit = () => { if(a.value.trim() && b.value.trim()) saveEntry("both", a.value, b.value); };
+  },
+  karaoke(body, card){
+    const p = el("p", { class:"hand" }, pick(KARAOKE)); const done = el("button", { class:"chip", type:"button", "aria-pressed":"false" }, "chanté");
+    done.addEventListener("click", () => { done.setAttribute("aria-pressed", "true"); done.textContent = "chanté. bravo, vraiment."; });
+    body.append(el("p", { class:"quiet" }, "Dans ta tête, sans un bruit. Personne ne saura."), p, done, el("div", {}, el("button", { class:"btn soft", type:"button", style:"margin-top:10px", onclick: () => { p.textContent = pick(KARAOKE); done.setAttribute("aria-pressed","false"); done.textContent = "chanté"; } }, "une autre")));
+  },
+  scene(body, card){
+    const st = el("div", { class:"sticker" }); const gen = () => { st.textContent = pick(SCENE1) + " " + pick(SCENE2); };
+    gen(); body.append(el("p", {}, "Ton nom de scène pour ce soir, burlesque ou punk, au choix du hasard :"), el("div", { class:"center" }, st), el("div", { class:"center" }, el("button", { class:"btn soft", type:"button", onclick: gen }, "encore")));
+  },
+  colorie(body, card){
+    const regions = [["fond","M0 0h200v200H0z"],["corps","M100 122c40 0 60 22 60 46s-20 32-60 32-60-8-60-32 20-46 60-46z"],["oreilleG","M52 52a17 17 0 1 0 0.1 0z"],["oreilleD","M148 52a17 17 0 1 0 0.1 0z"],["tete","M100 40a42 42 0 1 0 0.1 0z"],["museau","M100 92a17 12 0 1 0 0.1 0z"],["echarpe","M62 132q38 14 76 0l4 12q-42 14 -84 0z"],["patteG","M62 170a12 10 0 1 0 0.1 0z"],["patteD","M138 170a12 10 0 1 0 0.1 0z"]];
+    const key = "ours-1"; let fills = Object.assign({ fond:"#FBF6EF", corps:"#C9A98B", oreilleG:"#C9A98B", oreilleD:"#C9A98B", tete:"#C9A98B", museau:"#E9E4DA", echarpe:"#F3BFD1", patteG:"#C9A98B", patteD:"#C9A98B" }, store.get("colouring." + key, {}));
+    let current = COLOURS[0][2];
+    const pal = el("div", { class:"palette" });
+    COLOURS.forEach(([id, label, hex], i) => { const b = el("button", { type:"button", style:`background:${hex}`, "aria-label":"couleur " + label, "aria-pressed": String(i === 0) }); b.addEventListener("click", () => { current = hex; pal.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); }); pal.append(b); });
+    const wrap = el("div", { class:"colour" });
+    wrap.innerHTML = `<svg viewBox="0 0 200 200" role="img" aria-label="un ours à colorier">${regions.map(([id, d]) => `<path data-r="${id}" d="${d}" fill="${fills[id]}"/>`).join("")}<circle cx="88" cy="84" r="3.5" fill="#2B2430" pointer-events="none"/><circle cx="112" cy="84" r="3.5" fill="#2B2430" pointer-events="none"/><ellipse cx="100" cy="92" rx="5" ry="3.5" fill="#2B2430" pointer-events="none"/></svg>`;
+    wrap.addEventListener("click", ev => { const r = ev.target.getAttribute && ev.target.getAttribute("data-r"); if(!r) return; fills[r] = current; ev.target.setAttribute("fill", current); store.set("colouring." + key, fills); });
+    body.append(el("p", { class:"quiet" }, "Choisis une couleur, touche une zone. Ça reste comme tu le laisses."), pal, wrap);
+    card._commit = () => { store.set("colouring." + key, fills); grist.put("Colourings", { Key:key }, { Fills: JSON.stringify(fills) }); };
+  },
+  tiens(body, card){
+    const box = el("div", { class:"hold" }, el("div", { class:"fill" }), el("span", {}, "appuie ici et tiens"));
+    const fill = box.querySelector(".fill"); const label = box.querySelector("span"); let t = null, h = 0;
+    const down = ev => { ev.preventDefault(); if(t) return; label.textContent = "tu peux lâcher quand tu veux"; t = setInterval(() => { h = Math.min(100, h + 1.2); fill.style.height = h + "%"; }, 200); };
+    const up = () => { if(!t) return; clearInterval(t); t = null; h = 0; fill.style.height = "0%"; label.textContent = "merci. encore, si tu veux."; };
+    box.addEventListener("pointerdown", down); addEventListener("pointerup", up); addEventListener("pointercancel", up);
+    body.append(el("p", { class:"quiet" }, "La couleur monte pendant que tu appuies. Elle redescend quand tu lâches. Rien d'autre."), box);
+    card._leave = () => { up(); removeEventListener("pointerup", up); removeEventListener("pointercancel", up); };
+  },
+  meteo(body, card){
+    body.append(el("p", {}, "Le temps qu'il fait dedans, là. Sans chiffre."));
+    const grid = el("div", { class:"weather" });
+    [["soleil","soleil"],["nuages","nuages"],["brume","brume"],["orage","orage"],["neige","neige"]].forEach(([id, label]) => { const b = el("button", { type:"button", "aria-pressed":"false" }, el("span", { html: weatherSvg[id] }), label); b.addEventListener("click", () => { visit.weather = id; grid.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); }); grid.append(b); });
+    body.append(grid, el("p", { class:"quiet", style:"margin-top:10px" }, "La météo change. C'est sa seule règle."));
+  },
+  vrai(body, card){
+    const now = new Date();
+    const facts = ["On est " + dateFr(now) + ".", "Il est " + timeFr(now) + ".", "Tu tiens un téléphone, ou tu es devant un écran.", "Tu lis ces mots, donc tu respires."];
+    const ul = el("ul", { class:"list" }); facts.forEach(f => ul.append(el("li", {}, f)));
+    const inp = el("input", { type:"text", placeholder:"une chose vraie, à toi", maxlength:"120" });
+    body.append(el("p", { class:"quiet" }, "Des choses vraies, maintenant, sans discussion."), ul, el("p", { class:"quiet", style:"margin-top:10px" }, "Ajoute la tienne, si tu veux :"), inp);
+    card._commit = () => saveEntry("true", inp.value);
+  },
+  poro(body, card){
+    let n = 0; const wrap = el("div", { class:"center" }); const msg = el("p", { class:"hand center" }, "Il est déjà content. Un poro-snack, si tu veux.");
+    const drawPoro = () => { const r = 46 + n * 6; wrap.innerHTML = `<svg viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="un poro"><circle cx="90" cy="100" r="${r}" fill="#F5F0E6" stroke="#2B2430" stroke-width="2"/><ellipse cx="60" cy="52" rx="10" ry="18" fill="#F5F0E6" stroke="#2B2430" stroke-width="2" transform="rotate(-20 60 52)"/><ellipse cx="120" cy="52" rx="10" ry="18" fill="#F5F0E6" stroke="#2B2430" stroke-width="2" transform="rotate(20 120 52)"/><circle cx="76" cy="96" r="4" fill="#2B2430"/><circle cx="104" cy="96" r="4" fill="#2B2430"/><path d="M80 112 q10 8 20 0" stroke="#2B2430" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M90 108 l0 8" stroke="#F3BFD1" stroke-width="5" stroke-linecap="round"/><path d="M60 118 l-10 12 M120 118 l10 12" stroke="#2B2430" stroke-width="2" stroke-linecap="round"/></svg>`; };
+    drawPoro();
+    const b = el("button", { class:"btn", type:"button" }, "🍪 un poro-snack");
+    b.addEventListener("click", () => { if(n >= 5) return; n++; drawPoro(); msg.textContent = ["Miam.","Il fait un petit bruit content.","Il est un peu plus rond.","Il te regarde avec amour.","Il est content. C'est tout ce qu'il voulait."][n-1]; if(n >= 5){ b.disabled = true; b.textContent = "il est plein"; } });
+    body.append(wrap, msg, el("div", { class:"center" }, b));
+  },
+  gg(body, card){
+    body.append(el("p", {}, "Une chose que tu as faite aujourd'hui. Même minuscule. Surtout minuscule."));
+    const chips = el("div", { class:"chips" }); const inp = el("textarea", { placeholder:"ou autre chose", rows:"2" }); const stamp = el("div", { class:"center" });
+    GG_CHIPS.forEach(t => { const b = el("button", { class:"chip", type:"button" }, t); b.addEventListener("click", () => { inp.value = inp.value.trim() ? inp.value.trim() + ", " + t : t; stamp.innerHTML = '<span class="stamp">GG</span>'; }); chips.append(b); });
+    inp.addEventListener("input", () => { stamp.innerHTML = inp.value.trim() ? '<span class="stamp">GG</span>' : ""; });
+    body.append(chips, inp, stamp);
+    card._commit = () => saveEntry("gg", inp.value);
+  },
+  doux(body, card){
+    const st = el("div", { class:"sticker" }, pick(SOFT));
+    body.append(el("p", { class:"quiet" }, "Un mot à garder pour aujourd'hui. Il ne demande rien."), el("div", { class:"center" }, st));
+  },
+  nana(body, card){
+    const q = pick(QUOTES);
+    body.append(el("p", { class:"hand", style:"font-size:26px" }, "« " + q[0] + " »"), el("p", { class:"quiet" }, q[1]));
+  },
+};
+
+/* ---------- settings sheet and first note ---------- */
+function renderSheet(){
+  const p = $("#panel"); p.innerHTML = "";
+  p.append(el("h2", {}, "Réglages"), el("p", { class:"quiet" }, "Tout ici est à toi. Rien ne bouge sans toi."));
+  const sw = (label, get, set) => { const b = el("button", { type:"button", "aria-pressed": String(!!get()) }, get() ? "oui" : "non"); b.addEventListener("click", () => { set(!get()); b.setAttribute("aria-pressed", String(!!get())); b.textContent = get() ? "oui" : "non"; }); return el("div", { class:"switch" }, el("span", {}, label), b); };
+  p.append(
+    sw("Son", () => settings.sound, v => setSound(v)),
+    sw("Moins de mouvement", () => settings.reduce, v => { settings.reduce = v; saveSettings(); document.body.classList.toggle("reduce", v); }),
+    sw("Ne rien enregistrer aujourd'hui", () => isPrivate(), v => { settings.privateToday = v ? todayKey() : null; saveSettings(); }),
+    sw("Garder mes mots aussi dans le carnet partagé", () => settings.share, v => { settings.share = v; saveSettings(); }),
+    sw("Thème sombre", () => document.documentElement.getAttribute("data-theme") === "dark", v => { document.documentElement.setAttribute("data-theme", v ? "dark" : "light"); store.set("theme", v ? "dark" : "light"); }),
+  );
+  p.append(el("p", { class:"quiet", style:"margin-top:12px" }, "Ce qui part dans le carnet partagé (une feuille que Harry peut voir) : la couleur du jour, les cartes vues, la météo intérieure, le nom de l'ours, le coloriage. Tes mots restent sur cet appareil, sauf si tu allumes le réglage au-dessus."));
+  const note = el("button", { class:"btn soft", type:"button" }, "Relire le mot de Harry"); note.addEventListener("click", () => { $("#sheet").classList.remove("on"); renderNote(); show("s-note"); });
+  const close = el("button", { class:"btn primary", type:"button" }, "Fermer"); close.addEventListener("click", () => $("#sheet").classList.remove("on"));
+  p.append(el("div", { class:"stack", style:"margin-top:14px" }, note, close), el("p", { class:"quiet", style:"margin-top:16px;font-family:var(--hand);font-size:18px" }, "Buy less, choose well, make it last. (V. W.)"));
+}
+function renderNote(){
+  const s = $("#s-note"); s.innerHTML = "";
+  s.append(el("div", { class:"hero", html: bearSvg() }), el("div", { class:"note" }, ...FIRST_NOTE.split(/(?<=\. )/).map(t => el("p", {}, t))));
+  const b = el("button", { class:"btn primary", type:"button", style:"margin-top:14px" }, "D'accord");
+  b.addEventListener("click", () => { store.set("noteSeen", true); renderHome(); show("s-home"); });
+  s.append(el("div", { class:"center" }, b));
+}
+
+/* ---------- boot ---------- */
+(function boot(){
+  const theme = store.get("theme", null); if(theme) document.documentElement.setAttribute("data-theme", theme);
+  if(settings.reduce) document.body.classList.add("reduce");
+  $("#soundChip").addEventListener("click", () => setSound(!settings.sound));
+  setSound(false); // sound is off at every open; her tap turns it on
+  $("#settingsChip").addEventListener("click", () => { renderSheet(); $("#sheet").classList.add("on"); });
+  $("#sheet").addEventListener("click", ev => { if(ev.target === $("#sheet")) $("#sheet").classList.remove("on"); });
+  $("#brand").addEventListener("click", ev => { ev.preventDefault(); stopAudio(); visit = null; renderHome(); show("s-home"); });
+  grist.get("Bear", "filter=" + encodeURIComponent(JSON.stringify({ Key:["bear"] }))).then(rows => { if(rows && rows.length && rows[0].fields.Name && !bearName){ bearName = rows[0].fields.Name; store.set("bearName", bearName); if($("#s-home").classList.contains("on")) renderHome(); } });
+  addEventListener("focusin", ev => { if(ev.target.matches && ev.target.matches("textarea, input[type=text]")) setTimeout(() => ev.target.scrollIntoView({ block:"center", behavior:"smooth" }), 250); });
+  grist.drain();
+  if(!store.get("noteSeen", false)){ renderNote(); show("s-note"); } else { renderHome(); show("s-home"); }
+  window.__terrier = { draw, DECK, COLOURS, store, settings, grist, get visit(){ return visit; }, startVisit, renderCard, setDay, bearSvg };
+})();
+</script>
+</body>
+</html>
