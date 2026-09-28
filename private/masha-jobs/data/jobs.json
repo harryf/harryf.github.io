@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-09-28T12:51:04.136Z",
+ "generatedAt": "2026-09-28T13:36:23.484Z",
  "jobs": [
   {
    "id": "j-c80ab99784",
@@ -42,6 +42,235 @@
    "excerpt": "Wir suchen eine(n) Junior Software Engineer Java / Spring 80-100%, Zürich zur Verstärkung unseres Teams."
   },
   {
+   "id": "j-51470c3305",
+   "title": "Junior Software Engineer - GTM Products",
+   "employer": "Wingtra",
+   "employerId": "wingtra",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "en",
+   "url": "https://jobs.lever.co/wingtra-2/7985b1c8-ea4b-4af8-9260-7def37780218",
+   "original": true,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    },
+    {
+     "kind": "company",
+     "url": "https://jobs.lever.co/wingtra-2/7985b1c8-ea4b-4af8-9260-7def37780218",
+     "seenAt": "2026-09-28T13:36:23.484Z"
+    }
+   ],
+   "postedAt": "2026-08-28T13:39:59.261Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "online": true,
+   "tier": 3,
+   "score": 50,
+   "junior": true,
+   "stack": [
+    "typescript",
+    "postgres"
+   ],
+   "green": [
+    "junior",
+    "code review"
+   ],
+   "red": [],
+   "assessment": {
+    "at": "2026-09-28T13:42:42.269Z",
+    "model": "claude-haiku-4-5-20251001",
+    "answers": [
+     {
+      "n": 1,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 2,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 3,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 4,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 5,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 6,
+      "answer": "no",
+      "quote": "including the authority to send one back"
+     },
+     {
+      "n": 7,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 8,
+      "answer": "yes",
+      "quote": "our goal is to build the best aerial robots to digitize the world at the push of a button and set the basis for faster and better decisions."
+     },
+     {
+      "n": 9,
+      "answer": "yes",
+      "quote": "Founded more than 8 years ago at ETH Zurich"
+     },
+     {
+      "n": 10,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 11,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 12,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 13,
+      "answer": "unknown",
+      "quote": ""
+     }
+    ]
+   },
+   "excerpt": "Join the Wingtra team and become part of this venture-backed robotics scaleup with a global and international team of 125+ dedicated Wingtranauts who want to see their actions have a positive and lasting impact on the world. Founded more than 8 years ago at ETH Zurich, Europe’s leading robotics university, our goal is to build the best aerial robots to digitize the world at the push of a button and set the basis for faster and better decisions. Wingtra provides efficient and reliable data solutions to a variety of industries ranging from mining, construction and agriculture to humanitarian organizations, environmentalists and wildlife monitoring groups. \n\nWe are reaching for the stars and together we might just get there. Open communication, asking hard questions and valuing diverse viewpoints are but a few things that will help us achieve our goals. Above all we will never stop learning and striving to help each other reach our maximum potential.\n\nResponsibilities \n-\nProductionize prototypes. Take AI-built prototypes from the GTM team and make them real: authentication and access scoping, error handling, data integrity, tests, monitoring, documentation, handover.\n\n-\nOwn the infrastructure. Hosting, environments, CI/CD, secrets, backups, dependencies and releases for every GTM-owned service.\n\n-\nOwn security for partner-facing software. Authentication and role/hierarchy scoping, handling of partner and end-customer data, and answering the security questions partners and enterp"
+  },
+  {
+   "id": "j-8d6f1e9807",
+   "title": "Software Engineer Full-Stack (a)",
+   "employer": "Adnovum",
+   "employerId": "adnovum",
+   "newEmployer": false,
+   "place": "Winterthur",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "en",
+   "url": "https://careers.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://www.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
+     "seenAt": "2026-09-28T12:51:04.136Z"
+    },
+    {
+     "kind": "company",
+     "url": "https://careers.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
+     "seenAt": "2026-09-28T13:36:23.484Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "online": true,
+   "tier": 1,
+   "score": 50,
+   "junior": false,
+   "stack": [
+    "c#",
+    ".net",
+    "docker",
+    "git"
+   ],
+   "green": [
+    "part-time"
+   ],
+   "red": [],
+   "assessment": {
+    "at": "2026-09-28T13:39:40.757Z",
+    "model": "claude-haiku-4-5-20251001",
+    "answers": [
+     {
+      "n": 1,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 2,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 3,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 4,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 5,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 6,
+      "answer": "yes",
+      "quote": "Developing solution scenarios together with interdisciplinary project teams"
+     },
+     {
+      "n": 7,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 8,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 9,
+      "answer": "yes",
+      "quote": "",
+      "note": "no quote"
+     },
+     {
+      "n": 10,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 11,
+      "answer": "yes",
+      "quote": "the possibility to work part-time"
+     },
+     {
+      "n": 12,
+      "answer": "yes",
+      "quote": "we actively encourage and support individual training opportunities"
+     },
+     {
+      "n": 13,
+      "answer": "unknown",
+      "quote": ""
+     }
+    ]
+   },
+   "excerpt": "Select how often (in days) to receive an alert:\nSelect how often (in days) to receive an alert:\nSoftware Engineer Full-Stack (a)\n80 - 100%\nWinterthur\nWhat you're going to do\nDo you already have a few years of experience in software engineering and are ready for your next challenge in an international environment? Would you like to build tailor-made digital solutions that create real value for public-sector clients? Then we just might have the right opportunity for you.\nAs a member of our interdisciplinary and ambitious team, you will analyze, design, implement, and maintain modern software solutions for our clients. Working in an agile environment, you will collaborate closely with project managers, architects, and stakeholders to develop robust and sustainable applications. Our diverse project landscape gives you the opportunity to contribute throughout the entire software lifecycle, from requirements engineering to successful delivery and continuous improvement.\nYou will be responsible for the following tasks:\n- Analyzing customer requirements as well as functional and technical challenges\n- Developing solution scenarios together with interdisciplinary project teams\n- Designing and implementing scalable, maintainable, and high-quality software solutions\n- Ensuring robust application architectures and sustainable technical designs\n- Advising stakeholders on the further development and optimization of applications\n- Collaborating closely with project managers to achieve proje"
+  },
+  {
    "id": "j-914ab6e5ae",
    "title": "Young Professional Programm",
    "employer": "bbv Software Services",
@@ -56,25 +285,24 @@
     {
      "kind": "company",
      "url": "https://bbv.ch/career/young-professional-programm/",
-     "seenAt": "2026-09-28T12:51:04.136Z"
+     "seenAt": "2026-09-28T13:36:23.484Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
    "online": true,
    "tier": 1,
-   "score": 55,
+   "score": 50,
    "junior": true,
-   "stack": [
-    "spring"
-   ],
+   "stack": [],
    "green": [
     "weiterbildung"
    ],
    "red": [],
    "assessment": {
-    "at": "2026-09-28T12:31:03.871Z",
+    "at": "2026-09-28T13:41:07.390Z",
+    "model": "claude-haiku-4-5-20251001",
     "answers": [
      {
       "n": 1,
@@ -118,8 +346,8 @@
      },
      {
       "n": 9,
-      "answer": "yes",
-      "quote": "8005 Zürich, Schweiz"
+      "answer": "unknown",
+      "quote": ""
      },
      {
       "n": 10,
@@ -143,7 +371,7 @@
      }
     ]
    },
-   "excerpt": "Young Professional Programm | bbv\n\nZum Inhalt springen\n\nSearch\n\n-\n\nDE\n\n-\n\nEN\n\n-\n\nde\n\n-\n\nen\n- Customer Stories\n- Services\n- Digital Business\n- Digitale Geschäftsmodelle\n- B2B-E-Commerce-Plattform\n- Produktvision\n- Neue Ertragsquellen\n- Cybersecurity\n- Organisationsdesign\n- Products & Services\n- Software Engineering\n- Software Modernisierung\n- Rust Transition Service\n- KI Beratung für Unternehmen\n- bbv AI Hub\n- Data Management\n- Data Management\n- Datenstrategie\n- Datenarchitektur\n- Data & Analytics\n- Swiss LCDM Hub\n- BIM2FM\n- Softwarearchitektur\n- Mobile & Web Apps\n- Internet of Things\n- Cloud Services\n- DevOps und ALM\n- Managed Teams\n- Shoring\n- Digital Experiences\n- Agentic Pimcore\n- Product & Service Design\n- User & Customer Experience\n- Digital Marketing\n- Customer Story\nEffizientere Arbeitszeugnisse ohne Qualitätsverlust: KI gezielt und kontrolliert einsetzen\n- Insights\n- Blog\n- Tech Insights\n- Academy\n- Events\n- Aktuelle Events\n- Swiss AI Impact Forum\n- Webinar-Aufzeichnungen\n- Generative KI\n- KI Workshop für Verwaltungsrat und Geschäftsleitung\n- Swiss AI Impact Report 2026\n- Swiss AI Impact Report 2025\n- Swiss AI Impact Report 2024\n- Checkliste KI-Integration\n- Download AI Guidelines\n- Datenstrategie Assessment Light\n- Cybersecurity\n- Whitepaper Cyber Resilience Act\n- Checkliste Cyber Resilience Act\n- Quiz zum Cyber Resilience Act\n- Security Principles Checklist\n- CRA Survival Map\n- Software Quality Map\n- Technica Radar\n- Workshops\n- Innovation Workshops\n- Modernisierung"
+   "excerpt": "Young Professional Programm\nIT-Superheld sein, das wär‘s doch: Eine Heldin oder ein Held mit Skills, mit denen man sich von allen anderen abhebt! Unser Young Professional Programm bereitet dich optimal darauf vor!\nDas Young Professional Programm fördert und unterstützt dich auf deinem Weg zum IT-Helden. In einem optimalen Umfeld durchläufst du während rund zwei Jahren sowohl ON- als auch OFF-THE-JOB spannende Herausforderungen und individuelle Weiterbildung. Hast du dein Informatik-Studium in der Tasche und bist bereit für ein Superhelden-Abenteuer? Dann melde dich bei uns!\nAnna Lena Bartels\nSenior Recruiting Specialist\nMaking Visions Work\nLerne uns bei bbv Software Services kennen\nBist du auf der Suche nach einer neuen Herausforderung? Bei bbv Software Services AG zu arbeiten bedeutet ambitionierte Projekte, Teamwork mit erstklassigen Kollegen und unzählige Möglichkeiten, sich weiterzuentwickeln und mitzugestalten.\nFirmenkultur\nRespekt schafft Raum für neues Denken\n«Viele Unternehmen unterschätzen den Wert ‹Respekt› in der Unternehmenskultur», sagt HR-Spezialistin Laila Ulmann. bbv hat sich intensiv mit dem Begriff auseinandergesetzt – und festgestellt, dass gelebter Respekt klare Vorteile im Arbeitsalltag bringt.\nInterview\nGen Z: Neue Erwartungen, alte Vorurteile?\nWas unterscheidet die Gen Z von früheren Generationen in der Arbeitswelt? Mit HR-Leiterin Claudia Schaer, Berufsbildner Florian Bucher und Softwareentwicklerin Ying-Ling Dang diskutieren drei bbv-Mitarbeitende übe"
   },
   {
    "id": "j-17d1c2acfc",
@@ -269,12 +497,12 @@
     {
      "kind": "company",
      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_xNU4jaRuX9tlmqmJJB",
-     "seenAt": "2026-09-28T12:51:04.136Z"
+     "seenAt": "2026-09-28T13:36:23.484Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
    "online": true,
    "tier": 1,
    "score": 40,
@@ -288,7 +516,8 @@
    ],
    "red": [],
    "assessment": {
-    "at": "2026-09-28T12:33:20.137Z",
+    "at": "2026-09-28T13:44:14.609Z",
+    "model": "claude-haiku-4-5-20251001",
     "answers": [
      {
       "n": 1,
@@ -317,8 +546,8 @@
      },
      {
       "n": 6,
-      "answer": "yes",
-      "quote": "Ability to thrive in collaborative, self-organizing environments inspired by Agile principles"
+      "answer": "unknown",
+      "quote": ""
      },
      {
       "n": 7,
@@ -327,13 +556,13 @@
      },
      {
       "n": 8,
-      "answer": "unknown",
-      "quote": ""
+      "answer": "yes",
+      "quote": "contributing directly to the development of technologies that will support future supercomputing systems"
      },
      {
       "n": 9,
-      "answer": "yes",
-      "quote": "The Swiss National Supercomputing Centre (CSCS)"
+      "answer": "unknown",
+      "quote": ""
      },
      {
       "n": 10,
@@ -342,8 +571,8 @@
      },
      {
       "n": 11,
-      "answer": "unknown",
-      "quote": ""
+      "answer": "no",
+      "quote": "80%-100%, Lugano, fixed-term"
      },
      {
       "n": 12,
@@ -357,7 +586,7 @@
      }
     ]
    },
-   "excerpt": "HPC Systems Software Engineer – OpenCHAMI for Lugano or Zürich\n\nSprachauswahl\n\n-\n\nFAQ\n\n-\nde\n\nDeutsch\nEnglish\n\nStellenportal\n\nchevron_left\nÜbersicht\n\nchevron_left\nÜbersicht\n\nHPC Systems Software Engineer – OpenCHAMI for Lugano or Zürich\n\n80%-100%, Lugano, fixed-term\n\nprint\nDrucken\n\nThe Swiss National Supercomputing Centre (CSCS) develops and operates a high-performance computing and data research infrastructure that supports world-class science in Switzerland. Its user laboratory is available to domestic and international researchers in academia, industry, and the business sector. The centre is operated by ETH Zurich and has offices at its data centre in Lugano and in Zurich.\n\nProject background\n\nProject Overview:\n\nOpenCHAMI stands for Open Composable Heterogeneous Adaptable Management Infrastructure . It is an open source project that provides modern system management and provisioning tools for High Performance Computing (HPC) clusters and supercomputers. The project with limited project financing and therefore limited contract duration aims to bring cloud-like deployment, automation, and security capabilities to HPC environments.\n\nThis project with work location either Lugano or Zürich focuses on the development and advancement of OpenCHAMI for CSCS’s next-generation supercomputing infrastructure. The work will contribute to building an open, scalable, and modern approach to cluster management for large-scale High Performance Computing (HPC) systems.\n\nThe main objective is t"
+   "excerpt": "chevron_left\nÜbersicht\nHPC Systems Software Engineer – OpenCHAMI for Lugano or Zürich\n80%-100%, Lugano, fixed-term\nprint\nDrucken\nThe Swiss National Supercomputing Centre (CSCS) develops and operates a high-performance computing and data research infrastructure that supports world-class science in Switzerland. Its user laboratory is available to domestic and international researchers in academia, industry, and the business sector. The centre is operated by ETH Zurich and has offices at its data centre in Lugano and in Zurich.\nProject background\nProject Overview:\nOpenCHAMI stands for Open Composable Heterogeneous Adaptable Management Infrastructure . It is an open source project that provides modern system management and provisioning tools for High Performance Computing (HPC) clusters and supercomputers. The project with limited project financing and therefore limited contract duration aims to bring cloud-like deployment, automation, and security capabilities to HPC environments.\nThis project with work location either Lugano or Zürich focuses on the development and advancement of OpenCHAMI for CSCS’s next-generation supercomputing infrastructure. The work will contribute to building an open, scalable, and modern approach to cluster management for large-scale High Performance Computing (HPC) systems.\nThe main objective is to design, develop, integrate, and deploy OpenCHAMI capabilities tailored to the operational requirements of CSCS supercomputers.\nThe project will address the "
   },
   {
    "id": "j-eabf10f200",
@@ -401,76 +630,41 @@
    "excerpt": "Salary: CHF 120'000 - 140'000 per year\n\nRequirements:\n- Ausbildung in Informatik auf Stufe HF, FH oder Universität oder mehrjährige relevante Berufserfahrung\n- Mind. 3 Jahre Erfahrung im Software Engineering / Fullstack Development\n- Erfahrung in den letzten drei Jahren in mindestens einem der Bereiche Client Onboarding, digitale Produktabschlüsse oder Client Lifecycle Management\n- Zwingend: Sehr gute Kenntnisse in Java, Spring und JPA/Hibernate sowie mit JavaScript / TypeScript\n- Teamorientierte und kommunikative Persönlichkeit mit echtem DevOps- und Ownership-Mindset\n- Fliessende Deutschkenntnisse auf mindestens C1-Niveau sowie Verständnis von Schweizerdeutsch\n\nResponsibilities:\n- Entwicklung moderner digitaler Services für Client Onboarding, digitale Produktabschlüsse und Client Lifecycle Management\n- End-to-End-Verantwortung von der Anforderungsanalyse über Entwicklung und Testing bis zur Betreuung der selbst entwickelten Lösungen im Betrieb\n- Zusammenarbeit mit Business Engineers, Product Owner und Architekt:innen bei der Erarbeitung technischer Lösungen\n- Refinement und Umsetzung von Stories inklusive Aufwandsschätzungen und Sprint-Planung im agilen Umfeld\n- Fullstack-Entwicklung mit Schwerpunkt auf Java, Spring und JPA/Hibernate im Backend sowie TypeScript/JavaScript mit Angular im Frontend\n- Analyse von Incidents und kontinuierliche Weiterentwicklung der Anwendungen und Betriebsprozesse\n- Du gestaltest Services und technische Lösungsvarianten aktiv mit und berätst den"
   },
   {
-   "id": "j-51470c3305",
-   "title": "Junior Software Engineer - GTM Products",
-   "employer": "Wingtra",
-   "employerId": "wingtra",
+   "id": "j-8b7fb5bf0f",
+   "title": "Mid Java Fullstack Engineer (React or Angular)",
+   "employer": "Zühlke",
+   "employerId": "zuehlke",
    "newEmployer": false,
-   "place": "Zürich",
+   "place": "Schlieren",
    "percent": null,
-   "lang": "de",
-   "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
-   "original": false,
-   "sources": [
-    {
-     "kind": "jobsch",
-     "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
-    }
-   ],
-   "postedAt": "2026-08-29T01:28:45.000Z",
-   "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
-   "online": true,
-   "tier": 3,
-   "score": 35,
-   "junior": true,
-   "stack": [],
-   "green": [
-    "junior"
-   ],
-   "red": [],
-   "assessment": null,
-   "excerpt": "Wir suchen eine(n) Junior Software Engineer - GTM Products zur Verstärkung unseres Teams."
-  },
-  {
-   "id": "j-0dd2a04654",
-   "title": "Software Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer",
-   "employer": "ti&m",
-   "employerId": "ti-and-m",
-   "newEmployer": false,
-   "place": "Zürich",
-   "percent": null,
-   "lang": "de",
-   "url": "https://career.ti8m.com/offene-stellen/software-engineer-java-spring-boot-auf-dem-weg-zum-data-ai-engineer/76e56bc4-e9f1-4c67-8f08-c77a8c87eeba",
+   "lang": "en",
+   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
    "original": true,
    "sources": [
     {
      "kind": "company",
-     "url": "https://career.ti8m.com/offene-stellen/software-engineer-java-spring-boot-auf-dem-weg-zum-data-ai-engineer/76e56bc4-e9f1-4c67-8f08-c77a8c87eeba",
-     "seenAt": "2026-09-28T12:51:04.136Z"
+     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
+     "seenAt": "2026-09-28T13:36:23.484Z"
     }
    ],
-   "postedAt": null,
-   "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "postedAt": "2026-09-14T00:00:00.000Z",
+   "firstSeen": "2026-09-28T13:22:29.547Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
    "online": true,
    "tier": 2,
-   "score": 33,
+   "score": 28,
    "junior": false,
    "stack": [
     "java",
     "spring boot",
     "spring",
-    "typescript",
-    "docker"
+    "react",
+    "azure"
    ],
-   "green": [
-    "weiterbildung"
-   ],
+   "green": [],
    "red": [],
    "assessment": null,
-   "excerpt": "ti&m: Software Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nSoftware Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nEngineering\n\nSoftware Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nWir sind Techies aus Leidenschaft. In interdisziplinären und agilen Teams kreieren wir innovative Lösungen für unsere Kunden aus den Bereichen Banking, Insurance, Government, Transport, Industrie und Retail.\n\nJetzt bewerben\n\nSoftware Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nWerde Teil unserer Organisation und bereichere uns mit deiner Expertise. Wir leben die flache Hierarchie – deine Stimme und Passion zählen.\n\nStandort\nBern\n\nGoogle Maps\n\nErfahrung\n3–5 Jahre\n\nBeschäftigungsgrad\nUnbefristet\n\nSeniorität\nProfessional\n\nFolge uns\n\nWir suchen dich – werde Teil unseres Teams\n\nDu bringst fundierte Erfahrung in der Java/Spring Boot-Entwicklung mit und möchtest den nächsten Schritt gehen: weg von klassischen Backend-Systemen hin zu datengetriebenen Lösungen, AI-gestützten Anwendungen und modernen Plattform-Architekturen.\nGemeinsam mit erfahrenen Engineers, Data Specialists und Architekt:innen entwickelst du innovative Lösungen für Kunden aus Banking, Governement, Transportation und Retail. Dabei kombinierst du bewährte Software-Engineering-Prinzipien mit modernen Technologien aus den Bereichen Data Engineering, Machine Learning und AI Enablement.\nDich erwartet eine kollegiale Atmosphäre, spannende Kundenprojekte und die Möglichk"
+   "excerpt": "Standort: Porto\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nWhat drives us\nAs part of Zühlke , you are surrounded by innovation. We rely on teamwork, agile collaboration, and leading technologies to shape the future and challenge the status quo. We love breaking boundaries and entering new territory .\n\nOur creativity, skills and energy enable us to turn smart ideas into valuable solutions — solutions that help our customers bring modern, effective and sustainable products, services and processes to market.\n\nThis is what our heart beats for: “empowering ideas ”.\n\nHow you'll make an impact\n\nAs part of the team, you'll help desig"
   },
   {
    "id": "j-061619b82f",
@@ -589,6 +783,86 @@
    "red": [],
    "assessment": null,
    "excerpt": "Salary: CHF 90'000 - 120'000 per year\n\nRequirements:\n- To excel in this role, the ideal candidate should possess:\n- A minimum of four years of hands-on experience in DevOps and/or software engineering, especially in a complex and technical professional setting.\n- At least three years of experience with major public cloud services, particularly Google Cloud. (Other Clouds e.g. Azure, AWS are a plus.)\n- Expertise in Docker, Terraform, and Linux environments.\n- Familiarity with Python, particularly object-oriented programming, and preferably with Django web frameworks.\n- Proven track record in developing and maintaining automation tools for deployment, monitoring, and operational tasks.\n- Comprehensive knowledge of infrastructure as code principles, along with best practices in continuous integration and continuous deployment (CI/CD).\n- Demonstrated experience in formulating and executing disaster recovery strategies and performing system backups.\n- Capability in designing cloud-based systems that are highly available and fault-tolerant, utilizing tools such as load balancers, auto-scaling, and data replication services.\n- Expertise in setting up monitoring, logging, and alerting systems to ensure high operational standards.\n- A solid grasp of networking principles, database technologies, web technologies, and cybersecurity aspects.\n- Expertise in CI/CD and GitOps platforms, such as Github.\n- Direct involvement with agile development processes and a strong foundation in DevOps c"
+  },
+  {
+   "id": "j-646e78eb67",
+   "title": "Java Software Engineer",
+   "employer": "Zühlke",
+   "employerId": "zuehlke",
+   "newEmployer": false,
+   "place": "Schlieren",
+   "percent": null,
+   "lang": "en",
+   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Java-Software-Engineer_JR100931",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Java-Software-Engineer_JR100931",
+     "seenAt": "2026-09-28T13:36:23.484Z"
+    }
+   ],
+   "postedAt": "2026-09-02T00:00:00.000Z",
+   "firstSeen": "2026-09-28T13:22:29.547Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "online": true,
+   "tier": 2,
+   "score": 23,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring boot",
+    "spring"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Standort: Belgrade\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nThe Role\n\nWe are looking for a Java Software Engineer to join a small, senior team building a business-critical product for a Swiss client. You will work on backend services alongside four colleagues split between our Belgrade office and Zurich.\nThis is a backend-focused engineering role on a deliberately modern stack. The team is small enough that your decisions matter and you will see them in production and the engagement is a long-running product build rather than a series of short projects, so you get to live with the consequences of your architecture and impro"
+  },
+  {
+   "id": "j-5e0790dfea",
+   "title": "Software Engineer, Managed Services",
+   "employer": "Zühlke",
+   "employerId": "zuehlke",
+   "newEmployer": false,
+   "place": "Schlieren",
+   "percent": null,
+   "lang": "en",
+   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Software-Engineer--Managed-Services_JR100887-1",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Software-Engineer--Managed-Services_JR100887-1",
+     "seenAt": "2026-09-28T13:36:23.484Z"
+    }
+   ],
+   "postedAt": "2026-09-23T00:00:00.000Z",
+   "firstSeen": "2026-09-28T13:22:29.547Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "online": true,
+   "tier": 2,
+   "score": 23,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring boot",
+    "spring",
+    "c#",
+    ".net",
+    "typescript",
+    "react",
+    "sql",
+    "postgresql"
+   ],
+   "green": [
+    "onboarding"
+   ],
+   "red": [
+    "on-call"
+   ],
+   "assessment": null,
+   "excerpt": "Standort: Sofia\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nYou'll join a growing practice that runs application support and operations across 20+ clients, covering Java, .NET, Python, and TypeScript/Node.js stacks. Your primary assignment will be two Java applications for a Swiss federal regulatory authority, but you'll also contribute to other engagements as the team and portfolio evolve.\n\nWe're building an AI-first operations model. That means we actively use AI tooling (coding assistants, automated log analysis, AI-assisted incident triage) in daily work, and we expect you to push that boundary further. If you're the kind "
   },
   {
    "id": "j-8d54c031ed",
@@ -810,31 +1084,69 @@
    "excerpt": "Salary: CHF 90'000 - 120'000 per year\n\nRequirements:\n- Bachelor's degree or higher in computer science or a related field (or equivalent experience).\n- 3 years of experience in technical role, ideally linked to integrations and/or ERP systems\n- Proficiency in English, on top proficiency in German is preferred.\n- Experience with Go, Java, REST/SOAP, and SQL.\n- Ideally, professional experience in a client-facing role.\n-\n\nResponsibilities:\n- Collaborate with internal and external stakeholders to enable seamless ERP integration.\n- Work on our standard API’s using Go and Java, including further development and task execution.\n- Design and implement interfaces for diverse protocols (REST, SOAP, direct DB access, file transfers).\n- Translate and map incoming EDI and e-invoice formats to our standards.\n- Explore new ERP systems and determine optimal communication methods.\n- Document new interfaces and features.\n- Work with existing customers and maintain their interfaces.\n\nTechnologies:\n- AI\n- API\n- ERP\n- Java\n- REST\n- SOAP\n- SQL\n- Git\n- GitHub\n- Golang\n- MySQL\n\nMore:\n\nblp is a high-performance ETH and HSG spin-off redefining ERP automation with AI. We solve real enterprise problems with cutting-edge tech and a strong sense of ownership. Our solution is in production across 40+ countries, used by 20'000+ daily active users, automating 70'000+ processes every day.\n\nOur AI-driven ERP automation is transforming finance, procurement, logistics, sales, and more. As one of Switzerland's fa"
   },
   {
-   "id": "j-8d6f1e9807",
-   "title": "Software Engineer Full-Stack (a)",
-   "employer": "Adnovum",
-   "employerId": "adnovum",
+   "id": "j-cda872d456",
+   "title": "Software Engineer - GTM Products",
+   "employer": "Wingtra",
+   "employerId": "wingtra",
    "newEmployer": false,
-   "place": "Zürich",
+   "place": "Zurich",
    "percent": null,
-   "lang": "de",
-   "url": "https://www.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
+   "lang": "en",
+   "url": "https://jobs.lever.co/wingtra-2/58c2d218-8c52-4e90-af4e-f72402555f41",
    "original": true,
    "sources": [
     {
      "kind": "company",
-     "url": "https://www.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
-     "seenAt": "2026-09-28T12:51:04.136Z"
+     "url": "https://jobs.lever.co/wingtra-2/58c2d218-8c52-4e90-af4e-f72402555f41",
+     "seenAt": "2026-09-28T13:36:23.484Z"
     }
    ],
-   "postedAt": null,
-   "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "postedAt": "2026-08-28T11:44:54.067Z",
+   "firstSeen": "2026-09-28T13:22:29.547Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
    "online": true,
-   "tier": 1,
+   "tier": 3,
    "score": 15,
    "junior": false,
-   "stack": [],
+   "stack": [
+    "typescript",
+    "postgres"
+   ],
+   "green": [
+    "code review"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Join the Wingtra team and become part of this venture-backed robotics scaleup with a global and international team of 125+ dedicated Wingtranauts who want to see their actions have a positive and lasting impact on the world. Founded more than 8 years ago at ETH Zurich, Europe’s leading robotics university, our goal is to build the best aerial robots to digitize the world at the push of a button and set the basis for faster and better decisions. Wingtra provides efficient and reliable data solutions to a variety of industries ranging from mining, construction and agriculture to humanitarian organizations, environmentalists and wildlife monitoring groups. \n\nWe are reaching for the stars and together we might just get there. Open communication, asking hard questions and valuing diverse viewpoints are but a few things that will help us achieve our goals. Above all we will never stop learning and striving to help each other reach our maximum potential.\n\n\nPlease note that for this Software Engineer GTM Products role, we are only considering candidates based in Eastern Europe, the Baltics, or the Balkans.\n\nResponsibilities\n-\nProductionize prototypes. Take AI-built prototypes from the GTM team and make them real: authentication and access scoping, error handling, data integrity, tests, monitoring, documentation, handover.\n\n-\nOwn the infrastructure. Hosting, environments, CI/CD, secrets, backups, dependencies and releases for every GTM-owned service.\n\n-\nOwn security for partner-facing"
+  },
+  {
+   "id": "j-500f66bf9a",
+   "title": "Java Fullstack Engineer",
+   "employer": "Zühlke",
+   "employerId": "zuehlke",
+   "newEmployer": false,
+   "place": "Schlieren",
+   "percent": null,
+   "lang": "de",
+   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
+     "seenAt": "2026-09-28T13:36:23.484Z"
+    }
+   ],
+   "postedAt": "2026-09-28T00:00:00.000Z",
+   "firstSeen": "2026-09-28T13:22:29.547Z",
+   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "online": true,
+   "tier": 2,
+   "score": 13,
+   "junior": false,
+   "stack": [
+    "java"
+   ],
    "green": [],
    "red": [],
    "assessment": null,
