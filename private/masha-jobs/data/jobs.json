@@ -1,0 +1,1264 @@
+{
+ "version": 1,
+ "generatedAt": "2026-09-28T12:51:04.136Z",
+ "jobs": [
+  {
+   "id": "j-c80ab99784",
+   "title": "Junior Software Engineer Java / Spring 80-100%, Zürich",
+   "employer": "Allgemeine Plakatgesellschaft AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/453232cc-d1ef-450a-8a8f-9e46ce03f621/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/453232cc-d1ef-450a-8a8f-9e46ce03f621/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-23T00:33:13.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 55,
+   "junior": true,
+   "stack": [
+    "java",
+    "spring"
+   ],
+   "green": [
+    "junior"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Junior Software Engineer Java / Spring 80-100%, Zürich zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-914ab6e5ae",
+   "title": "Young Professional Programm",
+   "employer": "bbv Software Services",
+   "employerId": "bbv-software-services",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://bbv.ch/career/young-professional-programm/",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://bbv.ch/career/young-professional-programm/",
+     "seenAt": "2026-09-28T12:51:04.136Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "online": true,
+   "tier": 1,
+   "score": 55,
+   "junior": true,
+   "stack": [
+    "spring"
+   ],
+   "green": [
+    "weiterbildung"
+   ],
+   "red": [],
+   "assessment": {
+    "at": "2026-09-28T12:31:03.871Z",
+    "answers": [
+     {
+      "n": 1,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 2,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 3,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 4,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 5,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 6,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 7,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 8,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 9,
+      "answer": "yes",
+      "quote": "8005 Zürich, Schweiz"
+     },
+     {
+      "n": 10,
+      "answer": "yes",
+      "quote": "Das Young Professional Programm fördert und unterstützt dich auf deinem Weg zum IT-Helden"
+     },
+     {
+      "n": 11,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 12,
+      "answer": "yes",
+      "quote": "individuelle Weiterbildung"
+     },
+     {
+      "n": 13,
+      "answer": "unknown",
+      "quote": ""
+     }
+    ]
+   },
+   "excerpt": "Young Professional Programm | bbv\n\nZum Inhalt springen\n\nSearch\n\n-\n\nDE\n\n-\n\nEN\n\n-\n\nde\n\n-\n\nen\n- Customer Stories\n- Services\n- Digital Business\n- Digitale Geschäftsmodelle\n- B2B-E-Commerce-Plattform\n- Produktvision\n- Neue Ertragsquellen\n- Cybersecurity\n- Organisationsdesign\n- Products & Services\n- Software Engineering\n- Software Modernisierung\n- Rust Transition Service\n- KI Beratung für Unternehmen\n- bbv AI Hub\n- Data Management\n- Data Management\n- Datenstrategie\n- Datenarchitektur\n- Data & Analytics\n- Swiss LCDM Hub\n- BIM2FM\n- Softwarearchitektur\n- Mobile & Web Apps\n- Internet of Things\n- Cloud Services\n- DevOps und ALM\n- Managed Teams\n- Shoring\n- Digital Experiences\n- Agentic Pimcore\n- Product & Service Design\n- User & Customer Experience\n- Digital Marketing\n- Customer Story\nEffizientere Arbeitszeugnisse ohne Qualitätsverlust: KI gezielt und kontrolliert einsetzen\n- Insights\n- Blog\n- Tech Insights\n- Academy\n- Events\n- Aktuelle Events\n- Swiss AI Impact Forum\n- Webinar-Aufzeichnungen\n- Generative KI\n- KI Workshop für Verwaltungsrat und Geschäftsleitung\n- Swiss AI Impact Report 2026\n- Swiss AI Impact Report 2025\n- Swiss AI Impact Report 2024\n- Checkliste KI-Integration\n- Download AI Guidelines\n- Datenstrategie Assessment Light\n- Cybersecurity\n- Whitepaper Cyber Resilience Act\n- Checkliste Cyber Resilience Act\n- Quiz zum Cyber Resilience Act\n- Security Principles Checklist\n- CRA Survival Map\n- Software Quality Map\n- Technica Radar\n- Workshops\n- Innovation Workshops\n- Modernisierung"
+  },
+  {
+   "id": "j-17d1c2acfc",
+   "title": "Graduate Engineer im IT-Consulting (100%)",
+   "employer": "Innovation Process Technology AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    100,
+    100
+   ],
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Innovation-Process-Technology-AG-Graduate-Engineer-im-IT-Consulting-100",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Innovation-Process-Technology-AG-Graduate-Engineer-im-IT-Consulting-100",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-14T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 40,
+   "junior": true,
+   "stack": [
+    "java",
+    "azure"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": {
+    "at": "2026-09-28T12:34:21.779Z",
+    "answers": [
+     {
+      "n": 1,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 2,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 3,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 4,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 5,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 6,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 7,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 8,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 9,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 10,
+      "answer": "yes",
+      "quote": "We hire for attitude and train for skills"
+     },
+     {
+      "n": 11,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 12,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 13,
+      "answer": "unknown",
+      "quote": ""
+     }
+    ]
+   },
+   "excerpt": "Salary: CHF 85'000 - 100'000 per year\n\nRequirements:\n- Erfolgreich abgeschlossenes Studium in Informatik oder Wirtschaftsinformatik\n- Erste technische Praxiserfahrung ist ein Plus, sei es durch einen Job oder durch Studienprojekte\n- Du gehst mit Biss an Herausforderungen, die andere lieber liegen lassen\n- Professionelles Auftreten und sehr gute Deutsch- und Englischkenntnisse\n- Bereitschaft, 1 bis 3 Mal pro Woche vor Ort beim Kunden zu arbeiten (Zürich, Bern, Luzern, Basel)\n-\n\nResponsibilities:\n- Du arbeitest in einem Projektteam beim Kunden, gemeinsam mit dessen Mitarbeitenden und weiteren ipt’lern\n- Du entwickelst hands-on individuelle Lösungen rund um Cloud, API Management, Fullstack Applikationen oder Datenplattformen\n- Dabei arbeitest du mit führenden Technologien wie Microsoft Azure, AWS, Confluent oder Databricks\n- Dein erstes ipt-Projekt suchen wir gemeinsam mit dir, passend zu deinen Interessen und Stärken\n-\n\nTechnologies:\n- API\n- AWS\n- Azure\n- Cloud\n- Databricks\n- Fullstack\n- REST\n- Backend\n- Frontend\n- Java\n- Kafka\n- Security\n\nMore:\n\nDu hast gerade dein Studium abgeschlossen und schon zehn Jahre Erfahrung als Senior Engineer? Just kidding. We hire for attitude and train for skills. Du bringst Drive, Freude am Kundenkontakt, ein Herz für Tech und den Kopf für komplexe Probleme mit - den Rest bringen wir dir bei. Wer 'wir' sind? Eine Schweizer IT-Consulting-Firma mit über 270 Mitarbeitenden. Seit 1996 entwickeln wir gemeinsam mit unseren Kunden in der Deutschschweiz "
+  },
+  {
+   "id": "j-d3dc49d484",
+   "title": "HPC Systems Software Engineer – OpenCHAMI for Lugano or Zürich 80%-100%, Lugano, fixed-term 09.09.2026 | Swiss National Supercomputing Centre (CSCS)",
+   "employer": "ETH Zürich",
+   "employerId": "eth-zuerich",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "en",
+   "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_xNU4jaRuX9tlmqmJJB",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_xNU4jaRuX9tlmqmJJB",
+     "seenAt": "2026-09-28T12:51:04.136Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "online": true,
+   "tier": 1,
+   "score": 40,
+   "junior": false,
+   "stack": [
+    "docker",
+    "git"
+   ],
+   "green": [
+    "code review"
+   ],
+   "red": [],
+   "assessment": {
+    "at": "2026-09-28T12:33:20.137Z",
+    "answers": [
+     {
+      "n": 1,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 2,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 3,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 4,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 5,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 6,
+      "answer": "yes",
+      "quote": "Ability to thrive in collaborative, self-organizing environments inspired by Agile principles"
+     },
+     {
+      "n": 7,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 8,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 9,
+      "answer": "yes",
+      "quote": "The Swiss National Supercomputing Centre (CSCS)"
+     },
+     {
+      "n": 10,
+      "answer": "yes",
+      "quote": "We value technical excellence, curiosity, initiative, and the ability to learn and grow over a perfect checklist of skills."
+     },
+     {
+      "n": 11,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 12,
+      "answer": "unknown",
+      "quote": ""
+     },
+     {
+      "n": 13,
+      "answer": "unknown",
+      "quote": ""
+     }
+    ]
+   },
+   "excerpt": "HPC Systems Software Engineer – OpenCHAMI for Lugano or Zürich\n\nSprachauswahl\n\n-\n\nFAQ\n\n-\nde\n\nDeutsch\nEnglish\n\nStellenportal\n\nchevron_left\nÜbersicht\n\nchevron_left\nÜbersicht\n\nHPC Systems Software Engineer – OpenCHAMI for Lugano or Zürich\n\n80%-100%, Lugano, fixed-term\n\nprint\nDrucken\n\nThe Swiss National Supercomputing Centre (CSCS) develops and operates a high-performance computing and data research infrastructure that supports world-class science in Switzerland. Its user laboratory is available to domestic and international researchers in academia, industry, and the business sector. The centre is operated by ETH Zurich and has offices at its data centre in Lugano and in Zurich.\n\nProject background\n\nProject Overview:\n\nOpenCHAMI stands for Open Composable Heterogeneous Adaptable Management Infrastructure . It is an open source project that provides modern system management and provisioning tools for High Performance Computing (HPC) clusters and supercomputers. The project with limited project financing and therefore limited contract duration aims to bring cloud-like deployment, automation, and security capabilities to HPC environments.\n\nThis project with work location either Lugano or Zürich focuses on the development and advancement of OpenCHAMI for CSCS’s next-generation supercomputing infrastructure. The work will contribute to building an open, scalable, and modern approach to cluster management for large-scale High Performance Computing (HPC) systems.\n\nThe main objective is t"
+  },
+  {
+   "id": "j-eabf10f200",
+   "title": "Fullstack Software Engineer mit DevOps Mindset (a) (80 – 100%)",
+   "employer": "Zürcher Kantonalbank",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Zrcher-Kantonalbank-Fullstack-Software-Engineer-mit-DevOps-Mindset-a-80--100",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Zrcher-Kantonalbank-Fullstack-Software-Engineer-mit-DevOps-Mindset-a-80--100",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-23T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 35,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring",
+    "typescript",
+    "react"
+   ],
+   "green": [
+    "onboarding"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 120'000 - 140'000 per year\n\nRequirements:\n- Ausbildung in Informatik auf Stufe HF, FH oder Universität oder mehrjährige relevante Berufserfahrung\n- Mind. 3 Jahre Erfahrung im Software Engineering / Fullstack Development\n- Erfahrung in den letzten drei Jahren in mindestens einem der Bereiche Client Onboarding, digitale Produktabschlüsse oder Client Lifecycle Management\n- Zwingend: Sehr gute Kenntnisse in Java, Spring und JPA/Hibernate sowie mit JavaScript / TypeScript\n- Teamorientierte und kommunikative Persönlichkeit mit echtem DevOps- und Ownership-Mindset\n- Fliessende Deutschkenntnisse auf mindestens C1-Niveau sowie Verständnis von Schweizerdeutsch\n\nResponsibilities:\n- Entwicklung moderner digitaler Services für Client Onboarding, digitale Produktabschlüsse und Client Lifecycle Management\n- End-to-End-Verantwortung von der Anforderungsanalyse über Entwicklung und Testing bis zur Betreuung der selbst entwickelten Lösungen im Betrieb\n- Zusammenarbeit mit Business Engineers, Product Owner und Architekt:innen bei der Erarbeitung technischer Lösungen\n- Refinement und Umsetzung von Stories inklusive Aufwandsschätzungen und Sprint-Planung im agilen Umfeld\n- Fullstack-Entwicklung mit Schwerpunkt auf Java, Spring und JPA/Hibernate im Backend sowie TypeScript/JavaScript mit Angular im Frontend\n- Analyse von Incidents und kontinuierliche Weiterentwicklung der Anwendungen und Betriebsprozesse\n- Du gestaltest Services und technische Lösungsvarianten aktiv mit und berätst den"
+  },
+  {
+   "id": "j-51470c3305",
+   "title": "Junior Software Engineer - GTM Products",
+   "employer": "Wingtra",
+   "employerId": "wingtra",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-08-29T01:28:45.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": 3,
+   "score": 35,
+   "junior": true,
+   "stack": [],
+   "green": [
+    "junior"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Junior Software Engineer - GTM Products zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-0dd2a04654",
+   "title": "Software Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer",
+   "employer": "ti&m",
+   "employerId": "ti-and-m",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://career.ti8m.com/offene-stellen/software-engineer-java-spring-boot-auf-dem-weg-zum-data-ai-engineer/76e56bc4-e9f1-4c67-8f08-c77a8c87eeba",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://career.ti8m.com/offene-stellen/software-engineer-java-spring-boot-auf-dem-weg-zum-data-ai-engineer/76e56bc4-e9f1-4c67-8f08-c77a8c87eeba",
+     "seenAt": "2026-09-28T12:51:04.136Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "online": true,
+   "tier": 2,
+   "score": 33,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring boot",
+    "spring",
+    "typescript",
+    "docker"
+   ],
+   "green": [
+    "weiterbildung"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "ti&m: Software Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nSoftware Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nEngineering\n\nSoftware Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nWir sind Techies aus Leidenschaft. In interdisziplinären und agilen Teams kreieren wir innovative Lösungen für unsere Kunden aus den Bereichen Banking, Insurance, Government, Transport, Industrie und Retail.\n\nJetzt bewerben\n\nSoftware Engineer (Java/Spring Boot) auf dem Weg zum Data / AI Engineer\n\nWerde Teil unserer Organisation und bereichere uns mit deiner Expertise. Wir leben die flache Hierarchie – deine Stimme und Passion zählen.\n\nStandort\nBern\n\nGoogle Maps\n\nErfahrung\n3–5 Jahre\n\nBeschäftigungsgrad\nUnbefristet\n\nSeniorität\nProfessional\n\nFolge uns\n\nWir suchen dich – werde Teil unseres Teams\n\nDu bringst fundierte Erfahrung in der Java/Spring Boot-Entwicklung mit und möchtest den nächsten Schritt gehen: weg von klassischen Backend-Systemen hin zu datengetriebenen Lösungen, AI-gestützten Anwendungen und modernen Plattform-Architekturen.\nGemeinsam mit erfahrenen Engineers, Data Specialists und Architekt:innen entwickelst du innovative Lösungen für Kunden aus Banking, Governement, Transportation und Retail. Dabei kombinierst du bewährte Software-Engineering-Prinzipien mit modernen Technologien aus den Bereichen Data Engineering, Machine Learning und AI Enablement.\nDich erwartet eine kollegiale Atmosphäre, spannende Kundenprojekte und die Möglichk"
+  },
+  {
+   "id": "j-061619b82f",
+   "title": "Backend Software Engineer – GovTech SaaS (80-100%)",
+   "employer": "Konova AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zug",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Konova-AG-Backend-Software-Engineer--GovTech-SaaS-80-100",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Konova-AG-Backend-Software-Engineer--GovTech-SaaS-80-100",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-21T06:06:34.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 25,
+   "junior": false,
+   "stack": [
+    "react",
+    "docker",
+    "git"
+   ],
+   "green": [
+    "code review"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 80'000 - 120'000 per year\n\nRequirements:\n- 3 Jahre Erfahrung in professioneller Backend-Entwicklung\n- Erfahrung mit REST-APIs und sicherheitsbewusster Entwicklung\n- Solide Kenntnisse mit relationalen Datenbankmodellen\n- Erfahrung mit automatisierten Tests und CI/CD\n- Erfahrung mit containerisierten Umgebungen (Docker, Kubernetes von Vorteil)\n- Eigenständige, kommunikative Arbeitsweise und Lernbereitschaft\n- Offenheit, KI als Unterstützung im Entwicklungsworkflow zu nutzen\n- Gute Deutschkenntnisse, wohnhaft in der Schweiz\n\nResponsibilities:\n- Weiterentwicklung unserer SaaS-Lösung mit neuen Features (z. B. KI-Integrationen, Online-Kollaboration, effiziente Datenauswertung) sowie Wartung der bestehenden Komponenten\n- Mitarbeit bei der Architektur und Spezifikation neuer Features in enger Abstimmung mit den Produktverantwortlichen\n- Backend-Entwicklung auf Basis von Laravel, MySQL und Rest-API\n- Bei Interesse: Mitarbeit im Frontend (React)\n- Sicherheitsbewusste Entwicklung und Code Reviews\n- Schreiben und Pflegen von automatisierten Tests sowie Mitarbeit an CI/CD-Pipelines\n\nTechnologies:\n- API\n- Backend\n- CI/CD\n- CTO\n- Docker\n- Frontend\n- GitHub\n- JavaScript\n- Kubernetes\n- Laravel\n- MySQL\n- PHP\n- REST\n- React\n- Sentry\n- Copilot\n- Figma\n- Git\n- JIRA\n- MS Teams\n- OWASP\n- OpenAPI\n- OpenID\n- PhpStorm\n- PHPUnit\n- Postman\n- Swagger\n\nMore:\n\nKonova AG entwickelt digitale Lösungen für die öffentliche Hand in der Schweiz. 🇨🇭 Unser Hauptprodukt ist E-Mitwirkung, eine SaaS-Plat"
+  },
+  {
+   "id": "j-37ea9397de",
+   "title": "Cloud Software Engineer (m/w/d)",
+   "employer": "TekkMinds Schweiz AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/TekkMinds-Schweiz-AG-Cloud-Software-Engineer-mwd",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/TekkMinds-Schweiz-AG-Cloud-Software-Engineer-mwd",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-09T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 25,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring boot",
+    "spring",
+    "docker",
+    "azure",
+    "git"
+   ],
+   "green": [
+    "weiterbildung"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 100'000 - 120'000 per year\n\nRequirements:\n- Fundierte Erfahrung in Java/Kotlin (optional gerne auch Python)\n- Umfassende Erfahrung mit Spring (Boot) oder JEE\n- Umfassende Erfahrung mit Kafka Streams (und optional Flink)\n- Kenntnisse in Kubernetes/OpenShift + Docker und Cloud-Plattformen (AWS, Azure, GCP)\n- Praxiserfahrung mit CI/CD-Tools insbesondere GitLab (alternativ GitHub, Jenkins, AWS CodeBuild/CodePipeline, Azure DevOps)\n- Grundlagen der Softwarearchitektur und Clean Code\n-\n\nResponsibilities:\n- Konzeption und Entwicklung skalierbarer, cloud-nativer Anwendungen\n- Umsetzung von Data-streaming Applikationen unter Verwendung von Kafka (Streams) und Apache Flink\n- Implementierung von CI/CD-Pipelines und DevOps-Praktiken\n- Entwurf und Umsetzung von Software-Architekturen\n- Containerisierung bestehender und neuer Anwendungen\n- Enge Zusammenarbeit mit unseren Kunden zur Erarbeitung technischer Lösungen\n- Mitarbeit bei der Einführung und Integration von KI-Technologien in bestehende Systeme\n- Kontinuierliche Weiterentwicklung unserer internen Standards und Best Practices\n\nTechnologies:\n- AI\n- AWS\n- ArgoCD\n- Azure\n- CI/CD\n- Cloud\n- DevOps\n- Docker\n- Flink\n- GCP\n- Git\n- GitHub\n- GitLab\n- GitOps\n- IoT\n- Java\n- Jenkins\n- Kafka\n- Kotlin\n- Kubernetes\n- OpenShift\n- Python\n- Spring\n- Java EE\n- Podman\n- Spring Boot\n\nMore:\n\nPosition: Cloud Software Engineer\nOrt: Homeoffice ist grundsätzlich möglich, je nach Projekt kommt es zu Kundenterminen oder kundenseitigen Anwesenheitspfl"
+  },
+  {
+   "id": "j-e7af5abdc8",
+   "title": "DevOps // Cloud Software Engineer (50-100%)",
+   "employer": "Scalera AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    50,
+    100
+   ],
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/Scalera-AG-DevOps--Cloud-Software-Engineer-50-100",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Scalera-AG-DevOps--Cloud-Software-Engineer-50-100",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-08-28T11:46:17.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 25,
+   "junior": false,
+   "stack": [
+    "postgresql",
+    "docker",
+    "azure"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 90'000 - 120'000 per year\n\nRequirements:\n- To excel in this role, the ideal candidate should possess:\n- A minimum of four years of hands-on experience in DevOps and/or software engineering, especially in a complex and technical professional setting.\n- At least three years of experience with major public cloud services, particularly Google Cloud. (Other Clouds e.g. Azure, AWS are a plus.)\n- Expertise in Docker, Terraform, and Linux environments.\n- Familiarity with Python, particularly object-oriented programming, and preferably with Django web frameworks.\n- Proven track record in developing and maintaining automation tools for deployment, monitoring, and operational tasks.\n- Comprehensive knowledge of infrastructure as code principles, along with best practices in continuous integration and continuous deployment (CI/CD).\n- Demonstrated experience in formulating and executing disaster recovery strategies and performing system backups.\n- Capability in designing cloud-based systems that are highly available and fault-tolerant, utilizing tools such as load balancers, auto-scaling, and data replication services.\n- Expertise in setting up monitoring, logging, and alerting systems to ensure high operational standards.\n- A solid grasp of networking principles, database technologies, web technologies, and cybersecurity aspects.\n- Expertise in CI/CD and GitOps platforms, such as Github.\n- Direct involvement with agile development processes and a strong foundation in DevOps c"
+  },
+  {
+   "id": "j-8d54c031ed",
+   "title": "Java Full-Stack Engineer",
+   "employer": "Rockstar Recruiting AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Java-Full-Stack-Engineer",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Java-Full-Stack-Engineer",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-06-17T08:14:56.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 20,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring",
+    "sql",
+    "docker"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 120'000 - 140'000 per year\n\nRequirements:\n- • B.Sc./M.Sc. in Informatik oder einem äquivalenten Abschluss.\n- • Solide Programmiergrundlagen mit Schwerpunkt auf Java und dessen Umfeld.\n- • Nachgewiesene Erfahrung von mindestens 3 Jahren im Full-Stack mit einem starken Fokus auf die Entwicklung robuster und skalierbarer Webanwendungen. Erfahrung mit Frontend-Frameworks wie Angular ist äußerst wünschenswert.\n- • Sprachkenntnisse der deutschen Sprache auf mindestens B2-Niveau, um eine effektive Kommunikation mit Teammitgliedern und Stakeholdern zu gewährleisten.\n\nResponsibilities:\n- • Design und Implementierung neuer Softwarefunktionen\n- • Wartung und Optimierung bestehender Softwarekomponenten, proaktive Identifizierung von Verbesserungsmöglichkeiten und gegebenenfalls Refaktorisierung.\n- • Aktive Teilnahme an Architekturentscheidungen und Beitrag zum Design und zur Weiterentwicklung des Softwaresystems.\n- • Enge Zusammenarbeit mit interdisziplinären Teams, um eine nahtlose Integration und Bereitstellung von Softwareprojekten sicherzustellen.\n- • Übernahme von komplexen Aufgaben im Datenmanagement, Arbeit mit großen Datensätzen und Implementierung effizienter Lösungen für die Datenverarbeitung und -speicherung.\n\nTechnologies:\n- Angular\n- Cloud\n- Frontend\n- Java\n- microservices\n- Docker\n- Java EE\n- Kubernetes\n- Oracle\n- SQL\n- Spring\n- Fullstack\n\nMore:\n\nHaftungsausschluss: Bei diesen Stellenangeboten handelt es sich um aktuelle Möglichkeiten bei unseren Kunden, Schweiz"
+  },
+  {
+   "id": "j-382805cf5a",
+   "title": "Site Reliability Engineer / Software Engineer (60-100%)",
+   "employer": "Intelliact AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    60,
+    100
+   ],
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Intelliact-AG-Site-Reliability-Engineer--Software-Engineer-60-100",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Intelliact-AG-Site-Reliability-Engineer--Software-Engineer-60-100",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-24T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 20,
+   "junior": false,
+   "stack": [
+    "typescript",
+    "react",
+    "sql"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 95'000 - 135'000 per year\n\nRequirements:\n- Das bringst du mit (oder willst du bei uns auf das nächste Level heben):\n- Erfahrung in den methodischen Patterns für Backend und Frontend von Web-Applikationen.\n- Erfahrung in der Systemadministration und Kenntnisse in der Cloud-Infrastruktur mit Fokus auf Resilienz und Skalierbarkeit.\n- Applikationsentwicklung in TypeScript und PHP.\n- Umgang mit Incidents und Postmortems: Fähigkeit, schnell und selbständig auf Issues zu reagieren, die Ursachen zu analysieren und Lösungen zu entwickeln, um ähnliche Probleme in der Zukunft zu verhindern.\n- Kommunikationssicher in Deutsch und Englisch.\n\nResponsibilities:\n- Du bist am Puls unserer Systeme: Mit Tools wie Sentry spürst du Fehler in Echtzeit auf und behebst sie proaktiv und nachhaltig, noch bevor der Kunde überhaupt etwas davon merkt.\n- Incident Response. Du reagierst auf Fehler, Störungen und Ausfälle, führst eine schnelle Ursachenanalyse (Root Cause Analysis, RCA) durch und entwickelst Lösungen gemeinsam mit dem Team. Im Anschluss erstellst du Postmortems, damit das ganze Team dazulernen kann.\n- Du nutzt die gewonnen Insights als Ausgangslage, um die Code-Basis nachhaltig zu verbessern, Performance-Engpässe im Backend/Frontend zu eliminieren und gemeinsam mit dem Team resilientere Systemarchitekturen zu bauen, damit das System auch nach Jahren im Betrieb noch frisch ist.\n- Prozessautomatisierung. Du identifizierst manuelle Prozesse und automatisierst sie, um die Effizienz zu"
+  },
+  {
+   "id": "j-568e31b0d6",
+   "title": "Software Engineer - Android (all genders)",
+   "employer": "HolidayCheck",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Remote (Schweiz)",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---Android-all-genders",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---Android-all-genders",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-07-10T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 20,
+   "junior": false,
+   "stack": [],
+   "green": [
+    "onboarding",
+    "code review",
+    "pair programming",
+    "pair-programming"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 75'000 - 85'000 per year\n\nRequirements:\n- At least three years of experience in Android development\n- Strong proficiency in Kotlin\n- Deep knowledge of Android fundamentals and best practices\n- Experience with Android architecture components\n- Comfortable using Jetpack Compose, Coroutines, and Flows\n- Experience with RxJava is a plus\n- Solid understanding of testing practices and commitment to quality\n- Experience with Node.js or Scala is beneficial\n- Having published apps on the Play Store is highly regarded\n- Passion for learning and self-organization; readiness to enhance skills and take on new challenges\n- Courage to experiment with new technologies (including AI)\n- Customer-centric approach: prioritize quality, security, speed, and performance\n\nResponsibilities:\n- Collaborate in an agile, cross-functional team to maintain and evolve the HolidayCheck Android app\n- Engage in robust development practices including pair programming, code reviews, and continuous delivery to thousands of users\n- Innovate and implement new features in close collaboration with iOS and Android developers, Product Designers, and Product Managers\n- Contribute to the technical community through blogs or tech talks\n\nTechnologies:\n- AI\n- Android\n- Cloud\n- Excel\n- GitHub\n- Hardware\n- Kotlin\n- Linux\n- RxJava\n- Scala\n- Security\n- Windows\n- iOS\n- NodeJS\n- Mobile\n\nMore:\n\nStart your very own journey – with HolidayCheck!\nAt HolidayCheck, everything revolves around making vacations better – togethe"
+  },
+  {
+   "id": "j-3ae476a01f",
+   "title": "Frontend Engineer",
+   "employer": "Vinyamo AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zurich",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/Vinyamo-AG-Frontend-Engineer",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Vinyamo-AG-Frontend-Engineer",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-25T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 15,
+   "junior": false,
+   "stack": [
+    "typescript",
+    "react"
+   ],
+   "green": [
+    "coaching"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 110'000 - 135'000 per year\n\nRequirements:\n- You have a passion for building great frontends, on web and on mobile.\n- You have shipped a product that real people use.\n- You work with coding agents every day.\n- You work independently, ask the right questions, and make sound decisions.\n- You've done real work on yourself. Whatever your path, through therapy, meditation, coaching, ceremony, sport, art or life itself, this mission feels personal to you.\n\nResponsibilities:\n- Build the platform on web and on mobile: the interface and the flows.\n- Make it voice-first. People speak to the app and it answers, so the whole product works by voice.\n- Make it feel easy: low friction, convincing flows, an interface people come back to.\n- Ship the first public release.\n- Work directly with the founder as a genuine thought partner: question, contribute, and shape both the product and the culture from day one.\n- Vinyamo builds a research platform that learns what actually helps people heal, grow and live well. It reads lived experience at scale, alongside measured data, and shows each person their own fastest route to a life that fits. You would be one of the first people in the world building a product like this, with the freedom and funding to do it right.\n\nTechnologies:\n- GitHub\n- Machine Learning\n- Mobile\n- REST\n- Web\n- UX UI Design\n- AI Agents\n- JavaScript\n- Python\n- React\n- React Native\n- TypeScript\n- Frontend\n\nMore:\n\nWhat actually helps people heal, grow, and live well? The "
+  },
+  {
+   "id": "j-f7f239e338",
+   "title": "Software Engineer - Backend, AI & Frontend (m/w/d) - 100%",
+   "employer": "SCAIT",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zug",
+   "percent": [
+    100,
+    100
+   ],
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/SCAIT-Software-Engineer---Backend-AI--Frontend-mwd---100",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/SCAIT-Software-Engineer---Backend-AI--Frontend-mwd---100",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-24T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 15,
+   "junior": false,
+   "stack": [
+    "typescript",
+    "react",
+    "azure"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 95'000 - 125'000 per year\n\nRequirements:\n- Starke Frontend-Expertise: Du baust production-ready UIs in React und Next.js (TypeScript)\n- Gespür für Produkt und UX: Du denkst in User Flows, nicht nur in Komponenten. Du weisst, wie man komplexe Daten verständlich darstellt\n- Komponentenarchitektur: Erfahrung mit Design Systems, Composable Components, State Management (z.B. TanStack Query, Zustand, React Hook Form)\n- Du hast schon etwas gebaut und ausgeliefert: Ein Produkt, ein Side Project oder einen Open-Source-Beitrag\n- Backend-Kenntnisse: Du kannst einen API-Endpoint in Python/FastAPI schreiben\n- Du redest gerne mit Nutzern, siehst Probleme selbst und löst sie, statt auf Tickets zu warten\n- Deutsch und Englisch fliessend (Kunden sprechen Deutsch, intern arbeiten wir bilingual)\n\nResponsibilities:\n- u wirst unser erster Engineering-Hire und baust mit uns das Produkt, das verändert, wie Bauunternehmen arbeiten. Das heisst nicht nur Code schreiben, sondern Architektur mitentscheiden, mit Kunden sprechen und die technische Kultur von Scait mitprägen.\n- Wir arbeiten nach dem Forward-Deployed-Modell: du bist nah an den Kunden, verstehst ihre Workflows und baust Lösungen, die in der Realität der Baubranche wirklich funktionieren. Du verantwortest Projekte End-to-End, vom ersten Kundengespräch bis zum Code in Produktion.\n- Konkret:\n- Frontend & Produkt bauen. Komplexe, datenreiche UIs in Next.js und React entwickeln, die Kalkulatoren tatsächlich nutzen wollen. Dashboards, "
+  },
+  {
+   "id": "j-db02c97af2",
+   "title": "Software Engineer - ERP Integrations",
+   "employer": "BLP Digital AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/BLP-Digital-AG-Software-Engineer---ERP-Integrations",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/BLP-Digital-AG-Software-Engineer---ERP-Integrations",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-06-30T08:46:41.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 15,
+   "junior": false,
+   "stack": [
+    "java",
+    "sql",
+    "git"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 90'000 - 120'000 per year\n\nRequirements:\n- Bachelor's degree or higher in computer science or a related field (or equivalent experience).\n- 3 years of experience in technical role, ideally linked to integrations and/or ERP systems\n- Proficiency in English, on top proficiency in German is preferred.\n- Experience with Go, Java, REST/SOAP, and SQL.\n- Ideally, professional experience in a client-facing role.\n-\n\nResponsibilities:\n- Collaborate with internal and external stakeholders to enable seamless ERP integration.\n- Work on our standard API’s using Go and Java, including further development and task execution.\n- Design and implement interfaces for diverse protocols (REST, SOAP, direct DB access, file transfers).\n- Translate and map incoming EDI and e-invoice formats to our standards.\n- Explore new ERP systems and determine optimal communication methods.\n- Document new interfaces and features.\n- Work with existing customers and maintain their interfaces.\n\nTechnologies:\n- AI\n- API\n- ERP\n- Java\n- REST\n- SOAP\n- SQL\n- Git\n- GitHub\n- Golang\n- MySQL\n\nMore:\n\nblp is a high-performance ETH and HSG spin-off redefining ERP automation with AI. We solve real enterprise problems with cutting-edge tech and a strong sense of ownership. Our solution is in production across 40+ countries, used by 20'000+ daily active users, automating 70'000+ processes every day.\n\nOur AI-driven ERP automation is transforming finance, procurement, logistics, sales, and more. As one of Switzerland's fa"
+  },
+  {
+   "id": "j-8d6f1e9807",
+   "title": "Software Engineer Full-Stack (a)",
+   "employer": "Adnovum",
+   "employerId": "adnovum",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://www.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
+     "seenAt": "2026-09-28T12:51:04.136Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:51:04.136Z",
+   "online": true,
+   "tier": 1,
+   "score": 15,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": ""
+  },
+  {
+   "id": "j-d0119c084e",
+   "title": "Rust Software Engineer (a) - Zürich",
+   "employer": "ERNI",
+   "employerId": "erni",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Basel",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Basel",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    },
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Bern",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    },
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Zrich",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    },
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/afa58f15-2503-4582-8f3d-cdec022f5127/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-06-06T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": 2,
+   "score": 13,
+   "junior": false,
+   "stack": [
+    "docker"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 100'000 - 130'000 per year\n\nRequirements:\n- Abgeschlossenes Studium (ETH, FH, Uni oder HF) in Informatik oder eine vergleichbare Ausbildung\n- 5+ Jahre Erfahrung in der Softwareentwicklung, davon mindestens 2 Jahre praktische Erfahrung mit Rust\n- Sehr gute Kenntnisse von Rust (Ownership, Borrowing, Lifetimes, Async/Await) sowie Erfahrung mit Frameworks wie Tokio, Actix, Serde oder ähnlichen Technologien\n- Erfahrung in Softwarearchitektur, verteilten Systemen sowie Event-Driven Architectures\n- Erfahrung mit Linux, Docker und Kubernetes\n- Kenntnisse in DDD, TDD/BDD sowie automatisierten Tests und modernen Softwareentwicklungspraktiken\n- Erfahrung in SAFe/Agile-Umgebungen; Erfahrung in regulierten Branchen\n- Sehr gute Deutsch- und Englischkenntnisse in Wort und Schrift\n\nResponsibilities:\n- Entwicklung und Weiterentwicklung moderner Softwarelösungen mit Rust\n- Mitarbeit bei Architektur- und Designentscheidungen in einem internationalen Umfeld\n- Entwicklung skalierbarer und qualitativ hochwertiger Software unter Einhaltung hoher Qualitätsstandards\n- Implementierung von APIs, Services und asynchronen Komponenten in modernen Systemlandschaften\n- Zusammenarbeit mit Product Ownern, Architekten und interdisziplinären Entwicklungsteams\n- Sicherstellung von Softwarequalität durch automatisierte Tests und Best Practices\n- Aktive Mitgestaltung technischer Standards sowie Wissensaustausch innerhalb des Teams\n- Mitarbeit in einem agilen Umfeld nach SAFe\n\nTechnologies:\n- DDD\n- Dock"
+  },
+  {
+   "id": "j-be2d646c49",
+   "title": "Fullstack Software Engineer mit DevOps Mindset (a) (80-100%)",
+   "employer": "Consult & Pepper AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/4b672844-6aba-4261-a913-a9a9e9602d1c/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/4b672844-6aba-4261-a913-a9a9e9602d1c/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-28T04:11:46.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 10,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Fullstack Software Engineer mit DevOps Mindset (a) (80-100%) zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-37a9f901b1",
+   "title": "Software Engineer - iOS (all genders)",
+   "employer": "HolidayCheck",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Remote (Schweiz)",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---iOS-all-genders",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---iOS-all-genders",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-07-10T13:57:35.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 10,
+   "junior": false,
+   "stack": [],
+   "green": [
+    "onboarding",
+    "code review",
+    "pair programming"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 65'000 - 70'000 per year\n\nRequirements:\n- Passion for learning and self-development\n- Interest in mobile app development\n- Basic knowledge in iOS development; familiarity with Swift is essential\n- Understanding of how software is built\n- Awareness of quality and testing in development\n- Curiosity about new technologies like AI, APIs, or automation\n- Structured way of working and willingness to take feedback\n- We dont filter by: degrees or formal education paths; perfect CVs or polished GitHub profiles\n\nResponsibilities:\n- Work closely with experienced iOS and Android developers in a cross-functional team\n- Support the development and improvement of the HolidayCheck iOS app\n- Learn and apply modern development practices like code reviews, pair programming, and CI/CD\n- Contribute to features step by step — from implementation to release\n- Collaborate with Product Managers and Designers to understand user needs\n- Explore new technologies, including first use cases of AI in mobile apps\n\nTechnologies:\n- AI\n- Android\n- CI/CD\n- GitHub\n- Hardware\n- Support\n- Linux\n- Mobile\n- Swift\n- Windows\n- iOS\n\nMore:\n\nAt HolidayCheck, everything revolves around making vacations better — together. We enable the best time of the year for our travelers and create an inspiring work atmosphere for HolidayCheckers in our modern office in Bottighofen (Switzerland) or Munich (Germany).\n\nWe live our company values every day: as #TeamHolidayCheck, we build trust, take ownership, and love what we"
+  },
+  {
+   "id": "j-fae1447960",
+   "title": "Software Engineer – User Generated Content (all genders)",
+   "employer": "HolidayCheck",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Remote (Schweiz)",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer--User-Generated-Content-all-genders",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer--User-Generated-Content-all-genders",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-07-10T13:57:36.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 10,
+   "junior": false,
+   "stack": [
+    "typescript",
+    "sql"
+   ],
+   "green": [
+    "onboarding"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 75'000 - 85'000 per year\n\nRequirements:\n- Bachelors degree in Computer Science or a related technical field, or equivalent practical experience\n- 2–3 years of professional experience in software engineering\n- Familiarity with JavaScript, TypeScript, and Node.js for both frontend and backend development\n- Experience or exposure to writing automated tests for frontend and backend applications\n- Understanding of CI/CD tools and workflows\n- Basic knowledge of databases (SQL, NoSQL, or key-value stores)\n- Experience with additional programming languages such as Python, Go, Scala, or PHP is a plus\n\nResponsibilities:\n- Build fullstack systems that collect, process, and display user-generated content (UGC) at scale\n- Develop reliable backend services and APIs for reviews, photos, and ratings\n- Create intuitive, responsive interfaces that encourage traveler contributions\n- Collaborate with cross-functional teams (product managers, designers, data scientists, and engineers) to improve the traveler journey\n- Use data and feedback to refine ranking, personalization, and recommendations\n\nTechnologies:\n- AI\n- Backend\n- CI/CD\n- Frontend\n- Fullstack\n- Hardware\n- JavaScript\n- Linux\n- NoSQL\n- PHP\n- Python\n- SQL\n- Scala\n- TypeScript\n- Windows\n- NodeJS\n\nMore:\n\nSoftware Engineer – User Generated Content (all genders)\nLocation: Bottighofen, München\nEmployment: Full-time, Permanent employee\n\nStart your very own journey – with HolidayCheck!\nAt HolidayCheck, everything revolves around mak"
+  },
+  {
+   "id": "j-ad4bd4dc20",
+   "title": ".NET Software Engineer",
+   "employer": "Furado AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Horgen",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/24bed6ed-7416-480a-b55f-6400d13e8285/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/24bed6ed-7416-480a-b55f-6400d13e8285/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-10T13:38:06.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 5,
+   "junior": false,
+   "stack": [
+    ".net"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) .NET Software Engineer zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-1cd7e75a59",
+   "title": "Fullstack Engineer in Banking - longterm contract",
+   "employer": "Rockstar Recruiting AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Fullstack-Engineer-in-Banking---longterm-contract",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Fullstack-Engineer-in-Banking---longterm-contract",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2025-06-04T15:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 5,
+   "junior": false,
+   "stack": [
+    "java"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF ? - ? per year\n\nRequirements:\n- Im Auftrag unseres Kunden, einer Privatbank in Zürich, suchen wir derzeit einen erfahrenen Fullstack Engineer für ein langfristiges Projekt mit Start ab August/September (rolling contract).\n- Für eine erfolgreiche Bewerbung bringen Sie idealerweise folgende Kenntnisse und Erfahrungen mit:\n- Erfahrung in allen Phasen der Softwareentwicklung: Analyse, Design, Implementierung, Testing und Deployment – idealerweise in agilen Teams oder DevOps-Strukturen\n- Entwicklung von Webanwendungen mit Angular, SCSS und Microservice-Architekturen auf Basis von Kotlin und Java\n- Vertraut mit dem Bankenumfeld, speziell E-Banking, und gutem Verständnis von Investmentprozessen\n- Zusätzliche Kenntnisse in Avaloq, OpenShift/Kubernetes und Sicherheitsstandards wie OAuth\n- Sehr gute Deutsch- und Englischkenntnisse\n\nResponsibilities:\n- Als Fullstack Engineer hättest du folgende Verantwortungsbereiche:\n- Aktive Beteiligung an der Wartung und Weiterentwicklung produktiver Systeme durch die Übernahme von Second- und Third-Level-Support – inklusive Analyse und Behebung technischer Störungen\n- Entwicklung, Pflege und Optimierung automatisierter Abläufe in den Bereichen Build, Test und Deployment unter Einsatz moderner CI/CD-Tools zur Förderung von Effizienz und Softwarequalität\n- Verantwortung für alle Phasen des Softwareentwicklungszyklus – von der Bedarfsaufnahme über Architekturentscheidungen bis zur Implementierung, Qualitätssicherung, Auslieferung und dem la"
+  },
+  {
+   "id": "j-62891ca33b",
+   "title": "Professional Software Engineer .NET und Web",
+   "employer": "VZ VermögensZentrum",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/a20d74c5-df85-4b13-9300-158fe2f456a0/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/a20d74c5-df85-4b13-9300-158fe2f456a0/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-08-31T11:32:29.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 5,
+   "junior": false,
+   "stack": [
+    ".net"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Professional Software Engineer .NET und Web zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-9e809df9eb",
+   "title": "Software Engineer",
+   "employer": "Intonate",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/Intonate-Software-Engineer",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Intonate-Software-Engineer",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2025-11-13T23:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 5,
+   "junior": false,
+   "stack": [
+    "java",
+    "azure"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 70'000 - 90'000 per year\n\nRequirements:\n- •⁠ ⁠Bachelor’s degree in Computer Science, related technical field, or equivalent practical experience.\n- •⁠ ⁠2+ year of experience with software development in one or more programming languages (e.g., Python, C, C++, Java, JavaScript).\n- •⁠ ⁠Demonstrated software engineer experience via an internship, work experience, coding competitions, or widely used contributions in open source repositories (e.g. GitHub.)\n- •⁠ ⁠Interpersonal experience: cross-group and cross-functional collaboration.\n- •⁠ ⁠⁠EU/EFTA citizen or Swiss Work Permit.\n-\n\nResponsibilities:\n- •⁠ ⁠Full stack web/mobile application development with a variety of coding languages.\n- •⁠ ⁠Complete medium to large features (each with multiple tasks) independently with limited guidance.\n- •⁠ ⁠Work closely with operations and infrastructure to build and scale back-end services.\n- •⁠ ⁠Proactively identify and drive changes as needed for assigned codebase and product area.\n-\n\nTechnologies:\n- API\n- AWS\n- Azure\n- Cloud\n- GitHub\n- Java\n- JavaScript\n- Mobile\n- Python\n- Web\n- Android\n- iOS\n\nMore:\n\nIntonate is a technology startup based in Zürich and aims to reduce the administrative burdens in Europe’s healthcare systems. Our first product revolutionizes the way doctors document their work by generating medical reports in real-time directly from doctor-patient consultations. We are currently in the process of rolling out our solution to multiple EHR systems to reach doctors a"
+  },
+  {
+   "id": "j-69608be70b",
+   "title": "Software Engineer, Microsoft Power Platform",
+   "employer": "Migros-Genossenschafts-Bund",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/Migros-Genossenschafts-Bund-Software-Engineer-Microsoft-Power-Platform",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Migros-Genossenschafts-Bund-Software-Engineer-Microsoft-Power-Platform",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-01-15T10:10:33.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 5,
+   "junior": false,
+   "stack": [
+    "c#"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 110'000 - 140'000 per year\n\nRequirements:\n- Abgeschlossenes Studium (Uni/ETH, FH, HF) in Informatik, Wirtschaftsinformatik, Applikationsentwicklung oder einer vergleichbaren Fachrichtung\n- Mehrjährige Erfahrung in Applikation Engineering im Umfeld Microsoft Power und in der Digitalisierung von Prozessen\n- Hohe Fachwissen in Microsoft Power Platform\n- Kenntnisse in Software-Robotics und Low-Code-Apps sowie Business Process Automation mit UiPath (C#/VB)\n- Diplomatische, zielorientierte Umsetzung von Themen und Lenkung von Architektur-Lösungen\n- Erfahrung in agilen Value-Streams (zum Beispiel SAFe)\n- Verhandlungssichere Deutschkenntnisse\n- Gute Englischkenntnisse\n- Französischkenntnisse von Vorteil\n\nResponsibilities:\n- Entwickeln und Betreiben moderner Software-Applikationen zur Digitalisierung und Automatisierung von Geschäftsprozessen\n- Überführen neuer Entwicklungen in den operativen Betrieb unter Einhaltung der ITSM-Prozesse, Gewährleistung der Stabilität und Unterstützung bei der Betreuung und Weiterentwicklung der Applikationen\n- Definieren der notwendigen technischen und personellen Ressourcen sowie der passenden Software-Architektur und Schnittstellen zur bestehenden Systemlandschaft\n- Modellieren von Prozessen, Erstellen von Ablaufdiagrammen und Identifizieren von Optimierungspotenzialen in internen Abläufen\n- Strukturierte und methodische Erhebung, Analyse und Bewertung von Anforderungen (Requirement Engineering)\n\nTechnologies:\n- C#\n- ITSM\n- Microsoft Power"
+  },
+  {
+   "id": "j-8a92f41982",
+   "title": "APPLIKATIONSENTWICKLER / APPLIKATIONSENTWICKLERIN FEUERWEHR",
+   "employer": "GVZ Gebäudeversicherung Kanton Zürich",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/7e27178b-6d5b-4350-935d-689f845aba7e/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/7e27178b-6d5b-4350-935d-689f845aba7e/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-28T11:03:38.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 0,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) APPLIKATIONSENTWICKLER / APPLIKATIONSENTWICKLERIN FEUERWEHR zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-7cdeebd637",
+   "title": "Software Engineer - Infrastructure (GCP & Platform)",
+   "employer": "Optiml",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zurich",
+   "percent": null,
+   "lang": "en",
+   "url": "https://swissdevjobs.ch/jobs/Optiml-Software-Engineer---Infrastructure-GCP--Platform",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/Optiml-Software-Engineer---Infrastructure-GCP--Platform",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-06-30T22:00:00.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 0,
+   "junior": false,
+   "stack": [
+    "typescript",
+    "docker"
+   ],
+   "green": [
+    "coaching"
+   ],
+   "red": [
+    "you will own",
+    "on-call"
+   ],
+   "assessment": null,
+   "excerpt": "Salary: CHF 90'000 - 125'000 per year\n\nRequirements:\n- Who we are looking for\n- Embrace Challenges: You prioritize speed and flexibility, adept at making swift compromises to maintain momentum in a startup environment.\n- Push The Limits: You proactively identify bottlenecks and infrastructure debt, then drive the fixes without waiting to be asked.\n- Inspire Others: You bring kindness and humor to the team, enhancing both morale and collaboration.\n- Champion Reliability: Your attention to detail ensures production systems are stable, releases are smooth, and incidents are handled with composure.\n- Set The Direction: Youre opinionated about how infrastructure should work and can articulate a pragmatic vision for the platforms evolution.\n- Must have\n- BSc/MSc in Computer Science, Engineering, or equivalent practical experience.\n- 3+ years of experience in infrastructure engineering, or platform engineering roles.\n- Strong experience with a major cloud platform (preferably GCP), including compute, storage, networking, IAM, and container-based deployments.\n- Solid experience building, optimizing, and managing containerized applications (e.g., Docker or similar).\n- Proficiency in Python and ability to work within production backend or data-oriented codebases.\n- Experience working with databases in production environments (e.g., MongoDB, Redis), with an understanding of performance, scaling, and reliability considerations.\n- Experience scaling distributed workloads using metrics, qu"
+  },
+  {
+   "id": "j-14ddf853e5",
+   "title": "Stellenausschreibung: Application Engineer",
+   "employer": "Affidea SA",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zurich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/59f74e28-f7b0-4dcd-80ae-b5c9a3e7dd4e/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/59f74e28-f7b0-4dcd-80ae-b5c9a3e7dd4e/",
+     "seenAt": "2026-09-28T12:27:53.283Z"
+    }
+   ],
+   "postedAt": "2026-09-03T16:58:49.000Z",
+   "firstSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "online": true,
+   "tier": null,
+   "score": 0,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Stellenausschreibung: Application Engineer zur Verstärkung unseres Teams."
+  }
+ ]
+}

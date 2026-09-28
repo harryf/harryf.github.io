@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masha's Jobs</title>
+<meta name="description" content="Junior developer seats found around Zürich, and Masha's applications, one card each.">
+<meta name="theme-color" content="#1D5C8A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jobs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F1; --bg-2:#F1ECE2; --surface:#FFFFFF; --ink:#172230; --muted:#5A6572; --line:#E3DCCF;
+  --lake:#1D5C8A; --lake-ink:#FFFFFF; --lake-soft:#E3EEF7;
+  --sign:#F6C445; --sign-ink:#2B2200; --sign-soft:#FBEFC6;
+  --pine:#2F6B4F; --pine-soft:#E1F0E7;
+  --coral:#AD3F28; --coral-soft:#FBE4DE;
+  --shadow:0 1px 2px rgba(23,34,48,.05),0 10px 30px rgba(23,34,48,.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1621; --bg-2:#141E2B; --surface:#182331; --ink:#E9EEF3; --muted:#A3AEBA; --line:#27333F;
+    --lake:#7CB9E8; --lake-ink:#08131C; --lake-soft:#1C2E40;
+    --sign:#F6C445; --sign-ink:#2B2200; --sign-soft:#3A3116;
+    --pine:#7CC29A; --pine-soft:#173226;
+    --coral:#FF8F73; --coral-soft:#3B221B;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1621; --bg-2:#141E2B; --surface:#182331; --ink:#E9EEF3; --muted:#A3AEBA; --line:#27333F;
+  --lake:#7CB9E8; --lake-ink:#08131C; --lake-soft:#1C2E40;
+  --sign:#F6C445; --sign-ink:#2B2200; --sign-soft:#3A3116;
+  --pine:#7CC29A; --pine-soft:#173226;
+  --coral:#FF8F73; --coral-soft:#3B221B;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.12;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(1.9rem,5vw,2.8rem)}
+h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+h3{font-size:1.05rem;font-weight:700;margin:0 0 6px}
+h4{font:600 .78rem/1.3 Inter,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+p{margin:0 0 .8em}
+a{color:var(--lake)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.narrow{max-width:820px}
+.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:8px;height:56px}
+.top .brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.top .spacer{flex:1}
+.top nav{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.top nav::-webkit-scrollbar{display:none}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;min-height:38px}
+.btn.primary{background:var(--lake);color:var(--lake-ink);border-color:transparent}
+.btn.good{background:var(--pine);color:#fff;border-color:transparent}
+.btn.quiet{background:transparent}
+.btn.small{padding:5px 10px;font-size:.8rem;min-height:32px}
+.btn.on{background:var(--ink);color:var(--bg);border-color:transparent}
+.btn:disabled{opacity:.5;cursor:default}
+.screen{display:none;padding:28px 0 64px}
+.screen.active{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.lede{font-size:1.05rem;color:var(--ink);max-width:60ch}
+.muted{color:var(--muted)} .small{font-size:.88rem}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap}
+.pill.t1{background:var(--pine-soft);color:var(--pine)}
+.pill.t2{background:var(--lake-soft);color:var(--lake)}
+.pill.t3{background:var(--bg-2);color:var(--muted)}
+.pill.t0{background:var(--sign-soft);color:var(--sign-ink)}
+.pill.newco{background:var(--coral-soft);color:var(--coral)}
+.pill.orig{background:var(--sign-soft);color:var(--sign-ink)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .pill.t0, :root:not([data-theme="light"]) .pill.orig{color:var(--sign)} }
+:root[data-theme="dark"] .pill.t0, :root[data-theme="dark"] .pill.orig{color:var(--sign)}
+.pill.ok{background:var(--pine-soft);color:var(--pine)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.chip{background:var(--bg-2);border-radius:999px;padding:3px 10px;font-size:.84rem}
+.chip.hot{background:var(--coral-soft);color:var(--coral)} .chip.good{background:var(--pine-soft);color:var(--pine)}
+/* metric */
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);margin:0 0 16px;display:grid;gap:8px}
+.metric .n{font-family:Fraunces,Georgia,serif;font-size:1.6rem;font-weight:700;line-height:1}
+.metric .n small{font-size:.95rem;color:var(--muted);font-family:Inter,system-ui,sans-serif;font-weight:500;margin-left:6px}
+.bar{height:8px;background:var(--bg-2);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--pine);border-radius:999px;transition:width .4s ease}
+.past{font-size:.82rem;color:var(--muted)}
+/* board */
+.cols{display:grid;grid-template-columns:repeat(6,minmax(180px,1fr));gap:10px;align-items:start;overflow-x:auto;padding-bottom:8px}
+.col{background:var(--bg-2);border-radius:14px;padding:10px;border-top:4px solid var(--lake);min-width:0}
+.col.prep,.col.ready{border-top-color:var(--sign)} .col.applied,.col.interview{border-top-color:var(--pine)} .col.closed{border-top-color:var(--line)}
+.col h3{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;display:flex;justify-content:space-between}
+.col h3 .cnt{background:var(--surface);border-radius:999px;padding:0 7px;font-size:.72rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 8px;box-shadow:var(--shadow);cursor:pointer;scroll-margin-top:72px}
+.card:hover{border-color:var(--lake)}
+.card.hl{outline:3px solid var(--sign)}
+.card .co{font-weight:700;font-size:.92rem}
+.card .ti{font-size:.9rem;margin-top:1px}
+.card .meta{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:6px;font-size:.78rem;color:var(--muted);align-items:center}
+.card .acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.card .acts .btn{min-height:36px}
+.col .empty{color:var(--muted);font-size:.84rem;padding:4px 2px 8px}
+.score{font-weight:700;color:var(--pine)}
+.days{color:var(--coral);font-weight:600}
+.tabs{display:none;gap:6px;overflow-x:auto;margin:0 0 12px;scrollbar-width:none}
+/* today */
+.sect{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);margin:0 0 14px}
+.sect h3{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sect .card{box-shadow:none;cursor:default}
+.sect .more{margin-top:4px}
+/* detail */
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.detail .head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.92rem;margin:10px 0;min-width:0}
+.kv dt{color:var(--muted)} .kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.detail{min-width:0;overflow-wrap:anywhere}
+.tabbar{display:none}
+.qs{list-style:none;margin:0;padding:0}
+.qs li{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.qs li:last-child{border-bottom:0}
+.qs .a{width:26px;height:26px;border-radius:50%;text-align:center;font-weight:700;font-size:.8rem;line-height:26px}
+.qs .a.yes{background:var(--pine-soft);color:var(--pine)} .qs .a.no{background:var(--coral-soft);color:var(--coral)} .qs .a.unknown{background:var(--bg-2);color:var(--muted)}
+.qs .quote{display:block;color:var(--muted);font-size:.84rem;margin-top:2px;font-style:italic}
+.excerpt{white-space:pre-wrap;font-size:.9rem;color:var(--ink);background:var(--bg-2);border-radius:10px;padding:12px;max-height:320px;overflow:auto}
+textarea.note,input.txt,select.sel{font:inherit;font-size:16px;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:9px 12px;width:100%}
+textarea.note{min-height:72px;resize:vertical}
+textarea.note:focus,input.txt:focus,select.sel:focus{outline:2px solid var(--lake);outline-offset:1px}
+.state{font-size:.82rem;color:var(--muted);min-height:1.2em}
+.acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.form{display:grid;gap:8px;grid-template-columns:1fr 1fr;margin:8px 0}
+.form label{font-size:.82rem;color:var(--muted);display:grid;gap:4px}
+/* documents */
+.doc{background:#fff;color:#111;border:1px solid var(--line);border-radius:10px;padding:34px 40px;margin:0 0 16px;box-shadow:var(--shadow);font-family:Inter,system-ui,sans-serif;font-size:14.5px;line-height:1.45}
+.doc h1{font-size:1.7rem;margin:0 0 2px;color:#111}
+.doc h2{font-size:1rem;margin:18px 0 6px;text-transform:uppercase;letter-spacing:.08em;color:#1D5C8A;font-family:Inter,system-ui,sans-serif;font-weight:700;border-bottom:1px solid #E3DCCF;padding-bottom:3px}
+.doc .contact{color:#555;font-size:.9rem;margin:0 0 10px;white-space:pre-line}
+.doc .hl{color:#333;font-weight:600;margin:0 0 8px}
+.doc .exp{margin:0 0 10px}
+.doc .exp .row{display:flex;justify-content:space-between;gap:10px;font-weight:600}
+.doc .exp .when{color:#555;font-weight:400;white-space:nowrap}
+.doc ul{margin:4px 0 0 1.1em;padding:0} .doc li{margin:0 0 2px}
+.doc .grid{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:.92rem}
+.doc .grid dt{color:#555} .doc .grid dd{margin:0}
+.doc p{margin:0 0 .7em}
+.doc .sig{margin-top:22px;white-space:pre-line}
+.doc.letter .addr{white-space:pre-line;color:#333;margin-bottom:18px}
+.doc.letter .date{text-align:right;color:#555;margin-bottom:18px}
+.doc.letter .subj{font-weight:700;margin:0 0 12px}
+.doc.email{background:var(--surface);color:var(--ink)}
+.doc.email .body{white-space:pre-wrap}
+.docbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.warn{background:var(--sign-soft);border-left:4px solid var(--sign);border-radius:10px;padding:10px 14px;margin:0 0 14px;font-size:.92rem}
+/* reference */
+.emp{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.emp .e{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem}
+.emp .e b{display:block}
+.emp .e .w{color:var(--muted);font-size:.84rem;margin-top:2px}
+.emp .e a{font-size:.84rem}
+ol.q{margin:0;padding:0;list-style:none;counter-reset:q}
+ol.q li{counter-increment:q;display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.94rem}
+ol.q li:last-child{border-bottom:0}
+ol.q li::before{content:counter(q);flex:none;width:26px;height:26px;border-radius:50%;background:var(--sign);color:var(--sign-ink);font:700 .85rem/26px Fraunces,Georgia,serif;text-align:center}
+/* report */
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:7px 8px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-weight:700;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 10px}
+.rephead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+footer{padding:20px 0 40px;color:var(--muted);font-size:.84rem}
+.sync{font-size:.82rem;color:var(--muted);margin:8px 0 0;min-height:1em}
+.toast{position:fixed;left:16px;right:16px;bottom:16px;background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 16px;display:none;justify-content:space-between;align-items:center;gap:12px;z-index:9;font-size:.92rem;box-shadow:var(--shadow)}
+.toast.on{display:flex}
+.toast .btn{background:var(--bg);color:var(--ink);border-color:transparent}
+details.fold{margin-top:14px}
+details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){
+  .cols{grid-template-columns:1fr;overflow:visible}
+  .col{display:none} .col.show{display:block}
+  .tabs{display:flex}
+  .form{grid-template-columns:1fr}
+  .doc{padding:22px 18px}
+  .top .brand{font-size:.98rem}
+  .top nav a[data-nav],.top nav #mapLink{display:none}
+  .screen{padding:20px 0 96px}
+  .btn.small{min-height:40px} .card .acts .btn,.acts .btn{min-height:44px}
+  .tabbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:6;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:4px 4px calc(4px + env(safe-area-inset-bottom))}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:48px;text-decoration:none;color:var(--muted);font-size:.72rem;font-weight:600;border-radius:10px}
+  .tabbar a .i{font-size:1.15rem;line-height:1}
+  .tabbar a.on{color:var(--lake);background:var(--lake-soft)}
+  .toast{bottom:76px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .top,.docbar,.warn,footer,.toast,.acts,.noprint{display:none !important}
+  .screen{display:none} .screen.active{display:block;padding:0}
+  .doc{border:0;box-shadow:none;border-radius:0;padding:0;margin:0;page-break-after:always}
+  .doc:last-child{page-break-after:auto}
+  body.print-cv .doc:not(.cv),body.print-letter .doc:not(.letter),body.print-report .noprint{display:none}
+  .tablewrap{border:0;padding:0}
+  @page{margin:18mm}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <a class="brand" href="#today">Masha's Jobs</a>
+  <span class="spacer"></span>
+  <nav>
+    <a class="btn small" href="#today" data-nav="today">Today</a>
+    <a class="btn small" href="#board" data-nav="board">Board</a>
+    <a class="btn small" href="#reference" data-nav="reference">Reference</a>
+    <a class="btn small" href="#report" data-nav="report">RAV</a>
+    <a class="btn small" href="#settings" data-nav="settings" aria-label="Your details">You</a>
+    <a class="btn small" id="mapLink" href="../index.html">Map</a>
+    <button class="btn small" id="theme" type="button" aria-label="Switch colour scheme">Dark</button>
+  </nav>
+</div></div>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="#today" data-nav="today"><span class="i">☀</span>Today</a>
+  <a href="#board" data-nav="board"><span class="i">▦</span>Board</a>
+  <a href="#reference" data-nav="reference"><span class="i">☰</span>Reference</a>
+  <a href="#report" data-nav="report"><span class="i">▤</span>RAV</a>
+  <a href="#settings" data-nav="settings"><span class="i">☺</span>You</a>
+</nav>
+
+<!-- TODAY: the phone's first screen -->
+<section class="screen" id="today"><div class="wrap narrow">
+  <div class="eyebrow" id="todayDate"></div>
+  <h1>Today</h1>
+  <div class="sect" id="toSend"></div>
+  <div class="sect" id="toFollow"></div>
+  <div class="sect" id="toSort"></div>
+  <div class="sect" id="waiting"></div>
+  <div class="metric" id="metric"></div>
+  <p class="sync" id="sync1"></p>
+  <p class="small muted">Results are collected by Harry's tool; your choices are saved in the shared Grist document. <a href="#board">The whole board</a> has every card.</p>
+</div></section>
+
+<!-- BOARD -->
+<section class="screen" id="board"><div class="wrap">
+  <div class="eyebrow" id="boardStamp"></div>
+  <h1>Your board</h1>
+  <p class="lede">New results land on the left. Say "not for me" or "prepare"; prepared cards come back with a CV and a letter written for that job. Tap a card for the details.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="cols" id="cols"></div>
+  <p class="sync" id="sync2"></p>
+  <details class="fold" id="nopeFold"><summary>Not for me (<span id="nopeCount">0</span>)</summary><div id="nopeList"></div></details>
+</div></section>
+
+<!-- JOB DETAIL -->
+<section class="screen" id="job"><div class="wrap narrow"><div id="jobBox"></div><p class="sync" id="sync3"></p></div></section>
+
+<!-- DOCUMENTS -->
+<section class="screen" id="docs"><div class="wrap narrow"><div id="docsBox"></div><p class="sync" id="sync4"></p></div></section>
+
+<!-- REFERENCE -->
+<section class="screen" id="reference"><div class="wrap narrow">
+  <div class="eyebrow">Reference</div>
+  <h1>What we look for</h1>
+  <p class="lede">A junior developer seat in a team that teaches, at an employer whose work you would gladly explain to a friend, in or near Zürich. 80 to 100 percent now, able to go to 60 percent from August 2027 if you start school.</p>
+  <h4>Titles that match</h4>
+  <div class="chips"><span class="chip">Junior Software Engineer</span><span class="chip">Junior Softwareentwickler/in</span><span class="chip">Applikationsentwickler/in</span><span class="chip">Software Engineer, Berufseinsteiger</span><span class="chip">Graduate Software Engineer</span><span class="chip">Young Professional</span><span class="chip">Trainee Informatik</span><span class="chip">Full Stack Developer (junior)</span><span class="chip">Java / .NET / C# Entwickler/in</span><span class="chip">Test Automation Engineer</span><span class="chip">QA Engineer</span><span class="chip">Data Engineer (junior)</span></div>
+  <h4>Titles we skip</h4>
+  <div class="chips"><span class="chip">Senior</span><span class="chip">Lead</span><span class="chip">Architekt</span><span class="chip">Consultant</span><span class="chip">Application Manager</span><span class="chip">Applikationsverantwortliche/r</span><span class="chip">Support</span><span class="chip">System Engineer</span><span class="chip">SOC / Security Analyst</span><span class="chip">Product Owner</span><span class="chip">Business Analyst</span></div>
+  <h4>Green flags in an advert</h4>
+  <div class="chips"><span class="chip good">Junior</span><span class="chip good">Berufseinsteiger</span><span class="chip good">Lernende (they train apprentices)</span><span class="chip good">Mentor, Götti, Buddy</span><span class="chip good">Onboarding-Programm</span><span class="chip good">Code Reviews</span><span class="chip good">Scrum-Team</span><span class="chip good">Teilzeit, 60 to 100%</span><span class="chip good">Weiterbildung unterstützt</span><span class="chip good">Pair Programming</span></div>
+  <h4>Red flags</h4>
+  <div class="chips"><span class="chip hot">dynamisches Umfeld / dynamic environment</span><span class="chip hot">Allrounder</span><span class="chip hot">selbständig und eigenverantwortlich (as the lead trait)</span><span class="chip hot">Hands-on-Mentalität</span><span class="chip hot">Start-up-Mentalität</span><span class="chip hot">you'll own / sole</span><span class="chip hot">single point of contact</span><span class="chip hot">Pikett / on-call</span><span class="chip hot">the previous person left</span></div>
+  <h4>Your thirteen questions</h4>
+  <ol class="q">
+    <li>Will at least two people know the systems I work on? Who covers when I am on holiday?</li>
+    <li>Is there a named person responsible for my development, with a plan for months 3, 6 and 12?</li>
+    <li>Does someone review my code or my work every week?</li>
+    <li>Is my scope bounded at the start, with expansion as a planned step?</li>
+    <li>Is the release rhythm closer to monthly than weekly?</li>
+    <li>Are technical decisions made together, so I contribute without being the one who decides?</li>
+    <li>Can someone see my workload and rebalance it? Is there no solo on-call?</li>
+    <li>Would I be glad to explain to a friend what the product does?</li>
+    <li>Does the company have Swiss or European roots and take privacy and security seriously?</li>
+    <li>Is the title one I grow into, rather than one I must defend?</li>
+    <li>Can this job go to 60 percent from August 2027, if I start school?</li>
+    <li>Does the company support Weiterbildung, with what money and what stay clause?</li>
+    <li>How long has the team lead led this team, and how does feedback from a junior reach them?</li>
+  </ol>
+  <h2 style="margin-top:28px">Employers we watch</h2>
+  <p class="small muted">Tier 1: apply or write first. Tier 2: apply when a junior post appears. Tier 3: low weight, shown only for a junior post. Checked 26 September 2026. Harry adds names on request.</p>
+  <div id="empBox"></div>
+</div></section>
+
+<!-- RAV REPORT -->
+<section class="screen" id="report"><div class="wrap narrow">
+  <div class="rephead noprint"><div><div class="eyebrow">For the RAV</div><h1 style="margin:0">Nachweis der Arbeitsbemühungen</h1></div>
+    <div class="acts"><select class="sel" id="repMonth" aria-label="Month" style="width:auto"></select><button class="btn primary" id="repPrint" type="button">Print</button></div></div>
+  <p class="small muted noprint">Every card you marked as applied, with the date and the outcome, in the order of the RAV form. Print it, or save it as a PDF from the print dialog, and hand it in with the form. Check the contact column before you print; fill it on the card if it is empty.</p>
+  <div id="repBox"></div>
+</div></section>
+
+<!-- SETTINGS: her contact block, kept on the device only -->
+<section class="screen" id="settings"><div class="wrap narrow">
+  <div class="eyebrow">You</div>
+  <h1>Your details</h1>
+  <p class="lede">The CV and the letter need your address, phone and email at the top. They are saved only in this browser, on this device, and never sent to the shared document or anywhere else. Enter them once here (and once on your other device).</p>
+  <form id="contactForm" class="form" autocomplete="on">
+    <label>Full name<input class="txt" name="name" autocomplete="name"></label>
+    <label>Street and number<input class="txt" name="street" autocomplete="street-address"></label>
+    <label>Postcode and town<input class="txt" name="town" autocomplete="postal-code"></label>
+    <label>Phone<input class="txt" name="phone" autocomplete="tel"></label>
+    <label>Email<input class="txt" name="email" autocomplete="email" type="email"></label>
+    <label>Date of birth (optional, Swiss CVs often carry it)<input class="txt" name="dob" autocomplete="bday"></label>
+    <label>Nationality or permit (optional)<input class="txt" name="nationality"></label>
+    <label>Available from<input class="txt" name="available" placeholder="for example: 1 January 2027 or by arrangement"></label>
+  </form>
+  <div class="acts"><button class="btn primary" id="contactSave" type="button">Save on this device</button><span class="state" id="contactState"></span></div>
+  <h4 style="margin-top:28px">Install as an app</h4>
+  <p class="small">On the phone: open the browser menu and choose "Add to Home Screen" (iPhone) or "Install app" (Android). On the laptop, Chrome shows an install icon in the address bar. Updates arrive on their own the next time you open it.</p>
+  <p class="small muted" id="swState"></p>
+</div></section>
+
+<footer><div class="wrap">Made for Masha, September 2026. Results are collected once a day from employers' own pages and a few job boards; your status and notes live in the shared Grist document; your contact details stay on your device. No adverts, no tracking. <a id="mapLink2" href="../index.html">Back to the map</a>.</div></footer>
+
+<div class="toast" id="toast"><span id="toastText"></span><button class="btn small" id="toastBtn" type="button">Refresh</button></div>
+
+<script>
+(function(){
+  'use strict';
+  var root=document.documentElement;
+  var GH=/github\.io$/.test(location.hostname);
+  var MAP=GH?'../masha-map.html':'../index.html';
+  document.getElementById('mapLink').href=MAP; document.getElementById('mapLink2').href=MAP;
+  var PHONE=matchMedia('(max-width:760px)').matches;
+  var STATUS=['New','Preparing','Ready','Applied','Interview','Offer','Rejected','Closed','Not for me'];
+  var COLS=[{k:'New',c:'new',l:'New'},{k:'Preparing',c:'prep',l:'Preparing'},{k:'Ready',c:'ready',l:'Ready to send'},{k:'Applied',c:'applied',l:'Applied'},{k:'Interview',c:'interview',l:'Interview'},{k:'Closed',c:'closed',l:'Closed'}];
+  function colOf(s){ if(s==='Offer'||s==='Rejected'||s==='Closed') return 'Closed'; return COLS.some(function(c){return c.k===s;})?s:'New'; }
+  var Q=['Will at least two people know the systems I work on?','Is there a named person responsible for my development?','Does someone review my code or my work every week?','Is my scope bounded at the start?','Is the release rhythm closer to monthly than weekly?','Are technical decisions made together?','Can someone see my workload and rebalance it, with no solo on-call?','Would I be glad to explain what the product does?','Swiss or European roots, privacy and security taken seriously?','A title I grow into, not one I must defend?','Can it go to 60 percent from August 2027?','Weiterbildung supported, with what stay clause?','How long has the team lead led the team, and how does feedback reach them?'];
+
+  // ---- theme
+  var tbtn=document.getElementById('theme');
+  function current(){var t=root.getAttribute('data-theme');if(t)return t;return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function tlabel(){tbtn.textContent=current()==='dark'?'Light':'Dark';}
+  try{var sv=localStorage.getItem('masha-jobs-theme');if(sv==='dark'||sv==='light')root.setAttribute('data-theme',sv);}catch(e){}
+  tlabel(); tbtn.addEventListener('click',function(){var n=current()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('masha-jobs-theme',n);}catch(e){}tlabel();});
+
+  // ---- data: results from JSON, status from Grist, her contact block from this device
+  var DOC='https://docs.getgrist.com/api/docs/ujophYm1hVYi', T='Applications', K='JobId';
+  var DEVICE=(PHONE||matchMedia('(pointer:coarse)').matches)?'phone':'laptop';
+  try{ var tok=localStorage.getItem('masha-jobs-device'); if(!tok){ tok=Math.random().toString(36).slice(2,6); localStorage.setItem('masha-jobs-device',tok); } DEVICE+='-'+tok; }catch(e){}
+  var SK='masha-jobs-grist.v1';
+  var st={remote:{},queue:[],parked:[],writes:0,fetchedAt:0};
+  try{ var s0=JSON.parse(localStorage.getItem(SK)||'null'); if(s0&&s0.remote) st=s0; }catch(e){}
+  if(!st.remote||typeof st.remote!=='object') st.remote={}; if(!Array.isArray(st.queue)) st.queue=[]; if(!Array.isArray(st.parked)) st.parked=[]; st.writes=st.writes||0;
+  function save(){ try{ localStorage.setItem(SK,JSON.stringify(st)); }catch(e){} }
+  var jobs=[], jobsAt=null, jobsErr=null, employers=[], byId={};
+  var contact={}; try{ contact=JSON.parse(localStorage.getItem('masha-jobs-contact.v1')||'{}')||{}; }catch(e){}
+
+  function row(id){ var r=st.remote[id]?Object.assign({},st.remote[id]):null; st.queue.forEach(function(q){ if(q.id===id) r=Object.assign(r||{JobId:id},q.fields); }); return r; }
+  function pending(id){ return st.queue.some(function(q){ return q.id===id; }); }
+  function parkedFor(id){ return st.parked.filter(function(p){ return p.id===id; })[0]||null; }
+  var inflight=null, retryTimer=null, backoff=20000, lastError=null, fetchError=null;
+  st.parked=st.parked.filter(function(p){ p.tries=(p.tries||0)+1; if(p.tries>3) return true; delete p.error; st.queue.push(p); return false; }); save();
+  function enqueue(id,fields){
+    var j=byId[id]||{}, base=st.remote[id]?{}:{Employer:j.employer||'',Title:j.title||'',Url:j.url||'',Place:j.place||'',Percent:pct(j.percent)}; // denormalised once, so the RAV report survives a posting leaving the JSON
+    var f=Object.assign(base,fields,{UpdatedBy:DEVICE});
+    var open=null; st.queue.forEach(function(q){ if(q.id===id&&q!==inflight) open=q; });
+    if(open) Object.assign(open.fields,f); else st.queue.push({id:id,fields:f});
+    st.parked=st.parked.filter(function(p){ return p.id!==id; });
+    save(); renderAll(); drain();
+  }
+  function drop(q){ var i=st.queue.indexOf(q); if(i>=0) st.queue.splice(i,1); }
+  function withTimeout(ms){ var c=new AbortController(); setTimeout(function(){ c.abort(); },ms); return c.signal; }
+  function drain(force){
+    if(inflight||!st.queue.length) return;
+    if(retryTimer&&!force) return;
+    clearTimeout(retryTimer); retryTimer=null;
+    var q=st.queue[0]; inflight=q; renderSync();
+    fetch(DOC+'/tables/'+T+'/records?onmany=all',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({records:[{require:{JobId:q.id},fields:q.fields}]}),signal:withTimeout(15000),keepalive:document.visibilityState==='hidden'})
+      .then(function(res){ return res.text().then(function(b){ return {ok:res.ok,status:res.status,body:b.slice(0,200),ra:Number(res.headers.get('Retry-After'))}; },function(){ return {ok:res.ok,status:res.status,body:''}; }); },function(){ return {ok:false,status:0,body:''}; })
+      .then(function(res){
+        var s=res.status||0;
+        if(res.ok){ drop(q); st.writes++; lastError=null; backoff=20000; st.remote[q.id]=Object.assign({},st.remote[q.id]||{JobId:q.id},q.fields,{UpdatedAt:Math.floor(Date.now()/1000)}); }
+        else if(s>=400&&s<500&&s!==429){ drop(q); st.parked.push(Object.assign({},q,{error:s+' '+res.body})); console.warn('jobs: parked a write',q.id,s,res.body); }
+        else { lastError=s||'network'; var wait=backoff; if(s===429&&res.ra>0) wait=Math.max(wait,res.ra*1000); backoff=Math.min(backoff*2,5*60000); retryTimer=setTimeout(function(){ drain(true); },wait); inflight=null; save(); renderAll(); return; }
+        inflight=null; save(); renderAll();
+        if(st.queue.length) drain(); else fetchApps();
+      }).catch(function(e){ console.error('jobs: write failed',e); inflight=null; lastError='error'; retryTimer=setTimeout(function(){ drain(true); },backoff); save(); renderSync(); });
+  }
+  var fetching=false;
+  function fetchApps(attempt){
+    if(fetching) return; fetching=true; var before=st.writes;
+    fetch(DOC+'/tables/'+T+'/records',{signal:withTimeout(15000)}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).then(function(j){
+      fetching=false; if(st.writes!==before){ if((attempt||0)<2) return fetchApps((attempt||0)+1); return; }
+      var remote={}; (j.records||[]).forEach(function(rec){ var f=rec.fields||{}; var id=String(f.JobId||''); if(!id) return; f._rid=rec.id; if(!remote[id]||(f.UpdatedAt||0)>=(remote[id].UpdatedAt||0)) remote[id]=f; });
+      st.remote=remote; st.fetchedAt=Date.now(); fetchError=null; save(); renderAll();
+    },function(e){ fetching=false; fetchError=String(e&&e.message||e); console.warn('jobs: could not read the shared document',fetchError); renderSync(); });
+  }
+  function fetchJobs(){
+    return fetch('data/jobs.json',{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).then(function(j){
+      jobs=(j.jobs||[]).filter(function(x){ return x&&x.id; }); jobsAt=j.generatedAt||null; jobsErr=null; byId={}; jobs.forEach(function(x){ byId[x.id]=x; }); renderAll();
+    },function(e){ jobsErr=String(e&&e.message||e); renderAll(); });
+  }
+  function fetchEmployers(){ return fetch('data/employers.json',{cache:'no-store'}).then(function(r){ return r.ok?r.json():[]; }).then(function(j){ employers=Array.isArray(j)?j:(j.employers||[]); renderReference(); },function(){ employers=[]; renderReference(); }); }
+
+  // ---- helpers
+  function el(tag,cls,text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+  function pct(p){ if(!p||!p.length) return ''; return p[0]===p[1]?p[0]+'%':p[0]+' to '+p[1]+'%'; }
+  function fmtDate(x){ if(!x) return ''; var d=typeof x==='number'?new Date(x*1000):new Date(x); if(isNaN(d)) return ''; return d.toLocaleDateString('de-CH',{day:'2-digit',month:'2-digit',year:'numeric'}); }
+  function daysSince(x){ if(!x) return null; var d=typeof x==='number'?new Date(x*1000):new Date(x); return Math.floor((Date.now()-d.getTime())/86400000); }
+  function todayEpoch(){ var d=new Date(); return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/1000); }
+  function monthKey(x){ var d=typeof x==='number'?new Date(x*1000):new Date(x); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'); }
+  function monthLabel(k){ var p=k.split('-'); return new Date(Number(p[0]),Number(p[1])-1,1).toLocaleDateString('en-GB',{month:'long',year:'numeric'}); }
+  function tierPill(j){ if(j.newEmployer||j.tier==null) return el('span','pill newco','new employer'); if(j.tier===0) return el('span','pill t0','her call'); return el('span','pill t'+j.tier,'Tier '+j.tier); }
+  function statusOf(id){ var r=row(id); return (r&&r.Status)||'New'; }
+  // every card: results from the JSON plus rows in Grist whose posting is gone
+  function allCards(){
+    var seen={}, out=[];
+    jobs.forEach(function(j){ seen[j.id]=1; out.push(Object.assign({},j,{app:row(j.id),status:statusOf(j.id)})); });
+    Object.keys(st.remote).forEach(function(id){ if(seen[id]) return; var r=row(id); if(!r||!r.Status||r.Status==='New') return; out.push({id:id,title:r.Title||'',employer:r.Employer||'',place:r.Place||'',url:r.Url||'',percent:null,gone:true,sources:[],app:r,status:r.Status}); });
+    return out;
+  }
+  function applied(){ return allCards().filter(function(c){ return ['Applied','Interview','Offer','Rejected','Closed'].indexOf(c.status)>=0&&c.app&&c.app.AppliedAt; }); }
+
+  // ---- routing
+  var screens=[].slice.call(document.querySelectorAll('.screen')), screen='';
+  function go(h){ if(location.hash===h){ route(); return; } history.pushState(null,'',h); route(); }
+  function show(id,arg){
+    if(!document.getElementById(id)||!document.getElementById(id).classList.contains('screen')) id=PHONE?'today':'board';
+    var changed=id!==screen; screen=id; screens.forEach(function(s){ s.classList.toggle('active',s.id===id); });
+    document.querySelectorAll('[data-nav]').forEach(function(a){ a.classList.toggle('on',a.dataset.nav===id); });
+    if(changed) window.scrollTo(0,0);
+    if(id==='today') renderToday(); if(id==='board') renderBoard(); if(id==='job') renderJob(arg); if(id==='docs') renderDocs(arg); if(id==='report') renderReport(); if(id==='settings') renderSettings();
+    if(id==='board'&&arg){ var c=document.querySelector('.card[data-id="'+CSS.escape(arg)+'"]'); if(c){ c.classList.add('hl'); setTimeout(function(){ c.scrollIntoView({block:'center'}); },60); setTimeout(function(){ c.classList.remove('hl'); },2500); } }
+    try{ localStorage.setItem('masha-jobs-last',location.hash); }catch(e){}
+  }
+  function route(){ var h=(location.hash||(PHONE?'#today':'#board')).slice(1).split(':'); show(h[0],h.slice(1).join(':')); }
+  window.addEventListener('popstate',route);
+  document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey) return; e.preventDefault(); go(a.getAttribute('href')); });
+
+  // ---- cards
+  function cardFor(c,compact){
+    var card=el('div','card'); card.dataset.id=c.id;
+    var head=el('div'); head.appendChild(tierPill(c)); if(c.original) head.appendChild(el('span','pill orig','original posting')); if(c.gone) head.appendChild(el('span','pill t3','posting gone')); if(c.online===false&&!c.gone) head.appendChild(el('span','pill t3','no longer listed'));
+    card.appendChild(head);
+    card.appendChild(el('div','co',c.employer||'Unknown employer'));
+    card.appendChild(el('div','ti',c.title||''));
+    var meta=el('div','meta');
+    if(c.place) meta.appendChild(el('span',null,c.place)); if(c.percent) meta.appendChild(el('span',null,pct(c.percent)));
+    if(typeof c.score==='number') meta.appendChild(el('span','score','fit '+Math.round(c.score)));
+    if(c.sources&&c.sources.length>1) meta.appendChild(el('span',null,c.sources.length+' sources'));
+    if(c.status==='Applied'&&c.app&&c.app.AppliedAt){ var d=daysSince(c.app.AppliedAt); meta.appendChild(el('span',d>14?'days':'', 'applied '+fmtDate(c.app.AppliedAt)+(d>14?' · '+d+' days':''))); }
+    if(c.status==='Offer'||c.status==='Rejected') meta.appendChild(el('span',null,c.status));
+    if(c.app&&c.app.Note&&!compact) meta.appendChild(el('span',null,'📝'));
+    if(pending(c.id)) meta.appendChild(el('span',null,lastError?'not saved yet':'saving')); if(parkedFor(c.id)) meta.appendChild(el('span','days',"couldn't save"));
+    card.appendChild(meta);
+    var acts=el('div','acts');
+    if(c.status==='New'){ acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); })); acts.appendChild(actBtn('Prepare','primary',function(){ enqueue(c.id,{Status:'Preparing'}); })); }
+    else if(c.status==='Ready'){ acts.appendChild(actLink('Documents','primary','#docs:'+c.id)); acts.appendChild(actBtn('Applied','good',function(){ go('#job:'+c.id+':applied'); })); }
+    else if(c.status==='Preparing'){ acts.appendChild(el('span','small muted','documents on the way')); }
+    if(c.url&&!compact){ var o=el('a','btn small quiet','Open posting'); o.href=c.url; o.target='_blank'; o.rel='noopener'; o.addEventListener('click',function(e){ e.stopPropagation(); }); acts.appendChild(o); }
+    card.appendChild(acts);
+    card.addEventListener('click',function(e){ if(e.target.closest('button,a,select,textarea,input')) return; go('#job:'+c.id); });
+    return card;
+  }
+  function actBtn(label,cls,fn){ var b=el('button','btn small '+cls,label); b.type='button'; b.addEventListener('click',function(e){ e.stopPropagation(); fn(); }); return b; }
+  function actLink(label,cls,href){ var a=el('a','btn small '+cls,label); a.href=href; a.addEventListener('click',function(e){ e.stopPropagation(); }); return a; }
+
+  // ---- board
+  var tab=null;
+  function renderBoard(){
+    var cols=document.getElementById('cols'), tabs=document.getElementById('tabs'); cols.textContent=''; tabs.textContent='';
+    var cards=allCards().filter(function(c){ return c.status!=='Not for me'; });
+    cards.sort(function(a,b){ return (b.score||0)-(a.score||0); });
+    if(!tab) tab=COLS[0].k;
+    COLS.forEach(function(cd){
+      var mine=cards.filter(function(c){ return colOf(c.status)===cd.k; });
+      var tb=el('button','btn small'+(tab===cd.k?' on':''),cd.l+' '+mine.length); tb.type='button'; tb.addEventListener('click',function(){ tab=cd.k; renderBoard(); }); tabs.appendChild(tb);
+      var col=el('div','col '+cd.c+(tab===cd.k?' show':'')); var h=el('h3'); h.appendChild(el('span',null,cd.l)); h.appendChild(el('span','cnt',String(mine.length))); col.appendChild(h);
+      if(!mine.length) col.appendChild(el('div','empty',cd.k==='New'?(jobs.length?'Nothing new':'No results loaded yet'):'Nothing here'));
+      mine.forEach(function(c){ col.appendChild(cardFor(c,true)); });
+      cols.appendChild(col);
+    });
+    var nope=allCards().filter(function(c){ return c.status==='Not for me'; }); document.getElementById('nopeCount').textContent=nope.length;
+    var nl=document.getElementById('nopeList'); nl.textContent='';
+    nope.forEach(function(c){ var d=el('div','card'); d.appendChild(el('span','co',(c.employer||'')+' · ')); d.appendChild(el('span','ti',c.title||'')); var b=actBtn('Back to new','',function(){ enqueue(c.id,{Status:'New'}); }); b.style.marginLeft='10px'; d.appendChild(b); d.addEventListener('click',function(e){ if(e.target.closest('button')) return; go('#job:'+c.id); }); nl.appendChild(d); });
+    document.getElementById('boardStamp').textContent=jobsAt?'Results from '+new Date(jobsAt).toLocaleString('de-CH',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):(jobsErr?'Results could not be loaded ('+jobsErr+')':'Loading results');
+  }
+
+  // ---- today (the phone's first screen: what to do now, nothing else)
+  function section(id,title,items,empty,more){ var s=document.getElementById(id); s.textContent=''; var h=el('h3'); h.appendChild(el('span',null,title)); h.appendChild(el('span','pill t3',String(items.length))); s.appendChild(h);
+    if(!items.length){ s.appendChild(el('p','small muted',empty)); return; } items.slice(0,more||6).forEach(function(c){ s.appendChild(cardFor(c,false)); }); if(items.length>(more||6)){ var a=el('a','btn small quiet more','All '+items.length+' on the board'); a.href='#board'; s.appendChild(a); } }
+  function renderToday(){
+    document.getElementById('todayDate').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+    var cards=allCards();
+    var news=cards.filter(function(c){ return c.status==='New'&&!c.gone&&c.online!==false; }).sort(function(a,b){ return (b.score||0)-(a.score||0); });
+    section('toSort','To sort',news,jobs.length?'Nothing new to sort.':'No results loaded yet.',5);
+    section('toSend','To send',cards.filter(function(c){ return c.status==='Ready'; }),'Nothing waiting to be sent.',5);
+    var follow=cards.filter(function(c){ return c.status==='Applied'&&c.app&&c.app.AppliedAt&&daysSince(c.app.AppliedAt)>14; });
+    section('toFollow','To follow up',follow,'No application older than two weeks without an answer.',5);
+    var w=cards.filter(function(c){ return c.status==='Preparing'; }); var ws=document.getElementById('waiting'); ws.textContent=''; var wh=el('h3'); wh.appendChild(el('span',null,'Being prepared')); wh.appendChild(el('span','pill t3',String(w.length))); ws.appendChild(wh);
+    ws.appendChild(el('p','small muted',w.length?w.map(function(c){ return c.employer; }).join(', ')+'. Harry\'s tool writes the CV and the letter, usually by the next morning.':'Nothing in preparation.'));
+    renderMetric();
+  }
+  function renderMetric(){
+    var m=document.getElementById('metric'); m.textContent='';
+    var apps=applied(), now=monthKey(new Date()), months={};
+    apps.forEach(function(c){ var k=monthKey(c.app.AppliedAt); months[k]=(months[k]||0)+1; });
+    var n=months[now]||0, target=10;
+    var top=el('div'); top.appendChild(el('span','n',n+' of '+target)); top.appendChild(el('small',null,' applications in '+monthLabel(now))); m.appendChild(top);
+    var bar=el('div','bar'); var fill=el('span'); fill.style.width=Math.min(100,Math.round(n/target*100))+'%'; bar.appendChild(fill); m.appendChild(bar);
+    var past=Object.keys(months).filter(function(k){ return k!==now; }).sort().reverse().slice(0,4).map(function(k){ return monthLabel(k)+' '+months[k]; });
+    m.appendChild(el('div','past',past.length?'Earlier: '+past.join(' · '):'The RAV asks for ten a month. This bar only counts.'));
+  }
+
+  // ---- job detail
+  function renderJob(idArg){
+    var parts=String(idArg||'').split(':'), id=parts[0], mode=parts[1]||''; // #job:<id>:applied opens the applied form
+    var box=document.getElementById('jobBox'); box.textContent='';
+    var c=allCards().filter(function(x){ return x.id===id; })[0]; if(!c){ box.appendChild(el('p',null,'This card is not here any more.')); var b=el('a','btn','Back to the board'); b.href='#board'; box.appendChild(b); return; }
+    var d=el('div','detail'); var head=el('div','head'); var left=el('div');
+    var pl=el('div'); pl.appendChild(tierPill(c)); if(c.original) pl.appendChild(el('span','pill orig','original posting')); pl.appendChild(el('span','pill ok',c.status)); left.appendChild(pl);
+    left.appendChild(el('h2',null,c.title||'')); left.appendChild(el('div','co',c.employer||'')); head.appendChild(left);
+    var back=el('a','btn small','‹ Board'); back.href='#board:'+c.id; head.appendChild(back); d.appendChild(head);
+    var kv=el('dl','kv');
+    function kvRow(k,v,link){ if(!v) return; kv.appendChild(el('dt',null,k)); var dd=el('dd'); if(link){ var a=el('a',null,v.length>70?v.slice(0,70)+'…':v); a.href=v; a.target='_blank'; a.rel='noopener'; dd.appendChild(a); } else dd.textContent=v; kv.appendChild(dd); }
+    kvRow('Place',c.place); kvRow('Percent',pct(c.percent)); kvRow('Posting',c.url,true); if(c.postedAt) kvRow('Posted',fmtDate(c.postedAt)); if(c.firstSeen) kvRow('First seen',fmtDate(c.firstSeen)); if(c.online===false) kvRow('Online','no longer listed (last seen '+fmtDate(c.lastSeen)+')');
+    if(typeof c.score==='number') kvRow('Fit score',Math.round(c.score)+' of 100 (junior signal, stack, flags, tier)');
+    d.appendChild(kv);
+    if(c.sources&&c.sources.length){ d.appendChild(el('h4',null,'Seen on')); var ch=el('div','chips'); c.sources.forEach(function(s){ var a=el('a','chip',s.kind==='company'?'the company\'s page':s.kind); a.href=s.url; a.target='_blank'; a.rel='noopener'; ch.appendChild(a); }); d.appendChild(ch); }
+    if((c.green&&c.green.length)||(c.red&&c.red.length)){ d.appendChild(el('h4',null,'Flags')); var fl=el('div','chips'); (c.green||[]).forEach(function(g){ fl.appendChild(el('span','chip good',g)); }); (c.red||[]).forEach(function(r){ fl.appendChild(el('span','chip hot',r)); }); d.appendChild(fl); }
+    if(c.assessment&&c.assessment.answers&&c.assessment.answers.length){ d.appendChild(el('h4',null,'Your thirteen questions, read from the advert')); var ol=el('ul','qs');
+      c.assessment.answers.forEach(function(a){ var li=el('li'); li.appendChild(el('span','a '+(a.answer||'unknown'),a.answer==='yes'?'✓':(a.answer==='no'?'✗':'?'))); var t=el('div',null,(a.n)+'. '+(Q[a.n-1]||'')); if(a.quote) t.appendChild(el('span','quote','"'+a.quote+'"')); li.appendChild(t); ol.appendChild(li); }); d.appendChild(ol);
+      d.appendChild(el('p','small muted','Read by a model from the advert text. A quote is the advert\'s own words; "?" means the advert does not say. Ask the rest in the interview.')); }
+    else d.appendChild(el('p','small muted','The thirteen questions have not been read against this advert yet; the interview asks them.'));
+    // her note and status
+    d.appendChild(el('h4',null,'Your note'));
+    var ta=el('textarea','note'); ta.value=(c.app&&c.app.Note)||''; ta.placeholder='What you sent, what they said, what to do next'; d.appendChild(ta);
+    var stt=el('div','state'); d.appendChild(stt); var tmr=null;
+    noteState=function(){ var p=parkedFor(c.id); stt.textContent=p?"Couldn't save":(pending(c.id)?(lastError?'Not saved yet, will retry':'Saving'):(((row(c.id)||{}).Note||'')?'Saved':'')); };
+    noteState();
+    function commit(){ clearTimeout(tmr); tmr=null; var v=ta.value; if(v===((row(c.id)||{}).Note||'')) return; enqueue(c.id,{Note:v}); }
+    flushNote=function(){ if(tmr) commit(); };
+    ta.addEventListener('input',function(){ clearTimeout(tmr); tmr=setTimeout(commit,1000); }); ta.addEventListener('blur',commit);
+    d.appendChild(el('h4',null,'Move it'));
+    var acts=el('div','acts');
+    var s=c.status;
+    if(s==='New'){ acts.appendChild(actBtn('Prepare my application','primary',function(){ enqueue(c.id,{Status:'Preparing'}); renderJob(idArg); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
+    if(s==='Preparing'){ acts.appendChild(el('span','small muted','Harry\'s tool is preparing the CV and the letter. ')); acts.appendChild(actBtn('Back to new','',function(){ enqueue(c.id,{Status:'New'}); renderJob(idArg); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
+    if(s==='Ready'){ acts.appendChild(actLink('Open the documents','primary','#docs:'+c.id)); acts.appendChild(actBtn('I have applied','good',function(){ go('#job:'+c.id+':applied'); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
+    if(s==='Applied'){ acts.appendChild(actBtn('Interview','good',function(){ enqueue(c.id,{Status:'Interview'}); renderJob(idArg); })); acts.appendChild(actBtn('Rejected','',function(){ enqueue(c.id,{Status:'Rejected'}); renderJob(idArg); })); acts.appendChild(actBtn('Closed, no answer','',function(){ enqueue(c.id,{Status:'Closed'}); renderJob(idArg); })); }
+    if(s==='Interview'){ acts.appendChild(actBtn('Offer','good',function(){ enqueue(c.id,{Status:'Offer'}); renderJob(idArg); })); acts.appendChild(actBtn('Rejected','',function(){ enqueue(c.id,{Status:'Rejected'}); renderJob(idArg); })); }
+    if(s==='Offer'||s==='Rejected'||s==='Closed'){ acts.appendChild(actBtn('Back to applied','',function(){ enqueue(c.id,{Status:'Applied'}); renderJob(idArg); })); }
+    if(s==='Not for me'){ acts.appendChild(actBtn('Back to new','',function(){ enqueue(c.id,{Status:'New'}); renderJob(idArg); })); }
+    d.appendChild(acts);
+    if(mode==='applied'||['Applied','Interview','Offer','Rejected','Closed'].indexOf(s)>=0){
+      d.appendChild(el('h4',null,'For the RAV form'));
+      var f=el('div','form'); var app=c.app||{};
+      var lDate=el('label',null,'Date applied'); var iDate=el('input','txt'); iDate.type='date'; iDate.value=app.AppliedAt?new Date(app.AppliedAt*1000).toISOString().slice(0,10):new Date().toISOString().slice(0,10); lDate.appendChild(iDate); f.appendChild(lDate);
+      var lM=el('label',null,'How'); var sM=el('select','sel'); ['E-Mail','Online-Portal','LinkedIn','Persönlich','Telefon'].forEach(function(o){ var op=el('option',null,o); op.value=o; if((app.Method||'E-Mail')===o) op.selected=true; sM.appendChild(op); }); lM.appendChild(sM); f.appendChild(lM);
+      var lC=el('label',null,'Contact person (a first name and a role are enough)'); var iC=el('input','txt'); iC.value=app.Contact||''; lC.appendChild(iC); f.appendChild(lC);
+      d.appendChild(f);
+      d.appendChild(el('p','small muted','These fields go to the shared document, which anyone with its link can read. Keep other people\'s details short.'));
+      var saveBtn=actBtn(mode==='applied'?'Save and mark as applied':'Save these details','primary',function(){
+        var dt=iDate.value?Math.floor(Date.parse(iDate.value+'T00:00:00Z')/1000):todayEpoch();
+        var fields={AppliedAt:dt,Method:sM.value,Contact:iC.value.slice(0,200)}; if(mode==='applied') fields.Status='Applied';
+        enqueue(c.id,fields); go('#job:'+c.id);
+      }); var ab=el('div','acts'); ab.style.marginTop='6px'; ab.appendChild(saveBtn); d.appendChild(ab);
+    }
+    if(c.excerpt){ d.appendChild(el('h4',null,'From the advert')); d.appendChild(el('div','excerpt',c.excerpt)); }
+    box.appendChild(d);
+  }
+
+  // ---- documents
+  var docCache={}, docsFor=null; // docsFor: the card the documents screen last painted, so renderAll can retry a first paint that ran before the results arrived
+  function renderDocs(id){
+    var box=document.getElementById('docsBox'); box.textContent=''; docsFor=null;
+    var c=allCards().filter(function(x){ return x.id===id; })[0];
+    if(!c){ box.appendChild(el('p','muted',jobs.length||jobsErr?'This card is not here any more.':'Loading')); return; }
+    docsFor=id;
+    var head=el('div','docbar'); var back=el('a','btn small','‹ '+(c.employer||'the card')); back.href='#job:'+c.id; head.appendChild(back); box.appendChild(head);
+    var loading=el('p','muted','Loading your documents'); box.appendChild(loading);
+    var p=docCache[id]?Promise.resolve(docCache[id]):fetch('data/docs/'+encodeURIComponent(id)+'.json',{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).then(function(d){ docCache[id]=d; return d; });
+    p.then(function(doc){ loading.remove(); paintDocs(box,c,doc); },function(){ loading.textContent=c.status==='Ready'?'The documents file could not be loaded. Try again in a moment.':'No documents yet for this job. Press "Prepare" on the card and they arrive with the next run of Harry\'s tool.'; });
+  }
+  function contactBlock(){ return [contact.name,contact.street,contact.town,contact.phone,contact.email].filter(Boolean).join('\n'); }
+  function paintDocs(box,c,doc){
+    if(!contact.name){ var w=el('div','warn'); w.appendChild(document.createTextNode('Your name and address are not on this device yet, so the CV header is empty. ')); var a=el('a',null,'Enter them once'); a.href='#settings'; w.appendChild(a); w.appendChild(document.createTextNode(', then come back.')); box.appendChild(w); }
+    var bar=el('div','docbar');
+    bar.appendChild(actBtn('Save CV as PDF','primary',function(){ printOnly('print-cv'); }));
+    bar.appendChild(actBtn('Save letter as PDF','primary',function(){ printOnly('print-letter'); }));
+    var gm=el('a','btn good','Open in Gmail'); gm.target='_blank'; gm.rel='noopener'; gm.href='https://mail.google.com/mail/?view=cm&fs=1&su='+encodeURIComponent((doc.email&&doc.email.subject)||'')+'&body='+encodeURIComponent((doc.email&&doc.email.body)||''); bar.appendChild(gm);
+    var ml=el('a','btn','Other mail app'); ml.href='mailto:?subject='+encodeURIComponent((doc.email&&doc.email.subject)||'')+'&body='+encodeURIComponent((doc.email&&doc.email.body)||''); bar.appendChild(ml);
+    bar.appendChild(actBtn('Copy email text','',function(){ var t=((doc.email&&doc.email.subject)||'')+'\n\n'+((doc.email&&doc.email.body)||''); if(navigator.clipboard) navigator.clipboard.writeText(t); }));
+    box.appendChild(bar);
+    box.appendChild(el('p','small muted','Order: save the two PDFs, open Gmail, attach them, check the address, send. The email text below is a draft in your name; change anything that does not sound like you.'+(doc.generatedAt?' Written '+fmtDate(doc.generatedAt)+'.':'')));
+    // email
+    var em=el('div','doc email'); em.appendChild(el('h2',null,'Email')); em.appendChild(el('p','subj','Subject: '+((doc.email&&doc.email.subject)||''))); em.appendChild(el('div','body',(doc.email&&doc.email.body)||'')); box.appendChild(em);
+    // CV
+    var cv=doc.cv||{}; var dc=el('div','doc cv');
+    dc.appendChild(el('h1',null,contact.name||doc.name||'Masha Madani')); if(cv.headline) dc.appendChild(el('div','hl',cv.headline)); dc.appendChild(el('div','contact',contactBlock()+(contact.dob?'\n'+(doc.lang==='de'?'Geboren am ':'Born ')+contact.dob:'')+(contact.nationality?'\n'+contact.nationality:'')));
+    if(cv.summary){ dc.appendChild(el('h2',null,doc.lang==='de'?'Profil':'Profile')); dc.appendChild(el('p',null,cv.summary)); }
+    if(cv.experience&&cv.experience.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Werdegang':'Experience')); cv.experience.forEach(function(x){ var e=el('div','exp'); var r=el('div','row'); r.appendChild(el('span',null,(x.title||'')+(x.employer?', '+x.employer:''))); r.appendChild(el('span','when',[x.from,x.to].filter(Boolean).join(' – '))); e.appendChild(r); var bl=(x.bullets||[]).filter(function(b){ return b&&String(b).trim(); }); if(bl.length){ var ul=el('ul'); bl.forEach(function(b){ ul.appendChild(el('li',null,b)); }); e.appendChild(ul); } dc.appendChild(e); }); }
+    if(cv.education&&cv.education.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Ausbildung':'Education')); cv.education.forEach(function(x){ var e=el('div','exp'); var r=el('div','row'); r.appendChild(el('span',null,(x.title||'')+(x.institution?', '+x.institution:''))); r.appendChild(el('span','when',[x.from,x.to].filter(Boolean).join(' – '))); e.appendChild(r); if(x.note) e.appendChild(el('div','small',x.note)); dc.appendChild(e); }); }
+    if(cv.skills){ dc.appendChild(el('h2',null,doc.lang==='de'?'Kenntnisse':'Skills')); var g=el('dl','grid'); Object.keys(cv.skills).forEach(function(k){ var v=cv.skills[k]; if(!v||!v.length) return; g.appendChild(el('dt',null,{languages:doc.lang==='de'?'Sprachen':'Languages',platforms:doc.lang==='de'?'Plattformen':'Platforms',practices:doc.lang==='de'?'Methoden':'Practices',people:doc.lang==='de'?'Zusammenarbeit':'Working with people'}[k]||k)); g.appendChild(el('dd',null,Array.isArray(v)?v.join(', '):String(v))); }); dc.appendChild(g); }
+    if(cv.languages&&cv.languages.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Sprachen':'Languages')); dc.appendChild(el('p',null,cv.languages.map(function(l){ return l.name+(l.level?' ('+l.level+')':''); }).join(', '))); }
+    if(cv.interests&&cv.interests.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Interessen':'Interests')); dc.appendChild(el('p',null,cv.interests.join(', '))); }
+    box.appendChild(dc);
+    // letter
+    var lt=doc.letter||{}; var dl=el('div','doc letter');
+    dl.appendChild(el('div','addr',contactBlock())); dl.appendChild(el('div','addr',(c.employer||'')+(lt.to?'\n'+lt.to:''))); dl.appendChild(el('div','date',(contact.town?contact.town.replace(/^\d+\s*/,'')+', ':'')+new Date().toLocaleDateString(doc.lang==='de'?'de-CH':'en-GB',{day:'numeric',month:'long',year:'numeric'})));
+    if(lt.subject) dl.appendChild(el('p','subj',lt.subject));
+    var paras=(lt.paragraphs||[]).slice(), SIGN=/^(freundliche grüsse|mit freundlichen grüssen|kind regards|best regards|yours sincerely)/i;
+    while(paras.length&&SIGN.test(paras[paras.length-1].trim())) paras.pop(); // the page adds the sign-off itself; never twice
+    paras.forEach(function(p){ var pe=el('p',null,p); pe.style.whiteSpace='pre-line'; dl.appendChild(pe); });
+    dl.appendChild(el('p','sig',(doc.lang==='de'?'Freundliche Grüsse':'Kind regards')+'\n\n'+(contact.name||doc.name||'Masha Madani'))); box.appendChild(dl);
+    if(doc.emphasised&&doc.emphasised.length){ var em2=el('p','small muted noprint','What the letter leans on: '+doc.emphasised.join('; ')+'.'); box.appendChild(em2); }
+  }
+  function printOnly(cls){ document.body.classList.remove('print-cv','print-letter','print-report'); document.body.classList.add(cls); window.print(); } // the class comes off on afterprint, never on a timer (phones return from print() at once)
+  window.addEventListener('afterprint',function(){ document.body.classList.remove('print-cv','print-letter','print-report'); });
+
+  // ---- reference
+  function renderReference(){
+    var box=document.getElementById('empBox'); box.textContent='';
+    if(!employers.length){ box.appendChild(el('p','muted','The employer list is not loaded yet.')); return; }
+    [[1,'Tier 1: apply or write first'],[2,'Tier 2: when a junior post appears'],[3,'Low weight'],[0,'Your call']].forEach(function(t){
+      var list=employers.filter(function(e){ return e.tier===t[0]; }); if(!list.length) return;
+      box.appendChild(el('h4',null,t[1]+' ('+list.length+')')); var grid=el('div','emp');
+      list.sort(function(a,b){ return a.name.localeCompare(b.name); }).forEach(function(e){ var d=el('div','e'); d.appendChild(el('b',null,e.name)); d.appendChild(el('div','w',[e.place,e.what].filter(Boolean).join(' · '))); if(e.fitNote) d.appendChild(el('div','w',e.fitNote)); var u=e.careersUrl||e.boardUrl; if(u){ var a=el('a',null,e.careersUrl?'Careers page ↗':'Listing ↗'); a.href=u; a.target='_blank'; a.rel='noopener'; d.appendChild(a); } grid.appendChild(d); });
+      box.appendChild(grid);
+    });
+  }
+
+  // ---- RAV report
+  var repMonth=null;
+  function renderReport(){
+    var sel=document.getElementById('repMonth'), box=document.getElementById('repBox'); box.textContent='';
+    var apps=applied(), months={}; apps.forEach(function(c){ months[monthKey(c.app.AppliedAt)]=1; }); months[monthKey(new Date())]=1;
+    var keys=Object.keys(months).sort().reverse(); if(!repMonth||!months[repMonth]) repMonth=keys[0];
+    sel.textContent=''; keys.forEach(function(k){ var o=el('option',null,monthLabel(k)); o.value=k; if(k===repMonth) o.selected=true; sel.appendChild(o); });
+    var rows=apps.filter(function(c){ return monthKey(c.app.AppliedAt)===repMonth; }).sort(function(a,b){ return a.app.AppliedAt-b.app.AppliedAt; });
+    var hdr=el('div'); hdr.appendChild(el('h2',null,'Nachweis der persönlichen Arbeitsbemühungen · '+monthLabel(repMonth))); hdr.appendChild(el('p','small',(contact.name||'Masha Madani')+(contact.street?', '+contact.street+', '+(contact.town||''):'')+' · '+rows.length+' Bewerbungen')); box.appendChild(hdr);
+    var wrap=el('div','tablewrap'), tbl=el('table'), th=el('thead'), tr=el('tr'); ['Datum','Unternehmen','Ort','Stelle','Pensum','Bewerbungsart','Kontaktperson','Ergebnis'].forEach(function(h){ tr.appendChild(el('th',null,h)); }); th.appendChild(tr); tbl.appendChild(th);
+    var tb=el('tbody'); var RES={Applied:'offen',Interview:'Vorstellungsgespräch',Offer:'Zusage',Rejected:'Absage',Closed:'keine Antwort'};
+    rows.forEach(function(c){ var r=el('tr'); [fmtDate(c.app.AppliedAt),c.employer,c.place||'',c.title,c.percent?pct(c.percent):(c.app.Percent||''),c.app.Method||'E-Mail',c.app.Contact||'',RES[c.status]||c.status].forEach(function(v){ r.appendChild(el('td',null,v)); }); tb.appendChild(r); });
+    if(!rows.length){ var r0=el('tr'); var td=el('td',null,'No applications marked in this month yet.'); td.colSpan=8; r0.appendChild(td); tb.appendChild(r0); }
+    tbl.appendChild(tb); wrap.appendChild(tbl); box.appendChild(wrap);
+    box.appendChild(el('p','small muted','Unterschrift: ____________________________    Datum: ____________'));
+  }
+  document.getElementById('repMonth').addEventListener('change',function(){ repMonth=this.value; renderReport(); });
+  document.getElementById('repPrint').addEventListener('click',function(){ printOnly('print-report'); });
+
+  // ---- settings
+  function renderSettings(){ var f=document.getElementById('contactForm'); ['name','street','town','phone','email','dob','nationality','available'].forEach(function(k){ f.elements[k].value=contact[k]||''; }); }
+  document.getElementById('contactSave').addEventListener('click',function(){ var f=document.getElementById('contactForm'); var c={}; ['name','street','town','phone','email','dob','nationality','available'].forEach(function(k){ c[k]=f.elements[k].value.trim(); }); contact=c; try{ localStorage.setItem('masha-jobs-contact.v1',JSON.stringify(c)); document.getElementById('contactState').textContent='Saved on this device'; }catch(e){ document.getElementById('contactState').textContent='Could not save here'; } });
+
+  function renderSync(){ var q=st.queue.length,p=st.parked.length,msg=''; if(fetchError&&!st.fetchedAt) msg='Could not reach the shared document. What you do here is kept and sent later.'; else if(fetchError) msg='Could not refresh from the shared document just now; showing the last copy.'; else if(q) msg=lastError?'Not saved yet, will retry.':'Saving'; else if(p) msg=p+(p===1?' change could not be saved.':' changes could not be saved.'); ['sync1','sync2','sync3','sync4'].forEach(function(i){ var e=document.getElementById(i); if(e) e.textContent=msg; }); }
+  var noteState=null, flushNote=null; // set by renderJob: refresh the note's state line without rebuilding the box; send a pending note now
+  function editingJob(){ var a=document.activeElement; return !!(a&&a.closest&&a.closest('#jobBox')&&(a.tagName==='TEXTAREA'||a.tagName==='INPUT'||a.tagName==='SELECT')); }
+  function renderAll(){ if(screen==='today') renderToday(); if(screen==='board') renderBoard(); if(screen==='job'){ if(editingJob()){ if(noteState) noteState(); } else { var h=(location.hash||'').slice(1).split(':'); if(h[0]==='job') renderJob(h.slice(1).join(':')); } } if(screen==='docs'){ var hd=(location.hash||'').slice(1).split(':'); if(hd[0]==='docs'&&docsFor!==hd[1]) renderDocs(hd[1]); } if(screen==='report') renderReport(); renderSync(); }
+
+  // ---- service worker and the "new version" notice
+  var toast=document.getElementById('toast');
+  function showToast(text,label,fn){ document.getElementById('toastText').textContent=text; var b=document.getElementById('toastBtn'); b.textContent=label; b.onclick=fn; toast.classList.add('on'); }
+  if('serviceWorker' in navigator&&location.protocol!=='file:'){
+    navigator.serviceWorker.register('sw.js').then(function(reg){
+      document.getElementById('swState').textContent='Offline copy ready. Updates arrive on their own.';
+      reg.addEventListener('updatefound',function(){ var nw=reg.installing; if(!nw) return; nw.addEventListener('statechange',function(){ if(nw.state==='installed'&&navigator.serviceWorker.controller) showToast('A new version is ready.','Refresh',function(){ nw.postMessage('skipWaiting'); location.reload(); }); }); });
+    },function(e){ document.getElementById('swState').textContent='Could not register the offline copy: '+e; });
+    var hadController=!!navigator.serviceWorker.controller; // a first visit is an install, not an update
+    navigator.serviceWorker.addEventListener('controllerchange',function(){ if(hadController&&!toast.classList.contains('on')) showToast('Updated to the newest version.','OK',function(){ toast.classList.remove('on'); }); });
+  }
+
+  // ---- lifecycle
+  route(); renderAll();
+  fetchJobs(); fetchEmployers(); fetchApps(); drain();
+  document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='visible'){ fetchJobs(); fetchApps(); drain(); } else if(flushNote) flushNote(); });
+  window.addEventListener('pagehide',function(){ if(flushNote) flushNote(); });
+  window.addEventListener('online',function(){ drain(true); fetchApps(); });
+  window.__jobs={st:st,enqueue:enqueue,drain:drain,fetchApps:fetchApps,fetchJobs:fetchJobs,row:row,allCards:allCards,DEVICE:DEVICE,go:go};
+})();
+</script>
+</body>
+</html>
