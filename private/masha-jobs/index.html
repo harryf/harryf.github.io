@@ -138,27 +138,9 @@ textarea.note:focus,input.txt:focus,select.sel:focus{outline:2px solid var(--lak
 .acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .form{display:grid;gap:8px;grid-template-columns:1fr 1fr;margin:8px 0}
 .form label{font-size:.82rem;color:var(--muted);display:grid;gap:4px}
-/* documents */
-.doc{background:#fff;color:#111;border:1px solid var(--line);border-radius:10px;padding:34px 40px;margin:0 0 16px;box-shadow:var(--shadow);font-family:Inter,system-ui,sans-serif;font-size:14.5px;line-height:1.45}
-.doc h1{font-size:1.7rem;margin:0 0 2px;color:#111}
-.doc h2{font-size:1rem;margin:18px 0 6px;text-transform:uppercase;letter-spacing:.08em;color:#1D5C8A;font-family:Inter,system-ui,sans-serif;font-weight:700;border-bottom:1px solid #E3DCCF;padding-bottom:3px}
-.doc .contact{color:#555;font-size:.9rem;margin:0 0 10px;white-space:pre-line}
-.doc .hl{color:#333;font-weight:600;margin:0 0 8px}
-.doc .exp{margin:0 0 10px}
-.doc .exp .row{display:flex;justify-content:space-between;gap:10px;font-weight:600}
-.doc .exp .when{color:#555;font-weight:400;white-space:nowrap}
-.doc ul{margin:4px 0 0 1.1em;padding:0} .doc li{margin:0 0 2px}
-.doc .grid{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:.92rem}
-.doc .grid dt{color:#555} .doc .grid dd{margin:0}
-.doc p{margin:0 0 .7em}
-.doc .sig{margin-top:22px;white-space:pre-line}
-.doc.letter .addr{white-space:pre-line;color:#333;margin-bottom:18px}
-.doc.letter .date{text-align:right;color:#555;margin-bottom:18px}
-.doc.letter .subj{font-weight:700;margin:0 0 12px}
-.doc.email{background:var(--surface);color:var(--ink)}
-.doc.email .body{white-space:pre-wrap}
-.docbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
-.warn{background:var(--sign-soft);border-left:4px solid var(--sign);border-radius:10px;padding:10px 14px;margin:0 0 14px;font-size:.92rem}
+/* documents: links to the Google Docs the tool wrote */
+.docs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0 10px}
+.docs a.btn{min-height:40px}
 /* reference */
 .emp{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
 .emp .e{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem}
@@ -187,7 +169,6 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   .col{display:none} .col.show{display:block}
   .tabs{display:flex}
   .form{grid-template-columns:1fr}
-  .doc{padding:22px 18px}
   .top .brand{font-size:.98rem}
   .top nav a[data-nav],.top nav #mapLink{display:none}
   .screen{padding:20px 0 96px}
@@ -200,11 +181,8 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
 }
 @media print{
   body{background:#fff;color:#000}
-  .top,.docbar,.warn,footer,.toast,.acts,.noprint{display:none !important}
+  .top,footer,.toast,.acts,.noprint{display:none !important}
   .screen{display:none} .screen.active{display:block;padding:0}
-  .doc{border:0;box-shadow:none;border-radius:0;padding:0;margin:0;page-break-after:always}
-  .doc:last-child{page-break-after:auto}
-  body.print-cv .doc:not(.cv),body.print-letter .doc:not(.letter),body.print-report .noprint{display:none}
   .tablewrap{border:0;padding:0}
   @page{margin:18mm}
 }
@@ -261,9 +239,6 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
 <!-- JOB DETAIL -->
 <section class="screen" id="job"><div class="wrap narrow"><div id="jobBox"></div><p class="sync" id="sync3"></p></div></section>
 
-<!-- DOCUMENTS -->
-<section class="screen" id="docs"><div class="wrap narrow"><div id="docsBox"></div><p class="sync" id="sync4"></p></div></section>
-
 <!-- REFERENCE -->
 <section class="screen" id="reference"><div class="wrap narrow">
   <div class="eyebrow">Reference</div>
@@ -306,28 +281,23 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   <div id="repBox"></div>
 </div></section>
 
-<!-- SETTINGS: her contact block, kept on the device only -->
+<!-- SETTINGS: how the documents work, and the install note -->
 <section class="screen" id="settings"><div class="wrap narrow">
   <div class="eyebrow">You</div>
-  <h1>Your details</h1>
-  <p class="lede">The CV and the letter need your address, phone and email at the top. They are saved only in this browser, on this device, and never sent to the shared document or anywhere else. Enter them once here (and once on your other device).</p>
-  <form id="contactForm" class="form" autocomplete="on">
-    <label>Full name<input class="txt" name="name" autocomplete="name"></label>
-    <label>Street and number<input class="txt" name="street" autocomplete="street-address"></label>
-    <label>Postcode and town<input class="txt" name="town" autocomplete="postal-code"></label>
-    <label>Phone<input class="txt" name="phone" autocomplete="tel"></label>
-    <label>Email<input class="txt" name="email" autocomplete="email" type="email"></label>
-    <label>Date of birth (optional, Swiss CVs often carry it)<input class="txt" name="dob" autocomplete="bday"></label>
-    <label>Nationality or permit (optional)<input class="txt" name="nationality"></label>
-    <label>Available from<input class="txt" name="available" placeholder="for example: 1 January 2027 or by arrangement"></label>
-  </form>
-  <div class="acts"><button class="btn primary" id="contactSave" type="button">Save on this device</button><span class="state" id="contactState"></span></div>
+  <h1>Your documents</h1>
+  <p class="lede">Your CV, your letter and the email text for each application are Google Docs in a Drive folder that Harry shares with you. Your master CV lives there too: keep it complete, and every new application starts from it.</p>
+  <ol class="small">
+    <li>Press "Prepare" on a card. Harry's tool writes the three Docs, usually by the next morning (he can also run it at once).</li>
+    <li>The card turns "Ready to send" with links CV, Letter, Email and Folder. Read them and change anything that does not sound like you.</li>
+    <li>In the CV and the letter choose File, Download, PDF. Send the email with the two PDFs attached, then press "I have applied" and fill in the date and the contact.</li>
+  </ol>
+  <p class="small muted">Nothing on this page holds your address or phone; those are in the Docs only.</p>
   <h4 style="margin-top:28px">Install as an app</h4>
   <p class="small">On the phone: open the browser menu and choose "Add to Home Screen" (iPhone) or "Install app" (Android). On the laptop, Chrome shows an install icon in the address bar. Updates arrive on their own the next time you open it.</p>
   <p class="small muted" id="swState"></p>
 </div></section>
 
-<footer><div class="wrap">Made for Masha, September 2026. Results are collected once a day from employers' own pages and a few job boards; your status and notes live in the shared Grist document; your contact details stay on your device. No adverts, no tracking. <a id="mapLink2" href="../index.html">Back to the map</a>.</div></footer>
+<footer><div class="wrap">Made for Masha, September 2026. Results are collected once a day from employers' own pages and a few job boards; your status and notes live in the shared Grist document; your CV and letters are Google Docs in the shared Drive folder. No adverts, no tracking. <a id="mapLink2" href="../index.html">Back to the map</a>.</div></footer>
 
 <div class="toast" id="toast"><span id="toastText"></span><button class="btn small" id="toastBtn" type="button">Refresh</button></div>
 
@@ -351,7 +321,7 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   try{var sv=localStorage.getItem('masha-jobs-theme');if(sv==='dark'||sv==='light')root.setAttribute('data-theme',sv);}catch(e){}
   tlabel(); tbtn.addEventListener('click',function(){var n=current()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('masha-jobs-theme',n);}catch(e){}tlabel();});
 
-  // ---- data: results from JSON, status from Grist, her contact block from this device
+  // ---- data: results from JSON, status and document links from Grist
   var DOC='https://docs.getgrist.com/api/docs/ujophYm1hVYi', T='Applications', K='JobId';
   var DEVICE=(PHONE||matchMedia('(pointer:coarse)').matches)?'phone':'laptop';
   try{ var tok=localStorage.getItem('masha-jobs-device'); if(!tok){ tok=Math.random().toString(36).slice(2,6); localStorage.setItem('masha-jobs-device',tok); } DEVICE+='-'+tok; }catch(e){}
@@ -361,7 +331,6 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   if(!st.remote||typeof st.remote!=='object') st.remote={}; if(!Array.isArray(st.queue)) st.queue=[]; if(!Array.isArray(st.parked)) st.parked=[]; st.writes=st.writes||0;
   function save(){ try{ localStorage.setItem(SK,JSON.stringify(st)); }catch(e){} }
   var jobs=[], jobsAt=null, jobsErr=null, employers=[], byId={};
-  var contact={}; try{ contact=JSON.parse(localStorage.getItem('masha-jobs-contact.v1')||'{}')||{}; }catch(e){}
 
   function row(id){ var r=st.remote[id]?Object.assign({},st.remote[id]):null; st.queue.forEach(function(q){ if(q.id===id) r=Object.assign(r||{JobId:id},q.fields); }); return r; }
   function pending(id){ return st.queue.some(function(q){ return q.id===id; }); }
@@ -437,7 +406,7 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     var changed=id!==screen; screen=id; screens.forEach(function(s){ s.classList.toggle('active',s.id===id); });
     document.querySelectorAll('[data-nav]').forEach(function(a){ a.classList.toggle('on',a.dataset.nav===id); });
     if(changed) window.scrollTo(0,0);
-    if(id==='today') renderToday(); if(id==='board') renderBoard(); if(id==='job') renderJob(arg); if(id==='docs') renderDocs(arg); if(id==='report') renderReport(); if(id==='settings') renderSettings();
+    if(id==='today') renderToday(); if(id==='board') renderBoard(); if(id==='job') renderJob(arg); if(id==='report') renderReport();
     if(id==='board'&&arg){ var c=document.querySelector('.card[data-id="'+CSS.escape(arg)+'"]'); if(c){ c.classList.add('hl'); setTimeout(function(){ c.scrollIntoView({block:'center'}); },60); setTimeout(function(){ c.classList.remove('hl'); },2500); } }
     try{ localStorage.setItem('masha-jobs-last',location.hash); }catch(e){}
   }
@@ -463,7 +432,7 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     card.appendChild(meta);
     var acts=el('div','acts');
     if(c.status==='New'){ acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); })); acts.appendChild(actBtn('Prepare','primary',function(){ enqueue(c.id,{Status:'Preparing'}); })); }
-    else if(c.status==='Ready'){ acts.appendChild(actLink('Documents','primary','#docs:'+c.id)); acts.appendChild(actBtn('Applied','good',function(){ go('#job:'+c.id+':applied'); })); }
+    else if(c.status==='Ready'){ docLinks(c,true).forEach(function(a){ acts.appendChild(a); }); acts.appendChild(actBtn('Applied','good',function(){ go('#job:'+c.id+':applied'); })); }
     else if(c.status==='Preparing'){ acts.appendChild(el('span','small muted','documents on the way')); }
     if(c.url&&!compact){ var o=el('a','btn small quiet','Open posting'); o.href=c.url; o.target='_blank'; o.rel='noopener'; o.addEventListener('click',function(e){ e.stopPropagation(); }); acts.appendChild(o); }
     card.appendChild(acts);
@@ -472,6 +441,9 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   }
   function actBtn(label,cls,fn){ var b=el('button','btn small '+cls,label); b.type='button'; b.addEventListener('click',function(e){ e.stopPropagation(); fn(); }); return b; }
   function actLink(label,cls,href){ var a=el('a','btn small '+cls,label); a.href=href; a.addEventListener('click',function(e){ e.stopPropagation(); }); return a; }
+  // The documents are Google Docs written by Harry's tool; their links arrive with the Grist row. compact: the three docs only; else the folder too.
+  var DOCS=[['CvUrl','CV','primary'],['LetterUrl','Letter','primary'],['EmailUrl','Email',''],['Folder','Folder','quiet']];
+  function docLinks(c,compact){ var app=c.app||{}; var out=[]; DOCS.forEach(function(d){ var u=app[d[0]]; if(!u||!/^https:\/\/(docs|drive)\.google\.com\//.test(u)) return; if(compact&&d[0]==='Folder') return; var a=actLink(d[1],d[2],u); a.target='_blank'; a.rel='noopener'; out.push(a); }); return out; }
 
   // ---- board
   var tab=null;
@@ -506,7 +478,7 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     var follow=cards.filter(function(c){ return c.status==='Applied'&&c.app&&c.app.AppliedAt&&daysSince(c.app.AppliedAt)>14; });
     section('toFollow','To follow up',follow,'No application older than two weeks without an answer.',5);
     var w=cards.filter(function(c){ return c.status==='Preparing'; }); var ws=document.getElementById('waiting'); ws.textContent=''; var wh=el('h3'); wh.appendChild(el('span',null,'Being prepared')); wh.appendChild(el('span','pill t3',String(w.length))); ws.appendChild(wh);
-    ws.appendChild(el('p','small muted',w.length?w.map(function(c){ return c.employer; }).join(', ')+'. Harry\'s tool writes the CV and the letter, usually by the next morning.':'Nothing in preparation.'));
+    ws.appendChild(el('p','small muted',w.length?w.map(function(c){ return c.employer; }).join(', ')+'. Harry\'s tool writes the CV, the letter and the email as Google Docs, usually by the next morning.':'Nothing in preparation.'));
     renderMetric();
   }
   function renderMetric(){
@@ -553,8 +525,8 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     var acts=el('div','acts');
     var s=c.status;
     if(s==='New'){ acts.appendChild(actBtn('Prepare my application','primary',function(){ enqueue(c.id,{Status:'Preparing'}); renderJob(idArg); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
-    if(s==='Preparing'){ acts.appendChild(el('span','small muted','Harry\'s tool is preparing the CV and the letter. ')); acts.appendChild(actBtn('Back to new','',function(){ enqueue(c.id,{Status:'New'}); renderJob(idArg); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
-    if(s==='Ready'){ acts.appendChild(actLink('Open the documents','primary','#docs:'+c.id)); acts.appendChild(actBtn('I have applied','good',function(){ go('#job:'+c.id+':applied'); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
+    if(s==='Preparing'){ acts.appendChild(el('span','small muted','Harry\'s tool is writing the CV, the letter and the email as Google Docs. ')); acts.appendChild(actBtn('Back to new','',function(){ enqueue(c.id,{Status:'New'}); renderJob(idArg); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
+    if(s==='Ready'){ var links=docLinks(c,false); if(links.length){ var dl=el('div','docs'); links.forEach(function(a){ dl.appendChild(a); }); acts.appendChild(dl); acts.appendChild(el('p','small muted','Your CV, letter and email text are Google Docs in the shared folder. Read them, change anything that does not sound like you, then in each Doc choose File, Download, PDF and attach the two PDFs to your email.')); } else { acts.appendChild(el('p','small muted','The documents are marked ready but their links have not arrived yet. Pull to refresh in a moment.')); } acts.appendChild(actBtn('I have applied','good',function(){ go('#job:'+c.id+':applied'); })); acts.appendChild(actBtn('Not for me','',function(){ enqueue(c.id,{Status:'Not for me'}); go('#board'); })); }
     if(s==='Applied'){ acts.appendChild(actBtn('Interview','good',function(){ enqueue(c.id,{Status:'Interview'}); renderJob(idArg); })); acts.appendChild(actBtn('Rejected','',function(){ enqueue(c.id,{Status:'Rejected'}); renderJob(idArg); })); acts.appendChild(actBtn('Closed, no answer','',function(){ enqueue(c.id,{Status:'Closed'}); renderJob(idArg); })); }
     if(s==='Interview'){ acts.appendChild(actBtn('Offer','good',function(){ enqueue(c.id,{Status:'Offer'}); renderJob(idArg); })); acts.appendChild(actBtn('Rejected','',function(){ enqueue(c.id,{Status:'Rejected'}); renderJob(idArg); })); }
     if(s==='Offer'||s==='Rejected'||s==='Closed'){ acts.appendChild(actBtn('Back to applied','',function(){ enqueue(c.id,{Status:'Applied'}); renderJob(idArg); })); }
@@ -578,53 +550,9 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     box.appendChild(d);
   }
 
-  // ---- documents
-  var docCache={}, docsFor=null; // docsFor: the card the documents screen last painted, so renderAll can retry a first paint that ran before the results arrived
-  function renderDocs(id){
-    var box=document.getElementById('docsBox'); box.textContent=''; docsFor=null;
-    var c=allCards().filter(function(x){ return x.id===id; })[0];
-    if(!c){ box.appendChild(el('p','muted',jobs.length||jobsErr?'This card is not here any more.':'Loading')); return; }
-    docsFor=id;
-    var head=el('div','docbar'); var back=el('a','btn small','‹ '+(c.employer||'the card')); back.href='#job:'+c.id; head.appendChild(back); box.appendChild(head);
-    var loading=el('p','muted','Loading your documents'); box.appendChild(loading);
-    var p=docCache[id]?Promise.resolve(docCache[id]):fetch('data/docs/'+encodeURIComponent(id)+'.json',{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).then(function(d){ docCache[id]=d; return d; });
-    p.then(function(doc){ loading.remove(); paintDocs(box,c,doc); },function(){ loading.textContent=c.status==='Ready'?'The documents file could not be loaded. Try again in a moment.':'No documents yet for this job. Press "Prepare" on the card and they arrive with the next run of Harry\'s tool.'; });
-  }
-  function contactBlock(){ return [contact.name,contact.street,contact.town,contact.phone,contact.email].filter(Boolean).join('\n'); }
-  function paintDocs(box,c,doc){
-    if(!contact.name){ var w=el('div','warn'); w.appendChild(document.createTextNode('Your name and address are not on this device yet, so the CV header is empty. ')); var a=el('a',null,'Enter them once'); a.href='#settings'; w.appendChild(a); w.appendChild(document.createTextNode(', then come back.')); box.appendChild(w); }
-    var bar=el('div','docbar');
-    bar.appendChild(actBtn('Save CV as PDF','primary',function(){ printOnly('print-cv'); }));
-    bar.appendChild(actBtn('Save letter as PDF','primary',function(){ printOnly('print-letter'); }));
-    var gm=el('a','btn good','Open in Gmail'); gm.target='_blank'; gm.rel='noopener'; gm.href='https://mail.google.com/mail/?view=cm&fs=1&su='+encodeURIComponent((doc.email&&doc.email.subject)||'')+'&body='+encodeURIComponent((doc.email&&doc.email.body)||''); bar.appendChild(gm);
-    var ml=el('a','btn','Other mail app'); ml.href='mailto:?subject='+encodeURIComponent((doc.email&&doc.email.subject)||'')+'&body='+encodeURIComponent((doc.email&&doc.email.body)||''); bar.appendChild(ml);
-    bar.appendChild(actBtn('Copy email text','',function(){ var t=((doc.email&&doc.email.subject)||'')+'\n\n'+((doc.email&&doc.email.body)||''); if(navigator.clipboard) navigator.clipboard.writeText(t); }));
-    box.appendChild(bar);
-    box.appendChild(el('p','small muted','Order: save the two PDFs, open Gmail, attach them, check the address, send. The email text below is a draft in your name; change anything that does not sound like you.'+(doc.generatedAt?' Written '+fmtDate(doc.generatedAt)+'.':'')));
-    // email
-    var em=el('div','doc email'); em.appendChild(el('h2',null,'Email')); em.appendChild(el('p','subj','Subject: '+((doc.email&&doc.email.subject)||''))); em.appendChild(el('div','body',(doc.email&&doc.email.body)||'')); box.appendChild(em);
-    // CV
-    var cv=doc.cv||{}; var dc=el('div','doc cv');
-    dc.appendChild(el('h1',null,contact.name||doc.name||'Masha Madani')); if(cv.headline) dc.appendChild(el('div','hl',cv.headline)); dc.appendChild(el('div','contact',contactBlock()+(contact.dob?'\n'+(doc.lang==='de'?'Geboren am ':'Born ')+contact.dob:'')+(contact.nationality?'\n'+contact.nationality:'')));
-    if(cv.summary){ dc.appendChild(el('h2',null,doc.lang==='de'?'Profil':'Profile')); dc.appendChild(el('p',null,cv.summary)); }
-    if(cv.experience&&cv.experience.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Werdegang':'Experience')); cv.experience.forEach(function(x){ var e=el('div','exp'); var r=el('div','row'); r.appendChild(el('span',null,(x.title||'')+(x.employer?', '+x.employer:''))); r.appendChild(el('span','when',[x.from,x.to].filter(Boolean).join(' – '))); e.appendChild(r); var bl=(x.bullets||[]).filter(function(b){ return b&&String(b).trim(); }); if(bl.length){ var ul=el('ul'); bl.forEach(function(b){ ul.appendChild(el('li',null,b)); }); e.appendChild(ul); } dc.appendChild(e); }); }
-    if(cv.education&&cv.education.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Ausbildung':'Education')); cv.education.forEach(function(x){ var e=el('div','exp'); var r=el('div','row'); r.appendChild(el('span',null,(x.title||'')+(x.institution?', '+x.institution:''))); r.appendChild(el('span','when',[x.from,x.to].filter(Boolean).join(' – '))); e.appendChild(r); if(x.note) e.appendChild(el('div','small',x.note)); dc.appendChild(e); }); }
-    if(cv.skills){ dc.appendChild(el('h2',null,doc.lang==='de'?'Kenntnisse':'Skills')); var g=el('dl','grid'); Object.keys(cv.skills).forEach(function(k){ var v=cv.skills[k]; if(!v||!v.length) return; g.appendChild(el('dt',null,{languages:doc.lang==='de'?'Sprachen':'Languages',platforms:doc.lang==='de'?'Plattformen':'Platforms',practices:doc.lang==='de'?'Methoden':'Practices',people:doc.lang==='de'?'Zusammenarbeit':'Working with people'}[k]||k)); g.appendChild(el('dd',null,Array.isArray(v)?v.join(', '):String(v))); }); dc.appendChild(g); }
-    if(cv.languages&&cv.languages.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Sprachen':'Languages')); dc.appendChild(el('p',null,cv.languages.map(function(l){ return l.name+(l.level?' ('+l.level+')':''); }).join(', '))); }
-    if(cv.interests&&cv.interests.length){ dc.appendChild(el('h2',null,doc.lang==='de'?'Interessen':'Interests')); dc.appendChild(el('p',null,cv.interests.join(', '))); }
-    box.appendChild(dc);
-    // letter
-    var lt=doc.letter||{}; var dl=el('div','doc letter');
-    dl.appendChild(el('div','addr',contactBlock())); dl.appendChild(el('div','addr',(c.employer||'')+(lt.to?'\n'+lt.to:''))); dl.appendChild(el('div','date',(contact.town?contact.town.replace(/^\d+\s*/,'')+', ':'')+new Date().toLocaleDateString(doc.lang==='de'?'de-CH':'en-GB',{day:'numeric',month:'long',year:'numeric'})));
-    if(lt.subject) dl.appendChild(el('p','subj',lt.subject));
-    var paras=(lt.paragraphs||[]).slice(), SIGN=/^(freundliche grüsse|mit freundlichen grüssen|kind regards|best regards|yours sincerely)/i;
-    while(paras.length&&SIGN.test(paras[paras.length-1].trim())) paras.pop(); // the page adds the sign-off itself; never twice
-    paras.forEach(function(p){ var pe=el('p',null,p); pe.style.whiteSpace='pre-line'; dl.appendChild(pe); });
-    dl.appendChild(el('p','sig',(doc.lang==='de'?'Freundliche Grüsse':'Kind regards')+'\n\n'+(contact.name||doc.name||'Masha Madani'))); box.appendChild(dl);
-    if(doc.emphasised&&doc.emphasised.length){ var em2=el('p','small muted noprint','What the letter leans on: '+doc.emphasised.join('; ')+'.'); box.appendChild(em2); }
-  }
-  function printOnly(cls){ document.body.classList.remove('print-cv','print-letter','print-report'); document.body.classList.add(cls); window.print(); } // the class comes off on afterprint, never on a timer (phones return from print() at once)
-  window.addEventListener('afterprint',function(){ document.body.classList.remove('print-cv','print-letter','print-report'); });
+  // ---- print (the RAV report only; the CV and the letter are Google Docs now)
+  function printOnly(cls){ document.body.classList.remove('print-report'); document.body.classList.add(cls); window.print(); } // the class comes off on afterprint, never on a timer (phones return from print() at once)
+  window.addEventListener('afterprint',function(){ document.body.classList.remove('print-report'); });
 
   // ---- reference
   function renderReference(){
@@ -646,7 +574,7 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     var keys=Object.keys(months).sort().reverse(); if(!repMonth||!months[repMonth]) repMonth=keys[0];
     sel.textContent=''; keys.forEach(function(k){ var o=el('option',null,monthLabel(k)); o.value=k; if(k===repMonth) o.selected=true; sel.appendChild(o); });
     var rows=apps.filter(function(c){ return monthKey(c.app.AppliedAt)===repMonth; }).sort(function(a,b){ return a.app.AppliedAt-b.app.AppliedAt; });
-    var hdr=el('div'); hdr.appendChild(el('h2',null,'Nachweis der persönlichen Arbeitsbemühungen · '+monthLabel(repMonth))); hdr.appendChild(el('p','small',(contact.name||'Masha Madani')+(contact.street?', '+contact.street+', '+(contact.town||''):'')+' · '+rows.length+' Bewerbungen')); box.appendChild(hdr);
+    var hdr=el('div'); hdr.appendChild(el('h2',null,'Nachweis der persönlichen Arbeitsbemühungen · '+monthLabel(repMonth))); hdr.appendChild(el('p','small','Masha Madani · '+rows.length+' Bewerbungen')); box.appendChild(hdr);
     var wrap=el('div','tablewrap'), tbl=el('table'), th=el('thead'), tr=el('tr'); ['Datum','Unternehmen','Ort','Stelle','Pensum','Bewerbungsart','Kontaktperson','Ergebnis'].forEach(function(h){ tr.appendChild(el('th',null,h)); }); th.appendChild(tr); tbl.appendChild(th);
     var tb=el('tbody'); var RES={Applied:'offen',Interview:'Vorstellungsgespräch',Offer:'Zusage',Rejected:'Absage',Closed:'keine Antwort'};
     rows.forEach(function(c){ var r=el('tr'); [fmtDate(c.app.AppliedAt),c.employer,c.place||'',c.title,c.percent?pct(c.percent):(c.app.Percent||''),c.app.Method||'E-Mail',c.app.Contact||'',RES[c.status]||c.status].forEach(function(v){ r.appendChild(el('td',null,v)); }); tb.appendChild(r); });
@@ -657,14 +585,12 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   document.getElementById('repMonth').addEventListener('change',function(){ repMonth=this.value; renderReport(); });
   document.getElementById('repPrint').addEventListener('click',function(){ printOnly('print-report'); });
 
-  // ---- settings
-  function renderSettings(){ var f=document.getElementById('contactForm'); ['name','street','town','phone','email','dob','nationality','available'].forEach(function(k){ f.elements[k].value=contact[k]||''; }); }
-  document.getElementById('contactSave').addEventListener('click',function(){ var f=document.getElementById('contactForm'); var c={}; ['name','street','town','phone','email','dob','nationality','available'].forEach(function(k){ c[k]=f.elements[k].value.trim(); }); contact=c; try{ localStorage.setItem('masha-jobs-contact.v1',JSON.stringify(c)); document.getElementById('contactState').textContent='Saved on this device'; }catch(e){ document.getElementById('contactState').textContent='Could not save here'; } });
+  try{ localStorage.removeItem('masha-jobs-contact.v1'); }catch(e){} // the contact block lived on the device before the Google Docs flow; nothing reads it now
 
-  function renderSync(){ var q=st.queue.length,p=st.parked.length,msg=''; if(fetchError&&!st.fetchedAt) msg='Could not reach the shared document. What you do here is kept and sent later.'; else if(fetchError) msg='Could not refresh from the shared document just now; showing the last copy.'; else if(q) msg=lastError?'Not saved yet, will retry.':'Saving'; else if(p) msg=p+(p===1?' change could not be saved.':' changes could not be saved.'); ['sync1','sync2','sync3','sync4'].forEach(function(i){ var e=document.getElementById(i); if(e) e.textContent=msg; }); }
+  function renderSync(){ var q=st.queue.length,p=st.parked.length,msg=''; if(fetchError&&!st.fetchedAt) msg='Could not reach the shared document. What you do here is kept and sent later.'; else if(fetchError) msg='Could not refresh from the shared document just now; showing the last copy.'; else if(q) msg=lastError?'Not saved yet, will retry.':'Saving'; else if(p) msg=p+(p===1?' change could not be saved.':' changes could not be saved.'); ['sync1','sync2','sync3'].forEach(function(i){ var e=document.getElementById(i); if(e) e.textContent=msg; }); }
   var noteState=null, flushNote=null; // set by renderJob: refresh the note's state line without rebuilding the box; send a pending note now
   function editingJob(){ var a=document.activeElement; return !!(a&&a.closest&&a.closest('#jobBox')&&(a.tagName==='TEXTAREA'||a.tagName==='INPUT'||a.tagName==='SELECT')); }
-  function renderAll(){ if(screen==='today') renderToday(); if(screen==='board') renderBoard(); if(screen==='job'){ if(editingJob()){ if(noteState) noteState(); } else { var h=(location.hash||'').slice(1).split(':'); if(h[0]==='job') renderJob(h.slice(1).join(':')); } } if(screen==='docs'){ var hd=(location.hash||'').slice(1).split(':'); if(hd[0]==='docs'&&docsFor!==hd[1]) renderDocs(hd[1]); } if(screen==='report') renderReport(); renderSync(); }
+  function renderAll(){ if(screen==='today') renderToday(); if(screen==='board') renderBoard(); if(screen==='job'){ if(editingJob()){ if(noteState) noteState(); } else { var h=(location.hash||'').slice(1).split(':'); if(h[0]==='job') renderJob(h.slice(1).join(':')); } } if(screen==='report') renderReport(); renderSync(); }
 
   // ---- service worker and the "new version" notice
   var toast=document.getElementById('toast');
