@@ -2,7 +2,7 @@
 // reaches the phone on the next open and the app still opens offline with the last copy.
 // VERSION changes on every publish (Tools/jobs/publish.ts stamps it); a new worker takes over
 // at once and the page shows "New version ready".
-const VERSION = '20260928T170633';
+const VERSION = '20261004T090306';
 const CACHE = 'masha-jobs-' + VERSION;
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 

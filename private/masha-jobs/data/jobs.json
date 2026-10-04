@@ -1,7 +1,47 @@
 {
  "version": 1,
- "generatedAt": "2026-09-28T13:36:23.484Z",
+ "generatedAt": "2026-10-04T09:00:01.231Z",
  "jobs": [
+  {
+   "id": "j-a55915cd77",
+   "title": "Junior .Net Entwickler (a) 80 - 100%",
+   "employer": "Helsana",
+   "employerId": "helsana",
+   "newEmployer": false,
+   "place": "Dübendorf",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://jobs.helsana.ch/offene-stellen/junior-net-entwickler-a/ee813395-fee1-433b-8262-40d3084c55d9",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://jobs.helsana.ch/offene-stellen/junior-net-entwickler-a/ee813395-fee1-433b-8262-40d3084c55d9",
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    }
+   ],
+   "postedAt": "2026-09-29T15:01:27.000Z",
+   "firstSeen": "2026-10-04T09:00:01.231Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
+   "online": true,
+   "tier": 1,
+   "score": 75,
+   "junior": true,
+   "stack": [
+    "c#",
+    ".net",
+    "azure"
+   ],
+   "green": [
+    "junior"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Aufgaben\n- Entwickeln von modernen .NET-Lösungen mit C#, Blazor und Azure für interne Anwendungen\n- Mitwirken bei der Spezifikation, dem Design und der Umsetzung neuer Funktionen in interdisziplinären Teams\n- Umsetzen sicherer, wartbarer und zukunftsfähiger Softwarelösungen\n- Zusammenarbeiten mit Plattformteams entlang des gesamten Entwicklungszyklus\n\nAnforderungen\n- Studium (Uni/FH) in Informatik oder kurz vor dem erfolgreichen Abschluss\n- Erste Erfahrung in der Softwareentwicklung mit C# und relationalen Datenbanken\n- Interesse an modernen Microsoft-Technologien wie Blazor, Azure und Containern\n- Verständnis für Softwarequalität, Clean Code, CI/CD und Github Copilot\n- Teamorientierte Arbeitsweise sowie Freude an agiler Zusammenarbeit\n\nArbeitgeber\nIn den Bereichen Gesundheitsförderung, Recruiting-Qualität sowie für Vereinbarkeit von Beruf und Privatleben wird Helsana immer wieder ausgezeichnet.\nBenefits\nit"
+  },
   {
    "id": "j-c80ab99784",
    "title": "Junior Software Engineer Java / Spring 80-100%, Zürich",
@@ -26,7 +66,7 @@
    "postedAt": "2026-09-23T00:33:13.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
    "lastSeen": "2026-09-28T12:27:53.283Z",
-   "online": true,
+   "online": false,
    "tier": null,
    "score": 55,
    "junior": true,
@@ -56,17 +96,17 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     },
     {
      "kind": "company",
      "url": "https://jobs.lever.co/wingtra-2/7985b1c8-ea4b-4af8-9260-7def37780218",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-08-28T13:39:59.261Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 3,
    "score": 50,
@@ -176,12 +216,12 @@
     {
      "kind": "company",
      "url": "https://careers.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 1,
    "score": 50,
@@ -285,12 +325,12 @@
     {
      "kind": "company",
      "url": "https://bbv.ch/career/young-professional-programm/",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 1,
    "score": 50,
@@ -391,12 +431,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Innovation-Process-Technology-AG-Graduate-Engineer-im-IT-Consulting-100",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-14T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 40,
@@ -497,12 +537,12 @@
     {
      "kind": "company",
      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_xNU4jaRuX9tlmqmJJB",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 1,
    "score": 40,
@@ -606,12 +646,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Zrcher-Kantonalbank-Fullstack-Software-Engineer-mit-DevOps-Mindset-a-80--100",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-23T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 35,
@@ -628,6 +668,44 @@
    "red": [],
    "assessment": null,
    "excerpt": "Salary: CHF 120'000 - 140'000 per year\n\nRequirements:\n- Ausbildung in Informatik auf Stufe HF, FH oder Universität oder mehrjährige relevante Berufserfahrung\n- Mind. 3 Jahre Erfahrung im Software Engineering / Fullstack Development\n- Erfahrung in den letzten drei Jahren in mindestens einem der Bereiche Client Onboarding, digitale Produktabschlüsse oder Client Lifecycle Management\n- Zwingend: Sehr gute Kenntnisse in Java, Spring und JPA/Hibernate sowie mit JavaScript / TypeScript\n- Teamorientierte und kommunikative Persönlichkeit mit echtem DevOps- und Ownership-Mindset\n- Fliessende Deutschkenntnisse auf mindestens C1-Niveau sowie Verständnis von Schweizerdeutsch\n\nResponsibilities:\n- Entwicklung moderner digitaler Services für Client Onboarding, digitale Produktabschlüsse und Client Lifecycle Management\n- End-to-End-Verantwortung von der Anforderungsanalyse über Entwicklung und Testing bis zur Betreuung der selbst entwickelten Lösungen im Betrieb\n- Zusammenarbeit mit Business Engineers, Product Owner und Architekt:innen bei der Erarbeitung technischer Lösungen\n- Refinement und Umsetzung von Stories inklusive Aufwandsschätzungen und Sprint-Planung im agilen Umfeld\n- Fullstack-Entwicklung mit Schwerpunkt auf Java, Spring und JPA/Hibernate im Backend sowie TypeScript/JavaScript mit Angular im Frontend\n- Analyse von Incidents und kontinuierliche Weiterentwicklung der Anwendungen und Betriebsprozesse\n- Du gestaltest Services und technische Lösungsvarianten aktiv mit und berätst den"
+  },
+  {
+   "id": "j-500f66bf9a",
+   "title": "Java Fullstack Engineer",
+   "employer": "Zühlke",
+   "employerId": "zuehlke",
+   "newEmployer": false,
+   "place": "Schlieren",
+   "percent": null,
+   "lang": "en",
+   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    }
+   ],
+   "postedAt": "2026-09-28T00:00:00.000Z",
+   "firstSeen": "2026-09-28T13:22:29.547Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
+   "online": true,
+   "tier": 2,
+   "score": 28,
+   "junior": false,
+   "stack": [
+    "java",
+    "spring boot",
+    "spring",
+    "typescript",
+    "react",
+    "azure"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Standort: Schlieren\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nJob Description\nImportant: To ensure a smooth review process, please submit all application documents (CV, cover letter) in English only .\n\nThe role\nAs part of a team, you will design & implement versatile customer projects in the web and enterprise environment that are tailored to customer needs using modern, agile project methods.\nHow you’ll make impact\n- Collaborate closely with customers to understand their business and translate requirements into high quality software. Expect to visit our customers around 2-3 times per week.\n- Engage with developers on your t"
   },
   {
    "id": "j-8b7fb5bf0f",
@@ -650,7 +728,7 @@
    "postedAt": "2026-09-14T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
    "lastSeen": "2026-09-28T13:36:23.484Z",
-   "online": true,
+   "online": false,
    "tier": 2,
    "score": 28,
    "junior": false,
@@ -684,12 +762,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Konova-AG-Backend-Software-Engineer--GovTech-SaaS-80-100",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-21T06:06:34.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -721,12 +799,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/TekkMinds-Schweiz-AG-Cloud-Software-Engineer-mwd",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-09T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -764,12 +842,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Scalera-AG-DevOps--Cloud-Software-Engineer-50-100",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-08-28T11:46:17.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -805,7 +883,7 @@
    "postedAt": "2026-09-02T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
    "lastSeen": "2026-09-28T13:36:23.484Z",
-   "online": true,
+   "online": false,
    "tier": 2,
    "score": 23,
    "junior": false,
@@ -834,12 +912,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Software-Engineer--Managed-Services_JR100887-1",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-23T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 2,
    "score": 23,
@@ -879,12 +957,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Java-Full-Stack-Engineer",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-06-17T08:14:56.000Z",
+   "postedAt": "2026-10-01T12:06:58.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -918,12 +996,17 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Intelliact-AG-Site-Reliability-Engineer--Software-Engineer-60-100",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    },
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/8a07269b-16c8-43e2-b429-45dc83961bcf/",
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-09-24T22:00:00.000Z",
+   "postedAt": "2026-09-15T15:25:34.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -953,12 +1036,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---Android-all-genders",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-07-10T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -975,6 +1058,40 @@
    "excerpt": "Salary: CHF 75'000 - 85'000 per year\n\nRequirements:\n- At least three years of experience in Android development\n- Strong proficiency in Kotlin\n- Deep knowledge of Android fundamentals and best practices\n- Experience with Android architecture components\n- Comfortable using Jetpack Compose, Coroutines, and Flows\n- Experience with RxJava is a plus\n- Solid understanding of testing practices and commitment to quality\n- Experience with Node.js or Scala is beneficial\n- Having published apps on the Play Store is highly regarded\n- Passion for learning and self-organization; readiness to enhance skills and take on new challenges\n- Courage to experiment with new technologies (including AI)\n- Customer-centric approach: prioritize quality, security, speed, and performance\n\nResponsibilities:\n- Collaborate in an agile, cross-functional team to maintain and evolve the HolidayCheck Android app\n- Engage in robust development practices including pair programming, code reviews, and continuous delivery to thousands of users\n- Innovate and implement new features in close collaboration with iOS and Android developers, Product Designers, and Product Managers\n- Contribute to the technical community through blogs or tech talks\n\nTechnologies:\n- AI\n- Android\n- Cloud\n- Excel\n- GitHub\n- Hardware\n- Kotlin\n- Linux\n- RxJava\n- Scala\n- Security\n- Windows\n- iOS\n- NodeJS\n- Mobile\n\nMore:\n\nStart your very own journey – with HolidayCheck!\nAt HolidayCheck, everything revolves around making vacations better – togethe"
   },
   {
+   "id": "j-014f955c76",
+   "title": "Mid Java Fullstack Engineer (JavaScript/TypeScript Frontend)",
+   "employer": "Zühlke",
+   "employerId": "zuehlke",
+   "newEmployer": false,
+   "place": "Schlieren",
+   "percent": null,
+   "lang": "de",
+   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-10-04T09:00:01.231Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
+   "online": true,
+   "tier": 2,
+   "score": 18,
+   "junior": false,
+   "stack": [
+    "java",
+    "typescript"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": ""
+  },
+  {
    "id": "j-3ae476a01f",
    "title": "Frontend Engineer",
    "employer": "Vinyamo AG",
@@ -989,12 +1106,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Vinyamo-AG-Frontend-Engineer",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-09-25T22:00:00.000Z",
+   "postedAt": "2026-10-02T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 15,
@@ -1028,12 +1145,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/SCAIT-Software-Engineer---Backend-AI--Frontend-mwd---100",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-24T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 15,
@@ -1063,12 +1180,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/BLP-Digital-AG-Software-Engineer---ERP-Integrations",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-06-30T08:46:41.000Z",
+   "postedAt": "2026-10-01T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 15,
@@ -1098,12 +1215,12 @@
     {
      "kind": "company",
      "url": "https://jobs.lever.co/wingtra-2/58c2d218-8c52-4e90-af4e-f72402555f41",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-08-28T11:44:54.067Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 3,
    "score": 15,
@@ -1120,7 +1237,45 @@
    "excerpt": "Join the Wingtra team and become part of this venture-backed robotics scaleup with a global and international team of 125+ dedicated Wingtranauts who want to see their actions have a positive and lasting impact on the world. Founded more than 8 years ago at ETH Zurich, Europe’s leading robotics university, our goal is to build the best aerial robots to digitize the world at the push of a button and set the basis for faster and better decisions. Wingtra provides efficient and reliable data solutions to a variety of industries ranging from mining, construction and agriculture to humanitarian organizations, environmentalists and wildlife monitoring groups. \n\nWe are reaching for the stars and together we might just get there. Open communication, asking hard questions and valuing diverse viewpoints are but a few things that will help us achieve our goals. Above all we will never stop learning and striving to help each other reach our maximum potential.\n\n\nPlease note that for this Software Engineer GTM Products role, we are only considering candidates based in Eastern Europe, the Baltics, or the Balkans.\n\nResponsibilities\n-\nProductionize prototypes. Take AI-built prototypes from the GTM team and make them real: authentication and access scoping, error handling, data integrity, tests, monitoring, documentation, handover.\n\n-\nOwn the infrastructure. Hosting, environments, CI/CD, secrets, backups, dependencies and releases for every GTM-owned service.\n\n-\nOwn security for partner-facing"
   },
   {
-   "id": "j-500f66bf9a",
+   "id": "j-acb0aff19e",
+   "title": "Software Engineer Avaloq 80 – 100% (w/m/d)",
+   "employer": "St.Galler Kantonalbank",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://swissdevjobs.ch/jobs/StGaller-Kantonalbank-Software-Engineer-Avaloq-80--100-wmd",
+   "original": false,
+   "sources": [
+    {
+     "kind": "swissdevjobs",
+     "url": "https://swissdevjobs.ch/jobs/StGaller-Kantonalbank-Software-Engineer-Avaloq-80--100-wmd",
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    }
+   ],
+   "postedAt": "2026-09-30T22:00:00.000Z",
+   "firstSeen": "2026-10-04T09:00:01.231Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
+   "online": true,
+   "tier": null,
+   "score": 15,
+   "junior": false,
+   "stack": [
+    "sql"
+   ],
+   "green": [
+    "im team"
+   ],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Salary: CHF 110'000 - 125'000 per year\n\nRequirements:\n- Du verfügst über eine IT- oder bankfachliche Ausbildung, idealerweise ergänzt durch einen Fachhochschul- oder Studienabschluss.\n- Du hast Kenntnisse in Datenbankkonzepten und beherrschst SQL sicher.\n- In spezifischen bankfachlichen Themengebieten konntest du bereits mehrjährige Jahre Erfahrung im Requirements Engineering sowie in der Weiterentwicklung des Avaloq Core-Systems sammeln.\n- Du beherrschst die deutsche Sprache in Wort und Schrift.\n- Du bist eine selbstständige, belastbare und leistungsorientierte Persönlichkeit mit hohen analytischen und konzeptionellen Fähigkeiten und hast Freude am Umgang mit anderen Menschen sowie der Zusammenarbeit im Team.\n\nResponsibilities:\n- Gemeinsam mit unseren internen Stakeholdern analysierst du Benutzeranforderungen und erarbeitest massgeschneiderte Lösungsansätze.\n- In enger Zusammenarbeit mit dem Fachbereich entwickelst du nachhaltige Software-Anpassungen auf unserem Core-Banking-System Avaloq und begeisterst damit unsere Mitarbeitenden ausserhalb der Informatik.\n- Du wirkst aktiv in spannenden und innovativen Einführungs- und Weiterentwicklungsprojekten mit und trägst wesentlich zur kontinuierlichen Evolution unserer gesamten IT-Plattform bei.\n- Du übernimmst rasch Verantwortung für ganze, gemeinsam zu definierende Themengebiete und stellst deren Betrieb sicher.\n\nTechnologies:\n- Avaloq\n- SQL\n- Swift\n\nMore:\n\n«Wir begeistern unsere Kundinnen und Kunden - persönlich und digital». D"
+  },
+  {
+   "id": "j-c34fedc268",
    "title": "Java Fullstack Engineer",
    "employer": "Zühlke",
    "employerId": "zuehlke",
@@ -1128,18 +1283,18 @@
    "place": "Schlieren",
    "percent": null,
    "lang": "de",
-   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
-   "original": true,
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/c97143ac-33e7-4aea-9c03-615a6a5edb90/",
+   "original": false,
    "sources": [
     {
-     "kind": "company",
-     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
-     "seenAt": "2026-09-28T13:36:23.484Z"
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/c97143ac-33e7-4aea-9c03-615a6a5edb90/",
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-09-28T00:00:00.000Z",
-   "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
+   "postedAt": "2026-10-01T14:42:24.000Z",
+   "firstSeen": "2026-10-04T09:00:01.231Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 2,
    "score": 13,
@@ -1150,7 +1305,7 @@
    "green": [],
    "red": [],
    "assessment": null,
-   "excerpt": ""
+   "excerpt": "Wir suchen eine(n) Java Fullstack Engineer zur Verstärkung unseres Teams."
   },
   {
    "id": "j-d0119c084e",
@@ -1167,17 +1322,17 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Basel",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     },
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Bern",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     },
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Zrich",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     },
     {
      "kind": "jobsch",
@@ -1187,7 +1342,7 @@
    ],
    "postedAt": "2026-06-06T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": 2,
    "score": 13,
@@ -1219,11 +1374,16 @@
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/4b672844-6aba-4261-a913-a9a9e9602d1c/",
      "seenAt": "2026-09-28T12:27:53.283Z"
+    },
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/5310ac88-2a46-406e-ada1-189f97faab8c/",
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-09-28T04:11:46.000Z",
+   "postedAt": "2026-09-29T10:06:15.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1249,12 +1409,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---iOS-all-genders",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-07-10T13:57:35.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1284,12 +1444,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer--User-Generated-Content-all-genders",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-07-10T13:57:36.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1326,7 +1486,7 @@
    "postedAt": "2026-09-10T13:38:06.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
    "lastSeen": "2026-09-28T12:27:53.283Z",
-   "online": true,
+   "online": false,
    "tier": null,
    "score": 5,
    "junior": false,
@@ -1353,12 +1513,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Fullstack-Engineer-in-Banking---longterm-contract",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2025-06-04T15:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1386,12 +1546,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/a20d74c5-df85-4b13-9300-158fe2f456a0/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
-   "postedAt": "2026-08-31T11:32:29.000Z",
+   "postedAt": "2026-10-02T01:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1419,12 +1579,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Intonate-Software-Engineer",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2025-11-13T23:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1453,12 +1613,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Migros-Genossenschafts-Bund-Software-Engineer-Microsoft-Power-Platform",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-01-15T10:10:33.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1486,12 +1646,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/7e27178b-6d5b-4350-935d-689f845aba7e/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-28T11:03:38.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 0,
@@ -1501,6 +1661,68 @@
    "red": [],
    "assessment": null,
    "excerpt": "Wir suchen eine(n) APPLIKATIONSENTWICKLER / APPLIKATIONSENTWICKLERIN FEUERWEHR zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-a7032d6a22",
+   "title": "Avaloq Applikationsentwickler (w/m/d)",
+   "employer": "Raiffeisen Schweiz",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/a877a8e5-46ca-401f-be26-c0c672f59da3/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/a877a8e5-46ca-401f-be26-c0c672f59da3/",
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    }
+   ],
+   "postedAt": "2026-09-30T02:02:21.000Z",
+   "firstSeen": "2026-10-04T09:00:01.231Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
+   "online": true,
+   "tier": null,
+   "score": 0,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Avaloq Applikationsentwickler (w/m/d) zur Verstärkung unseres Teams."
+  },
+  {
+   "id": "j-36c89f549b",
+   "title": "EI&C Software Application Engineer",
+   "employer": "Swisslinx AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/343cd596-b7c4-407f-91cf-69b7b14a8168/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/343cd596-b7c4-407f-91cf-69b7b14a8168/",
+     "seenAt": "2026-10-04T09:00:01.231Z"
+    }
+   ],
+   "postedAt": "2026-10-02T12:15:40.000Z",
+   "firstSeen": "2026-10-04T09:00:01.231Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
+   "online": true,
+   "tier": null,
+   "score": 0,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) EI&C Software Application Engineer zur Verstärkung unseres Teams."
   },
   {
    "id": "j-7cdeebd637",
@@ -1517,12 +1739,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Optiml-Software-Engineer---Infrastructure-GCP--Platform",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-06-30T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 0,
@@ -1556,12 +1778,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/59f74e28-f7b0-4dcd-80ae-b5c9a3e7dd4e/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
+     "seenAt": "2026-10-04T09:00:01.231Z"
     }
    ],
    "postedAt": "2026-09-03T16:58:49.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
+   "lastSeen": "2026-10-04T09:00:01.231Z",
    "online": true,
    "tier": null,
    "score": 0,
