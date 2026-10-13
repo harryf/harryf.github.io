@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-12T09:00:00.599Z",
+ "generatedAt": "2026-10-13T09:00:00.590Z",
  "jobs": [
   {
    "id": "j-871037f8a3",
@@ -85,45 +85,6 @@
    "red": [],
    "assessment": null,
    "excerpt": "Aufgaben\n- Entwickeln von modernen .NET-Lösungen mit C#, Blazor und Azure für interne Anwendungen\n- Mitwirken bei der Spezifikation, dem Design und der Umsetzung neuer Funktionen in interdisziplinären Teams\n- Umsetzen sicherer, wartbarer und zukunftsfähiger Softwarelösungen\n- Zusammenarbeiten mit Plattformteams entlang des gesamten Entwicklungszyklus\n\nAnforderungen\n- Studium (Uni/FH) in Informatik oder kurz vor dem erfolgreichen Abschluss\n- Erste Erfahrung in der Softwareentwicklung mit C# und relationalen Datenbanken\n- Interesse an modernen Microsoft-Technologien wie Blazor, Azure und Containern\n- Verständnis für Softwarequalität, Clean Code, CI/CD und Github Copilot\n- Teamorientierte Arbeitsweise sowie Freude an agiler Zusammenarbeit\n\nArbeitgeber\nIn den Bereichen Gesundheitsförderung, Recruiting-Qualität sowie für Vereinbarkeit von Beruf und Privatleben wird Helsana immer wieder ausgezeichnet.\nBenefits\nit"
-  },
-  {
-   "id": "j-c80ab99784",
-   "title": "Junior Software Engineer Java / Spring 80-100%, Zürich",
-   "employer": "Allgemeine Plakatgesellschaft AG",
-   "employerId": null,
-   "newEmployer": true,
-   "place": "Zürich",
-   "percent": [
-    80,
-    100
-   ],
-   "lang": "de",
-   "url": "https://www.jobs.ch/de/stellenangebote/detail/453232cc-d1ef-450a-8a8f-9e46ce03f621/",
-   "original": false,
-   "sources": [
-    {
-     "kind": "jobsch",
-     "url": "https://www.jobs.ch/de/stellenangebote/detail/453232cc-d1ef-450a-8a8f-9e46ce03f621/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
-    }
-   ],
-   "postedAt": "2026-09-23T00:33:13.000Z",
-   "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
-   "online": false,
-   "tier": null,
-   "score": 55,
-   "junior": true,
-   "stack": [
-    "java",
-    "spring"
-   ],
-   "green": [
-    "junior"
-   ],
-   "red": [],
-   "assessment": null,
-   "excerpt": "Wir suchen eine(n) Junior Software Engineer Java / Spring 80-100%, Zürich zur Verstärkung unseres Teams."
   },
   {
    "id": "j-51470c3305",
@@ -789,43 +750,6 @@
    "excerpt": "Standort: Schlieren\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nJob Description\nImportant: To ensure a smooth review process, please submit all application documents (CV, cover letter) in English only .\n\nThe role\nAs part of a team, you will design & implement versatile customer projects in the web and enterprise environment that are tailored to customer needs using modern, agile project methods.\nHow you’ll make impact\n- Collaborate closely with customers to understand their business and translate requirements into high quality software. Expect to visit our customers around 2-3 times per week.\n- Engage with developers on your t"
   },
   {
-   "id": "j-8b7fb5bf0f",
-   "title": "Mid Java Fullstack Engineer (React or Angular)",
-   "employer": "Zühlke",
-   "employerId": "zuehlke",
-   "newEmployer": false,
-   "place": "Schlieren",
-   "percent": null,
-   "lang": "en",
-   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
-   "original": true,
-   "sources": [
-    {
-     "kind": "company",
-     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
-     "seenAt": "2026-09-28T13:36:23.484Z"
-    }
-   ],
-   "postedAt": "2026-09-14T00:00:00.000Z",
-   "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
-   "online": false,
-   "tier": 2,
-   "score": 28,
-   "junior": false,
-   "stack": [
-    "java",
-    "spring boot",
-    "spring",
-    "react",
-    "azure"
-   ],
-   "green": [],
-   "red": [],
-   "assessment": null,
-   "excerpt": "Standort: Porto\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nWhat drives us\nAs part of Zühlke , you are surrounded by innovation. We rely on teamwork, agile collaboration, and leading technologies to shape the future and challenge the status quo. We love breaking boundaries and entering new territory .\n\nOur creativity, skills and energy enable us to turn smart ideas into valuable solutions — solutions that help our customers bring modern, effective and sustainable products, services and processes to market.\n\nThis is what our heart beats for: “empowering ideas ”.\n\nHow you'll make an impact\n\nAs part of the team, you'll help desig"
-  },
-  {
    "id": "j-aea6a48ca2",
    "title": "React Frontend Engineer",
    "employer": "Zühlke",
@@ -979,41 +903,6 @@
    "red": [],
    "assessment": null,
    "excerpt": "Salary: CHF 90'000 - 120'000 per year\n\nRequirements:\n- To excel in this role, the ideal candidate should possess:\n- A minimum of four years of hands-on experience in DevOps and/or software engineering, especially in a complex and technical professional setting.\n- At least three years of experience with major public cloud services, particularly Google Cloud. (Other Clouds e.g. Azure, AWS are a plus.)\n- Expertise in Docker, Terraform, and Linux environments.\n- Familiarity with Python, particularly object-oriented programming, and preferably with Django web frameworks.\n- Proven track record in developing and maintaining automation tools for deployment, monitoring, and operational tasks.\n- Comprehensive knowledge of infrastructure as code principles, along with best practices in continuous integration and continuous deployment (CI/CD).\n- Demonstrated experience in formulating and executing disaster recovery strategies and performing system backups.\n- Capability in designing cloud-based systems that are highly available and fault-tolerant, utilizing tools such as load balancers, auto-scaling, and data replication services.\n- Expertise in setting up monitoring, logging, and alerting systems to ensure high operational standards.\n- A solid grasp of networking principles, database technologies, web technologies, and cybersecurity aspects.\n- Expertise in CI/CD and GitOps platforms, such as Github.\n- Direct involvement with agile development processes and a strong foundation in DevOps c"
-  },
-  {
-   "id": "j-646e78eb67",
-   "title": "Java Software Engineer",
-   "employer": "Zühlke",
-   "employerId": "zuehlke",
-   "newEmployer": false,
-   "place": "Schlieren",
-   "percent": null,
-   "lang": "en",
-   "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Java-Software-Engineer_JR100931",
-   "original": true,
-   "sources": [
-    {
-     "kind": "company",
-     "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Java-Software-Engineer_JR100931",
-     "seenAt": "2026-09-28T13:36:23.484Z"
-    }
-   ],
-   "postedAt": "2026-09-02T00:00:00.000Z",
-   "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-09-28T13:36:23.484Z",
-   "online": false,
-   "tier": 2,
-   "score": 23,
-   "junior": false,
-   "stack": [
-    "java",
-    "spring boot",
-    "spring"
-   ],
-   "green": [],
-   "red": [],
-   "assessment": null,
-   "excerpt": "Standort: Belgrade\nPensum: Full time\nFounded in Switzerland in 1968, Zühlke is owned by its partners and located across Europe and Asia. We are a global transformation partner, with engineering and innovation in our DNA. We're trusted to help clients envision and build their businesses for the future – to run smarter today while adapting for tomorrow’s markets, customers, and communities. Our multidisciplinary teams specialise in tech strategy and business innovation, digital solutions and applications, and device and systems engineering. We excel in complex, regulated spaces including health and finance, connecting strategy, tech implementation, and operational services to help clients become more effective, resilient businesses.\n\nIf you share our values and want to do the best work, for the right reasons, we can offer you the chance to do it on a global scale and play a real role in shaping our exciting journey.\n\nThe Role\n\nWe are looking for a Java Software Engineer to join a small, senior team building a business-critical product for a Swiss client. You will work on backend services alongside four colleagues split between our Belgrade office and Zurich.\nThis is a backend-focused engineering role on a deliberately modern stack. The team is small enough that your decisions matter and you will see them in production and the engagement is a long-running product build rather than a series of short projects, so you get to live with the consequences of your architecture and impro"
   },
   {
    "id": "j-5e0790dfea",
@@ -1693,39 +1582,6 @@
    "red": [],
    "assessment": null,
    "excerpt": "Wir suchen eine(n) Software Entwickler IBMi 80-100% (m/w) zur Verstärkung unseres Teams."
-  },
-  {
-   "id": "j-ad4bd4dc20",
-   "title": ".NET Software Engineer",
-   "employer": "Furado AG",
-   "employerId": null,
-   "newEmployer": true,
-   "place": "Horgen",
-   "percent": null,
-   "lang": "de",
-   "url": "https://www.jobs.ch/de/stellenangebote/detail/24bed6ed-7416-480a-b55f-6400d13e8285/",
-   "original": false,
-   "sources": [
-    {
-     "kind": "jobsch",
-     "url": "https://www.jobs.ch/de/stellenangebote/detail/24bed6ed-7416-480a-b55f-6400d13e8285/",
-     "seenAt": "2026-09-28T12:27:53.283Z"
-    }
-   ],
-   "postedAt": "2026-09-10T13:38:06.000Z",
-   "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-09-28T12:27:53.283Z",
-   "online": false,
-   "tier": null,
-   "score": 5,
-   "junior": false,
-   "stack": [
-    ".net"
-   ],
-   "green": [],
-   "red": [],
-   "assessment": null,
-   "excerpt": "Wir suchen eine(n) .NET Software Engineer zur Verstärkung unseres Teams."
   },
   {
    "id": "j-0d18bd8f80",
