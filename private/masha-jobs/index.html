@@ -447,13 +447,16 @@ details.fold summary{cursor:pointer;color:var(--muted);font-size:.9rem}
 
   // ---- board
   var tab=null;
+  // a New card whose posting is no longer listed goes to Closed, below the real closed ones; Grist is not touched
+  function unlisted(c){ return c.status==='New'&&(c.gone||c.online===false); }
+  function boardCol(c){ return unlisted(c)?'Closed':colOf(c.status); }
   function renderBoard(){
     var cols=document.getElementById('cols'), tabs=document.getElementById('tabs'); cols.textContent=''; tabs.textContent='';
     var cards=allCards().filter(function(c){ return c.status!=='Not for me'; });
-    cards.sort(function(a,b){ return (b.score||0)-(a.score||0); });
+    cards.sort(function(a,b){ return (unlisted(a)-unlisted(b))||((b.score||0)-(a.score||0)); });
     if(!tab) tab=COLS[0].k;
     COLS.forEach(function(cd){
-      var mine=cards.filter(function(c){ return colOf(c.status)===cd.k; });
+      var mine=cards.filter(function(c){ return boardCol(c)===cd.k; });
       var tb=el('button','btn small'+(tab===cd.k?' on':''),cd.l+' '+mine.length); tb.type='button'; tb.addEventListener('click',function(){ tab=cd.k; renderBoard(); }); tabs.appendChild(tb);
       var col=el('div','col '+cd.c+(tab===cd.k?' show':'')); var h=el('h3'); h.appendChild(el('span',null,cd.l)); h.appendChild(el('span','cnt',String(mine.length))); col.appendChild(h);
       if(!mine.length) col.appendChild(el('div','empty',cd.k==='New'?(jobs.length?'Nothing new':'No results loaded yet'):'Nothing here'));
