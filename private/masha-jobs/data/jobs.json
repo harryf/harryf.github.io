@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-26T10:00:01.164Z",
+ "generatedAt": "2026-10-27T10:00:00.976Z",
  "jobs": [
   {
    "id": "j-871037f8a3",
@@ -256,12 +256,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/23e93221-41e3-4d3a-b7eb-dc8f65a6f91e/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-09-23T00:33:13.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 55,
@@ -292,17 +292,17 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/e6efacb7-6163-4672-8500-2cc4d698f26b/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     },
     {
      "kind": "company",
      "url": "https://jobs.lever.co/wingtra-2/7985b1c8-ea4b-4af8-9260-7def37780218",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-08-28T13:39:59.261Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 3,
    "score": 50,
@@ -412,12 +412,12 @@
     {
      "kind": "company",
      "url": "https://careers.adnovum.com/job/Winterthur-Software-Engineer-Full-Stack-%28a%29/1165416155/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 1,
    "score": 50,
@@ -521,12 +521,12 @@
     {
      "kind": "company",
      "url": "https://bbv.ch/career/young-professional-programm/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 1,
    "score": 50,
@@ -627,12 +627,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Innovation-Process-Technology-AG-Graduate-Engineer-im-IT-Consulting-100",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-09-14T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 40,
@@ -842,12 +842,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Zrcher-Kantonalbank-Fullstack-Software-Engineer-mit-DevOps-Mindset-a-80--100",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-09-23T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 35,
@@ -880,12 +880,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/118211c8-8f5e-419a-9414-7b66a0e8cd0d/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-13T00:13:46.000Z",
    "firstSeen": "2026-10-14T09:00:00.473Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 30,
@@ -911,12 +911,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-09-28T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -949,12 +949,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/React-Frontend-Engineer_JR100976-2",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-09T00:00:00.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -989,12 +989,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Konova-AG-Backend-Software-Engineer--GovTech-SaaS-80-100",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
-   "postedAt": "2026-09-21T06:06:34.000Z",
+   "postedAt": "2026-10-26T07:10:14.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -1026,12 +1026,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/TekkMinds-Schweiz-AG-Cloud-Software-Engineer-mwd",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-09-09T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -1069,12 +1069,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Scalera-AG-DevOps--Cloud-Software-Engineer-50-100",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-08-28T11:46:17.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -1109,13 +1109,13 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Advanced-Software-Java-Engineer_JR100974-2",
-     "seenAt": "2026-10-19T09:00:01.119Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-12T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-10-19T09:00:01.119Z",
-   "online": false,
+   "lastSeen": "2026-10-27T10:00:00.976Z",
+   "online": true,
    "tier": 2,
    "score": 23,
    "junior": false,
@@ -1150,7 +1150,7 @@
    "postedAt": "2026-09-23T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
    "lastSeen": "2026-10-26T10:00:01.164Z",
-   "online": true,
+   "online": false,
    "tier": 2,
    "score": 23,
    "junior": false,
@@ -1189,12 +1189,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Java-Full-Stack-Engineer",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-01T12:06:58.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -1228,7 +1228,7 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Intelliact-AG-Site-Reliability-Engineer--Software-Engineer-60-100",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     },
     {
      "kind": "jobsch",
@@ -1238,7 +1238,7 @@
    ],
    "postedAt": "2026-09-29T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -1268,12 +1268,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---Android-all-genders",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-07-10T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -1304,12 +1304,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-10-04T09:00:01.231Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 2,
    "score": 18,
@@ -1410,12 +1410,12 @@
     {
      "kind": "company",
      "url": "https://www.scandit.com/careers/job-description/?gh_jid=8276084",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-13T10:53:29.000Z",
    "firstSeen": "2026-10-14T09:00:00.473Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 3,
    "score": 15,
@@ -1484,12 +1484,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/BLP-Digital-AG-Software-Engineer---ERP-Integrations",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-01T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 15,
@@ -1519,12 +1519,12 @@
     {
      "kind": "company",
      "url": "https://jobs.lever.co/wingtra-2/58c2d218-8c52-4e90-af4e-f72402555f41",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-08-28T11:44:54.067Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 3,
    "score": 15,
@@ -1555,12 +1555,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/c97143ac-33e7-4aea-9c03-615a6a5edb90/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-01T14:42:24.000Z",
    "firstSeen": "2026-10-04T09:00:01.231Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 2,
    "score": 13,
@@ -1588,17 +1588,17 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Basel",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     },
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Bern",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     },
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/ERNI-Schweiz-AG-Rust-Software-Engineer-a---Zrich",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     },
     {
      "kind": "jobsch",
@@ -1608,7 +1608,7 @@
    ],
    "postedAt": "2026-06-06T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": 2,
    "score": 13,
@@ -1736,12 +1736,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/4cfac7d2-91cf-48b7-927a-4c1943c5852a/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-26T04:10:26.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1838,12 +1838,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer---iOS-all-genders",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-07-10T13:57:35.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1873,12 +1873,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/HolidayCheck-Software-Engineer--User-Generated-Content-all-genders",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-07-10T13:57:36.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1912,12 +1912,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/6716245e-1458-4b75-995b-468ec5eb7377/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-22T08:32:41.000Z",
    "firstSeen": "2026-10-06T09:00:00.617Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1943,12 +1943,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Frontend-Engineer-in-Banking---longterm-contract",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-08T22:00:00.000Z",
    "firstSeen": "2026-10-10T09:00:00.463Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1976,12 +1976,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Intonate-Software-Engineer",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2025-11-13T23:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -2010,12 +2010,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Migros-Genossenschafts-Bund-Software-Engineer-Microsoft-Power-Platform",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-01-15T10:10:33.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -2043,12 +2043,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/a877a8e5-46ca-401f-be26-c0c672f59da3/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-09-30T02:02:21.000Z",
    "firstSeen": "2026-10-04T09:00:01.231Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 0,
@@ -2105,12 +2105,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/f9f3d728-df11-47fa-9700-26ae4e1b314a/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-07T07:07:19.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 0,
@@ -2198,12 +2198,12 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/b327b639-dc3c-43ac-bbed-e0741afd42f2/",
-     "seenAt": "2026-10-26T10:00:01.164Z"
+     "seenAt": "2026-10-27T10:00:00.976Z"
     }
    ],
    "postedAt": "2026-10-08T13:52:06.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
-   "lastSeen": "2026-10-26T10:00:01.164Z",
+   "lastSeen": "2026-10-27T10:00:00.976Z",
    "online": true,
    "tier": null,
    "score": 0,
