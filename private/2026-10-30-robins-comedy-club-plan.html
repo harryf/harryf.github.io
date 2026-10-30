@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROBIN's comedy plan</title>
+<meta name="description" content="IN YOUR FACE Comedy at ROBIN's: where it stands on 30 October 2026, four paths for the next 24 months, the numbers that decide between them, and a monthly check-in tracker.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #faf9f6; --surface: #ffffff; --surface-2: #f1efe9; --line: #dedbd2;
+    --ink: #1b1a17; --ink-2: #55534c; --ink-3: #85827a;
+    --brew: #2a78d6; --community: #eb6834; --target: #1baf7a; --other: #9a978e; --accent: #6250d6;
+    --good: #0c7a2e; --warn: #9a6400; --bad: #b3261e;
+    --good-bg: #e3f3e7; --warn-bg: #fbefd6; --bad-bg: #fae2df;
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #161614; --surface: #1f1f1c; --surface-2: #292926; --line: #3a3934;
+      --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8d84;
+      --brew: #3987e5; --community: #d95926; --target: #199e70; --other: #76746c; --accent: #9085e9;
+      --good: #6cc98a; --warn: #e2b659; --bad: #f08a83;
+      --good-bg: #1d3324; --warn-bg: #3a2f14; --bad-bg: #3d1f1c;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #161614; --surface: #1f1f1c; --surface-2: #292926; --line: #3a3934;
+    --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #8f8d84;
+    --brew: #3987e5; --community: #d95926; --target: #199e70; --other: #76746c; --accent: #9085e9;
+    --good: #6cc98a; --warn: #e2b659; --bad: #f08a83;
+    --good-bg: #1d3324; --warn-bg: #3a2f14; --bad-bg: #3d1f1c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 -apple-system, "Helvetica Neue", Inter, Arial, sans-serif; }
+  main { max-width: 66rem; margin: 0 auto; padding: 1.5rem 16px 4rem; }
+  h1 { font-size: 1.9rem; line-height: 1.15; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  h2 { font-size: 1.35rem; margin: 2.8rem 0 .6rem; letter-spacing: -.01em; }
+  h3 { font-size: 1.05rem; margin: 1.4rem 0 .4rem; }
+  p { margin: .5rem 0; max-width: 46rem; }
+  .lede { color: var(--ink-2); font-size: 1.05rem; max-width: 50rem; }
+  small, .muted { color: var(--ink-3); }
+  a { color: var(--brew); }
+  nav.toc { display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin: 1rem 0 0; font-size: .92rem; }
+  nav.toc a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+  .tiles { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin-top: 1rem; }
+  .tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem; }
+  .tile .n { font-size: 1.9rem; font-weight: 650; letter-spacing: -.02em; line-height: 1.1; }
+  .tile .l { color: var(--ink-2); font-size: .9rem; margin-top: .15rem; }
+  .tile .s { color: var(--ink-3); font-size: .8rem; margin-top: .35rem; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; }
+  .card h3 { margin-top: 0; }
+  .card.rec { border-color: var(--target); box-shadow: 0 0 0 2px color-mix(in srgb, var(--target) 25%, transparent); }
+  .pill { display: inline-block; font-size: .78rem; padding: .1rem .55rem; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); margin-left: .3rem; vertical-align: middle; }
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .pill.warn { background: var(--warn-bg); color: var(--warn); }
+  .pill.bad { background: var(--bad-bg); color: var(--bad); }
+  .pill.brew { background: color-mix(in srgb, var(--brew) 15%, transparent); color: var(--brew); }
+  ul, ol { padding-left: 1.3rem; max-width: 48rem; }
+  li { margin: .25rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; color: var(--ink-2); background: var(--surface-2); font-size: .82rem; text-transform: none; }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius); }
+  .callout { border-left: 4px solid var(--accent); background: var(--surface); padding: .7rem 1rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1rem 0; max-width: 50rem; }
+  .callout.warn { border-left-color: var(--warn); }
+  .callout.good { border-left-color: var(--target); }
+  figure { margin: 1rem 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .8rem 1rem .4rem; }
+  figure figcaption { font-size: .85rem; color: var(--ink-2); margin-bottom: .4rem; }
+  figure svg { width: 100%; height: auto; display: block; }
+  .legend { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .82rem; color: var(--ink-2); margin: .3rem 0 .2rem; }
+  .legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: .35rem; border-radius: 2px; }
+  .legend i.dot { width: 9px; height: 9px; border-radius: 50%; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: .8rem; padding: .3rem .5rem; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -130%); opacity: 0; transition: opacity .1s; }
+  .figwrap { position: relative; }
+  .timeline { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .phase { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem; border-top: 4px solid var(--brew); }
+  .phase.p0 { border-top-color: var(--other); } .phase.p1 { border-top-color: var(--brew); } .phase.p2 { border-top-color: var(--community); } .phase.p3 { border-top-color: var(--accent); }
+  .phase h3 { margin: 0 0 .1rem; } .phase .when { color: var(--ink-3); font-size: .85rem; margin-bottom: .5rem; }
+  .phase ul { padding-left: 1.1rem; font-size: .92rem; }
+  .gate { display: grid; grid-template-columns: 1fr auto auto; gap: .3rem .8rem; align-items: center; font-size: .92rem; }
+  .gate > div { padding: .35rem 0; border-bottom: 1px solid var(--line); }
+  .gate > div:nth-last-child(-n+3) { border-bottom: 0; }
+  .gate .v { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+  input[type=number], input[type=text], textarea { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: .3rem .45rem; }
+  input[type=number] { width: 6.2rem; text-align: right; }
+  input[type=range] { width: 100%; }
+  .inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .6rem 1rem; margin: .6rem 0; }
+  .inputs label { display: flex; flex-direction: column; font-size: .85rem; color: var(--ink-2); gap: .2rem; }
+  .inputs label b { color: var(--ink); font-weight: 600; }
+  button { font: inherit; padding: .4rem .8rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+  button.primary { background: var(--brew); color: #fff; border-color: var(--brew); }
+  .tracker td input { width: 5.2rem; }
+  .tracker td input.wide { width: 100%; min-width: 9rem; }
+  .tracker td.month { white-space: nowrap; font-weight: 600; }
+  .tracker tr.target td { color: var(--ink-3); font-size: .82rem; background: var(--surface-2); }
+  .status { font-size: .85rem; color: var(--ink-3); margin: .4rem 0; }
+  .sources li { font-size: .88rem; }
+  details { margin: .5rem 0; } summary { cursor: pointer; color: var(--ink-2); }
+  @media (max-width: 640px) { h1 { font-size: 1.55rem; } .tile .n { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<main>
+<h1>ROBIN's as a comedy club: the next 24 months</h1>
+<p class="lede">IN YOUR FACE Comedy at ROBIN's, 30 October 2026. Where the numbers stand, four honest paths including "not a club", the gates that decide between them, and a monthly check-in you can keep on this page. Every figure here comes from the Eventfrog order exports, the site's click reports and the business model spreadsheet; the places where a number is a guess say so.</p>
+<nav class="toc">
+  <a href="#now">Where you are</a><a href="#read">The honest read</a><a href="#paths">Four paths</a><a href="#plan">The plan</a><a href="#gates">Gates</a><a href="#series">Series scorecard</a><a href="#promessi">The Promessi factor</a><a href="#weekends">Fridays and Saturdays</a><a href="#tracker">Monthly check-in</a><a href="#money">Money</a><a href="#sources">Sources</a>
+</nav>
+
+<h2 id="now">Where you are</h2>
+<div class="tiles">
+  <div class="tile"><div class="n" id="t-people">~450</div><div class="l">people a month through comedy at ROBIN's</div><div class="s">estimate; only Brew, Jokes, Pulp and Double Shot are measured</div></div>
+  <div class="tile"><div class="n" id="t-brew8">31</div><div class="l">Comedy Brew, average of the last 8 nights</div><div class="s">2024: 19, 2025: 20, Jan to Jul 2026: 21, Aug to Oct 2026: 30</div></div>
+  <div class="tile"><div class="n">502</div><div class="l">different Brew buyers in the last 12 months</div><div class="s">1,311 since 2023; 55% of tickets go to someone who has been before</div></div>
+  <div class="tile"><div class="n">25</div><div class="l">comedy nights at ROBIN's in November and December</div><div class="s">7 series or one-offs, 5 producers besides you</div></div>
+  <div class="tile"><div class="n">1</div><div class="l">Friday or Saturday show in the last year</div><div class="s">Double Shot, 2 October: 23 sold at CHF 19 average, the highest ticket price realised at ROBIN's</div></div>
+  <div class="tile"><div class="n">24</div><div class="l">shows removed from the site since June 2024</div><div class="s">a guest series typically lasts 3 to 8 months</div></div>
+</div>
+
+<figure>
+  <figcaption>Comedy Brew tickets per night, August 2023 to 29 October 2026 (133 nights from the Eventfrog exports; the line is the trailing average of 8 nights). Capacity is 60.</figcaption>
+  <div class="legend"><span><i class="dot" style="background:var(--brew)"></i>tickets on the night</span><span><i style="background:var(--brew)"></i>trailing 8-night average</span><span><i style="background:var(--target)"></i>targets: 35 by June 2027, 40 by December 2027</span></span></div>
+  <div class="figwrap"><svg id="brew-chart" viewBox="0 0 960 300" role="img" aria-label="Comedy Brew tickets per night with trailing average"></svg><div class="tip" id="brew-tip"></div></div>
+</figure>
+
+<h2 id="read">The honest read</h2>
+<ol>
+  <li><b>The Brew is the business, and it has started to grow.</b> Three years flat at about 20 a night, then 30 a night since August: the ads, the daily titles and the thank-you emails did that. Half the room comes back, which is what a club needs. It is also the only thing paying for everything else (about CHF 8,000 gross a year, CHF 5,000 after ads).</li>
+  <li><b>You already have the throughput you once thought paid a salary.</b> The voice note says 350 to 400 people a month. Comedy already brings roughly 450 a month into ROBIN's. The spreadsheet and the Elias model say the real bar is about 350 a <em>week</em> (1,500 a month) before a rented room pays one wage. You are at a third of that, and the gap is the whole strategy.</li>
+  <li><b>Guest series die without an owner who sells.</b> Offside Comedy (July, weekly, nobody's audience) went 12, 3, 14, 6 and stopped. Tall Order shared Tuesdays with Jokes and was folded in after two nights. Brexiles at Monroe fell from 53 to 14 over fourteen months. The ones that work have a named person whose own followers show up: Promessi (Miguel and Nik), Double Shot (you and Martina), Jokes (Woocash). Cadence is the other killer: a weekly show needs four times the audience of a monthly one.</li>
+  <li><b>Promessi Spassi is a different kind of show, not a bigger version of the same thing.</b> One night a month, a language community, two hosts with their own Instagram, and 3,280 ticket clicks on the site since August without a franc of IN YOUR FACE ad money. It is the second strongest demand signal on the site after the Brew. The repeatable part is the template (community, monthly, owner with reach), not the Italian.</li>
+  <li><b>Fridays and Saturdays are empty, and that is where a club's money is.</b> The spreadsheet's optimistic year gets 60% of its ticket income from Friday and Saturday house shows at 60 to 70 a night. Today there are none. One Double Shot proved the price point, not the night.</li>
+  <li><b>The full club does not add up yet, and will not in 2027.</b> CHF 21,850 a month of fixed cost plus CHF 180,000 up front. The spreadsheet's base case loses CHF 71,500 a year on 13,190 people; the optimistic case makes CHF 94,000 on 23,620 people, which is four times today. Nobody should sign a CHF 20,000 lease on a hope of 4x. The small room (CHF 9,000 rent) is a café business that only works with Elias, and it needs the same throughput to make comedy matter.</li>
+  <li><b>The limiting resource is your hours, not the room.</b> You host every Thursday and run the whole back office alone. Every path below is sized in hours a week, and the plan's first hire is not staff, it is two co-organisers.</li>
+</ol>
+
+<h2 id="paths">Four paths, plus the one you asked to keep open</h2>
+<div class="grid">
+  <div class="card"><h3>A. Venue partner, as now <span class="pill">5 to 8 h a week</span></h3><p>Keep the Brew, let producers run shows for free, ROBIN's keeps the drinks. No rent, no risk, no leverage. Setup pain every night stays.</p><p><b>Right when:</b> growth stalls below 700 a month for two check-ins, or your hours have to drop. This is the "not a club" answer and it is a fine one: a profitable hobby with a room that likes you.</p></div>
+  <div class="card rec"><h3>B. Resident programme <span class="pill good">recommended now</span> <span class="pill">8 to 12 h, with two helpers</span></h3><p>Same deal with ROBIN's (no rent, they keep the bar) but run it like a club: a permanent stage corner with the PA left in place, one producer agreement, a monthly Friday house show, one more community show, every show counted, one shared mailing list. Prove the club before paying for it.</p><p><b>Right when:</b> now. It costs a few thousand francs of kit and a conversation with ROBIN's, and it produces the numbers paths C and D need.</p></div>
+  <div class="card"><h3>C. Take the small room <span class="pill warn">gate: 1,000 a month and Elias</span> <span class="pill">20+ h</span></h3><p>CHF 9,000 rent for the front room, run the bar, the owners' preferred version. The voice note says it clears CHF 4,000 to 5,000 a month as a café; that needs six months of till data to believe. Comedy adds to it only above about 350 guests a week.</p><p><b>Right when:</b> 1,000 a month for three months, Elias signed, till data seen, and you want to run a bar.</p></div>
+  <div class="card"><h3>D. The comedy club <span class="pill bad">gate: 1,500 a month for 6 months</span> <span class="pill">a job</span></h3><p>Back room at CHF 20,000 a month, CHF 180,000 up front, drinks are yours, parties until late. Break-even sits near 1,500 people a month with the weekend mix the spreadsheet assumes.</p><p><b>Right when:</b> every gate in the list below is green for two quarters. Earliest honest date: 2028.</p></div>
+</div>
+<div class="callout good"><b>The recommendation.</b> Run path B for twelve months with the check-ins below. At the January 2028 check-in, the numbers pick between A, C and D for you. The plan is written so that nothing done under B is wasted if the answer is A.</div>
+
+<h2 id="plan">The plan: four phases</h2>
+<div class="timeline">
+  <div class="phase p0"><h3>0. Count everything</h3><div class="when">November to December 2026</div><ul>
+    <li>Headcount from every producer after every show (a WhatsApp number is enough). Put the month's total in the tracker below.</li>
+    <li>Ask Elias for bar takings per comedy night from the till: this is the one number every later decision needs and nobody has it.</li>
+    <li>Mailing list baseline: Mailchimp count plus what each producer holds.</li>
+    <li>Jokes went weekly on 24 October: give it 8 weeks, keep weekly only if it averages 20 or more.</li>
+    <li>Book Double Shot 2 for a Friday in January and a third for March.</li>
+    <li>Write the one-page producer agreement (below) and show it to Miguel first.</li>
+  </ul></div>
+  <div class="phase p1"><h3>1. Owners and Fridays</h3><div class="when">January to June 2027</div><ul>
+    <li>Producer agreement live for every new show: one named owner, a three-show trial, headcount after each show, the door QR to the shared list, listed under IN YOUR FACE.</li>
+    <li>Monthly Friday house show (Double Shot or a sibling), CHF 20 ticket, lineup from the Brew's best.</li>
+    <li>One new community show on the Promessi template: Spanish first (La Tarima already exists elsewhere in town), then German, using the Digital Daddy nights in March and April as the test.</li>
+    <li>Ask ROBIN's for a permanent stage corner and PA storage; spend up to CHF 8,000 on sound, lights and a curtain from the spreadsheet's list. Setup time per show is the pain you named.</li>
+    <li>Open offer to The Beast (Basel) and Red Mic: a Friday or Saturday the day before or after their Basel date, they do ticketing and paid promotion, we do organic and the room.</li>
+    <li>Recruit two co-organisers with named jobs: a Friday producer and a community-shows coordinator.</li>
+  </ul></div>
+  <div class="phase p2"><h3>2. Prove the weekend</h3><div class="when">July to December 2027</div><ul>
+    <li>Two weekend nights a month by October: the house Friday plus a touring or partner Saturday.</li>
+    <li>Start charging producers when the trigger fires (two producers want the same night, or a show averages 40+ for three months): CHF 2 a head to a kit fund, or a bar share agreed with ROBIN's. Until then the price is the headcount and the list.</li>
+    <li>Second community show live. Promessi watched for the second-year slide.</li>
+    <li>Twelve months of till data in hand: Elias's own forecast model gets real inputs.</li>
+    <li>Harry's hours capped at 12 a week; if it is more for three months without the two helpers, drop to Brew plus the monthly Friday.</li>
+  </ul></div>
+  <div class="phase p3"><h3>3. Decide</h3><div class="when">January to June 2028</div><ul>
+    <li>January 2028 check-in reads the gates. Green across the board: open the lease conversation (C first, D only with capital). Half green: another year of B. Red: path A, with no regret.</li>
+    <li>Only then: company form (an association keeps liability and tax simple until there is a lease; a GmbH when there is), capital (CHF 180,000 or landlord-funded fit-out), Elias contract.</li>
+  </ul></div>
+</div>
+
+<h2 id="gates">The gates, with where you stand</h2>
+<p>Fill the current values in the tracker below and this list recolours itself. The targets come from the spreadsheet's break-even and from what the last three months show is possible.</p>
+<div class="card"><div class="gate" id="gate-list"></div></div>
+<p class="muted" style="margin-top:.6rem">The two hard numbers: 1,000 a month unlocks a serious look at the small room; 1,500 a month for six months is the only honest basis for a CHF 20,000 lease. Everything else on the list is there because the spreadsheet's optimistic year silently assumes it.</p>
+
+<h2 id="series">Series scorecard</h2>
+<p>Every show at ROBIN's, who owns it, how it is doing, and what the rules say. "Measured" means tickets in the Eventfrog exports; the rest is the producer's word or a click count on the site.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Show</th><th>Owner</th><th>Cadence</th><th class="num">Last known</th><th>Trend</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td><b>Comedy Brew</b></td><td>Harry, Martina</td><td>weekly Thu</td><td class="num">30 avg (8 nights), 57 peak</td><td>up since August</td><td><span class="pill good">grow</span> target 35 then 40; it is the engine, protect the Thursday</td></tr>
+<tr><td><b>Promessi Spassi</b></td><td>Miguel, Nik</td><td>monthly Wed</td><td class="num">~100 (their count)</td><td>strong; 992 ticket clicks in 30 days</td><td><span class="pill good">protect</span> get a headcount each month; expect a slide in year two; never move it to weekly</td></tr>
+<tr><td><b>Jokes, Jokes, Jokes</b></td><td>Woocash</td><td>weekly Tue since 24 Oct</td><td class="num">27 on 13 Oct</td><td>new cadence</td><td><span class="pill warn">8-week trial</span> weekly stays only at 20+ average; fortnightly is the fallback</td></tr>
+<tr><td><b>Pulp Non-Fiction</b></td><td>Albert</td><td>every 2nd Sun</td><td class="num">20 to 22, mostly free</td><td>flat</td><td><span class="pill good">keep</span> cheap community night; counts for throughput, not money</td></tr>
+<tr><td><b>Gratis zum Mitnehmen</b></td><td>Teddy Hall</td><td>every 2nd Sun</td><td class="num">not measured; 53 clicks since Aug</td><td>weak signal</td><td><span class="pill warn">measure</span> headcount for 3 shows, then the 25-for-a-free-show rule</td></tr>
+<tr><td><b>The Nerdy Comedy Show</b></td><td>Pavel, Sussman</td><td>3 dates to year end</td><td class="num">not measured; 391 clicks</td><td>new at ROBIN's</td><td><span class="pill warn">trial</span> three-show trial under the agreement</td></tr>
+<tr><td><b>Double Shot</b></td><td>Harry, Martina</td><td>one Friday</td><td class="num">23 at CHF 19</td><td>proof of price</td><td><span class="pill good">repeat</span> monthly Friday from January; the house show</td></tr>
+<tr><td>Mike Casa, Digital Daddy</td><td>Mike; Benjamin</td><td>one-offs</td><td class="num">to come</td><td></td><td><span class="pill">spotlight</span> the independent-spotlight type; Digital Daddy in French and German doubles as the community test</td></tr>
+<tr><td class="muted">Tall Order</td><td class="muted">Prak, Miguel</td><td class="muted">was 2nd Tue</td><td class="num muted">2 nights</td><td class="muted">merged into Jokes</td><td><span class="pill bad">ended</span> lesson: two shows on one weeknight split one crowd</td></tr>
+<tr><td class="muted">Offside Comedy</td><td class="muted">no audience owner</td><td class="muted">weekly, July</td><td class="num muted">12, 3, 14, 6</td><td class="muted">died in 4 weeks</td><td><span class="pill bad">ended</span> lesson: weekly plus summer plus no following</td></tr>
+<tr><td class="muted">Brexiles (Monroe)</td><td class="muted">guest producer</td><td class="muted">monthly</td><td class="num muted">53 down to 14</td><td class="muted">14-month slide</td><td><span class="pill bad">ended</span> lesson: even a good monthly fades without refresh</td></tr>
+</tbody></table></div>
+
+<h3>The series rules (put them in the producer agreement)</h3>
+<ul>
+  <li><b>One owner.</b> A named person whose followers come. No owner, no slot.</li>
+  <li><b>Three-show trial, then the number talks.</b> Paid show: trailing average of four below 15, it pauses. Free show: below 25. A show that drops two months running gets a conversation, not a surprise.</li>
+  <li><b>Cadence follows the number.</b> Monthly until 40 a night, fortnightly until 40 again, weekly only above that. The Brew took three years to earn weekly numbers.</li>
+  <li><b>One show per weeknight.</b> Two producers on the same night fight for the same 30 people.</li>
+  <li><b>Count every show.</b> Headcount the same night, and the till total from Elias.</li>
+  <li><b>The list is shared.</b> A door QR to one "Comedy at ROBIN's" list, run by you; a producer cannot hand over their buyers' emails (data protection), but they can put the QR on the door and in their thank-you message.</li>
+</ul>
+
+<h2 id="promessi">The Promessi factor</h2>
+<p>What it tells you, and what to do with it:</p>
+<ul>
+  <li><b>It is community demand, not comedy demand.</b> Italians in Zürich have few nights that are theirs. The hosts bring their followers; the format is an open mic. The same mechanism explains the Spanish and Balkan nights that have come and gone, and the Beast in Basel is built on it with the English-speaking crowd.</li>
+  <li><b>The sustainability risk is real and dated.</b> Novelty carries a community show for 12 to 18 months, then it needs new faces or a new hook (Brexiles fell from 53 to 14 by month fourteen). Keep it monthly so each night stays an event, and read its count every month in the tracker. A fall below 60 for two months is the signal to help, not to replace.</li>
+  <li><b>Replicate the template, not the show.</b> One monthly night per language community, each owned by a host with reach: Spanish (Andrea already runs La Tarima elsewhere in town), German (the Digital Daddy night in April is the test), French (March). Four communities at 60 to 100 each is 300 a month, producer-owned, with few of your hours. That is the single biggest realistic lever in this plan.</li>
+  <li><b>It is worth more than its drinks to you.</b> 100 people in the room is the proof ROBIN's and any future landlord need. Ask Miguel and Nik for the headcount and for the door QR, and give them something back: the Friday house show slot once a quarter, or the first Saturday under the touring offer.</li>
+</ul>
+
+<h2 id="weekends">Fridays and Saturdays: selective, not open</h2>
+<ul>
+  <li><b>House Friday, monthly.</b> Double Shot showed 23 at CHF 19 with no track record. Make it a brand ("Friday Night Live" in the spreadsheet), rotate the second host, lineup from the Brew's strongest. Target 40 by June 2027, 50 by December.</li>
+  <li><b>Partner Saturday, when it comes.</b> The Beast is a members club in Basel running English nights most weeks; Red Mic tours "best of" line-ups through Basel, Geneva and a Zürich date at a club in Kreis 4 in October. The offer is simple: the room, organic promotion, a listing; they ticket and pay for ads. Two or three of these a quarter is plenty; it makes the room's name without your hours.</li>
+  <li><b>Not open to anyone.</b> The ComedyHaus (200 seats, hire on request) is the place for a comedian with a budget. Your filter is the owner rule plus one referee you trust. A bad Saturday costs more reputation than an empty one.</li>
+  <li><b>Late show later.</b> The spreadsheet's 22:30 "drinkers' show" belongs to path D, when the bar is yours. Under B it only makes ROBIN's money and costs your Friday.</li>
+</ul>
+
+<h2 id="tracker">Monthly check-in</h2>
+<p>Fill the row on the first weekend of the next month. Entries save in this browser; export the JSON now and then and keep it with this file. The grey rows are the targets. Quarterly check-ins (January, April, July, October) are the ones where you read the gates and change the plan.</p>
+<div class="inputs">
+  <label><b>Hours a week you can give</b><input type="number" id="in-hours" min="0" max="40" value="10"></label>
+  <label><b>People a month today (estimate)</b><input type="number" id="in-people" min="0" max="5000" value="450"></label>
+  <label><b>Mailing list today</b><input type="number" id="in-list" min="0" max="50000" value="0" placeholder="Mailchimp count"></label>
+  <label><b>Co-organisers committed</b><input type="number" id="in-helpers" min="0" max="10" value="0"></label>
+</div>
+<div class="tablewrap"><table class="tracker" id="tracker">
+<thead><tr><th>Month</th><th class="num">People</th><th class="num">Brew avg</th><th class="num">Fri/Sat nights</th><th class="num">Promessi</th><th class="num">List</th><th class="num">Hours/wk</th><th>Notes (confounders, decisions)</th></tr></thead>
+<tbody></tbody>
+</table></div>
+<p class="status" id="tracker-status"></p>
+<p><button class="primary" id="btn-export">Export JSON</button> <button id="btn-import">Import JSON</button> <button id="btn-clear">Clear entries</button></p>
+<textarea id="io" rows="4" style="width:100%;display:none" placeholder="Paste exported JSON here, then press Import"></textarea>
+
+<figure>
+  <figcaption>People a month through comedy at ROBIN's: what you enter, against the plan's target line.</figcaption>
+  <div class="legend"><span><i style="background:var(--brew)"></i>entered</span><span><i style="background:var(--target)"></i>target</span></div>
+  <div class="figwrap"><svg id="people-chart" viewBox="0 0 960 240" role="img" aria-label="People a month against target"></svg><div class="tip" id="people-tip"></div></div>
+</figure>
+
+<h2 id="money">Money, in one table</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Line</th><th class="num">Path A/B (today)</th><th class="num">Path C, small room</th><th class="num">Path D, club (sheet base)</th><th class="num">Path D, club (sheet optimistic)</th></tr></thead>
+<tbody>
+<tr><td>Fixed cost a month</td><td class="num">0</td><td class="num">about 9,000 rent + staff</td><td class="num">21,850</td><td class="num">21,850</td></tr>
+<tr><td>Up front</td><td class="num">up to 8,000 kit</td><td class="num">unknown</td><td class="num">180,400</td><td class="num">180,400</td></tr>
+<tr><td>People a year assumed</td><td class="num">about 5,400 now</td><td class="num">same, plus café trade</td><td class="num">13,190</td><td class="num">23,620</td></tr>
+<tr><td>People a month that implies</td><td class="num">450</td><td class="num">1,000 to matter</td><td class="num">1,100</td><td class="num">1,970</td></tr>
+<tr><td>Result a year</td><td class="num">about +5,000 (Brew after ads)</td><td class="num">+48,000 to 60,000 claimed, unverified</td><td class="num">−71,500</td><td class="num">+93,800</td></tr>
+<tr><td>What has to be true</td><td>nothing new</td><td>Elias stays; till data confirms the café margin</td><td>2.4x today's people, and it still loses</td><td>4.4x today's people, 47 Friday and 47 Saturday house shows at 60 to 70</td></tr>
+</tbody></table></div>
+<p class="muted">Sheet figures are from "Comedy Club Business Model.xlsx" (Inputs, Upfront Costs, Weekly Schedule and Weekly Schedule Optimistic). The Brew's year is the Eventfrog exports: CHF 7,945 gross in 2026 to date, ads about CHF 120 a week since mid September. The small-room claim is from your voice note.</p>
+
+<h2 id="sources">Sources and assumptions</h2>
+<ul class="sources">
+  <li>Eventfrog order exports in Drive ("IN YOUR FACE Marketing / EventFrog Data / Processed"): 232 events from April 2022, 133 distinct Comedy Brew nights. Tickets counted as rows with status "verkauft" or "sold"; buyers counted by distinct email, nothing copied out.</li>
+  <li>Site click reports (<code>_data/reports/*.json</code>, since 26 August 2026) for the shows with their own ticketing: Promessi 3,280 ticket clicks, Jackpot 892, Jokes 462, Nerdy 391, Tall Order 233, Gratis 53.</li>
+  <li><code>_data/calendar.yml</code> on 30 October 2026: 25 nights at ROBIN's in November and December across 7 shows.</li>
+  <li>The 450 a month estimate: Brew 30 x 4.3, Jokes 20 x 4.3, Promessi 100, Pulp 20 x 2, Gratis 15 x 2 (guess), Nerdy 30, one-offs 40. Replace it with real headcounts in phase 0.</li>
+  <li>"Comedy Club Business Model.xlsx" (30 October 2026): rent 20,000, utilities 800, insurance 400, licence 250, cleaning 400; upfront 180,400 including 85,000 reserve; base case 361 shows and 13,190 people for −71,509; optimistic 415 shows and 23,620 people for +93,759.</li>
+  <li>Voice note "IN YOUR FACE ROBINS STRATEGY.txt": back room 20,000 a month, small room 9,000 with a 4,000 to 5,000 café profit, the Elias dependency, 350 to 400 a month "pays a salary" (the spreadsheet says that figure is per week).</li>
+  <li>Elias earnings forecast (September 2026): comedy guests move the bar's result only above about 350 a week; 200 a week gives about CHF 1,500 operating profit a month.</li>
+  <li>Competitors, public pages read today: ComedyHaus 200 seats concert seating, hire on request (price not published; your note says CHF 900 minimum). The Beast, Pfluggässlein 10 Basel, members club with free membership, English nights most weeks. Red Mic "best of" touring shows listed in Basel, Geneva and Zürich in October 2026.</li>
+  <li>Not known and worth finding: bar takings per comedy night, Promessi's real headcount, the Mailchimp list size, Gratis and Nerdy headcounts.</li>
+</ul>
+<p class="muted">Written 30 October 2026. Edit the tracker, not the text; when the plan changes, change the gates first.</p>
+</main>
+
+<script>
+const BREW = [["2023-08-24",21,155],["2023-08-31",10,90],["2023-09-07",1,10],["2023-09-14",9,90],["2023-09-28",2,20],["2023-10-05",13,125],["2023-10-12",7,70],["2023-10-19",10,90],["2023-11-02",21,315],["2023-11-09",37,501],["2023-11-16",16,135],["2023-11-30",5,40],["2023-12-07",9,126],["2023-12-14",7,93],["2023-12-21",6,40],["2024-01-18",12,120],["2024-01-25",28,250],["2024-02-01",9,90],["2024-02-08",22,175],["2024-02-15",10,90],["2024-02-22",28,210],["2024-02-29",9,60],["2024-03-07",14,110],["2024-03-21",19,180],["2024-03-28",26,200],["2024-04-04",9,70],["2024-04-18",30,255],["2024-05-02",22,210],["2024-05-09",54,470],["2024-05-16",23,195],["2024-05-23",21,190],["2024-05-30",12,110],["2024-06-06",10,75],["2024-06-13",22,155],["2024-06-20",9,90],["2024-06-27",10,100],["2024-07-04",16,155],["2024-07-11",31,285],["2024-07-18",18,155],["2024-08-15",10,70],["2024-08-22",7,70],["2024-08-29",8,80],["2024-09-12",24,220],["2024-09-19",23,200],["2024-09-26",9,75],["2024-10-03",10,85],["2024-10-10",16,115],["2024-10-17",33,295],["2024-10-24",27,250],["2024-10-31",22,210],["2024-11-07",16,155],["2024-11-14",11,110],["2024-11-21",16,110],["2024-11-28",12,105],["2024-12-05",28,255],["2024-12-26",15,125],["2025-01-02",32,280],["2025-01-23",18,155],["2025-01-30",17,165],["2025-02-06",28,215],["2025-02-13",40,370],["2025-02-20",18,165],["2025-02-27",16,150],["2025-03-06",35,275],["2025-03-13",21,200],["2025-03-27",19,160],["2025-04-03",15,135],["2025-04-10",16,150],["2025-04-17",18,155],["2025-04-24",13,125],["2025-05-01",18,160],["2025-05-08",21,185],["2025-05-15",11,105],["2025-05-22",13,130],["2025-05-29",13,125],["2025-06-12",19,185],["2025-06-19",5,45],["2025-06-26",20,165],["2025-07-03",15,120],["2025-07-10",25,225],["2025-08-07",21,200],["2025-08-14",35,325],["2025-08-21",25,220],["2025-08-28",30,230],["2025-09-04",23,215],["2025-09-11",19,165],["2025-09-25",36,330],["2025-10-02",19,165],["2025-10-09",27,230],["2025-10-16",19,165],["2025-10-23",15,140],["2025-10-30",14,120],["2025-11-06",21,165],["2025-11-13",17,145],["2025-11-20",22,165],["2025-11-27",8,70],["2025-12-04",15,135],["2025-12-18",20,160],["2026-01-22",20,165],["2026-02-05",30,260],["2026-02-12",41,285],["2026-02-19",33,275],["2026-02-26",17,155],["2026-03-12",29,245],["2026-03-19",6,55],["2026-03-26",26,235],["2026-04-09",12,105],["2026-04-16",12,120],["2026-04-23",10,85],["2026-04-30",33,270],["2026-05-07",10,80],["2026-05-14",79,725],["2026-06-04",18,160],["2026-06-11",29,250],["2026-06-18",4,35],["2026-06-25",17,150],["2026-07-02",11,110],["2026-07-09",5,45],["2026-07-16",6,55],["2026-07-23",15,105],["2026-07-30",29,260],["2026-08-06",30,280],["2026-08-13",26,220],["2026-08-20",30,250],["2026-08-27",30,275],["2026-09-03",20,170],["2026-09-10",24,220],["2026-09-17",23,200],["2026-09-24",36,320],["2026-10-01",18,175],["2026-10-08",23,205],["2026-10-22",57,470],["2026-10-29",43,395]];
+const OTHER = [["2024-06-25","An Evening with Matt Jenkins: Clean, Qui",9,213],["2024-06-29","An Evening with Matt Jenkins: Clean, Qui",10,164],["2024-09-20","Daddy's Gone Wild",28,602],["2025-01-21","ADULT CONTENT with Yoshi Obayashi",7,540],["2026-06-06","Pulp Non-Fiction Storytelling Open Mic Z",22,60],["2026-07-07","Offside Comedy",12,110],["2026-07-14","Offside Comedy",3,30],["2026-07-21","Offside Comedy",14,130],["2026-07-28","Offside Comedy",6,50],["2026-10-02","DOUBLE SHOT",23,435],["2026-10-04","Pulp Non-Fiction Storytelling Open Mic Z",20,40],["2026-10-13","Jokes, Jokes, Jokes",27,195]];
+const KEY = "robins-plan-tracker.v1";
+const MONTHS = (() => { const out = []; let y = 2026, m = 11; for (let i = 0; i < 24; i++) { out.push(`${y}-${String(m).padStart(2, "0")}`); m++; if (m > 12) { m = 1; y++; } } return out; })();
+// targets: people a month, Brew avg, Fri/Sat nights, list
+const TARGETS = { "2026-12": [450, 30, 0, null], "2027-03": [550, 32, 1, 1000], "2027-06": [700, 35, 1, 1500], "2027-09": [850, 37, 2, 2000], "2027-12": [1000, 40, 2, 2500], "2028-03": [1200, 40, 3, 3000], "2028-06": [1500, 42, 4, 4000], "2028-10": [1500, 45, 4, 4500] };
+const fmtMonth = k => new Date(k + "-01T12:00:00").toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+
+// ---------- Brew chart ----------
+(function () {
+  const svg = document.getElementById("brew-chart"), tip = document.getElementById("brew-tip");
+  const W = 960, H = 300, L = 40, R = 16, T = 14, B = 34;
+  const n = BREW.length, x = i => L + (i / (n - 1)) * (W - L - R) * 0.84, y = v => T + (1 - v / 60) * (H - T - B);
+  let s = "";
+  for (const g of [0, 20, 40, 60]) s += `<line x1="${L}" x2="${W - R}" y1="${y(g)}" y2="${y(g)}" stroke="var(--line)" stroke-width="1"/><text x="${L - 6}" y="${y(g) + 4}" font-size="11" text-anchor="end" fill="var(--ink-3)">${g}</text>`;
+  const years = {}; BREW.forEach((b, i) => { const yr = b[0].slice(0, 4); if (!(yr in years)) years[yr] = i; });
+  for (const [yr, i] of Object.entries(years)) s += `<text x="${x(i)}" y="${H - 12}" font-size="11" fill="var(--ink-3)">${yr}</text>`;
+  const iJun27 = n - 1 + 34, iDec27 = n - 1 + 60; // ~weeks ahead, drawn as a dashed hint to the right edge
+  s += `<line x1="${x(n - 1)}" x2="${W - R}" y1="${y(35)}" y2="${y(35)}" stroke="var(--target)" stroke-width="2" stroke-dasharray="4 4"/><text x="${W - R}" y="${y(35) - 5}" font-size="11" text-anchor="end" fill="var(--target)">35 Jun 2027</text>`;
+  s += `<line x1="${x(n - 1)}" x2="${W - R}" y1="${y(40)}" y2="${y(40)}" stroke="var(--target)" stroke-width="2" stroke-dasharray="4 4"/><text x="${W - R}" y="${y(40) - 5}" font-size="11" text-anchor="end" fill="var(--target)">40 Dec 2027</text>`;
+  BREW.forEach((b, i) => { s += `<circle cx="${x(i)}" cy="${y(b[1])}" r="3.2" fill="var(--brew)" fill-opacity=".45" data-i="${i}"/>`; });
+  let path = ""; BREW.forEach((b, i) => { if (i < 7) return; const avg = BREW.slice(i - 7, i + 1).reduce((a, c) => a + c[1], 0) / 8; path += (path ? "L" : "M") + x(i).toFixed(1) + " " + y(avg).toFixed(1) + " "; });
+  s += `<path d="${path}" fill="none" stroke="var(--brew)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  s += `<rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" id="brew-hit"/>`;
+  svg.innerHTML = s;
+  const hit = document.getElementById("brew-hit"), wrap = svg.parentElement;
+  const show = ev => { const r = svg.getBoundingClientRect(); const px = (ev.clientX - r.left) / r.width * W; let i = Math.round((px - L) / (W - L - R) * (n - 1)); i = Math.max(0, Math.min(n - 1, i)); const b = BREW[i]; const avg = i >= 7 ? (BREW.slice(i - 7, i + 1).reduce((a, c) => a + c[1], 0) / 8).toFixed(1) : "n/a"; tip.textContent = `${new Date(b[0] + "T12:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}: ${b[1]} tickets, CHF ${b[2]}; 8-night avg ${avg}`; tip.style.left = (x(i) / W * r.width) + "px"; tip.style.top = (y(b[1]) / H * r.height) + "px"; tip.style.opacity = 1; };
+  hit.addEventListener("mousemove", show); hit.addEventListener("touchstart", e => show(e.touches[0]), { passive: true }); hit.addEventListener("mouseleave", () => tip.style.opacity = 0);
+})();
+
+// ---------- tracker ----------
+let state = { entries: {}, inputs: {} };
+try { const raw = localStorage.getItem(KEY); if (raw) state = Object.assign(state, JSON.parse(raw)); } catch (e) {}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); document.getElementById("tracker-status").textContent = "Saved in this browser at " + new Date().toLocaleTimeString("en-GB"); } catch (e) { document.getElementById("tracker-status").textContent = "Could not save (private window?). Export the JSON to keep it."; } }
+const COLS = ["people", "brew", "weekend", "promessi", "list", "hours"];
+function renderTracker() {
+  const tb = document.querySelector("#tracker tbody"); let h = "";
+  for (const m of MONTHS) {
+    const e = state.entries[m] || {};
+    h += `<tr data-m="${m}"><td class="month">${fmtMonth(m)}</td>` + COLS.map(c => `<td class="num"><input type="number" min="0" data-c="${c}" value="${e[c] ?? ""}"></td>`).join("") + `<td><input type="text" class="wide" data-c="notes" value="${(e.notes ?? "").replace(/"/g, "&quot;")}"></td></tr>`;
+    if (TARGETS[m]) { const t = TARGETS[m]; h += `<tr class="target"><td>target by ${fmtMonth(m)}</td><td class="num">${t[0]}</td><td class="num">${t[1]}</td><td class="num">${t[2]}</td><td class="num">${m >= "2027-06" ? "60+" : "80+"}</td><td class="num">${t[3] ?? ""}</td><td class="num">≤ 12</td><td>${{ "2026-12": "baseline counted", "2027-03": "agreement live, Friday 2 done", "2027-06": "quarterly check: 700 or rethink", "2027-09": "weekend 2 a month", "2027-12": "small-room gate", "2028-03": "second year of B or lease talk", "2028-06": "club gate, 6 months at 1,500", "2028-10": "decision made" }[m]}</td></tr>`; }
+  }
+  tb.innerHTML = h;
+  tb.querySelectorAll("input").forEach(inp => inp.addEventListener("change", () => { const m = inp.closest("tr").dataset.m, c = inp.dataset.c; state.entries[m] = state.entries[m] || {}; state.entries[m][c] = c === "notes" ? inp.value : (inp.value === "" ? null : Number(inp.value)); save(); renderPeople(); renderGates(); }));
+}
+for (const id of ["hours", "people", "list", "helpers"]) { const el = document.getElementById("in-" + id); if (state.inputs[id] != null) el.value = state.inputs[id]; el.addEventListener("input", () => { state.inputs[id] = Number(el.value); save(); renderGates(); }); }
+document.getElementById("btn-export").onclick = () => { const io = document.getElementById("io"); io.style.display = "block"; io.value = JSON.stringify(state, null, 1); io.select(); };
+document.getElementById("btn-import").onclick = () => { const io = document.getElementById("io"); if (io.style.display === "none") { io.style.display = "block"; io.value = ""; io.focus(); return; } try { const j = JSON.parse(io.value); if (j && j.entries) { state = j; save(); renderTracker(); renderPeople(); renderGates(); io.style.display = "none"; } } catch (e) { document.getElementById("tracker-status").textContent = "That is not valid JSON."; } };
+document.getElementById("btn-clear").onclick = () => { if (confirm("Clear every entry in the tracker?")) { state.entries = {}; save(); renderTracker(); renderPeople(); renderGates(); } };
+
+// ---------- people chart ----------
+function renderPeople() {
+  const svg = document.getElementById("people-chart"), tip = document.getElementById("people-tip");
+  const W = 960, H = 240, L = 44, R = 16, T = 14, B = 34, MAX = 1600;
+  const x = i => L + (i / (MONTHS.length - 1)) * (W - L - R), y = v => T + (1 - Math.min(v, MAX) / MAX) * (H - T - B);
+  let s = "";
+  for (const g of [0, 500, 1000, 1500]) s += `<line x1="${L}" x2="${W - R}" y1="${y(g)}" y2="${y(g)}" stroke="var(--line)"/><text x="${L - 6}" y="${y(g) + 4}" font-size="11" text-anchor="end" fill="var(--ink-3)">${g}</text>`;
+  MONTHS.forEach((m, i) => { if (m.endsWith("-01") || i === 0) s += `<text x="${x(i)}" y="${H - 12}" font-size="11" fill="var(--ink-3)">${fmtMonth(m)}</text>`; });
+  const tpts = Object.entries(TARGETS).map(([m, t]) => [MONTHS.indexOf(m), t[0]]).filter(p => p[0] >= 0);
+  s += `<path d="${tpts.map((p, i) => (i ? "L" : "M") + x(p[0]) + " " + y(p[1])).join(" ")}" fill="none" stroke="var(--target)" stroke-width="2" stroke-dasharray="5 4"/>`;
+  const pts = MONTHS.map((m, i) => [i, state.entries[m]?.people]).filter(p => typeof p[1] === "number");
+  if (pts.length) { s += `<path d="${pts.map((p, i) => (i ? "L" : "M") + x(p[0]) + " " + y(p[1])).join(" ")}" fill="none" stroke="var(--brew)" stroke-width="2.5"/>`; pts.forEach(p => s += `<circle cx="${x(p[0])}" cy="${y(p[1])}" r="4.5" fill="var(--brew)" stroke="var(--surface)" stroke-width="2"><title>${fmtMonth(MONTHS[p[0]])}: ${p[1]}</title></circle>`); }
+  else s += `<text x="${(L + W - R) / 2}" y="${H / 2}" font-size="13" text-anchor="middle" fill="var(--ink-3)">Enter "People" in the tracker and the line appears here.</text>`;
+  svg.innerHTML = s;
+}
+
+// ---------- gates ----------
+function renderGates() {
+  const months = MONTHS.filter(m => state.entries[m] && typeof state.entries[m].people === "number");
+  const last = months.length ? state.entries[months[months.length - 1]] : null;
+  const lastN = (c, n) => months.slice(-n).map(m => state.entries[m][c]).filter(v => typeof v === "number");
+  const people = last ? last.people : (state.inputs.people ?? 450);
+  const brew8 = 30.5;
+  const brewNow = lastN("brew", 1)[0] ?? brew8;
+  const weekend = lastN("weekend", 3); const weekendAvg = weekend.length ? weekend.reduce((a, b) => a + b, 0) / weekend.length : 0.1;
+  const list = lastN("list", 1)[0] ?? (state.inputs.list || 0);
+  const hours = state.inputs.hours ?? 10, helpers = state.inputs.helpers ?? 0;
+  const six = lastN("people", 6); const sixOk = six.length === 6 && six.every(v => v >= 1500);
+  const three = lastN("people", 3); const threeOk = three.length === 3 && three.every(v => v >= 1000);
+  const rows = [
+    ["People a month, latest", `${people}`, people >= 1500 ? "good" : people >= 1000 ? "warn" : "bad", "1,000 opens the small-room talk; 1,500 is the club number"],
+    ["People at or above 1,500 for 6 months running", six.length ? `${six.filter(v => v >= 1500).length} of last ${six.length}` : "no entries yet", sixOk ? "good" : "bad", "the only basis for a CHF 20,000 lease"],
+    ["People at or above 1,000 for 3 months running", three.length ? `${three.filter(v => v >= 1000).length} of last ${three.length}` : "no entries yet", threeOk ? "good" : "bad", "path C gate, with Elias"],
+    ["Comedy Brew average per night", `${brewNow}`, brewNow >= 40 ? "good" : brewNow >= 35 ? "warn" : "bad", "35 by June 2027, 40 by December 2027"],
+    ["Friday or Saturday nights a month (3-month average)", weekend.length ? weekendAvg.toFixed(1) : "none yet", weekendAvg >= 4 ? "good" : weekendAvg >= 2 ? "warn" : "bad", "2 by October 2027, 4 before any lease"],
+    ["Series at 40+ owned by someone other than you", "fill from the scorecard", "warn", "three before a lease; today it is one (Promessi)"],
+    ["Mailing list", list ? list.toLocaleString("en-GB") : "unknown", list >= 4000 ? "good" : list >= 2500 ? "warn" : "bad", "2,500 by December 2027, 4,000 before a lease"],
+    ["Co-organisers with a named job", `${helpers}`, helpers >= 2 ? "good" : helpers >= 1 ? "warn" : "bad", "two before phase 2 can start"],
+    ["Your hours a week", `${hours}`, hours <= 12 ? "good" : hours <= 16 ? "warn" : "bad", "cap 12 under path B; more means cut back, not push on"],
+    ["Bar takings per comedy night known", "ask Elias", "warn", "needed for C and D; nobody has it today"],
+    ["Elias committed", "not yet", "warn", "C and D both depend on him"],
+    ["Capital or landlord-funded fit-out", "none", "bad", "CHF 180,400 in the sheet, 85,000 of it reserve"],
+  ];
+  document.getElementById("gate-list").innerHTML = rows.map(r => `<div>${r[0]}<br><small>${r[3]}</small></div><div class="v">${r[1]}</div><div><span class="pill ${r[2]}">${r[2] === "good" ? "✓ met" : r[2] === "warn" ? "~ partly" : "✗ not yet"}</span></div>`).join("");
+}
+renderTracker(); renderPeople(); renderGates();
+</script>
+</body>
+</html>
