@@ -1,0 +1,15 @@
+{
+  "name": "Masha's Mac",
+  "short_name": "Masha's Mac",
+  "description": "A course in ten modules: from the Mac keyboard to the Terminal, Claude Code, myos and owning your own app.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FAF7F1",
+  "theme_color": "#1D5C8A",
+  "lang": "en",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

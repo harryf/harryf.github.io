@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masha's Mac</title>
+<meta name="description" content="A course in ten modules: from the Mac keyboard to the Terminal, Claude Code, myos and owning your own app.">
+<meta name="theme-color" content="#1D5C8A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Masha's Mac">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F1; --bg-2:#F1ECE2; --surface:#FFFFFF; --ink:#172230; --muted:#5A6572; --line:#E3DCCF;
+  --lake:#1D5C8A; --lake-ink:#FFFFFF; --lake-soft:#E3EEF7;
+  --sign:#F6C445; --sign-ink:#2B2200; --sign-soft:#FBEFC6;
+  --pine:#2F6B4F; --pine-soft:#E1F0E7;
+  --coral:#AD3F28; --coral-soft:#FBE4DE;
+  --code-bg:#1B2430; --code-ink:#E6EDF3;
+  --shadow:0 1px 2px rgba(23,34,48,.05),0 10px 30px rgba(23,34,48,.07);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1621; --bg-2:#141E2B; --surface:#182331; --ink:#E9EEF3; --muted:#A3AEBA; --line:#27333F;
+    --lake:#7CB9E8; --lake-ink:#08131C; --lake-soft:#1C2E40;
+    --sign:#F6C445; --sign-ink:#2B2200; --sign-soft:#3A3116;
+    --pine:#7CC29A; --pine-soft:#173226;
+    --coral:#FF8F73; --coral-soft:#3B221B;
+    --code-bg:#0A111A; --code-ink:#E6EDF3;
+    --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1621; --bg-2:#141E2B; --surface:#182331; --ink:#E9EEF3; --muted:#A3AEBA; --line:#27333F;
+  --lake:#7CB9E8; --lake-ink:#08131C; --lake-soft:#1C2E40;
+  --sign:#F6C445; --sign-ink:#2B2200; --sign-soft:#3A3116;
+  --pine:#7CC29A; --pine-soft:#173226;
+  --coral:#FF8F73; --coral-soft:#3B221B;
+  --code-bg:#0A111A; --code-ink:#E6EDF3;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.12;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(1.9rem,5vw,2.8rem)}
+h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+h3{font-size:1.08rem;font-weight:700;margin:22px 0 8px}
+p{margin:0 0 .9em}
+a{color:var(--lake)}
+code,kbd,pre{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+code{background:var(--bg-2);border-radius:6px;padding:1px 6px;font-size:.9em}
+kbd{display:inline-block;background:var(--surface);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:0 6px;font-size:.84em;line-height:1.6;white-space:nowrap}
+pre{position:relative;background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:14px 16px;overflow:auto;font-size:.9rem;line-height:1.5;margin:0 0 14px}
+pre code{background:none;padding:0;font-size:inherit;color:inherit}
+pre .copy{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:8px;padding:4px 10px;font:600 .76rem Inter,system-ui,sans-serif;cursor:pointer}
+pre .copy:hover{background:rgba(255,255,255,.22)}
+pre .copy.ok{background:var(--pine);color:#fff}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.narrow{max-width:820px}
+.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:10px;min-height:56px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.top .brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.86rem;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.top nav a.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.xpbar{width:100%;display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--muted);padding:2px 0 4px}
+.xpbar .lvl{font-weight:700;color:var(--ink);white-space:nowrap}
+.xpbar .bar{flex:1;height:8px;background:var(--bg-2);border-radius:999px;overflow:hidden}
+.xpbar .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--lake),var(--pine));border-radius:999px;transition:width .5s ease}
+.xpbar .n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:40px;line-height:1.2}
+.btn.primary{background:var(--lake);color:var(--lake-ink);border-color:transparent}
+.btn.good{background:var(--pine);color:#fff;border-color:transparent}
+.btn.warn{background:var(--coral);color:#fff;border-color:transparent}
+.btn.quiet{background:transparent}
+.btn.small{padding:5px 12px;font-size:.8rem;min-height:32px}
+.btn:disabled{opacity:.5;cursor:default}
+.btn:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--sign);outline-offset:2px}
+.screen{display:none;padding:28px 0 72px}
+.screen.active{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.lede{font-size:1.08rem;max-width:62ch}
+.muted{color:var(--muted)} .small{font-size:.88rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.mod{display:block;text-decoration:none;color:inherit;position:relative;transition:transform .15s ease,border-color .15s ease}
+.mod:hover{transform:translateY(-2px);border-color:var(--lake)}
+.mod .em{font-size:1.8rem;line-height:1}
+.mod h3{margin:8px 0 4px;font-family:Fraunces,Georgia,serif;font-size:1.25rem}
+.mod .blurb{color:var(--muted);font-size:.92rem;margin:0 0 10px;min-height:2.8em}
+.mod .meta{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--muted)}
+.mod .meta .bar{flex:1;height:6px;background:var(--bg-2);border-radius:999px;overflow:hidden}
+.mod .meta .bar span{display:block;height:100%;background:var(--pine);border-radius:999px}
+.mod .num{position:absolute;top:14px;right:16px;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.1rem;color:var(--muted)}
+.mod.done{border-color:var(--pine)}
+.mod .badge{position:absolute;top:12px;right:14px;background:var(--pine-soft);color:var(--pine);font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 9px}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 8px;white-space:nowrap;vertical-align:middle}
+.pill.ok{background:var(--pine-soft);color:var(--pine)}
+.pill.todo{background:var(--bg-2);color:var(--muted)}
+.pill.sign{background:var(--sign-soft);color:var(--sign-ink)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .pill.sign{color:var(--sign)} }
+:root[data-theme="dark"] .pill.sign{color:var(--sign)}
+.tip{border-left:4px solid var(--sign);background:var(--sign-soft);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.tip .t{font-weight:700;margin-bottom:2px}
+.tip p{margin:0}
+.callout{border-left:4px solid var(--lake);background:var(--lake-soft);border-radius:10px;padding:10px 14px;margin:12px 0}
+.callout p{margin:0}
+.lesson-list{list-style:none;margin:0;padding:0}
+.lesson-list li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.lesson-list li:last-child{border-bottom:0}
+.lesson-list a{text-decoration:none;color:var(--ink);font-weight:600;flex:1}
+.lesson-list .st{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:700;background:var(--bg-2);color:var(--muted);flex:none}
+.lesson-list .st.ok{background:var(--pine-soft);color:var(--pine)}
+.lesson-list .min{color:var(--muted);font-size:.82rem;white-space:nowrap}
+.body table{border-collapse:collapse;width:100%;margin:0 0 14px;font-size:.92rem}
+.body th,.body td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.body th{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.body ul,.body ol{padding-left:22px;margin:0 0 14px}
+.body li{margin:3px 0}
+.body .tbl{overflow-x:auto;margin:0 0 14px}
+.body .tbl table{margin:0;min-width:420px}
+.navrow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:28px;flex-wrap:wrap}
+.navrow .spacer{flex:1}
+/* quiz */
+.q .num{font-size:.78rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.q h3{margin:6px 0 14px;font-size:1.15rem}
+.opts{display:grid;gap:8px;margin:0 0 12px}
+.opt{text-align:left;background:var(--bg-2);border:2px solid transparent;border-radius:12px;padding:12px 14px;font:inherit;color:var(--ink);cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+.opt .k{font-weight:700;color:var(--muted);flex:none}
+.opt:hover{border-color:var(--lake)}
+.opt.right{background:var(--pine-soft);border-color:var(--pine)}
+.opt.wrong{background:var(--coral-soft);border-color:var(--coral)}
+.opt:disabled{cursor:default}
+.fb{border-radius:12px;padding:12px 14px;margin:0 0 12px;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--pine-soft)} .fb.no{background:var(--coral-soft)}
+.fb .h{font-weight:700;margin-bottom:2px}
+.score{font-family:Fraunces,Georgia,serif;font-size:2.4rem;font-weight:700;line-height:1}
+textarea.proof,input.proof{font:inherit;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.9rem;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%}
+textarea.proof{min-height:120px;resize:vertical}
+.state{font-size:.88rem;min-height:1.3em;margin:8px 0}
+.state.ok{color:var(--pine);font-weight:600} .state.no{color:var(--coral)}
+label.check{display:flex;align-items:center;gap:10px;font-weight:600;cursor:pointer;margin:10px 0}
+label.check input{width:22px;height:22px}
+/* sandbox */
+.term{background:var(--code-bg);color:var(--code-ink);border-radius:14px;padding:14px 16px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.9rem;line-height:1.5;min-height:360px;max-height:60vh;overflow:auto;box-shadow:var(--shadow)}
+.term .out{white-space:pre-wrap;word-break:break-word;margin:0}
+.term .err{color:#FF8F73}
+.term .ps{color:#7CC29A}
+.term .cmd{color:#fff}
+.term form{display:flex;gap:8px;align-items:center;margin-top:4px}
+.term input{flex:1;background:transparent;border:0;color:#fff;font:inherit;outline:none;padding:0;min-width:0}
+.term input::placeholder{color:#5A6572}
+.tasks{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.tasks li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem}
+.tasks li .st{flex:none;width:22px;height:22px;border-radius:50%;background:var(--bg-2);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--muted)}
+.tasks li.ok .st{background:var(--pine-soft);color:var(--pine)}
+.tasks li.ok{color:var(--muted);text-decoration:line-through}
+/* progress */
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0 20px}
+.bdg{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center;box-shadow:var(--shadow)}
+.bdg .em{font-size:2rem;filter:grayscale(1);opacity:.35}
+.bdg.on .em{filter:none;opacity:1}
+.bdg .n{font-weight:700;font-size:.86rem;margin-top:4px}
+.bdg .m{font-size:.76rem;color:var(--muted)}
+.levels{display:grid;gap:4px;font-size:.9rem}
+.levels div{display:flex;justify-content:space-between;padding:6px 10px;border-radius:8px}
+.levels div.now{background:var(--lake-soft);font-weight:700}
+.levels div.past{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.cheat table{border-collapse:collapse;width:100%;font-size:.9rem}
+.cheat th,.cheat td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.cheat code{white-space:normal}
+.two > *{min-width:0}
+.cheat th{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* confetti */
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:999px;font-weight:600;box-shadow:var(--shadow);opacity:0;transition:all .3s ease;z-index:60;max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.continue{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+footer{color:var(--muted);font-size:.82rem;padding:24px 0 40px;text-align:center}
+@media (max-width:600px){
+  .top .brand{font-size:.98rem}
+  .screen{padding:20px 0 60px}
+  pre{font-size:.82rem;padding:12px 12px}
+  .mod .blurb{min-height:0}
+}
+@media (prefers-reduced-motion: reduce){ .screen.active{animation:none} .mod:hover{transform:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home">🍎 Masha's Mac</a>
+    <nav>
+      <a href="#home" data-nav="home">Modules</a>
+      <a href="#sandbox" data-nav="sandbox">Sandbox</a>
+      <a href="#cheatsheet" data-nav="cheatsheet">Cheat sheet</a>
+      <a href="#progress" data-nav="progress">Progress</a>
+    </nav>
+    <div class="xpbar"><span class="lvl" id="lvl"></span><div class="bar"><span id="xpfill"></span></div><span class="n" id="xpn"></span></div>
+  </div>
+</header>
+
+<main class="wrap" id="main"></main>
+<footer>Made for Masha by Harry, with myos. Progress stays in this browser. <a href="#progress">Export it</a> before you switch.</footer>
+<canvas id="confetti"></canvas>
+<div class="toast" id="toast"></div>
+
+<script src="content.js"></script>
+<script src="sandbox.js"></script>
+<script>
+(function(){
+  const C = window.CONTENT;
+  const KEY = 'masha-osx.v1';
+  const $ = (s, el) => (el || document).querySelector(s);
+  const main = $('#main');
+
+  // ───────────────────────── state
+  const fresh = () => ({ v: 1, lessons: {}, quiz: {}, challenges: {}, tipOffset: 0, lastHash: '', celebrated: {} });
+  function load() {
+    try { const raw = localStorage.getItem(KEY); if (raw) return Object.assign(fresh(), JSON.parse(raw)); } catch (e) {}
+    return fresh();
+  }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  let S = load();
+
+  // XP is derived, never stored: no farming, no drift.
+  function xp() {
+    let n = Object.keys(S.lessons).length * C.xp.lesson;
+    for (const m of Object.values(S.quiz)) n += Object.keys(m.correct || {}).length * C.xp.answer;
+    n += Object.keys(S.challenges).length * C.xp.challenge;
+    return n;
+  }
+  function level(n) {
+    let cur = C.levels[0], next = null;
+    for (let i = 0; i < C.levels.length; i++) { if (n >= C.levels[i].xp) cur = C.levels[i]; else { next = C.levels[i]; break; } }
+    return { cur, next };
+  }
+  function moduleStats(m) {
+    const lessons = m.lessons.filter((l) => S.lessons[m.id + '/' + l.id]).length;
+    const quizDone = m.quiz.length === 0 || (S.quiz[m.id] && S.quiz[m.id].done);
+    const chDone = !!S.challenges[m.id];
+    const total = m.lessons.length + (m.quiz.length ? 1 : 0) + 1;
+    const done = lessons + (m.quiz.length && quizDone ? 1 : 0) + (chDone ? 1 : 0);
+    return { lessons, quizDone, chDone, total, done, complete: done === total };
+  }
+  function renderXp() {
+    const n = xp(); const { cur, next } = level(n);
+    $('#lvl').textContent = cur.name;
+    const base = cur.xp, top = next ? next.xp : cur.xp + 1;
+    const pct = next ? Math.min(100, Math.round(((n - base) / (top - base)) * 100)) : 100;
+    $('#xpfill').style.width = pct + '%';
+    $('#xpn').textContent = next ? `${n} XP · ${next.xp - n} to ${next.name}` : `${n} XP · top level`;
+  }
+
+  // ───────────────────────── mini markdown
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function inline(s) {
+    s = esc(s);
+    s = s.replace(/\[\[([\s\S]+?)\]\]/g, (_, c) => `<code>${c}</code>`);
+    s = s.replace(/\{\{([^}]+)\}\}/g, (_, k) => `<kbd>${k}</kbd>`);
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    return s;
+  }
+  function md(src) {
+    const lines = src.split('\n'); const out = []; let i = 0;
+    const flushPara = (buf) => { if (buf.length) { out.push(`<p>${inline(buf.join(' '))}</p>`); buf.length = 0; } };
+    let para = [];
+    while (i < lines.length) {
+      const ln = lines[i];
+      if (ln.startsWith('~~~')) {
+        flushPara(para); const code = []; i++;
+        while (i < lines.length && !lines[i].startsWith('~~~')) { code.push(lines[i]); i++; }
+        i++;
+        out.push(`<pre><button class="copy" type="button" data-copy>Copy</button><code>${esc(code.join('\n'))}</code></pre>`);
+        continue;
+      }
+      if (ln.startsWith('## ')) { flushPara(para); out.push(`<h3>${inline(ln.slice(3))}</h3>`); i++; continue; }
+      if (ln.startsWith('> ')) {
+        flushPara(para); const q = [];
+        while (i < lines.length && lines[i].startsWith('> ')) { q.push(lines[i].slice(2)); i++; }
+        out.push(`<div class="callout"><p>${inline(q.join(' '))}</p></div>`); continue;
+      }
+      if (ln.startsWith('|')) {
+        flushPara(para); const rows = [];
+        while (i < lines.length && lines[i].startsWith('|')) { rows.push(lines[i]); i++; }
+        const cells = (r) => r.replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
+        const head = cells(rows[0]); const body = rows.slice(1).filter((r) => !/^\|[\s-|]+\|$/.test(r));
+        out.push('<div class="tbl"><table><thead><tr>' + head.map((h) => `<th>${inline(h)}</th>`).join('') + '</tr></thead><tbody>' +
+          body.map((r) => '<tr>' + cells(r).map((c) => `<td>${inline(c)}</td>`).join('') + '</tr>').join('') + '</tbody></table></div>');
+        continue;
+      }
+      if (/^- /.test(ln)) {
+        flushPara(para); const items = [];
+        while (i < lines.length && /^- /.test(lines[i])) { items.push(lines[i].slice(2)); i++; }
+        out.push('<ul>' + items.map((x) => `<li>${inline(x)}</li>`).join('') + '</ul>'); continue;
+      }
+      if (/^\d+\. /.test(ln)) {
+        flushPara(para); const items = [];
+        while (i < lines.length && /^\d+\. /.test(lines[i])) { items.push(lines[i].replace(/^\d+\. /, '')); i++; }
+        out.push('<ol>' + items.map((x) => `<li>${inline(x)}</li>`).join('') + '</ol>'); continue;
+      }
+      if (ln.trim() === '') { flushPara(para); i++; continue; }
+      para.push(ln); i++;
+    }
+    flushPara(para);
+    return out.join('\n');
+  }
+
+  // ───────────────────────── routing
+  function parse(hash) {
+    const h = (hash || '').replace(/^#/, '');
+    if (!h || h === 'home') return { screen: 'home' };
+    if (['sandbox', 'cheatsheet', 'progress'].includes(h)) return { screen: h };
+    const m = h.match(/^(m\d+)(?:\/(l\d+|quiz|challenge))?$/);
+    if (m) {
+      const mod = C.modules.find((x) => x.id === m[1]);
+      if (!mod) return { screen: 'home' };
+      if (!m[2]) return { screen: 'module', mod };
+      if (m[2] === 'quiz') return { screen: 'quiz', mod };
+      if (m[2] === 'challenge') return { screen: 'challenge', mod };
+      const lesson = mod.lessons.find((l) => l.id === m[2]);
+      return lesson ? { screen: 'lesson', mod, lesson } : { screen: 'module', mod };
+    }
+    return { screen: 'home' };
+  }
+  function go(hash) { if (location.hash !== hash) history.pushState({}, '', hash); render(); }
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || e.metaKey || e.ctrlKey) return;
+    e.preventDefault(); go(a.getAttribute('href'));
+  });
+  window.addEventListener('popstate', render);
+
+  function render() {
+    const r = parse(location.hash);
+    document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('on', a.dataset.nav === r.screen || (a.dataset.nav === 'home' && ['module', 'lesson', 'quiz', 'challenge'].includes(r.screen))));
+    main.innerHTML = '';
+    const sec = document.createElement('section'); sec.className = 'screen active';
+    main.appendChild(sec);
+    ({ home, module: moduleScreen, lesson, quiz, challenge, sandbox, cheatsheet, progress })[r.screen](sec, r);
+    if (r.screen !== 'home') { S.lastHash = location.hash; save(); }
+    renderXp();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    document.title = r.mod ? `${r.mod.title} · Masha's Mac` : "Masha's Mac";
+  }
+
+  // ───────────────────────── screens
+  function home(sec) {
+    const n = xp(); const { cur } = level(n);
+    const done = C.modules.filter((m) => moduleStats(m).complete).length;
+    const tipIdx = (Math.floor(Date.now() / 864e5) + (S.tipOffset || 0)) % C.tips.length;
+    const tip = C.tips[tipIdx];
+    const last = S.lastHash && parse(S.lastHash).screen !== 'home' ? S.lastHash : null;
+    const lastR = last ? parse(last) : null;
+    sec.innerHTML = `
+      <div class="eyebrow">Ten modules, plus a welcome and a send-off</div>
+      <h1>From "which key is Cmd" to owning your own app.</h1>
+      <p class="lede">The Mac, the Terminal, the tools, Claude Code, myos, and the job search app. Short lessons, a quiz, a real challenge. Your level: <strong>${cur.name}</strong>. Modules finished: <strong>${done} of ${C.modules.length}</strong>.</p>
+      ${last ? `<div class="continue"><a class="btn primary" href="${last}">Continue: ${lastR.mod ? esc(lastR.mod.title) : esc(lastR.screen)}${lastR.lesson ? ' · ' + esc(lastR.lesson.title) : ''} ›</a><span class="muted small">where you left off</span></div>` : ''}
+      <div class="tip" id="tip"><div class="t">💡 Mac moment: ${esc(tip.title)}</div><p>${inline(tip.body)}</p><p style="margin-top:8px"><button class="btn small quiet" type="button" id="nexttip">Another one</button></p></div>
+      <div class="grid">${C.modules.map((m, i) => {
+        const st = moduleStats(m);
+        return `<a class="card mod ${st.complete ? 'done' : ''}" href="#${m.id}">
+          ${st.complete ? `<span class="badge">🏅 ${esc(m.badge)}</span>` : `<span class="num">${i}</span>`}
+          <div class="em">${m.emoji}</div>
+          <h3>${esc(m.title)}</h3>
+          <p class="blurb">${esc(m.blurb)}</p>
+          <div class="meta"><span>${m.lessons.length} lesson${m.lessons.length === 1 ? '' : 's'}${m.quiz.length ? ' · quiz' : ''} · challenge</span><div class="bar"><span style="width:${Math.round((st.done / st.total) * 100)}%"></span></div><span>${st.done}/${st.total}</span></div>
+        </a>`; }).join('')}</div>
+      <p class="muted small">Links to any lesson can be shared: the address bar always points at where you are.</p>`;
+    $('#nexttip', sec).addEventListener('click', () => { S.tipOffset = (S.tipOffset || 0) + 1; save(); render(); });
+  }
+
+  function moduleScreen(sec, { mod }) {
+    const st = moduleStats(mod); const i = C.modules.indexOf(mod);
+    const q = S.quiz[mod.id];
+    sec.innerHTML = `
+      <div class="eyebrow"><a href="#home">Modules</a> › Module ${i}</div>
+      <h1>${mod.emoji} ${esc(mod.title)}</h1>
+      <p class="lede">${esc(mod.blurb)}</p>
+      ${st.complete ? `<p><span class="pill ok">🏅 badge earned: ${esc(mod.badge)}</span></p>` : `<p class="muted small">Finish every lesson, the quiz and the challenge to earn the <strong>${esc(mod.badge)}</strong> badge.</p>`}
+      <div class="card">
+        <h3 style="margin-top:0">Lessons</h3>
+        <ul class="lesson-list">${mod.lessons.map((l, k) => `<li><span class="st ${S.lessons[mod.id + '/' + l.id] ? 'ok' : ''}">${S.lessons[mod.id + '/' + l.id] ? '✓' : k + 1}</span><a href="#${mod.id}/${l.id}">${esc(l.title)}</a><span class="min">${l.minutes} min</span></li>`).join('')}</ul>
+      </div>
+      <div class="two">
+        ${mod.quiz.length ? `<div class="card"><h3 style="margin-top:0">Quiz</h3><p class="muted small">${mod.quiz.length} questions. ${q && q.done ? `Best: ${q.best} of ${mod.quiz.length}.` : 'Not taken yet.'}</p><a class="btn ${q && q.done ? '' : 'primary'}" href="#${mod.id}/quiz">${q && q.done ? 'Take it again' : 'Start the quiz'} ›</a></div>` : ''}
+        <div class="card"><h3 style="margin-top:0">Challenge</h3><p class="muted small">${esc(mod.challenge.title)}. ${st.chDone ? 'Done.' : `Worth ${C.xp.challenge} XP.`}</p><a class="btn ${st.chDone ? '' : 'primary'}" href="#${mod.id}/challenge">${st.chDone ? 'Look again' : 'Open the challenge'} ›</a></div>
+      </div>
+      <div class="navrow">${i > 0 ? `<a class="btn quiet" href="#${C.modules[i - 1].id}">‹ ${esc(C.modules[i - 1].title)}</a>` : '<span></span>'}<span class="spacer"></span>${i < C.modules.length - 1 ? `<a class="btn quiet" href="#${C.modules[i + 1].id}">${esc(C.modules[i + 1].title)} ›</a>` : ''}</div>`;
+  }
+
+  function lesson(sec, { mod, lesson: l }) {
+    const k = mod.lessons.indexOf(l); const key = mod.id + '/' + l.id;
+    const prev = k > 0 ? `#${mod.id}/${mod.lessons[k - 1].id}` : `#${mod.id}`;
+    const next = k < mod.lessons.length - 1 ? `#${mod.id}/${mod.lessons[k + 1].id}` : (mod.quiz.length ? `#${mod.id}/quiz` : `#${mod.id}/challenge`);
+    const nextLabel = k < mod.lessons.length - 1 ? `Next: ${esc(mod.lessons[k + 1].title)} ›` : (mod.quiz.length ? 'On to the quiz ›' : 'On to the challenge ›');
+    sec.innerHTML = `
+      <div class="eyebrow"><a href="#home">Modules</a> › <a href="#${mod.id}">${esc(mod.title)}</a> › Lesson ${k + 1} of ${mod.lessons.length}</div>
+      <h1>${esc(l.title)}</h1>
+      <p class="muted small">${l.minutes} min read${S.lessons[key] ? ' · <span class="pill ok">read</span>' : ''}</p>
+      <div class="body narrow">${md(l.body)}</div>
+      <div class="card narrow" style="margin-top:22px">
+        ${S.lessons[key] ? `<p style="margin:0">✓ Marked as read. <a class="small" href="#" data-unread>Unmark</a></p>` : `<button class="btn good" type="button" data-read>✓ I read this (+${C.xp.lesson} XP)</button>`}
+      </div>
+      <div class="navrow narrow"><a class="btn quiet" href="${prev}">‹ Back</a><span class="spacer"></span><a class="btn primary" href="${next}">${nextLabel}</a></div>`;
+    const rb = $('[data-read]', sec);
+    if (rb) rb.addEventListener('click', () => { S.lessons[key] = Date.now(); save(); toast(`+${C.xp.lesson} XP`); checkBadge(mod); render(); });
+    const ub = $('[data-unread]', sec);
+    if (ub) ub.addEventListener('click', (e) => { e.preventDefault(); delete S.lessons[key]; save(); render(); });
+    wireCopy(sec);
+  }
+
+  function quiz(sec, { mod }) {
+    const qs = mod.quiz; let idx = 0; let roundCorrect = 0;
+    const st = (S.quiz[mod.id] = S.quiz[mod.id] || { correct: {}, best: 0, done: false });
+    const cheer = ['Yes!', 'Exactly.', 'That is it.', 'Nice.', 'You have got this.', 'Spot on.'];
+    const oops = ['Not quite.', 'Close, but no.', 'Nope, here is why.', 'Other one.'];
+    function show() {
+      if (idx >= qs.length) {
+        const first = !st.done; st.done = true; st.best = Math.max(st.best || 0, roundCorrect); save(); checkBadge(mod);
+        sec.innerHTML = `
+          <div class="eyebrow"><a href="#home">Modules</a> › <a href="#${mod.id}">${esc(mod.title)}</a> › Quiz</div>
+          <div class="card narrow" style="text-align:center;padding:30px 20px">
+            <div class="score">${roundCorrect} / ${qs.length}</div>
+            <p class="lede" style="margin:10px auto 16px">${roundCorrect === qs.length ? 'Perfect round. ' : roundCorrect >= qs.length * 0.7 ? 'Solid. ' : 'The explanations are the point; read them and go again. '}${first ? 'Quiz counted for the badge.' : `Best so far: ${st.best} of ${qs.length}.`}</p>
+            <p><button class="btn" type="button" data-again>Try again</button> <a class="btn primary" href="#${mod.id}/challenge">On to the challenge ›</a></p>
+            <p class="muted small">XP is given once per question, the first time you get it right. Repeats are for you, not for points.</p>
+          </div>`;
+        $('[data-again]', sec).addEventListener('click', () => { idx = 0; roundCorrect = 0; show(); });
+        if (roundCorrect === qs.length) confetti(60);
+        return;
+      }
+      const q = qs[idx]; const isText = q.type === 'text';
+      sec.innerHTML = `
+        <div class="eyebrow"><a href="#home">Modules</a> › <a href="#${mod.id}">${esc(mod.title)}</a> › Quiz</div>
+        <div class="card narrow q">
+          <div class="num">Question ${idx + 1} of ${qs.length}</div>
+          <h3>${inline(q.q)}</h3>
+          ${isText ? `<form data-text><input class="proof" type="text" autocomplete="off" spellcheck="false" placeholder="type the command" aria-label="answer"> <p style="margin-top:10px"><button class="btn primary" type="submit">Check</button></p></form>`
+                   : `<div class="opts">${q.a.map((a, i) => `<button class="opt" type="button" data-i="${i}"><span class="k">${'ABCD'[i]}</span><span>${inline(a)}</span></button>`).join('')}</div>`}
+          <div class="fb" data-fb></div>
+          <p style="margin:0"><button class="btn primary" type="button" data-next hidden>${idx + 1 < qs.length ? 'Next question ›' : 'See the score ›'}</button></p>
+        </div>`;
+      const fb = $('[data-fb]', sec); const nextBtn = $('[data-next]', sec);
+      function settle(ok, extra) {
+        const alreadyHad = !!st.correct[idx];
+        if (ok) { roundCorrect++; if (!alreadyHad) { st.correct[idx] = true; toast(`+${C.xp.answer} XP`); } }
+        save(); renderXp();
+        fb.className = 'fb show ' + (ok ? 'ok' : 'no');
+        fb.innerHTML = `<div class="h">${ok ? cheer[Math.floor(Math.random() * cheer.length)] : oops[Math.floor(Math.random() * oops.length)]}</div>${extra || ''}<div>${inline(q.why)}</div>`;
+        nextBtn.hidden = false; nextBtn.focus();
+      }
+      if (isText) {
+        $('[data-text]', sec).addEventListener('submit', (e) => {
+          e.preventDefault(); const v = $('input', sec).value.trim();
+          const ok = q.accept.some((re) => new RegExp(re, 'i').test(v));
+          $('input', sec).disabled = true; $('button[type=submit]', sec).disabled = true;
+          settle(ok, ok ? '' : `<div class="small muted">You typed <code>${esc(v || '(nothing)')}</code>.</div>`);
+        });
+        $('input', sec).focus();
+      } else {
+        sec.querySelectorAll('.opt').forEach((b) => b.addEventListener('click', () => {
+          const i = +b.dataset.i; const ok = i === q.c;
+          sec.querySelectorAll('.opt').forEach((x) => { x.disabled = true; if (+x.dataset.i === q.c) x.classList.add('right'); });
+          if (!ok) b.classList.add('wrong');
+          settle(ok);
+        }));
+      }
+      nextBtn.addEventListener('click', () => { idx++; show(); });
+    }
+    show();
+  }
+
+  function challenge(sec, { mod }) {
+    const ch = mod.challenge; const done = !!S.challenges[mod.id];
+    sec.innerHTML = `
+      <div class="eyebrow"><a href="#home">Modules</a> › <a href="#${mod.id}">${esc(mod.title)}</a> › Challenge</div>
+      <h1>${esc(ch.title)}</h1>
+      <div class="body narrow">${md(ch.body)}</div>
+      <div class="card narrow">
+        ${ch.proof
+          ? `${ch.proof.regex === '\\S{3,}' ? `<input class="proof" type="text" placeholder="${esc(ch.proof.placeholder)}" aria-label="your answer">` : `<textarea class="proof" placeholder="${esc(ch.proof.placeholder)}" spellcheck="false" aria-label="paste the output"></textarea>`}
+             <div class="state ${done ? 'ok' : ''}" data-state>${done ? '✓ Done. That was the real thing.' : ''}</div>
+             <p style="margin:0"><button class="btn primary" type="button" data-check>Check</button> ${done ? '<span class="pill ok">done</span>' : `<span class="muted small">worth ${C.xp.challenge} XP</span>`}</p>`
+          : `<label class="check"><input type="checkbox" data-tick ${done ? 'checked' : ''}> I did it${done ? '' : ` (+${C.xp.challenge} XP)`}</label>`}
+      </div>
+      <div class="navrow narrow"><a class="btn quiet" href="#${mod.id}">‹ Module</a><span class="spacer"></span>${C.modules.indexOf(mod) < C.modules.length - 1 ? `<a class="btn primary" href="#${C.modules[C.modules.indexOf(mod) + 1].id}">Next module ›</a>` : '<a class="btn primary" href="#progress">See your badges ›</a>'}</div>`;
+    wireCopy(sec);
+    function pass() {
+      const first = !S.challenges[mod.id];
+      S.challenges[mod.id] = Date.now(); save(); renderXp();
+      if (first) { toast(`Challenge done, +${C.xp.challenge} XP`); confetti(90); }
+      checkBadge(mod);
+    }
+    const cb = $('[data-check]', sec);
+    if (cb) cb.addEventListener('click', () => {
+      const v = $('.proof', sec).value; const st = $('[data-state]', sec);
+      const re = new RegExp(ch.proof.regex, ch.proof.flags || '');
+      if (v.trim() && re.test(v)) { st.className = 'state ok'; st.textContent = '✓ That is the real thing. Well done.'; pass(); render(); }
+      else { st.className = 'state no'; st.textContent = (v.trim() ? 'That does not look right yet. ' : 'Paste something first. ') + ch.proof.hint; }
+    });
+    const tk = $('[data-tick]', sec);
+    if (tk) tk.addEventListener('change', () => { if (tk.checked) { pass(); render(); } else { delete S.challenges[mod.id]; save(); render(); } });
+  }
+
+  function sandbox(sec) {
+    if (!window.__sb) window.__sb = window.Sandbox.create();
+    const sb = window.__sb;
+    const tasks = [
+      { t: 'Print where you are with pwd', test: (h) => /^pwd$/.test(h) },
+      { t: 'List the home folder with ls, then with ls -la', test: (h, hs) => hs.some((x) => /^ls\s+-(la|al)$/.test(x)) },
+      { t: 'Go into Documents with cd and come back up with cd ..', test: (h, hs) => hs.some((x) => /^cd\s+Documents\/?$/.test(x)) && hs.some((x) => /^cd\s+\.\.$/.test(x)) },
+      { t: 'Read shopping.txt with cat', test: (h) => /^cat\s+(~\/|\.\/|Documents\/)?shopping\.txt$/.test(h) || /^cat\s+\S*shopping\.txt$/.test(h) },
+      { t: 'Make a folder called week1 inside Playground (mkdir)', test: () => !!(sb.fs.Users.masha.Playground && sb.fs.Users.masha.Playground.week1) },
+      { t: 'Write a line into a new file with echo and >', test: (h) => /^echo\s+.+>\s*\S+$/.test(h) && !/>>/.test(h) },
+      { t: 'Add a second line with >>', test: (h) => /^echo\s+.+>>\s*\S+$/.test(h) },
+      { t: 'Count the lines of notes.txt with wc -l', test: (h) => /^wc\s+-l\s+\S*notes\.txt$/.test(h) },
+      { t: 'Find milk in shopping.txt with grep', test: (h) => /^grep\s+(-i\s+)?["']?milk["']?\s+\S*shopping\.txt$/i.test(h) || /^cat\s+\S*shopping\.txt\s*\|\s*grep/.test(h) },
+      { t: 'Pipe ls into wc -l', test: (h) => /^ls(\s+\S+)*\s*\|\s*wc\s+-l$/.test(h) },
+      { t: 'Put something on the pretend clipboard with pbcopy, read it with pbpaste', test: (h, hs) => hs.some((x) => /\|\s*pbcopy$/.test(x)) && hs.some((x) => /^pbpaste$/.test(x)) },
+      { t: 'Make the Mac talk with say', test: (h) => /^say\s+.+/.test(h) },
+    ];
+    const doneSet = new Set();
+    sec.innerHTML = `
+      <div class="eyebrow">Practice</div>
+      <h1>The Sandbox</h1>
+      <p class="lede">${inline('A pretend Terminal with a pretend home folder. Nothing you type here touches the real Mac, so try everything. Type [[help]] for the list. The real Terminal is {{Cmd+Space}}, [[term]].')}</p>
+      <div class="two">
+        <div>
+          <div class="term" id="term"><div class="out" id="tout"><span class="muted">Welcome to the sandbox. Type a command and press Return.\n</span></div>
+            <form id="tform"><span class="ps" id="tps">masha@MacBook ~ %</span><input id="tin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here" aria-label="command"></form>
+          </div>
+          <p class="muted small" style="margin-top:8px">Up arrow repeats the last command. <code>clear</code> wipes the screen. <button class="btn small quiet" type="button" id="treset">Reset the folder</button></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Things to try</h3>
+          <ul class="tasks" id="tasks">${tasks.map((t, i) => `<li data-t="${i}"><span class="st">${i + 1}</span><span>${inline(t.t)}</span></li>`).join('')}</ul>
+          <p class="muted small" style="margin:12px 0 0">The folder has Desktop, Documents (cv.txt, shopping.txt), Downloads, Playground, notes.txt and a hidden .zshrc.</p>
+        </div>
+      </div>`;
+    const out = $('#tout', sec); const inp = $('#tin', sec); const ps = $('#tps', sec); const term = $('#term', sec);
+    let histPos = -1;
+    const prompt = () => `masha@MacBook ${window.Sandbox.pretty(sb, sb.cwd)} %`;
+    ps.textContent = prompt();
+    function refreshTasks(line) {
+      tasks.forEach((t, i) => { if (!doneSet.has(i) && t.test(line, sb.history)) { doneSet.add(i); $(`[data-t="${i}"]`, sec).classList.add('ok'); $(`[data-t="${i}"] .st`, sec).textContent = '✓'; } });
+      if (doneSet.size === tasks.length && !S.sandboxDone) { S.sandboxDone = true; save(); confetti(80); toast('Sandbox list complete. The real Terminal is waiting.'); }
+    }
+    $('#tform', sec).addEventListener('submit', (e) => {
+      e.preventDefault(); const line = inp.value; inp.value = ''; histPos = -1;
+      const r = window.Sandbox.run(sb, line);
+      if (r.clear) { out.innerHTML = ''; }
+      else {
+        const echo = document.createElement('div'); echo.innerHTML = `<span class="ps">${esc(prompt())}</span> <span class="cmd">${esc(line)}</span>`; out.appendChild(echo);
+        if (r.err) { const d = document.createElement('div'); d.className = 'err'; d.textContent = r.err; out.appendChild(d); }
+        else if (r.out) { const d = document.createElement('div'); d.textContent = r.out; out.appendChild(d); }
+      }
+      if (r.say && 'speechSynthesis' in window) { try { speechSynthesis.speak(new SpeechSynthesisUtterance(r.say)); } catch (x) {} }
+      ps.textContent = prompt(); refreshTasks(line.trim()); term.scrollTop = term.scrollHeight; inp.focus();
+    });
+    inp.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') { e.preventDefault(); if (sb.history.length) { histPos = histPos < 0 ? sb.history.length - 1 : Math.max(0, histPos - 1); inp.value = sb.history[histPos]; } }
+      if (e.key === 'ArrowDown') { e.preventDefault(); if (histPos >= 0) { histPos = histPos + 1 >= sb.history.length ? -1 : histPos + 1; inp.value = histPos < 0 ? '' : sb.history[histPos]; } }
+      if (e.key === 'l' && e.ctrlKey) { e.preventDefault(); out.innerHTML = ''; }
+    });
+    term.addEventListener('click', () => inp.focus());
+    $('#treset', sec).addEventListener('click', () => { window.__sb = window.Sandbox.create(); render(); });
+    inp.focus();
+  }
+
+  function cheatsheet(sec) {
+    const cs = C.cheatsheet;
+    sec.innerHTML = `
+      <div class="eyebrow">Reference</div>
+      <h1>Cheat sheet</h1>
+      <p class="lede">${inline('Everything the course teaches, on one page. Print it with {{Cmd+P}} and keep it next to the Mac for a week.')}</p>
+      <div class="two cheat">
+        <div class="card"><h3 style="margin-top:0">Keys: Windows to Mac</h3><table><thead><tr><th>Do</th><th>Mac</th><th>Windows</th></tr></thead><tbody>${cs.keys.map((r) => `<tr><td>${esc(r[0])}</td><td><strong>${esc(r[1])}</strong></td><td class="muted">${esc(r[2])}</td></tr>`).join('')}</tbody></table></div>
+        <div class="card"><h3 style="margin-top:0">Terminal</h3><table><thead><tr><th>Command</th><th>Does</th></tr></thead><tbody>${cs.commands.map((r) => `<tr><td><code>${esc(r[0])}</code></td><td>${esc(r[1])}</td></tr>`).join('')}</tbody></table></div>
+      </div>`;
+  }
+
+  function progress(sec) {
+    const n = xp(); const { cur, next } = level(n);
+    sec.innerHTML = `
+      <div class="eyebrow">You</div>
+      <h1>${esc(cur.name)}</h1>
+      <p class="lede">${n} XP. ${next ? `${next.xp - n} more to <strong>${esc(next.name)}</strong>.` : 'Top of the mountain.'} Lessons read: ${Object.keys(S.lessons).length} of ${C.modules.reduce((a, m) => a + m.lessons.length, 0)}. Challenges done: ${Object.keys(S.challenges).length} of ${C.modules.length}.</p>
+      <h3>Badges</h3>
+      <div class="badges">${C.modules.map((m) => { const st = moduleStats(m); return `<a class="bdg ${st.complete ? 'on' : ''}" href="#${m.id}" style="text-decoration:none;color:inherit"><div class="em">${m.emoji}</div><div class="n">${esc(m.badge)}</div><div class="m">${st.complete ? 'earned' : `${st.done}/${st.total}`}</div></a>`; }).join('')}</div>
+      <div class="two">
+        <div class="card"><h3 style="margin-top:0">Levels</h3><div class="levels">${C.levels.map((l) => `<div class="${l === cur ? 'now' : l.xp < cur.xp ? 'past' : ''}"><span>${esc(l.name)}</span><span>${l.xp} XP</span></div>`).join('')}</div></div>
+        <div class="card"><h3 style="margin-top:0">Your progress file</h3>
+          <p class="small muted">Progress lives in this browser only. Export it before switching browsers or Macs, import it on the other side.</p>
+          <p><button class="btn" type="button" id="exp">Export (copy and download)</button></p>
+          <p><textarea class="proof" id="imp" placeholder="paste an exported progress file here" aria-label="import"></textarea></p>
+          <p><button class="btn" type="button" id="impb">Import</button> <span class="state" id="impst" style="display:inline"></span></p>
+          <p style="margin-top:18px"><button class="btn warn small" type="button" id="reset">Reset everything</button></p>
+        </div>
+      </div>`;
+    $('#exp', sec).addEventListener('click', async () => {
+      const text = JSON.stringify(S, null, 2);
+      try { await navigator.clipboard.writeText(text); } catch (e) {}
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' })); a.download = `masha-mac-progress-${new Date().toISOString().slice(0, 10)}.json`; a.click();
+      toast('Copied to the clipboard and downloaded.');
+    });
+    $('#impb', sec).addEventListener('click', () => {
+      const st = $('#impst', sec);
+      try { const obj = JSON.parse($('#imp', sec).value); if (obj && obj.v === 1 && obj.lessons) { S = Object.assign(fresh(), obj); save(); st.className = 'state ok'; st.textContent = 'Imported.'; render(); } else throw new Error('shape'); }
+      catch (e) { st.className = 'state no'; st.textContent = 'That is not a progress file from this page.'; }
+    });
+    $('#reset', sec).addEventListener('click', () => { if (confirm('Delete all progress on this browser? Export first if you want to keep it.')) { S = fresh(); save(); render(); } });
+  }
+
+  // ───────────────────────── helpers
+  function wireCopy(root) {
+    root.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
+      const text = b.parentElement.querySelector('code').textContent;
+      try { await navigator.clipboard.writeText(text); b.textContent = 'Copied'; b.classList.add('ok'); } catch (e) { b.textContent = 'Select and Cmd+C'; }
+      setTimeout(() => { b.textContent = 'Copy'; b.classList.remove('ok'); }, 1600);
+    }));
+  }
+  let toastT;
+  function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+  function checkBadge(mod) {
+    if (moduleStats(mod).complete && !S.celebrated[mod.id]) { S.celebrated[mod.id] = Date.now(); save(); confetti(160); setTimeout(() => toast(`🏅 Badge earned: ${mod.badge}`), 300); }
+  }
+  function confetti(count) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cv = $('#confetti'); const ctx = cv.getContext('2d');
+    cv.width = innerWidth; cv.height = innerHeight;
+    const cols = ['#F6C445', '#1D5C8A', '#2F6B4F', '#AD3F28', '#7CB9E8'];
+    const ps = Array.from({ length: count }, () => ({ x: innerWidth / 2 + (Math.random() - .5) * 200, y: innerHeight * .35, vx: (Math.random() - .5) * 14, vy: -Math.random() * 12 - 4, r: Math.random() * 6 + 3, c: cols[Math.floor(Math.random() * cols.length)], a: Math.random() * 6 }));
+    let t = 0;
+    (function frame() {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      for (const p of ps) { p.vy += .35; p.x += p.vx; p.y += p.vy; p.a += .1; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.fillStyle = p.c; ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * .6); ctx.restore(); }
+      if (++t < 110) requestAnimationFrame(frame); else ctx.clearRect(0, 0, cv.width, cv.height);
+    })();
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.target.matches('input,textarea')) return;
+    const r = parse(location.hash);
+    if (r.screen !== 'lesson') return;
+    const k = r.mod.lessons.indexOf(r.lesson);
+    if (e.key === 'ArrowRight' && k < r.mod.lessons.length - 1) go(`#${r.mod.id}/${r.mod.lessons[k + 1].id}`);
+    if (e.key === 'ArrowLeft' && k > 0) go(`#${r.mod.id}/${r.mod.lessons[k - 1].id}`);
+  });
+
+  // service worker: only over http(s); a file:// open or a failed registration changes nothing.
+  if ('serviceWorker' in navigator && /^https?:/.test(location.protocol)) {
+    navigator.serviceWorker.register('sw.js').then((reg) => {
+      reg.addEventListener('updatefound', () => { const w = reg.installing; w && w.addEventListener('statechange', () => { if (w.state === 'installed' && navigator.serviceWorker.controller) toast('New version ready. Reload when you like.'); }); });
+    }).catch(() => {});
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
