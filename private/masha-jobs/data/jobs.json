@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T10:00:01.293Z",
+ "generatedAt": "2026-11-24T10:00:00.919Z",
  "jobs": [
   {
    "id": "j-c80ab99784",
@@ -178,12 +178,12 @@
     {
      "kind": "company",
      "url": "https://bbv.ch/career/young-professional-programm/",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 1,
    "score": 50,
@@ -267,6 +267,44 @@
    "excerpt": "Young Professional Programm\nIT-Superheld sein, das wär‘s doch: Eine Heldin oder ein Held mit Skills, mit denen man sich von allen anderen abhebt! Unser Young Professional Programm bereitet dich optimal darauf vor!\nDas Young Professional Programm fördert und unterstützt dich auf deinem Weg zum IT-Helden. In einem optimalen Umfeld durchläufst du während rund zwei Jahren sowohl ON- als auch OFF-THE-JOB spannende Herausforderungen und individuelle Weiterbildung. Hast du dein Informatik-Studium in der Tasche und bist bereit für ein Superhelden-Abenteuer? Dann melde dich bei uns!\nAnna Lena Bartels\nSenior Recruiting Specialist\nMaking Visions Work\nLerne uns bei bbv Software Services kennen\nBist du auf der Suche nach einer neuen Herausforderung? Bei bbv Software Services AG zu arbeiten bedeutet ambitionierte Projekte, Teamwork mit erstklassigen Kollegen und unzählige Möglichkeiten, sich weiterzuentwickeln und mitzugestalten.\nFirmenkultur\nRespekt schafft Raum für neues Denken\n«Viele Unternehmen unterschätzen den Wert ‹Respekt› in der Unternehmenskultur», sagt HR-Spezialistin Laila Ulmann. bbv hat sich intensiv mit dem Begriff auseinandergesetzt – und festgestellt, dass gelebter Respekt klare Vorteile im Arbeitsalltag bringt.\nInterview\nGen Z: Neue Erwartungen, alte Vorurteile?\nWas unterscheidet die Gen Z von früheren Generationen in der Arbeitswelt? Mit HR-Leiterin Claudia Schaer, Berufsbildner Florian Bucher und Softwareentwicklerin Ying-Ling Dang diskutieren drei bbv-Mitarbeitende übe"
   },
   {
+   "id": "j-5827fae814",
+   "title": "Full Stack Software Engineer – Discovery Services (m/w/d) 80%, Zürich, unbefristet 23.11.2026 | ETH-Bibliothek",
+   "employer": "ETH Zürich",
+   "employerId": "eth-zuerich",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": [
+    80,
+    80
+   ],
+   "lang": "de",
+   "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_JgR4JIaJdkH75PnpI6",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_JgR4JIaJdkH75PnpI6",
+     "seenAt": "2026-11-24T10:00:00.919Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-11-24T10:00:00.919Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
+   "online": true,
+   "tier": 1,
+   "score": 40,
+   "junior": false,
+   "stack": [
+    "typescript",
+    "docker",
+    "git"
+   ],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "chevron_left\nÜbersicht\nFull Stack Software Engineer – Discovery Services (m/w/d)\n80%, Zürich, unbefristet\nprint\nDrucken\nDie  ETH-Bibliothek , fördert Wissen, unterstützt Forschung und Lehre und macht als vertrauenswürdige Institution die Welt von gestern, heute und morgen für dich besser begreifbar. Unser Team Discovery and API Management in der Gruppe Digital Business Solutions entwickelt und betreut die dafür notwendigen Systeme.\nAuf den 1. März 2027 oder nach Vereinbarung suchen wir eine:n Full Stack Software Engineer – Discovery Services (m/w/d) mit einem 80 % Pensum.\nStellenbeschreibung\nWir suchen eine erfahrene und engagierte Persönlichkeit, die in einem kleinen Team technische Verantwortung für zwei zentrale Services übernimmt: das Suchportal «ETH swisscovery» und den Resource Information Bus, die API-Drehscheibe der ETH-Bibliothek.\nDeine Aufgaben\n- Suchportal weiterentwickeln : Du entwickelst ETH-spezifische Komponenten unseres Suchportals mit Angular und TypeScript. Ein Schwerpunkt ist die Einführung der neuen Plattformgeneration Primo Next Discovery Experience (NDE) im Jahr 2027, mit Anpassungen für die Bibliotheks- und Forschungssicht. Du integrierst Hersteller-Releases, koordinierst technische Anpassungen mit dem nationalen Bibliotheksverbund SLSP und betreust bis zur Ablösung im Sommer 2027 die bestehende AngularJS-Lösung.\n- Backend und Schnittstellen gestalten : Du betreibst und erweiterst den Resource Information Bus auf Basis von Node.js und Express. Du entwic"
+  },
+  {
    "id": "j-17d1c2acfc",
    "title": "Graduate Engineer im IT-Consulting (100%)",
    "employer": "Innovation Process Technology AG",
@@ -284,12 +322,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Innovation-Process-Technology-AG-Graduate-Engineer-im-IT-Consulting-100",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-13T04:31:36.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 40,
@@ -390,12 +428,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Zrcher-Kantonalbank-Fullstack-Software-Engineer-mit-DevOps-Mindset-a-80--100",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-29T14:21:21.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 35,
@@ -428,12 +466,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Fullstack-Engineer---Java---Angular_JR101010-1",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-11T00:00:00.000Z",
    "firstSeen": "2026-11-12T10:00:00.697Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 2,
    "score": 33,
@@ -469,12 +507,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Konova-AG-Full-Stack-Developer-PHPLaravel--React-80---100--mwd",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-15T23:00:00.000Z",
    "firstSeen": "2026-11-16T10:00:00.892Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 30,
@@ -510,12 +548,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/healthinal-Fullstack-Software-Engineer-80-100",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-09T23:00:00.000Z",
    "firstSeen": "2026-11-12T10:00:00.697Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 30,
@@ -555,12 +593,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Agentic-Software-Engineer_JR101000",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-11T00:00:00.000Z",
    "firstSeen": "2026-11-12T10:00:00.697Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -592,12 +630,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-09-28T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -630,12 +668,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/React-Frontend-Engineer_JR100976-2",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-09T00:00:00.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -707,12 +745,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/TekkMinds-Schweiz-AG-Cloud-Software-Engineer-mwd",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-21T15:37:50.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -750,12 +788,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Scalera-AG-DevOps--Cloud-Software-Engineer-50-100",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-08-28T11:46:17.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -785,12 +823,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/riok-GmbH-Full-Stack-Software-Engineer",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-11-12T23:00:00.000Z",
    "firstSeen": "2026-11-13T10:00:00.347Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -862,12 +900,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Advanced-Software-Java-Engineer_JR100974-2",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-12T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 2,
    "score": 23,
@@ -934,12 +972,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Java-Full-Stack-Engineer",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-01T12:06:58.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -1049,12 +1087,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-10-04T09:00:01.231Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 2,
    "score": 18,
@@ -1067,6 +1105,37 @@
    "red": [],
    "assessment": null,
    "excerpt": ""
+  },
+  {
+   "id": "j-d9fc936a83",
+   "title": "Full Stack Software Engineer – Discovery Services (m/w/d)",
+   "employer": "ETH Zürich",
+   "employerId": "eth-zuerich",
+   "newEmployer": false,
+   "place": "Zürich",
+   "percent": null,
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/7626abdd-f492-4863-b4f1-ae94e15b3212/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/7626abdd-f492-4863-b4f1-ae94e15b3212/",
+     "seenAt": "2026-11-24T10:00:00.919Z"
+    }
+   ],
+   "postedAt": "2026-11-23T16:47:18.000Z",
+   "firstSeen": "2026-11-24T10:00:00.919Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
+   "online": true,
+   "tier": 1,
+   "score": 15,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Full Stack Software Engineer – Discovery Services (m/w/d) zur Verstärkung unseres Teams."
   },
   {
    "id": "j-7099c444d6",
@@ -1119,12 +1188,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/BLP-Digital-AG-Software-Engineer---ERP-Integrations",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-01T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 15,
@@ -1226,12 +1295,12 @@
     {
      "kind": "company",
      "url": "https://jobs.stadt-zuerich.ch/job/Software-Entwicklerin/1378064957/",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-11-21T10:00:01.184Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": 1,
    "score": 15,
@@ -1289,6 +1358,40 @@
    "red": [],
    "assessment": null,
    "excerpt": "Salary: CHF 100'000 - 130'000 per year\n\nRequirements:\n- Abgeschlossenes Studium (ETH, FH, Uni oder HF) in Informatik oder eine vergleichbare Ausbildung\n- 5+ Jahre Erfahrung in der Softwareentwicklung, davon mindestens 2 Jahre praktische Erfahrung mit Rust\n- Sehr gute Kenntnisse von Rust (Ownership, Borrowing, Lifetimes, Async/Await) sowie Erfahrung mit Frameworks wie Tokio, Actix, Serde oder ähnlichen Technologien\n- Erfahrung in Softwarearchitektur, verteilten Systemen sowie Event-Driven Architectures\n- Erfahrung mit Linux, Docker und Kubernetes\n- Kenntnisse in DDD, TDD/BDD sowie automatisierten Tests und modernen Softwareentwicklungspraktiken\n- Erfahrung in SAFe/Agile-Umgebungen; Erfahrung in regulierten Branchen\n- Sehr gute Deutsch- und Englischkenntnisse in Wort und Schrift\n\nResponsibilities:\n- Entwicklung und Weiterentwicklung moderner Softwarelösungen mit Rust\n- Mitarbeit bei Architektur- und Designentscheidungen in einem internationalen Umfeld\n- Entwicklung skalierbarer und qualitativ hochwertiger Software unter Einhaltung hoher Qualitätsstandards\n- Implementierung von APIs, Services und asynchronen Komponenten in modernen Systemlandschaften\n- Zusammenarbeit mit Product Ownern, Architekten und interdisziplinären Entwicklungsteams\n- Sicherstellung von Softwarequalität durch automatisierte Tests und Best Practices\n- Aktive Mitgestaltung technischer Standards sowie Wissensaustausch innerhalb des Teams\n- Mitarbeit in einem agilen Umfeld nach SAFe\n\nTechnologies:\n- DDD\n- Dock"
+  },
+  {
+   "id": "j-2ce0ea9f57",
+   "title": "Fullstack Entwickler 80 – 100% in Zürich (a)",
+   "employer": "Axept Business Software AG",
+   "employerId": null,
+   "newEmployer": true,
+   "place": "Zürich",
+   "percent": [
+    80,
+    100
+   ],
+   "lang": "de",
+   "url": "https://www.jobs.ch/de/stellenangebote/detail/7afec157-3c05-440a-9e98-16ee317c8d9e/",
+   "original": false,
+   "sources": [
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/7afec157-3c05-440a-9e98-16ee317c8d9e/",
+     "seenAt": "2026-11-24T10:00:00.919Z"
+    }
+   ],
+   "postedAt": "2026-11-23T13:12:08.000Z",
+   "firstSeen": "2026-11-24T10:00:00.919Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
+   "online": true,
+   "tier": null,
+   "score": 10,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "Wir suchen eine(n) Fullstack Entwickler 80 – 100% in Zürich (a) zur Verstärkung unseres Teams."
   },
   {
    "id": "j-be2d646c49",
@@ -1354,11 +1457,16 @@
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/e3f631f2-26ea-46ad-af1b-24da75028e22/",
      "seenAt": "2026-11-23T10:00:01.293Z"
+    },
+    {
+     "kind": "jobsch",
+     "url": "https://www.jobs.ch/de/stellenangebote/detail/3120bcd2-915e-4ab9-a6f8-e018296ca7d2/",
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
-   "postedAt": "2026-11-17T13:06:00.000Z",
+   "postedAt": "2026-11-23T04:15:07.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1384,17 +1492,17 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/014cffac-b284-4919-80ce-a6e2003047c0/",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     },
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/530da96e-bd94-41ec-8ca8-5f659e64b5f5/",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2025-12-13T09:55:57.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 10,
@@ -1548,39 +1656,6 @@
    "excerpt": "Wir suchen eine(n) Software Engineer Full-Stack (60%) zur Verstärkung unseres Teams."
   },
   {
-   "id": "j-1e632f4b82",
-   "title": ".NET Software Engineer",
-   "employer": "Swisscard AECS GmbH",
-   "employerId": null,
-   "newEmployer": true,
-   "place": "Horgen",
-   "percent": null,
-   "lang": "de",
-   "url": "https://www.jobs.ch/de/stellenangebote/detail/f1f80f7a-1998-48f6-be9b-3f34dcb3f223/",
-   "original": false,
-   "sources": [
-    {
-     "kind": "jobsch",
-     "url": "https://www.jobs.ch/de/stellenangebote/detail/f1f80f7a-1998-48f6-be9b-3f34dcb3f223/",
-     "seenAt": "2026-11-10T10:00:00.349Z"
-    }
-   ],
-   "postedAt": "2026-11-09T05:17:32.000Z",
-   "firstSeen": "2026-11-09T10:00:00.382Z",
-   "lastSeen": "2026-11-10T10:00:00.349Z",
-   "online": false,
-   "tier": null,
-   "score": 5,
-   "junior": false,
-   "stack": [
-    ".net"
-   ],
-   "green": [],
-   "red": [],
-   "assessment": null,
-   "excerpt": "Wir suchen eine(n) .NET Software Engineer zur Verstärkung unseres Teams."
-  },
-  {
    "id": "j-0d18bd8f80",
    "title": "Frontend Engineer in Banking - longterm contract",
    "employer": "Rockstar Recruiting AG",
@@ -1595,12 +1670,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Frontend-Engineer-in-Banking---longterm-contract",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-08T22:00:00.000Z",
    "firstSeen": "2026-10-10T09:00:00.463Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1628,12 +1703,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Intonate-Software-Engineer",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2025-11-13T23:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1695,12 +1770,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Migros-Genossenschafts-Bund-Software-Engineer-Microsoft-Power-Platform",
-     "seenAt": "2026-11-23T10:00:01.293Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-01-15T10:10:33.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-23T10:00:01.293Z",
+   "lastSeen": "2026-11-24T10:00:00.919Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1728,13 +1803,13 @@
     {
      "kind": "jobsch",
      "url": "https://www.jobs.ch/de/stellenangebote/detail/6cf83794-7f2e-4d74-a20b-71b1d57e3717/",
-     "seenAt": "2026-11-19T10:00:00.665Z"
+     "seenAt": "2026-11-24T10:00:00.919Z"
     }
    ],
    "postedAt": "2026-10-27T15:32:07.000Z",
    "firstSeen": "2026-11-18T10:00:01.253Z",
-   "lastSeen": "2026-11-19T10:00:00.665Z",
-   "online": false,
+   "lastSeen": "2026-11-24T10:00:00.919Z",
+   "online": true,
    "tier": null,
    "score": 0,
    "junior": false,
@@ -1770,7 +1845,7 @@
    "postedAt": "2026-11-06T05:17:39.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
    "lastSeen": "2026-11-23T10:00:01.293Z",
-   "online": true,
+   "online": false,
    "tier": null,
    "score": 0,
    "junior": false,
@@ -1806,7 +1881,7 @@
    "postedAt": "2026-11-06T05:17:38.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
    "lastSeen": "2026-11-23T10:00:01.293Z",
-   "online": true,
+   "online": false,
    "tier": null,
    "score": 0,
    "junior": false,
