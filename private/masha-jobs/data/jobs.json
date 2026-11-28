@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T10:00:00.949Z",
+ "generatedAt": "2026-11-28T10:00:00.482Z",
  "jobs": [
   {
    "id": "j-c80ab99784",
@@ -66,12 +66,12 @@
     {
      "kind": "company",
      "url": "https://bbv.ch/career/young-professional-programm/",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 1,
    "score": 50,
@@ -172,12 +172,12 @@
     {
      "kind": "company",
      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_JgR4JIaJdkH75PnpI6",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-11-24T10:00:00.919Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 1,
    "score": 40,
@@ -210,12 +210,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Innovation-Process-Technology-AG-Graduate-Engineer-im-IT-Consulting-100",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-11-13T04:31:36.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 40,
@@ -316,12 +316,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Zrcher-Kantonalbank-Fullstack-Software-Engineer-mit-DevOps-Mindset-a-80--100",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-10-29T14:21:21.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 35,
@@ -401,7 +401,7 @@
    "postedAt": "2026-11-26T17:55:44.000Z",
    "firstSeen": "2026-11-27T10:00:00.949Z",
    "lastSeen": "2026-11-27T10:00:00.949Z",
-   "online": true,
+   "online": false,
    "tier": null,
    "score": 30,
    "junior": false,
@@ -435,12 +435,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Konova-AG-Full-Stack-Developer-PHPLaravel--React-80---100--mwd",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-11-15T23:00:00.000Z",
    "firstSeen": "2026-11-16T10:00:00.892Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 30,
@@ -476,12 +476,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/healthinal-Fullstack-Software-Engineer-80-100",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-11-23T23:00:00.000Z",
    "firstSeen": "2026-11-12T10:00:00.697Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 30,
@@ -521,12 +521,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Belgrade/Agentic-Software-Engineer_JR101000",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-11-11T00:00:00.000Z",
    "firstSeen": "2026-11-12T10:00:00.697Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -558,12 +558,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Schlieren/Java-Fullstack-Engineer_JR100937",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-09-28T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -596,12 +596,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/React-Frontend-Engineer_JR100976-2",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-10-09T00:00:00.000Z",
    "firstSeen": "2026-10-09T09:00:01.274Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 2,
    "score": 28,
@@ -673,12 +673,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/TekkMinds-Schweiz-AG-Cloud-Software-Engineer-mwd",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-11-21T15:37:50.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -716,12 +716,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Scalera-AG-DevOps--Cloud-Software-Engineer-50-100",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-08-28T11:46:17.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -751,12 +751,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/riok-GmbH-Full-Stack-Software-Engineer",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-11-26T07:01:14.000Z",
    "firstSeen": "2026-11-13T10:00:00.347Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 25,
@@ -828,12 +828,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Sofia/Advanced-Software-Java-Engineer_JR100974-2",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-10-12T00:00:00.000Z",
    "firstSeen": "2026-09-28T13:22:29.547Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 2,
    "score": 23,
@@ -900,12 +900,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Java-Full-Stack-Engineer",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-10-01T12:06:58.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 20,
@@ -972,12 +972,12 @@
     {
      "kind": "company",
      "url": "https://zuehlke.wd3.myworkdayjobs.com/Zuhlke-Careers/job/Porto/Java-and-React-Software-Engineer_JR100891",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-10-04T09:00:01.231Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 2,
    "score": 18,
@@ -1073,12 +1073,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/BLP-Digital-AG-Software-Engineer---ERP-Integrations",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-10-01T22:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 15,
@@ -1144,12 +1144,12 @@
     {
      "kind": "company",
      "url": "https://jobs.stadt-zuerich.ch/job/Software-Entwicklerin/1378064957/",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": null,
    "firstSeen": "2026-11-21T10:00:01.184Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": 1,
    "score": 15,
@@ -1387,6 +1387,40 @@
    "excerpt": "Salary: CHF 65'000 - 70'000 per year\n\nRequirements:\n- Passion for learning and self-development\n- Interest in mobile app development\n- Basic knowledge in iOS development; familiarity with Swift is essential\n- Understanding of how software is built\n- Awareness of quality and testing in development\n- Curiosity about new technologies like AI, APIs, or automation\n- Structured way of working and willingness to take feedback\n- We dont filter by: degrees or formal education paths; perfect CVs or polished GitHub profiles\n\nResponsibilities:\n- Work closely with experienced iOS and Android developers in a cross-functional team\n- Support the development and improvement of the HolidayCheck iOS app\n- Learn and apply modern development practices like code reviews, pair programming, and CI/CD\n- Contribute to features step by step — from implementation to release\n- Collaborate with Product Managers and Designers to understand user needs\n- Explore new technologies, including first use cases of AI in mobile apps\n\nTechnologies:\n- AI\n- Android\n- CI/CD\n- GitHub\n- Hardware\n- Support\n- Linux\n- Mobile\n- Swift\n- Windows\n- iOS\n\nMore:\n\nAt HolidayCheck, everything revolves around making vacations better — together. We enable the best time of the year for our travelers and create an inspiring work atmosphere for HolidayCheckers in our modern office in Bottighofen (Switzerland) or Munich (Germany).\n\nWe live our company values every day: as #TeamHolidayCheck, we build trust, take ownership, and love what we"
   },
   {
+   "id": "j-973a3437f8",
+   "title": "Software Engineer - LISA Space Mission 100%, Zurich, fixed-term 27.11.2026 | ETH Zurich | Space / Gravitational Physics Research Group",
+   "employer": "ETH Zürich",
+   "employerId": "eth-zuerich",
+   "newEmployer": false,
+   "place": "Zurich",
+   "percent": [
+    100,
+    100
+   ],
+   "lang": "en",
+   "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ALLpb3NZwHecFGs7kQ",
+   "original": true,
+   "sources": [
+    {
+     "kind": "company",
+     "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ALLpb3NZwHecFGs7kQ",
+     "seenAt": "2026-11-28T10:00:00.482Z"
+    }
+   ],
+   "postedAt": null,
+   "firstSeen": "2026-11-28T10:00:00.482Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
+   "online": true,
+   "tier": 1,
+   "score": 10,
+   "junior": false,
+   "stack": [],
+   "green": [],
+   "red": [],
+   "assessment": null,
+   "excerpt": "chevron_left\nÜbersicht\nSoftware Engineer - LISA Space Mission\n100%, Zurich, fixed-term\nprint\nDrucken\nETH Zurich | Space and the Gravitational Physics Research group led by Prof. Michele Vallisneri in the Dept. of Physics at ETH Zurich invite applications for a Software Engineer position (for one year, with a prospect of becoming indefinite) on the development of the data-analysis suite and pipeline infrastructure for the upcoming gravitational-wave space observatory LISA.\nProject background\nIn 2015, the LIGO–Virgo collaboration achieved the first detection of high-frequency gravitational radiation, confirming Einstein’s 1916 results, and establishing the existence of binaries of stellar-mass black holes. In the mid 2030s, the Laser Interferometer Space Antenna (LISA) will begin to observe thousands of low-frequency gravitational-wave sources, including ultracompact stellar-remnant binaries in the Milky Way, and the mergers of massive-black-hole binaries across cosmic time. Identifying these sources is a central part of the LISA data analysis challenge.\nThe ESA-funded LISA will rely on an extensive ground segment for data processing and analysis. The LISA ground segment is a distributed facility (the LISA Distributed Data Processing Center), for which LISA member states contribute national centers with specific commitments and deliverables. In this international context, the newly formed Gravitational Physics Research Group at ETH Zurich leads the implementation of the Swiss L"
+  },
+  {
    "id": "j-fae1447960",
    "title": "Software Engineer – User Generated Content (all genders)",
    "employer": "HolidayCheck",
@@ -1471,12 +1505,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Rockstar-Recruiting-AG-Frontend-Engineer-in-Banking---longterm-contract",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-10-08T22:00:00.000Z",
    "firstSeen": "2026-10-10T09:00:00.463Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1504,12 +1538,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Intonate-Software-Engineer",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2025-11-13T23:00:00.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 5,
@@ -1538,12 +1572,12 @@
     {
      "kind": "swissdevjobs",
      "url": "https://swissdevjobs.ch/jobs/Migros-Genossenschafts-Bund-Software-Engineer-Microsoft-Power-Platform",
-     "seenAt": "2026-11-27T10:00:00.949Z"
+     "seenAt": "2026-11-28T10:00:00.482Z"
     }
    ],
    "postedAt": "2026-01-15T10:10:33.000Z",
    "firstSeen": "2026-09-28T12:27:53.283Z",
-   "lastSeen": "2026-11-27T10:00:00.949Z",
+   "lastSeen": "2026-11-28T10:00:00.482Z",
    "online": true,
    "tier": null,
    "score": 5,
